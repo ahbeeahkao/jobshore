@@ -1,0 +1,223 @@
+---
+import { COMPANY_INFO } from '../data/siteData';
+---
+
+<div class="fixed bottom-5 right-5 z-40">
+  <!-- Floating Trigger Button -->
+  <button
+    type="button"
+    id="ai-concierge-toggle"
+    class="group flex items-center gap-2.5 rounded-full border border-sky-400/50 bg-slate-900/95 px-4 py-3 text-xs font-extrabold text-white shadow-2xl shadow-sky-500/30 backdrop-blur-md transition hover:border-emerald-400 hover:bg-slate-900 cursor-pointer"
+    aria-label="Open Jobshore AI Deal Concierge"
+  >
+    <span class="relative flex h-2.5 w-2.5">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+    </span>
+    <span>Ask AI Architect • Instant Quote</span>
+  </button>
+
+  <!-- Concierge Drawer -->
+  <div
+    id="ai-concierge-panel"
+    class="hidden fixed bottom-20 right-5 w-[92vw] max-w-sm flex-col overflow-hidden rounded-2xl border border-sky-500/40 bg-slate-900/98 shadow-2xl shadow-slate-950/90 backdrop-blur-xl"
+  >
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-slate-800 bg-slate-950 px-4 py-3">
+      <div class="flex items-center gap-2.5">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-sky-500 to-emerald-500 font-black text-slate-950 text-xs">
+          AI
+        </div>
+        <div>
+          <div class="text-xs font-bold text-white">Jobshore AI Solutions Architect</div>
+          <div class="text-[10px] text-emerald-400">Online • EN / BM / 中文 • Instant Scoping</div>
+        </div>
+      </div>
+      <button
+        type="button"
+        id="ai-concierge-close"
+        class="rounded-lg p-1 text-slate-400 hover:bg-slate-800 hover:text-white cursor-pointer"
+        aria-label="Close AI Concierge"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- Chat Messages Area -->
+    <div
+      id="ai-concierge-messages"
+      class="code-scroll max-h-72 overflow-y-auto p-4 space-y-3 text-xs leading-relaxed"
+    >
+      <div class="rounded-xl border border-slate-800 bg-slate-950/90 p-3 text-slate-200">
+        👋 Hi! I’m the <strong class="text-sky-300">Jobshore AI Solutions Architect</strong>. Select a question below or type your requirement to get an instant answer, ROI estimate, or 14-day pilot quote:
+      </div>
+    </div>
+
+    <!-- Quick Prompt Chips -->
+    <div class="border-t border-slate-800/80 bg-slate-950/60 px-3 py-2.5">
+      <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">
+        Tap a Common Buyer Question:
+      </div>
+      <div class="flex flex-wrap gap-1.5">
+        <button
+          type="button"
+          data-concierge-q="pricing"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-sky-300 hover:border-sky-500 cursor-pointer"
+        >
+          💰 How does pricing &amp; 14-day pilot work?
+        </button>
+        <button
+          type="button"
+          data-concierge-q="pos"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-amber-300 hover:border-amber-500 cursor-pointer"
+        >
+          🏪 Offline POS &amp; LHDN QR e-Invoice?
+        </button>
+        <button
+          type="button"
+          data-concierge-q="erp"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-indigo-300 hover:border-indigo-500 cursor-pointer"
+        >
+          🏭 Migrate SQL/AutoCount to ERPNext?
+        </button>
+        <button
+          type="button"
+          data-concierge-q="hallucination"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-emerald-300 hover:border-emerald-500 cursor-pointer"
+        >
+          🛡️ How do you prevent AI hallucinations?
+        </button>
+      </div>
+    </div>
+
+    <!-- Free-Text Input + Action Bar -->
+    <form id="ai-concierge-form" class="border-t border-slate-800 bg-slate-950 p-3 flex gap-2">
+      <input
+        id="ai-concierge-input"
+        type="text"
+        placeholder="Ask about OCR, POS, ERPNext, LHDN..."
+        class="flex-1 rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+      />
+      <button
+        type="submit"
+        class="rounded-xl bg-sky-500 px-3.5 py-2 text-xs font-bold text-slate-950 hover:bg-sky-400 cursor-pointer"
+      >
+        Ask
+      </button>
+    </form>
+
+    <!-- Bottom Conversion Strip -->
+    <div class="flex items-center justify-between border-t border-slate-800 bg-slate-900 px-3.5 py-2 text-[11px]">
+      <a
+        href="#contact"
+        id="concierge-goto-quote"
+        class="font-bold text-sky-400 hover:underline"
+      >
+        Calculate My Dynamic Quote →
+      </a>
+      <a
+        href={`https://wa.me/${COMPANY_INFO.whatsappClean}?text=${encodeURIComponent('Hi Jobshore, I would like a Free 3-Document OCR / POS / ERPNext Demo and 14-Day Pilot quote.')}`}
+        target="_blank"
+        rel="noopener"
+        class="font-bold text-emerald-400 hover:underline"
+      >
+        WhatsApp Engineer Now →
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('ai-concierge-toggle');
+  const closeBtn = document.getElementById('ai-concierge-close');
+  const panel = document.getElementById('ai-concierge-panel');
+  const messagesBox = document.getElementById('ai-concierge-messages');
+  const form = document.getElementById('ai-concierge-form') as HTMLFormElement | null;
+  const input = document.getElementById('ai-concierge-input') as HTMLInputElement | null;
+  const gotoQuote = document.getElementById('concierge-goto-quote');
+
+  const ANSWERS: Record<string, { q: string; a: string }> = {
+    pricing: {
+      q: 'How does pricing & the 14-day pilot work?',
+      a: 'Instead of rigid price tags, we tailor pricing to your outlet/warehouse scale and pair it with your projected annual ROI. You can start with a low-risk 14-Day Production Pilot (100% credited toward your full rollout) — and we even offer a Free 3-Invoice / 10-SKU Live Proof on our first call!',
+    },
+    pos: {
+      q: 'How does Offline POS & LHDN QR e-Invoicing work?',
+      a: 'Our POS keeps ringing sales and printing thermal receipts via local IndexedDB/SQLite even if store internet drops. Every receipt prints a unique QR code so walk-in customers can self-claim a validated LHDN e-Invoice on their phone, while unclaimed receipts auto-submit as a monthly Consolidated e-Invoice.',
+    },
+    erp: {
+      q: 'Can you migrate from AutoCount, SQL Accounting, Xero, or SAP to ERPNext?',
+      a: 'Yes! We migrate your Chart of Accounts, Customers, Suppliers, Inventory Items, BOMs, and Opening Balances into Frappe ERPNext with $0 per-user licensing fees—typically going live in 6–12 weeks with full Malaysia LHDN MyInvois and EPF/SOCSO/PCB payroll compliance.',
+    },
+    hallucination: {
+      q: 'How do you prevent AI hallucinations in OCR and finance?',
+      a: 'We never let an LLM post directly to your database. Every AI OCR extraction passes through Deterministic Math Invariants (Qty × Unit Price == Line Total & Subtotal + Tax == Grand Total), 3-way PO/GRN matching, and a Human-in-the-Loop (HITL) review queue for any variance.',
+    },
+  };
+
+  function appendExchange(question: string, answer: string) {
+    if (!messagesBox) return;
+    const userDiv = document.createElement('div');
+    userDiv.className = 'ml-6 rounded-xl bg-sky-500/20 border border-sky-500/30 p-2.5 text-right text-white font-medium';
+    userDiv.textContent = question;
+
+    const botDiv = document.createElement('div');
+    botDiv.className = 'mr-4 rounded-xl border border-slate-800 bg-slate-950 p-3 text-slate-200';
+    botDiv.textContent = answer;
+
+    messagesBox.appendChild(userDiv);
+    messagesBox.appendChild(botDiv);
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+
+  toggleBtn?.addEventListener('click', () => {
+    if (panel?.classList.contains('hidden')) {
+      panel.classList.remove('hidden');
+      panel.classList.add('flex');
+    } else {
+      panel?.classList.add('hidden');
+      panel?.classList.remove('flex');
+    }
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    panel?.classList.add('hidden');
+    panel?.classList.remove('flex');
+  });
+
+  gotoQuote?.addEventListener('click', () => {
+    panel?.classList.add('hidden');
+    panel?.classList.remove('flex');
+  });
+
+  document.querySelectorAll('.concierge-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const key = chip.getAttribute('data-concierge-q') || 'pricing';
+      const item = ANSWERS[key] || ANSWERS.pricing;
+      appendExchange(item.q, item.a);
+    });
+  });
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input?.value.trim() || '';
+    if (!text) return;
+    if (input) input.value = '';
+
+    const lower = text.toLowerCase();
+    let reply =
+      'Great question! Based on your requirement, we recommend starting with a Free 3-Document / 10-SKU Live Demo followed by a 14-Day Verified Pilot. Click "Calculate My Dynamic Quote" below to get your instant scope-adjusted estimate & ROI!';
+
+    if (lower.includes('price') || lower.includes('cost') || lower.includes('harga') || lower.includes('多少钱') || lower.includes('quote')) {
+      reply = ANSWERS.pricing.a;
+    } else if (lower.includes('pos') || lower.includes('retail') || lower.includes('f&b') || lower.includes('qr') || lower.includes('offline')) {
+      reply = ANSWERS.pos.a;
+    } else if (lower.includes('erp') || lower.includes('autocount') || lower.includes('sql') || lower.includes('lhdn') || lower.includes('invois')) {
+      reply = ANSWERS.erp.a;
+    } else if (lower.includes('ocr') || lower.includes('hallucinat') || lower.includes('accuracy') || lower.includes('test')) {
+      reply = ANSWERS.hallucination.a;
+    }
+
+    appendExchange(text, reply);
+  });
+</script>

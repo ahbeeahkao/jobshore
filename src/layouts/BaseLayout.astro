@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { COMPANY_INFO, SERVICE_PILLARS, UI_TRANSLATIONS, buildHomeJsonLd } from '../data/siteData';
 import { withBase } from '../utils/paths';
 import SeoAeoModal from '../components/SeoAeoModal.astro';
+import AiDealConciergeWidget from '../components/AiDealConciergeWidget.astro';
 
 interface Props {
   title?: string;
@@ -495,6 +496,9 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
 
     <!-- Live SEO & AEO Inspector Modal -->
     <SeoAeoModal jsonLd={jsonLd} />
+
+    <!-- Floating AI Solutions Architect & Deal Concierge Widget -->
+    <AiDealConciergeWidget />
 
     <!-- Trilingual (EN / BM / ZH) Client-Side Switcher Script -->
     <script define:vars={{ UI_TRANSLATIONS }}>

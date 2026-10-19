@@ -13,9 +13,12 @@ export const COMPANY_CONFIG = {
   state: 'Selangor',
   country: 'Malaysia',
   countryCode: 'MY',
-  // Set showStartingPrice to false if you prefer "Custom Scoped • Free Pilot Assessment" instead of showing price numbers
-  showStartingPrice: true,
-  customPriceFallbackText: 'Custom Milestone Quote • 14-Day Pilot Available',
+  // Set showStartingPrice to false so static cards don't low-anchor enterprise buyers;
+  // Instead, buyers get a scope-adjusted estimate paired with ROI inside the AI Quote Closer (#contact).
+  showStartingPrice: false,
+  customPriceFallbackText: 'AI Scope-Adjusted Quote • 14-Day Pilot Available',
+  // Optional: Paste a Make.com / n8n / Web3Forms / Formspree webhook URL here to auto-send leads to your CRM/AI Agent
+  leadWebhookUrl: '',
 };
 
 export interface SubService {
@@ -88,6 +91,7 @@ export const COMPANY_INFO = {
   ssmRegistrationNo: COMPANY_CONFIG.ssmRegistrationNo,
   showStartingPrice: COMPANY_CONFIG.showStartingPrice,
   customPriceFallbackText: COMPANY_CONFIG.customPriceFallbackText,
+  leadWebhookUrl: COMPANY_CONFIG.leadWebhookUrl,
   domain: resolvedDomain,
   githubRepoUrl: 'https://github.com/ahbeeahkao/jobshore',
   tagline: 'AI Engineering, Business Automation, Frappe ERPNext, POS Systems & Full-Stack Product Studio',
