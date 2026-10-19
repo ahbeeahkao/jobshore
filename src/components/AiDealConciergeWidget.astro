@@ -137,22 +137,67 @@ import { COMPANY_INFO } from '../data/siteData';
   const requestCallback = document.getElementById('concierge-request-callback');
   let lastUserQuestion = '';
 
-  const ANSWERS: Record<string, { q: string; a: string }> = {
+  function getActiveLang(): 'en' | 'bm' | 'zh' {
+    const fn = (window as any).__jobshoreGetLang;
+    return fn ? fn() : 'en';
+  }
+
+  const ANSWERS: Record<string, Record<'en' | 'bm' | 'zh', { q: string; a: string }>> = {
     pricing: {
-      q: 'How does pricing & the 14-day pilot work?',
-      a: 'Instead of rigid price tags, we tailor pricing to your outlet/warehouse scale and pair it with your projected annual ROI. You can start with a low-risk 14-Day Production Pilot (100% credited toward your full rollout) — and we even offer a Free 3-Invoice / 10-SKU Live Proof on our first call!',
+      en: {
+        q: 'How does pricing & the 14-day pilot work?',
+        a: 'Instead of rigid price tags, we tailor pricing to your outlet/warehouse scale and pair it with your projected annual ROI. You can start with a low-risk 14-Day Production Pilot (100% credited toward your full rollout) — and we even offer a Free 3-Invoice / 10-SKU Live Proof on our first call!',
+      },
+      bm: {
+        q: 'Bagaimana harga & perintis 14 hari berfungsi?',
+        a: 'Daripada tanda harga kaku, kami menyesuaikan pelaburan mengikut saiz cawangan/gudang anda beserta unjuran ROI tahunan. Anda boleh bermula dengan Perintis Produksi 14 Hari berisiko rendah (100% dikreditkan ke pelaksanaan penuh) — malah kami menawarkan Bukti Langsung Percuma 3-Invois / 10-SKU!',
+      },
+      zh: {
+        q: '价格体系与 14 天生产试点如何运作？',
+        a: '我们摒弃死板标价，根据您的门店/仓库规模定制投资方案并配套年度 ROI 测算。您可以先启动低风险的 14 天生产试点（100% 费用全额抵扣正式项目）——首次沟通还可免费享受 3 份发票 / 10 个 SKU 真实数据实测！',
+      },
     },
     pos: {
-      q: 'How does Offline POS & LHDN QR e-Invoicing work?',
-      a: 'Our POS keeps ringing sales and printing thermal receipts via local IndexedDB/SQLite even if store internet drops. Every receipt prints a unique QR code so walk-in customers can self-claim a validated LHDN e-Invoice on their phone, while unclaimed receipts auto-submit as a monthly Consolidated e-Invoice.',
+      en: {
+        q: 'How does Offline POS & LHDN QR e-Invoicing work?',
+        a: 'Our POS keeps ringing sales and printing thermal receipts via local IndexedDB/SQLite even if store internet drops. Every receipt prints a unique QR code so walk-in customers can self-claim a validated LHDN e-Invoice on their phone, while unclaimed receipts auto-submit as a monthly Consolidated e-Invoice.',
+      },
+      bm: {
+        q: 'Bagaimana POS Luar Talian & e-Invois QR LHDN berfungsi?',
+        a: 'POS kami terus merekod jualan dan mencetak resit terma melalui IndexedDB/SQLite tempatan walaupun internet kedai terputus. Setiap resit mencetak kod QR unik supaya pelanggan walk-in boleh menuntut e-Invois LHDN pada telefon mereka, manakala resit tidak dituntut dihantar secara automatik sebagai e-Invois Disatukan bulanan.',
+      },
+      zh: {
+        q: '断网离线 POS 与 LHDN 扫码电子发票如何运作？',
+        a: '即使门店断网，我们的 POS 仍可通过本地 IndexedDB/SQLite 照常扫码收银并打印热敏小票。每张小票自动打印专属二维码供顾客手机自助申领 LHDN 电子发票，未申领小票则在月底自动汇总上报。',
+      },
     },
     erp: {
-      q: 'Can you migrate from AutoCount, SQL Accounting, Xero, or SAP to ERPNext?',
-      a: 'Yes! We migrate your Chart of Accounts, Customers, Suppliers, Inventory Items, BOMs, and Opening Balances into Frappe ERPNext with $0 per-user licensing fees—typically going live in 6–12 weeks with full Malaysia LHDN MyInvois and EPF/SOCSO/PCB payroll compliance.',
+      en: {
+        q: 'Can you migrate from AutoCount, SQL Accounting, Xero, or SAP to ERPNext?',
+        a: 'Yes! We migrate your Chart of Accounts, Customers, Suppliers, Inventory Items, BOMs, and Opening Balances into Frappe ERPNext with $0 per-user licensing fees—typically going live in 6–12 weeks with full Malaysia LHDN MyInvois and EPF/SOCSO/PCB payroll compliance.',
+      },
+      bm: {
+        q: 'Bolehkah anda migrasi daripada AutoCount, SQL Accounting, Xero, atau SAP ke ERPNext?',
+        a: 'Ya! Kami memigrasikan Carta Akaun, Pelanggan, Pembekal, Item Inventori, BOM, dan Baki Awal anda ke dalam Frappe ERPNext dengan yuran lesen $0 setiap pengguna—biasanya dilancarkan dalam 6–12 minggu lengkap dengan pematuhan LHDN MyInvois dan gaji KWSP/PERKESO/PCB.',
+      },
+      zh: {
+        q: '能否从 AutoCount、SQL、Xero 或 SAP 迁移至 ERPNext？',
+        a: '完全可以！我们将您的会计科目表、客户、供应商、库存商品、生产 BOM 及期初余额完整迁移至终身 $0 按人头授权费的 Frappe ERPNext——通常 6–12 周即可账实平衡上线，并全面符合马来西亚 LHDN 电子发票与法定薪资合规。',
+      },
     },
     hallucination: {
-      q: 'How do you prevent AI hallucinations in OCR and finance?',
-      a: 'We never let an LLM post directly to your database. Every AI OCR extraction passes through Deterministic Math Invariants (Qty × Unit Price == Line Total & Subtotal + Tax == Grand Total), 3-way PO/GRN matching, and a Human-in-the-Loop (HITL) review queue for any variance.',
+      en: {
+        q: 'How do you prevent AI hallucinations in OCR and finance?',
+        a: 'We never let an LLM post directly to your database. Every AI OCR extraction passes through Deterministic Math Invariants (Qty × Unit Price == Line Total & Subtotal + Tax == Grand Total), 3-way PO/GRN matching, and a Human-in-the-Loop (HITL) review queue for any variance.',
+      },
+      bm: {
+        q: 'Bagaimana anda mencegah halusinasi AI dalam OCR dan kewangan?',
+        a: 'Kami tidak sesekali membenarkan LLM menulis terus ke pangkalan data anda. Setiap pengekstrakan AI OCR melalui Invarian Matematik Deterministik (Kuantiti × Harga Seunit == Jumlah Baris & Subjumlah + Cukai == Jumlah Besar), padanan 3-hala PO/GRN, dan baris gilir Semakan Manusia (HITL).',
+      },
+      zh: {
+        q: '你们如何防止 OCR 与财务系统中的 AI 幻觉？',
+        a: '我们绝不允许大模型直接写入数据库。所有 AI OCR 提取结果均须通过确定性数学恒等式校验（数量 × 单价 == 行小计 且 小计 + 税额 == 总计）、PO/GRN 采购三单匹配以及人机协同 (HITL) 异常审核队列。',
+      },
     },
   };
 
@@ -208,7 +253,9 @@ import { COMPANY_INFO } from '../data/siteData';
   document.querySelectorAll('.concierge-chip').forEach((chip) => {
     chip.addEventListener('click', () => {
       const key = chip.getAttribute('data-concierge-q') || 'pricing';
-      const item = ANSWERS[key] || ANSWERS.pricing;
+      const lang = getActiveLang();
+      const group = ANSWERS[key] || ANSWERS.pricing;
+      const item = group[lang] || group.en;
       appendExchange(item.q, item.a);
     });
   });
@@ -219,18 +266,23 @@ import { COMPANY_INFO } from '../data/siteData';
     if (!text) return;
     if (input) input.value = '';
 
+    const lang = getActiveLang();
     const lower = text.toLowerCase();
     let reply =
-      'Great question! Based on your requirement, we recommend starting with a Free 3-Document / 10-SKU Live Demo followed by a 14-Day Verified Pilot. Click "Calculate My Dynamic Quote" below to get your instant scope-adjusted estimate & ROI!';
+      lang === 'bm'
+        ? 'Soalan yang baik! Berdasarkan keperluan anda, kami mengesyorkan bermula dengan Demo Langsung Percuma 3-Dokumen / 10-SKU diikuti Perintis Disahkan 14 Hari. Klik "Kira Sebut Harga Dinamik Saya" di bawah untuk mendapatkan anggaran segera & ROI anda!'
+        : lang === 'zh'
+          ? '非常好的问题！根据您的需求，我们建议先进行免费的“3 份单据 / 10 个 SKU 真实数据演示”，随后启动 14 天验证试点。请点击下方“计算我的动态方案报价”即时获取投资估算与 ROI！'
+          : 'Great question! Based on your requirement, we recommend starting with a Free 3-Document / 10-SKU Live Demo followed by a 14-Day Verified Pilot. Click "Calculate My Dynamic Quote" below to get your instant scope-adjusted estimate & ROI!';
 
-    if (lower.includes('price') || lower.includes('cost') || lower.includes('harga') || lower.includes('多少钱') || lower.includes('quote')) {
-      reply = ANSWERS.pricing.a;
-    } else if (lower.includes('pos') || lower.includes('retail') || lower.includes('f&b') || lower.includes('qr') || lower.includes('offline')) {
-      reply = ANSWERS.pos.a;
-    } else if (lower.includes('erp') || lower.includes('autocount') || lower.includes('sql') || lower.includes('lhdn') || lower.includes('invois')) {
-      reply = ANSWERS.erp.a;
-    } else if (lower.includes('ocr') || lower.includes('hallucinat') || lower.includes('accuracy') || lower.includes('test')) {
-      reply = ANSWERS.hallucination.a;
+    if (lower.includes('price') || lower.includes('cost') || lower.includes('harga') || lower.includes('多少钱') || lower.includes('报价') || lower.includes('quote')) {
+      reply = (ANSWERS.pricing[lang] || ANSWERS.pricing.en).a;
+    } else if (lower.includes('pos') || lower.includes('retail') || lower.includes('f&b') || lower.includes('qr') || lower.includes('offline') || lower.includes('收银')) {
+      reply = (ANSWERS.pos[lang] || ANSWERS.pos.en).a;
+    } else if (lower.includes('erp') || lower.includes('autocount') || lower.includes('sql') || lower.includes('lhdn') || lower.includes('invois') || lower.includes('发票')) {
+      reply = (ANSWERS.erp[lang] || ANSWERS.erp.en).a;
+    } else if (lower.includes('ocr') || lower.includes('hallucinat') || lower.includes('accuracy') || lower.includes('test') || lower.includes('识别')) {
+      reply = (ANSWERS.hallucination[lang] || ANSWERS.hallucination.en).a;
     }
 
     appendExchange(text, reply);
