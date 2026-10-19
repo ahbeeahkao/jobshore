@@ -540,20 +540,47 @@ import { COMPANY_INFO } from '../data/siteData';
   const gateErrorMsg = document.getElementById('gate-error-msg');
   const honeypotInput = document.getElementById('gate-honeypot') as HTMLInputElement | null;
 
+  function getActiveLang(): 'en' | 'bm' | 'zh' {
+    const fn = (window as any).__jobshoreGetLang;
+    return fn ? fn() : 'en';
+  }
+
+  function updateChallengeLabels() {
+    const lang = getActiveLang();
+    if (mathPrompt) {
+      mathPrompt.textContent =
+        lang === 'bm'
+          ? `Berapakah ${challengeA} + ${challengeB}?`
+          : lang === 'zh'
+            ? `请问 ${challengeA} + ${challengeB} 等于多少？`
+            : `What is ${challengeA} + ${challengeB}?`;
+    }
+    if (statusPill) {
+      if (challengeVerified) {
+        statusPill.textContent =
+          lang === 'bm' ? '✓ Manusia Disahkan' : lang === 'zh' ? '✓ 真人已验证' : '✓ Human Verified';
+      } else {
+        statusPill.textContent =
+          lang === 'bm' ? '🔒 Pengesahan Manusia' : lang === 'zh' ? '🔒 真人安全验证' : '🔒 Verify Human';
+      }
+    }
+  }
+
   function generateChallenge() {
     challengeA = Math.floor(Math.random() * 8) + 3; // 3..10
     challengeB = Math.floor(Math.random() * 8) + 2; // 2..9
     challengeVerified = false;
-    if (mathPrompt) mathPrompt.textContent = `What is ${challengeA} + ${challengeB}?`;
     if (mathInput) mathInput.value = '';
     if (statusPill) {
-      statusPill.textContent = '🔒 Verify Human';
       statusPill.className =
         'rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 font-mono text-[10px] font-semibold text-amber-300';
     }
+    updateChallengeLabels();
   }
 
   generateChallenge();
+
+  window.addEventListener('jobshore:langchange', updateChallengeLabels);
 
   mathRefresh?.addEventListener('click', generateChallenge);
 
@@ -562,7 +589,6 @@ import { COMPANY_INFO } from '../data/siteData';
     if (val === challengeA + challengeB) {
       challengeVerified = true;
       if (statusPill) {
-        statusPill.textContent = '✓ Human Verified';
         statusPill.className =
           'rounded-full border border-emerald-500/40 bg-emerald-500/15 px-2.5 py-1 font-mono text-[10px] font-bold text-emerald-300';
       }
@@ -570,11 +596,11 @@ import { COMPANY_INFO } from '../data/siteData';
     } else {
       challengeVerified = false;
       if (statusPill) {
-        statusPill.textContent = '🔒 Verify Human';
         statusPill.className =
           'rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 font-mono text-[10px] font-semibold text-amber-300';
       }
     }
+    updateChallengeLabels();
   });
 
   // ==========================================================================
@@ -630,32 +656,53 @@ import { COMPANY_INFO } from '../data/siteData';
       chkPos.checked = false;
       chkWeb.checked = false;
 
+      const lang = getActiveLang();
       if (preset === 'retail-pos') {
         chkPos.checked = true;
         chkErp.checked = true;
         scaleSelect.value = 'mid';
         docVolSelect.value = 'high';
-        detailsInput.value = 'Multi-outlet Retail/F&B POS rollout with offline checkout, LHDN QR receipt self-claim, and ERPNext inventory sync.';
+        detailsInput.value =
+          lang === 'bm'
+            ? 'Pelaksanaan POS Runcit/F&B pelbagai cawangan dengan kaunter luar talian, tuntutan kendiri QR resit LHDN, dan penyegerakan inventori ERPNext.'
+            : lang === 'zh'
+              ? '多门店零售/餐饮 POS 部署：包含断网离线收银、LHDN 小票扫码自助开票及 ERPNext 实时库存同步。'
+              : 'Multi-outlet Retail/F&B POS rollout with offline checkout, LHDN QR receipt self-claim, and ERPNext inventory sync.';
       } else if (preset === 'mfg-erp') {
         chkErp.checked = true;
         chkAi.checked = true;
         chkBpa.checked = true;
         scaleSelect.value = 'mid';
         docVolSelect.value = 'med';
-        detailsInput.value = 'Manufacturing BOM/MRP & Multi-Warehouse ERPNext rollout with AI OCR 3-way supplier invoice matching & LHDN MyInvois.';
+        detailsInput.value =
+          lang === 'bm'
+            ? 'Pelaksanaan ERPNext Pembuatan BOM/MRP & Pelbagai Gudang dengan padanan invois pembekal 3-hala AI OCR & LHDN MyInvois.'
+            : lang === 'zh'
+              ? '生产制造 BOM/MRP 与多仓库 ERPNext 实施：搭配 AI OCR 采购三单自动匹配与 LHDN MyInvois 电子发票。'
+              : 'Manufacturing BOM/MRP & Multi-Warehouse ERPNext rollout with AI OCR 3-way supplier invoice matching & LHDN MyInvois.';
       } else if (preset === 'dist-bpa') {
         chkBpa.checked = true;
         chkAi.checked = true;
         chkErp.checked = true;
         scaleSelect.value = 'mid';
         docVolSelect.value = 'high';
-        detailsInput.value = 'Wholesale distribution automation: WhatsApp B2B order intake bot, AI DO/Invoice OCR, and automated LHDN e-Invoicing.';
+        detailsInput.value =
+          lang === 'bm'
+            ? 'Automasi pengedaran borong: bot pesanan B2B WhatsApp, AI OCR DO/Invois, dan e-Invois LHDN automatik.'
+            : lang === 'zh'
+              ? '批发分销全流程自动化：WhatsApp B2B 自动接单机器人、AI 送货单/发票 OCR 识别及 LHDN 电子发票自动上报。'
+              : 'Wholesale distribution automation: WhatsApp B2B order intake bot, AI DO/Invoice OCR, and automated LHDN e-Invoicing.';
       } else if (preset === 'tech-ai') {
         chkAi.checked = true;
         chkWeb.checked = true;
         scaleSelect.value = 'starter';
         docVolSelect.value = 'med';
-        detailsInput.value = 'Custom 100/100 SEO/AEO web & Flutter mobile app with deterministic AI code verification & self-healing Playwright QA.';
+        detailsInput.value =
+          lang === 'bm'
+            ? 'Aplikasi web SEO/AEO 100/100 & mudah alih Flutter tersuai dengan pengesahan kod AI deterministik & QA Playwright penyembuhan kendiri.'
+            : lang === 'zh'
+              ? '定制 100/100 满分 SEO/AEO 网站与 Flutter 移动应用，结合确定性 AI 代码验证与自愈式 Playwright 自动化测试。'
+              : 'Custom 100/100 SEO/AEO web & Flutter mobile app with deterministic AI code verification & self-healing Playwright QA.';
       }
     });
   });

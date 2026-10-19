@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { COMPANY_INFO, SERVICE_PILLARS, UI_TRANSLATIONS, buildHomeJsonLd } from '../data/siteData';
+import { I18N_TEXT_MAP, I18N_PLACEHOLDER_MAP } from '../data/i18nComplete';
 import { withBase } from '../utils/paths';
 import AiDealConciergeWidget from '../components/AiDealConciergeWidget.astro';
 
@@ -483,8 +484,8 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
     <!-- Floating AI Solutions Architect & Deal Concierge Widget -->
     <AiDealConciergeWidget />
 
-    <!-- Trilingual (EN / BM / ZH) Client-Side Switcher Script -->
-    <script define:vars={{ UI_TRANSLATIONS }}>
+    <!-- Trilingual (EN / BM / ZH) 100% Complete Client-Side Switcher Script -->
+    <script define:vars={{ UI_TRANSLATIONS, I18N_TEXT_MAP, I18N_PLACEHOLDER_MAP }}>
       const mobileToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
 
@@ -508,9 +509,84 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
 
       const langButtons = document.querySelectorAll('.lang-switch-btn');
 
-      function applyLanguage(lang) {
-        const t = UI_TRANSLATIONS[lang] || UI_TRANSLATIONS.en;
+      // Build a lossless cache of all translatable DOM Text nodes & Placeholders on first load
+      let i18nInitialized = false;
+      const trackedTextNodes = [];
+      const trackedPlaceholders = [];
+      let origDocTitle = '';
+      let currentLang = 'en';
 
+      window.__jobshoreGetLang = () => currentLang;
+
+      function initI18nNodes() {
+        if (i18nInitialized) return;
+        i18nInitialized = true;
+
+        origDocTitle = (document.title || '').replace(/\s+/g, ' ').trim();
+
+        const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'PRE', 'SVG', 'NOSCRIPT']);
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+            if (parent.closest('pre, script, style, svg, #hero-headline, #i18n-hero-summary')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            const raw = node.nodeValue || '';
+            const norm = raw.replace(/\s+/g, ' ').trim();
+            if (!norm || !I18N_TEXT_MAP[norm]) return NodeFilter.FILTER_SKIP;
+            return NodeFilter.FILTER_ACCEPT;
+          },
+        });
+
+        let currentNode = walker.nextNode();
+        while (currentNode) {
+          const raw = currentNode.nodeValue || '';
+          const norm = raw.replace(/\s+/g, ' ').trim();
+          const entry = I18N_TEXT_MAP[norm];
+          if (entry) {
+            const lead = (raw.match(/^\s*/) || [''])[0];
+            const trail = (raw.match(/\s*$/) || [''])[0];
+            trackedTextNodes.push({
+              node: currentNode,
+              en: raw,
+              bm: lead + entry.bm + trail,
+              zh: lead + entry.zh + trail,
+            });
+          }
+          currentNode = walker.nextNode();
+        }
+
+        document.querySelectorAll('[placeholder]').forEach((el) => {
+          const rawP = (el.getAttribute('placeholder') || '').trim();
+          const entry = I18N_PLACEHOLDER_MAP[rawP];
+          if (entry) {
+            trackedPlaceholders.push({
+              el,
+              en: rawP,
+              bm: entry.bm,
+              zh: entry.zh,
+            });
+          }
+        });
+      }
+
+      function applyLanguage(lang) {
+        initI18nNodes();
+        currentLang = lang === 'bm' || lang === 'zh' ? lang : 'en';
+
+        document.documentElement.lang =
+          currentLang === 'bm' ? 'ms' : currentLang === 'zh' ? 'zh-Hans' : 'en';
+
+        // 1. Update Document Title if in dictionary
+        if (origDocTitle && I18N_TEXT_MAP[origDocTitle]) {
+          document.title =
+            currentLang === 'en' ? origDocTitle : I18N_TEXT_MAP[origDocTitle][currentLang];
+        }
+
+        // 2. Update Hero HTML blocks & primary IDs
+        const t = UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS.en;
         const topBadge = document.getElementById('i18n-top-badge');
         const heroBadge = document.getElementById('i18n-hero-badge');
         const heroHeadline = document.getElementById('hero-headline');
@@ -527,15 +603,28 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
         if (ctaSecondary) ctaSecondary.textContent = t.ctaSecondary;
         if (navCta) navCta.textContent = t.navBookCall;
 
-        // Translate any element with data-i18n-en / data-i18n-bm / data-i18n-zh
+        // 3. Update all tracked Text nodes across the entire page
+        for (let i = 0; i < trackedTextNodes.length; i++) {
+          const item = trackedTextNodes[i];
+          item.node.nodeValue = item[currentLang] || item.en;
+        }
+
+        // 4. Update all tracked Placeholders
+        for (let i = 0; i < trackedPlaceholders.length; i++) {
+          const item = trackedPlaceholders[i];
+          item.el.setAttribute('placeholder', item[currentLang] || item.en);
+        }
+
+        // 5. Translate any explicit [data-i18n-en] attributes
         document.querySelectorAll('[data-i18n-en]').forEach((el) => {
-          const val = el.getAttribute(`data-i18n-${lang}`) || el.getAttribute('data-i18n-en');
+          const val = el.getAttribute(`data-i18n-${currentLang}`) || el.getAttribute('data-i18n-en');
           if (val) el.textContent = val;
         });
 
+        // 6. Update Language Switcher Button active state
         langButtons.forEach((btn) => {
           const bLang = btn.getAttribute('data-lang-switch');
-          if (bLang === lang) {
+          if (bLang === currentLang) {
             btn.className =
               'lang-switch-btn rounded-md bg-sky-500 px-2 py-0.5 font-bold text-slate-950 transition cursor-pointer';
           } else {
@@ -545,8 +634,13 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
         });
 
         try {
-          localStorage.setItem('jobshore_lang', lang);
+          localStorage.setItem('jobshore_lang', currentLang);
         } catch (_) {}
+
+        // 7. Notify interactive calculators & concierge widget
+        window.dispatchEvent(
+          new CustomEvent('jobshore:langchange', { detail: { lang: currentLang } })
+        );
       }
 
       langButtons.forEach((btn) => {
@@ -555,6 +649,9 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
           applyLanguage(lang);
         });
       });
+
+      // Initialize node cache immediately while DOM is in clean English state
+      initI18nNodes();
 
       try {
         const saved = localStorage.getItem('jobshore_lang');

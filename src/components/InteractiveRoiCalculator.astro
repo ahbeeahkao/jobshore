@@ -199,10 +199,17 @@
     const docs = Number(sliderDocs?.value || 2500);
     const staff = Number(sliderStaff?.value || 6);
     const users = Number(sliderUsers?.value || 35);
+    const lang = (window as any).__jobshoreGetLang ? (window as any).__jobshoreGetLang() : 'en';
 
-    if (labelDocs) labelDocs.textContent = `${docs.toLocaleString()} docs / mo`;
-    if (labelStaff) labelStaff.textContent = `${staff} staff`;
-    if (labelUsers) labelUsers.textContent = `${users} users`;
+    const docsUnit = lang === 'bm' ? 'dok / bln' : lang === 'zh' ? '份 / 月' : 'docs / mo';
+    const staffUnit = lang === 'bm' ? 'staf' : lang === 'zh' ? '名员工' : 'staff';
+    const usersUnit = lang === 'bm' ? 'pengguna' : lang === 'zh' ? '名用户' : 'users';
+    const hrsUnit = lang === 'bm' ? 'jam/thn' : lang === 'zh' ? '小时/年' : 'hrs/yr';
+    const yrUnit = lang === 'bm' ? '/thn' : lang === 'zh' ? '/年' : '/yr';
+
+    if (labelDocs) labelDocs.textContent = `${docs.toLocaleString()} ${docsUnit}`;
+    if (labelStaff) labelStaff.textContent = `${staff} ${staffUnit}`;
+    if (labelUsers) labelUsers.textContent = `${users} ${usersUnit}`;
 
     // Each manual document takes ~4.5 mins (0.075 hrs); AI OCR + 3-way match saves 85% of that
     const docHoursPerYear = Math.round(docs * 12 * 0.064);
@@ -220,10 +227,12 @@
 
     const prefix = currency === 'MYR' ? 'RM ' : '$';
 
-    if (roiHoursSaved) roiHoursSaved.textContent = `${totalHoursSaved.toLocaleString()} hrs/yr`;
-    if (roiLicenseSaved) roiLicenseSaved.textContent = `${prefix}${licenseSaved.toLocaleString()}/yr`;
+    if (roiHoursSaved) roiHoursSaved.textContent = `${totalHoursSaved.toLocaleString()} ${hrsUnit}`;
+    if (roiLicenseSaved) roiLicenseSaved.textContent = `${prefix}${licenseSaved.toLocaleString()}${yrUnit}`;
     if (roiTotalSavings) roiTotalSavings.textContent = `${prefix}${totalSaved.toLocaleString()}`;
   }
+
+  window.addEventListener('jobshore:langchange', updateRoi);
 
   btnMyr?.addEventListener('click', () => {
     currency = 'MYR';
