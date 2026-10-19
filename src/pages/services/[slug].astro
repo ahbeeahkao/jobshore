@@ -53,7 +53,7 @@ const servicePageJsonLd = {
       areaServed: ['Malaysia', 'Singapore', 'Southeast Asia', 'Global'],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: `${pillar.shortTitle} Capabilities`,
+        name: `${pillar.shortTitle} Outcome Capabilities`,
         itemListElement: pillar.subServices.map((sub, i) => ({
           '@type': 'Offer',
           position: i + 1,
@@ -81,7 +81,7 @@ const servicePageJsonLd = {
 ---
 
 <BaseLayout
-  title={`${pillar.shortTitle} | Jobshore Enterprise Engineering`}
+  title={`${pillar.shortTitle} | Jobshore Outcome Engineering`}
   description={pillar.aeoSummary}
   canonicalPath={`/services/${pillar.slug}`}
   jsonLd={servicePageJsonLd}
@@ -94,14 +94,19 @@ const servicePageJsonLd = {
         <ol class="flex flex-wrap items-center gap-2">
           <li><a href={withBase('/')} class="hover:text-sky-400">Home</a></li>
           <li>/</li>
-          <li><span class="text-slate-500">Services</span></li>
+          <li><a href={withBase('/#services')} class="hover:text-sky-400">Services</a></li>
           <li>/</li>
           <li class="font-semibold text-sky-400" aria-current="page">{pillar.shortTitle}</li>
         </ol>
       </nav>
 
-      <div class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3.5 py-1 text-xs font-bold text-sky-300">
-        {pillar.badge}
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3.5 py-1 text-xs font-bold text-sky-300">
+          {pillar.badge}
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-300">
+          ✓ {pillar.outcomePromise}
+        </span>
       </div>
 
       <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:leading-tight">
@@ -112,10 +117,25 @@ const servicePageJsonLd = {
         {pillar.subtitle}
       </p>
 
+      <!-- Tangible Monthly Outcome Scorecard Box -->
+      <div class="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">
+            📊 Tangible Monthly Outcome Scorecard (How We Make Intangible Value Trackable)
+          </span>
+          <span class="rounded-md bg-slate-900 px-2.5 py-0.5 font-mono text-[11px] text-sky-300">
+            {pillar.commercialModel}
+          </span>
+        </div>
+        <p class="mt-2 text-sm leading-relaxed text-slate-200">
+          {pillar.tangibleScorecard}
+        </p>
+      </div>
+
       <!-- AEO Direct Answer Capsule -->
       <aside
         aria-label="Direct Answer Summary"
-        class="aeo-summary mt-8 rounded-2xl border border-sky-500/30 bg-slate-900/80 p-5 text-sm leading-relaxed text-slate-200"
+        class="aeo-summary mt-6 rounded-2xl border border-sky-500/30 bg-slate-900/80 p-5 text-sm leading-relaxed text-slate-200"
       >
         <div class="mb-1 text-xs font-bold uppercase tracking-wider text-sky-400">
           Direct Answer Summary (AEO Citation Block)
@@ -140,13 +160,13 @@ const servicePageJsonLd = {
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-14">
       <div>
         <h2 class="text-2xl font-extrabold text-white sm:text-3xl">
-          Specialized Capabilities &amp; Technical Modules
+          Specialized Outcome Modules &amp; Tracked KPIs
         </h2>
         <div class="mt-6 grid gap-6 md:grid-cols-2">
           {pillar.subServices.map((sub, i) => (
             <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <span class="font-mono text-xs font-bold text-sky-400">MODULE 0{i + 1}</span>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="font-mono text-xs font-bold text-sky-400">OUTCOME MODULE 0{i + 1}</span>
                 <span class="rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300">
                   {sub.metrics}
                 </span>
@@ -168,7 +188,7 @@ const servicePageJsonLd = {
       <!-- Deliverables & Stack Table -->
       <div class="grid gap-6 lg:grid-cols-12">
         <div class="lg:col-span-7 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 class="text-lg font-bold text-white">Standard Production Deliverables</h3>
+          <h3 class="text-lg font-bold text-white">Tangible Production Deliverables &amp; Monthly Proof</h3>
           <ul class="mt-4 space-y-2.5 text-sm text-slate-300">
             {pillar.deliverables.map((d) => (
               <li class="flex items-start gap-2.5">
@@ -181,7 +201,10 @@ const servicePageJsonLd = {
 
         <div class="lg:col-span-5 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between space-y-6">
           <div>
-            <h3 class="text-lg font-bold text-white">Technology Stack &amp; Commercials</h3>
+            <h3 class="text-lg font-bold text-white">Technology Stack &amp; Commercial Model</h3>
+            <p class="mt-2 text-xs font-semibold text-emerald-300">
+              {pillar.commercialModel}
+            </p>
             <div class="mt-3 flex flex-wrap gap-1.5">
               {pillar.techStack.map((t) => (
                 <span class="rounded-lg border border-slate-700 bg-slate-950 px-2.5 py-1 font-mono text-xs text-sky-300">
@@ -221,7 +244,7 @@ const servicePageJsonLd = {
 
       <!-- Cross-Links to Other Jobshore Pillars -->
       <div class="border-t border-slate-800 pt-10">
-        <h2 class="text-lg font-bold text-white">Explore Complementary Jobshore Service Pillars</h2>
+        <h2 class="text-lg font-bold text-white">Explore Complementary Jobshore Outcome Pillars</h2>
         <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {otherPillars.map((op) => (
             <a
@@ -230,7 +253,7 @@ const servicePageJsonLd = {
             >
               <div class="text-xs font-bold text-sky-400">{op.badge}</div>
               <div class="mt-1 text-sm font-bold text-white">{op.shortTitle}</div>
-              <div class="mt-2 text-xs text-slate-400">Explore deep-dive →</div>
+              <div class="mt-2 text-xs text-slate-400">Explore outcome →</div>
             </a>
           ))}
         </div>

@@ -16,7 +16,7 @@ export const COMPANY_CONFIG = {
   // Set showStartingPrice to false so static cards don't low-anchor enterprise buyers;
   // Instead, buyers get a scope-adjusted estimate paired with ROI inside the AI Quote Closer (#contact).
   showStartingPrice: false,
-  customPriceFallbackText: 'AI Scope-Adjusted Quote • 14-Day Pilot Available',
+  customPriceFallbackText: 'Outcome-Based Milestone + Tracked SLA',
   // Optional: Paste a Make.com / n8n / Web3Forms / Formspree webhook URL here to auto-send leads to your CRM/AI Agent
   leadWebhookUrl: '',
 };
@@ -41,6 +41,9 @@ export interface ServicePillar {
   subtitle: string;
   subtitleBm: string;
   subtitleZh: string;
+  outcomePromise: string; // The concrete business result the buyer gets
+  tangibleScorecard: string; // How intangible AI/engineering is tracked tangibly every month
+  commercialModel: string; // How it is priced without punitive per-seat software licenses
   aeoSummary: string; // Direct Answer Capsule optimized for LLM / Featured Snippet extraction
   iconName: 'ai' | 'automation' | 'erp' | 'pos' | 'webmobile';
   accentColor: string;
@@ -94,7 +97,7 @@ export const COMPANY_INFO = {
   leadWebhookUrl: COMPANY_CONFIG.leadWebhookUrl,
   domain: resolvedDomain,
   githubRepoUrl: 'https://github.com/ahbeeahkao/jobshore',
-  tagline: 'AI Engineering, Business Automation, Frappe ERPNext, POS Systems & Full-Stack Product Studio',
+  tagline: 'Outcome-Guaranteed AI Engineering, Business Automation, Frappe ERPNext, POS Systems & Product Studio',
   email: COMPANY_CONFIG.email,
   phone: COMPANY_CONFIG.phoneDisplay,
   whatsapp: COMPANY_CONFIG.whatsappDisplay,
@@ -107,46 +110,46 @@ export const COMPANY_INFO = {
     regionCoverage: ['Malaysia', 'Singapore', 'Southeast Asia (ASEAN)', 'Global B2B (US, UK, EU, AU)'],
   },
   stats: [
-    { value: '99.4%', label: 'Enterprise OCR Field Accuracy', detail: 'Multi-language invoices, DOs & customs forms' },
-    { value: '85%', label: 'Manual Ops Automated', detail: 'End-to-end 3-way match & workflow pipelines' },
-    { value: '100%', label: 'ERPNext + POS + LHDN Ready', detail: 'Real-time B2B, POS QR & Consolidated e-Invoice' },
-    { value: '100/100', label: 'SEO & AEO Architecture', detail: 'EN / BM / 中文 Indexed • JSON-LD & llms.txt' },
+    { value: '99.4%', label: 'Verified OCR Ledger Accuracy', detail: 'Zero-hallucination math & PO/GRN cross-check' },
+    { value: '85%', label: 'Manual Work Eliminated', detail: 'Tracked monthly in reclaimed staff hours & RM saved' },
+    { value: '100%', label: 'LHDN & Audit Compliance', detail: 'ERPNext + Offline POS with $0 per-user seat tax' },
+    { value: '3.2x', label: 'Faster Zero-Defect Releases', detail: 'AI-verified code + self-healing automated QA' },
   ],
 };
 
 export const UI_TRANSLATIONS = {
   en: {
-    topBadge: 'ERPNext + POS LHDN MyInvois Ready',
-    heroBadge: 'Enterprise AI • Automation • Frappe ERPNext • POS Systems • Web & Mobile',
+    topBadge: 'We Sell Verified Business Outcomes — Not Unchecked AI Code or Per-Seat Licenses',
+    heroBadge: 'Outcome-Guaranteed AI • Automation • Frappe ERPNext • POS Systems • Web & Mobile',
     heroTitleHtml:
-      'Ship Verified <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">AI &amp; OCR</span>, Autonomous Workflows, <span class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">Frappe ERPNext</span> &amp; <span class="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">POS Systems</span>.',
+      'Anyone Can Prompt AI to Write Code. We Engineer <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">Verified Business Outcomes</span> That Cut Costs &amp; Scale Operations.',
     heroSummaryHtml:
-      '<strong class="text-white">Jobshore</strong> is an enterprise engineering consultancy serving <strong class="text-white">Malaysia, Southeast Asia, and Global B2B</strong> clients across five core pillars: (1) <strong class="text-sky-300">AI Coding, Deterministic Verification, Self-Healing Automated Testing &amp; 99.4% Enterprise OCR</strong>, (2) <strong class="text-emerald-300">End-to-End Business Process Automation</strong>, (3) <strong class="text-indigo-300">Frappe &amp; ERPNext Consultation &amp; Implementation</strong>, (4) <strong class="text-amber-300">Cloud &amp; Offline-First POS Software &amp; Retail/F&amp;B Systems</strong> (with real-time Malaysia LHDN MyInvois B2B, QR Self-Claim &amp; Consolidated e-Invoicing), and (5) <strong class="text-violet-300">SEO/AEO-First Web &amp; Cross-Platform Mobile App Development</strong>.',
-    ctaPrimary: 'Request Architecture & Quote',
-    ctaSecondary: 'Try Live AI OCR, POS & Verification Lab',
-    navBookCall: 'Book Discovery Call',
+      'Raw AI prompts hallucinate numbers, break in production, and create hidden compliance risks. <strong class="text-white">Jobshore</strong> delivers <strong class="text-emerald-300">measurable, contractually tracked operational outcomes</strong> across five pillars: (1) <strong class="text-sky-300">99.4% Accurate Document OCR &amp; Zero-Defect Verified Software</strong>, (2) <strong class="text-emerald-300">85% Less Manual Data Entry via Autonomous Workflows</strong>, (3) <strong class="text-indigo-300">Real-Time Stock &amp; Cashflow Control on $0-License Frappe ERPNext</strong>, (4) <strong class="text-amber-300">Zero-Downtime Retail/F&amp;B POS with Automated LHDN e-Invoicing</strong>, and (5) <strong class="text-violet-300">Revenue-Generating SEO/AEO Web Portals &amp; Field Mobile Apps</strong>.',
+    ctaPrimary: 'Calculate Your Guaranteed Outcome & ROI',
+    ctaSecondary: 'See Live Proof in Our AI & POS Sandbox',
+    navBookCall: 'Get Outcome Proposal',
   },
   bm: {
-    topBadge: 'Sedia LHDN MyInvois e-Invois (ERPNext + POS)',
-    heroBadge: 'Kejuruteraan AI • Automasi Bisnes • Frappe ERPNext • Sistem POS • Web & Aplikasi Mudah Alih',
+    topBadge: 'Kami Menjual Hasil Bisnes Yang Terbukti — Bukan Sekadar Kod AI Mentah',
+    heroBadge: 'Hasil Terjamin: AI & OCR • Automasi • Frappe ERPNext • Sistem POS • Web & Aplikasi',
     heroTitleHtml:
-      'Bina Sistem <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">AI &amp; OCR</span> Disahkan, Automasi Operasi, <span class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">Frappe ERPNext</span> &amp; <span class="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">Sistem POS</span>.',
+      'Sesiapa Boleh Guna AI Tulis Kod. Kami Membina <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">Hasil Operasi Terjamin</span> Yang Menjimatkan Kos &amp; Masa.',
     heroSummaryHtml:
-      '<strong class="text-white">Jobshore</strong> ialah firma perunding kejuruteraan teknologi untuk pelanggan <strong class="text-white">Malaysia, Asia Tenggara &amp; Global B2B</strong> merentasi lima teras utama: (1) <strong class="text-sky-300">Pengekodan AI, Pengesahan Deterministik, Ujian Automatik &amp; OCR Pintar 99.4%</strong>, (2) <strong class="text-emerald-300">Automasi Proses Perniagaan (BPA)</strong>, (3) <strong class="text-indigo-300">Konsultasi &amp; Implementasi Frappe ERPNext</strong>, (4) <strong class="text-amber-300">Perisian &amp; Sistem POS Runcit/F&amp;B (Cloud &amp; Luar Talian)</strong> lengkap dengan integrasi e-Invois LHDN MyInvois &amp; kod QR resit, serta (5) <strong class="text-violet-300">Pembangunan Web SEO/AEO &amp; Aplikasi Mudah Alih iOS/Android</strong>.',
-    ctaPrimary: 'Mohon Sebut Harga & Pelan Sistem',
-    ctaSecondary: 'Cuba Demo AI OCR, POS & Pengesahan',
-    navBookCall: 'Tempah Sesi Konsultasi',
+      'Prompt AI biasa sering tersilap kira angka cukai dan gagal semasa operasi sebenar. <strong class="text-white">Jobshore</strong> membekalkan <strong class="text-emerald-300">hasil perniagaan yang diukur setiap bulan</strong> merentasi lima teras: (1) <strong class="text-sky-300">Ketepatan Dokumen OCR 99.4% &amp; Perisian Disahkan Tanpa Ralat</strong>, (2) <strong class="text-emerald-300">85% Pengurangan Kerja Manual Melalui Automasi Pintar</strong>, (3) <strong class="text-indigo-300">Kawalan Stok &amp; Akaun Masa Nyata dengan Frappe ERPNext ($0 Lesen Pengguna)</strong>, (4) <strong class="text-amber-300">Sistem POS Runcit/F&amp;B Tanpa Gangguan Internet + e-Invois LHDN Automatik</strong>, dan (5) <strong class="text-violet-300">Portal Web SEO/AEO &amp; Aplikasi Mudah Alih Berimpak Tinggi</strong>.',
+    ctaPrimary: 'Kira Jaminan ROI & Penjimatan Anda',
+    ctaSecondary: 'Lihat Bukti Langsung AI OCR & POS',
+    navBookCall: 'Dapatkan Pelan Hasil',
   },
   zh: {
-    topBadge: '全面支持马来西亚 LHDN MyInvois 电子发票 (ERPNext + POS)',
-    heroBadge: '企业级 AI 工程 • 业务流程自动化 • Frappe ERPNext • 智能 POS 系统 • 网站与移动应用开发',
+    topBadge: '我们交付可量化的商业结果——而非未经验证的 AI 代码或高昂人头授权费',
+    heroBadge: '结果导向：防幻觉 AI 与 OCR • 业务自动化 • Frappe ERPNext • 离线 POS • 网站与移动应用',
     heroTitleHtml:
-      '打造零幻觉 <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">AI 与智能 OCR</span>、自动化工作流、<span class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">Frappe ERPNext</span> 与 <span class="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">零售餐饮 POS 系统</span>。',
+      '任何人都能用 AI 写代码，但我们交付<span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">零差错、可量化的商业结果</span>，直接为您降本增效。',
     heroSummaryHtml:
-      '<strong class="text-white">Jobshore</strong> 是一家服务于<strong class="text-white">马来西亚、东南亚及全球 B2B 企业</strong>的软件与 AI 技术咨询公司，提供五大核心服务：(1) <strong class="text-sky-300">AI 辅助编程、确定性代码验证、自愈式自动化测试与 99.4% 高精度多语言 OCR 识别</strong>，(2) <strong class="text-emerald-300">端到端业务流程自动化 (BPA 与三单匹配)</strong>，(3) <strong class="text-indigo-300">开源 Frappe ERPNext 咨询与实施 ($0 按人头授权费)</strong>，(4) <strong class="text-amber-300">支持断网离线收银的零售与餐饮 POS 系统</strong>（内置 LHDN MyInvois 电子发票小票二维码自助开票与月度汇总申报），以及 (5) <strong class="text-violet-300">SEO/AEO 满分网站及跨平台 iOS/Android 移动应用开发</strong>。',
-    ctaPrimary: '获取系统架构方案与报价',
-    ctaSecondary: '体验 AI OCR、POS 与验证实验室',
-    navBookCall: '预约免费技术咨询',
+      '普通 AI 提示词极易产生财务算错、系统崩溃与合规风险。<strong class="text-white">Jobshore</strong> 专注于交付<strong class="text-emerald-300">每月可通过数据看板追踪的确定性业务成果</strong>：(1) <strong class="text-sky-300">99.4% 零幻觉单据 OCR 提取与经过严格验证的无缺陷代码</strong>，(2) <strong class="text-emerald-300">砍掉 85% 人工录入的端到端自动化工作流</strong>，(3) <strong class="text-indigo-300">省下 70% 软件成本的开源 Frappe ERPNext 实时账物管控 ($0 账号费)</strong>，(4) <strong class="text-amber-300">断网照常收银 + 100% 自动申报 LHDN 电子发票的门店 POS 系统</strong>，以及 (5) <strong class="text-violet-300">自带 Google/AI 搜索引擎客流的网站与业务员移动应用</strong>。',
+    ctaPrimary: '测算您的年度省钱金额与落地方案',
+    ctaSecondary: '体验 AI OCR、POS 与验证沙盒',
+    navBookCall: '获取结果保障方案',
   },
 };
 
@@ -154,155 +157,167 @@ export const SERVICE_PILLARS: ServicePillar[] = [
   {
     id: 'ai-services',
     slug: 'ai-ocr-verification',
-    badge: 'Pillar 01 • AI Engineering & Quality',
+    badge: 'Pillar 01 • Outcome: Zero-Defect Speed & 99.4% Document Accuracy',
     shortTitle: 'AI Coding, Verification, Testing & OCR',
     shortTitleBm: 'Pengekodan AI, Pengesahan, Ujian Automatik & OCR',
     shortTitleZh: 'AI 编程、代码验证、自动化测试与智能 OCR',
-    title: 'AI Services: Autonomous Coding, Deterministic Verification, Automated Testing & Intelligent OCR',
-    titleBm: 'Perkhidmatan AI: Pengekodan Pintar, Pengesahan Kod, Ujian Automatik & OCR Dokumen 99.4%',
-    titleZh: '企业 AI 服务：AI 辅助开发、确定性防幻觉验证、自动化测试与 99.4% 多语言智能 OCR',
+    title: 'Ship Software 3.2x Faster with Zero Escaped Bugs & 99.4% Verified Document OCR',
+    titleBm: 'Siapkan Sistem 3.2x Lebih Pantas Tanpa Pepijat & Ekstraksi Dokumen OCR 99.4% Tepat',
+    titleZh: '研发提速 3.2 倍且零严重生产故障，实现 99.4% 财务级单据 OCR 自动提取',
     subtitle:
-      'Production-grade AI systems engineered for accuracy, security, and auditability—from custom LLM coding pipelines and formal verification to self-healing QA suites and 99.4% accurate multi-language OCR.',
+      'Anyone can prompt an LLM to generate raw code or read a PDF—until a hallucinated decimal or hidden security flaw corrupts your production database. We deliver deterministic verification gates, self-healing QA, and math-verified multi-language OCR.',
     subtitleBm:
-      'Sistem AI gred produksi yang dibina untuk ketepatan dan keselamatan audit—daripada pemodenan kod LLM dan pengesahan matematik kepada ujian automatik Playwright serta ekstraksi OCR berbilang bahasa (EN/BM/Cina).',
+      'Sesiapa boleh guna AI biasa, tetapi satu kesilapan angka boleh merosakkan akaun syarikat. Kami membina lapisan pengesahan matematik deterministik, ujian automatik Playwright, dan enjin OCR (EN/BM/Cina) yang dijamin tepat.',
     subtitleZh:
-      '专为高准确率、安全性与可审计性打造的企业级 AI 系统——涵盖私有大模型开发、防幻觉数学校验、Playwright 自愈自动化测试，以及支持中/英/马来文的发票与单据 OCR 提取。',
+      '任何人都能用 AI 生成草稿代码或识别图片，但只要算错一个小数点就会导致财务烂账。我们为您构建确定性数学校验网关、自愈式自动化测试与中/英/巫多语言高精度 OCR。',
+    outcomePromise:
+      'Eliminate manual document keying and cut software regression bugs by 99.8%—without hiring a larger QA or data-entry team.',
+    tangibleScorecard:
+      'Monthly Verified Outcome Ledger: Tracks exact # of documents extracted with 100% math balance, # of production bugs blocked in CI/CD, and total engineering/admin hours saved.',
+    commercialModel:
+      'Fixed-Scope Pilot + Monthly Managed Accuracy & Verification SLA (Billed on verified document throughput & zero-regression uptime).',
     aeoSummary:
-      'Jobshore provides four specialized AI engineering services: (1) AI-assisted software development and private RAG/LLM systems, (2) deterministic AI code verification and security auditing, (3) self-healing automated software testing (E2E, API, and regression), and (4) Enterprise OCR & Intelligent Document Processing (IDP) that extracts structured JSON from complex multi-language invoices, purchase orders, and identity documents with 99.4%+ accuracy.',
+      'Jobshore delivers outcome-guaranteed AI engineering across four capabilities: (1) AI-assisted software development and legacy modernization, (2) deterministic AI code verification and anti-hallucination guardrails, (3) self-healing automated software testing (Playwright E2E & API QA), and (4) Enterprise OCR & Intelligent Document Processing (IDP) that extracts structured JSON from multi-language invoices, POs, and customs forms with 99.4%+ verified accuracy.',
     iconName: 'ai',
     accentColor: 'sky',
     kpis: [
-      { value: '99.4%', label: 'OCR Field Extraction Accuracy' },
-      { value: '< 2.2s', label: 'Document-to-JSON Latency' },
-      { value: '99.8%', label: 'Schema & Guardrail Compliance' },
-      { value: '78%', label: 'Reduction in QA Maintenance' },
+      { value: '99.4%', label: 'Math-Verified OCR Accuracy' },
+      { value: '0', label: 'Hallucinated Ledger Entries' },
+      { value: '78%', label: 'Less QA Maintenance Cost' },
+      { value: '3.2x', label: 'Faster Verified Releases' },
     ],
     subServices: [
       {
-        title: 'AI-Assisted Coding & Custom LLM Systems',
+        title: 'Outcome 1: 99.4% Accurate Multi-Language Invoice, PO & DO Extraction (IDP/OCR)',
         description:
-          'Accelerate product delivery and legacy modernization (PHP/Java/.NET to TypeScript/Python/Go) using domain-tuned LLM coding workflows, enterprise RAG knowledge bases, and private model deployments.',
-        metrics: '3.2x faster feature velocity with full code ownership',
-        tags: ['Custom RAG', 'Agentic Coding', 'Legacy Modernization', 'Private LLMs'],
+          'Stop paying staff to type supplier bills and delivery orders into your system. Our Vision-LLM + math-verified OCR extracts tables, SST tax codes, and handwriting across English, Bahasa Melayu, and Chinese directly into ERPNext.',
+        metrics: 'Tracked KPI: Cost-per-invoice dropped by 82% (<2.2s/page)',
+        tags: ['Multi-Language OCR', 'Math Cross-Check', 'Invoice & DO Parsing', 'HITL Exception Queue'],
       },
       {
-        title: 'AI Verification & Deterministic Code Auditing',
+        title: 'Outcome 2: Zero AI Hallucinations or Security Escapes in Production',
         description:
-          'Eliminate AI hallucinations and subtle vulnerabilities before production. We implement static/dynamic security gates (SAST/DAST), formal invariant checks, strict JSON schema validators, and automated code review pipelines.',
-        metrics: 'Zero unverified AI outputs in production workflows',
-        tags: ['Formal Verification', 'Hallucination Guardrails', 'SAST/DAST', 'Schema Enforcement'],
+          'We wrap every AI workflow and code commit in deterministic verification guardrails: AST static security analysis (SAST/DAST), strict Pydantic/Zod schema enforcement, and banker’s rounding invariants.',
+        metrics: 'Tracked KPI: 100% schema-validated outputs & 0 ledger drift',
+        tags: ['Deterministic Verification', 'Anti-Hallucination Gate', 'SAST/DAST Audit', 'Financial Invariants'],
       },
       {
-        title: 'AI-Powered Automated Software Testing',
+        title: 'Outcome 3: 78% Lower QA Overhead via Self-Healing Automated Testing',
         description:
-          'Self-healing End-to-End (Playwright/Cypress), API contract, load, and visual regression test suites that automatically adapt to UI changes and generate synthetic edge-case datasets.',
-        metrics: '>92% critical-path coverage with 78% less flaky test triage',
-        tags: ['Playwright E2E', 'Self-Healing QA', 'Synthetic Test Data', 'CI/CD Quality Gates'],
+          'Replace fragile manual testing with AI-powered Playwright E2E and API contract test suites that automatically heal selector changes and fuzz thousands of edge cases before every deployment.',
+        metrics: 'Tracked KPI: >92% critical-path test coverage in CI/CD',
+        tags: ['Self-Healing Playwright', 'API Contract QA', 'Synthetic Fuzzing', 'Zero-Flake CI Gate'],
       },
       {
-        title: 'Intelligent OCR & Document Processing (IDP)',
+        title: 'Outcome 4: 3.2x Faster Legacy Modernization & Private AI Assistants',
         description:
-          'Vision-LLM + layout-aware OCR pipelines that extract line-item tables, tax codes, stamps, and handwriting from Invoices, POs, Delivery Orders, Customs Forms, and MyKad/Passports across English, Malay, and Chinese.',
-        metrics: '99.4%+ field accuracy with direct ERPNext & webhook sync',
-        tags: ['Multi-Language OCR', 'Invoice & PO Extraction', 'Table Parsing', 'HITL Confidence Queue'],
+          'Migrate aging PHP/Java/.NET systems to modern TypeScript/Python/Go or deploy PDPA-compliant private RAG assistants ("Chat with Your SOPs & Contracts") inside your own VPC.',
+        metrics: 'Tracked KPI: 100% IP ownership & zero external data leakage',
+        tags: ['Legacy Modernization', 'Private VPC LLMs', 'Enterprise RAG', 'Full Code Ownership'],
       },
     ],
     deliverables: [
-      'Fine-tuned / Prompt-engineered Vision-OCR pipeline with REST & Webhook API',
-      'Human-in-the-Loop (HITL) confidence scoring & exception review interface',
-      'Automated CI/CD verification & self-healing Playwright E2E test suite',
-      'Private or cloud-hosted LLM gateway with audit logging & token cost controls',
-      'Complete technical documentation, benchmark dataset, and source code repository',
+      'Live Monthly Outcome Scorecard (Documents Verified, Bugs Blocked, Hours Reclaimed)',
+      'Math-Verified Vision-OCR Pipeline with Human-in-the-Loop (HITL) Exception Queue',
+      'Automated CI/CD Verification Gate & Self-Healing Playwright E2E Test Suite',
+      'Private or Zero-Retention LLM Gateway with Token Cost & PDPA Controls',
+      '100% Source Code & Benchmark Dataset Ownership',
     ],
     techStack: [
       'Python',
       'FastAPI',
       'TypeScript',
       'Playwright',
-      'PyTorch',
-      'OpenAI / Claude / Gemini APIs',
+      'Zod / Pydantic',
+      'OpenAI / Claude / Gemini',
       'vLLM & Ollama',
-      'PaddleOCR & Vision LLMs',
+      'Vision-LLM OCR',
       'PostgreSQL + pgvector',
       'Docker',
     ],
-    timeline: '2–6 Weeks (Pilot in 14 Days)',
+    timeline: '2–6 Weeks (Verified Pilot in 14 Days)',
     startingInvestment: 'From USD $3,500 / MYR 15,000',
     faqs: [
+      {
+        question: 'Since anyone can use ChatGPT or Cursor to write code, why hire Jobshore for AI services?',
+        answer:
+          'Generating raw code or text with AI takes 30 seconds; making it 99.9% reliable, secure, and mathematically accurate in production takes deep systems engineering. DIY AI setups fail when faced with skewed multi-language invoices, floating-point tax rounding, or UI changes that break tests. Jobshore sells the guaranteed outcome—backed by deterministic math proofs, AST security gates, and a tracked monthly accuracy scorecard.',
+      },
       {
         question: 'How accurate is Jobshore’s AI OCR on messy, skewed, or multi-language Malaysian and SEA documents?',
         answer:
           'Our hybrid OCR pipeline combines geometric deskewing, layout-aware document segmentation, and Vision-Language Models (VLMs) with deterministic mathematical cross-checks (verifying qty × unit price = line total and subtotal + tax = grand total). This achieves 99.4%+ field-level accuracy across English, Bahasa Melayu, and Chinese commercial documents.',
-      },
-      {
-        question: 'How does AI Code Verification prevent bugs and hallucinations in enterprise systems?',
-        answer:
-          'We never trust raw LLM outputs in production. Every AI-generated code block or structured data payload passes through deterministic verification layers: strict Pydantic/Zod schema validation, AST static analysis, automated security scanners, property-based unit tests, and mathematical reconciliation rules before execution.',
       },
     ],
   },
   {
     id: 'business-automation',
     slug: 'business-automation',
-    badge: 'Pillar 02 • Operational Velocity',
+    badge: 'Pillar 02 • Outcome: 85% Less Manual Admin & 10x Faster Processing',
     shortTitle: 'Business Process Automation',
     shortTitleBm: 'Automasi Proses Perniagaan (BPA)',
     shortTitleZh: '企业业务流程自动化 (BPA)',
-    title: 'Business Process Automation: End-to-End Workflow Orchestration & Autonomous Operations',
-    titleBm: 'Automasi Proses Perniagaan: Aliran Kerja Pintar, Pemadanan 3-Hala & Integrasi Sistem',
-    titleZh: '业务流程自动化 (BPA)：端到端工作流编排、采购三单匹配与 WhatsApp 自动化',
+    title: 'Reclaim 120–450+ Staff Hours Every Month by Putting Repetitive Operations on Autopilot',
+    titleBm: 'Jimat 120–450+ Jam Kerja Staf Setiap Bulan dengan Automasi Operasi End-to-End',
+    titleZh: '每月释放 120–450+ 小时人工工时，让采购对账与接单流程 24/7 自动运转',
     subtitle:
-      'Eliminate repetitive data entry, spreadsheet bottlenecks, and departmental silos. We connect your ERP, POS, finance, WhatsApp, CRM, e-commerce, and supply chain into self-running operational pipelines.',
+      'Stop paying skilled finance, operations, and sales staff to copy-paste data between WhatsApp, Excel, email, and accounting software. We build self-running operational pipelines with tracked monthly time-savings reports.',
     subtitleBm:
-      'Hapuskan kemasukan data manual dan semakan dokumen berulang. Kami menghubungkan ERP, POS, kewangan, WhatsApp Business API, e-dagang dan rantaian bekalan anda menjadi aliran kerja automatik 24/7.',
+      'Hentikan pembaziran masa staf menyalin data antara WhatsApp, Excel dan perisian akaun. Kami membina aliran kerja automatik lengkap dengan laporan masa dan kos yang dijimatkan setiap bulan.',
     subtitleZh:
-      '彻底告别繁琐的手工录入与 Excel 对账瓶颈。我们将您的 ERP、POS 门店、财务、WhatsApp、电商平台与供应链打通为 24/7 全自动运转的业务流水线。',
+      '别再让高薪财务与运营人员充当“人肉复制粘贴机”。我们将 WhatsApp、邮箱、电商与 ERP 打通为全自动流水线，并按月向您呈交可视化的省时省钱成绩单。',
+    outcomePromise:
+      'Cut back-office processing costs by up to 85% and shorten order-to-cash cycles from days to under 30 seconds.',
+    tangibleScorecard:
+      'Automated Task & Time-Saved Telemetry: Every 3-way match, WhatsApp order, and bank reconciliation is logged—generating a monthly executive report showing exact hours and RM saved.',
+    commercialModel:
+      'Fixed-Scope Workflow Rollout + Monthly Autonomous Ops & Exception-Monitoring Retainer.',
     aeoSummary:
-      'Jobshore designs and deploys end-to-end Business Process Automation (BPA) systems that eliminate up to 85% of repetitive manual back-office work. Core solutions include automated 3-way procurement matching (PO, GRN, Invoice), WhatsApp Business API customer/order automation, multi-channel e-commerce & POS to ERP synchronization, automated bank reconciliation, and event-driven middleware.',
+      'Jobshore designs and deploys outcome-driven Business Process Automation (BPA) systems that eliminate up to 85% of repetitive manual back-office work. Core solutions include automated 3-way procurement matching (PO, GRN, Invoice), WhatsApp Business API customer/order automation, multi-channel e-commerce & POS to ERP synchronization, and automated bank reconciliation.',
     iconName: 'automation',
     accentColor: 'emerald',
     kpis: [
       { value: '85%', label: 'Manual Data Entry Eliminated' },
-      { value: '10x', label: 'Faster Order-to-Invoice Cycle' },
-      { value: '24/7', label: 'Autonomous Queue Processing' },
-      { value: '< 3 mo', label: 'Average ROI Payback Period' },
+      { value: '120–450h', label: 'Staff Hours Reclaimed / Mo' },
+      { value: '< 30 sec', label: 'WhatsApp-to-ERP Order Logging' },
+      { value: '< 3 mo', label: 'Measured ROI Payback Window' },
     ],
     subServices: [
       {
-        title: 'Finance & 3-Way Procurement Reconciliation',
+        title: 'Outcome 1: Zero-Touch 3-Way Procurement & AP Reconciliation',
         description:
-          'Automatically match supplier invoices (extracted via AI OCR) against ERP Purchase Orders and Warehouse Goods Receipt Notes (GRN), flagging price/quantity variances and auto-posting clean bills.',
-        metrics: 'Reduces invoice processing cost by 76%',
-        tags: ['3-Way Matching', 'AP/AR Automation', 'Bank Reconciliation', 'Variance Alerts'],
+          'Automatically cross-check incoming supplier invoices against ERP Purchase Orders and Warehouse Goods Receipt Notes (GRN). Clean bills post automatically; price/qty variances trigger instant manager alerts.',
+        metrics: 'Tracked KPI: 76% lower cost per processed supplier bill',
+        tags: ['3-Way PO-GRN-Invoice Match', 'Variance Detection', 'Auto Ledger Post', 'Bank Feed Sync'],
       },
       {
-        title: 'WhatsApp Business API & Omnichannel Ops',
+        title: 'Outcome 2: 24/7 Instant B2B Order Capture & Approvals on WhatsApp',
         description:
-          'Turn WhatsApp, email, and web chat into structured operational channels. Capture B2B orders, dispatch automated LHDN e-Invoices, send delivery tracking updates, and trigger approval workflows directly from chat.',
-        metrics: 'Under 30-second response & order logging time',
-        tags: ['WhatsApp Cloud API', 'Order Intake Bots', 'Approval Workflows', 'Automated Notifications'],
+          'Turn WhatsApp into an automated sales counter. Customers message their restock list; our AI workflow checks live ERP stock, creates the Sales Order, sends the LHDN e-Invoice PDF, and routes credit approvals.',
+        metrics: 'Tracked KPI: 3.4x faster B2B reorder turnaround',
+        tags: ['WhatsApp Cloud API', '24/7 Order Intake', '1-Click Manager Approval', 'Automated e-Invoice PDF'],
       },
       {
-        title: 'Cross-Platform API, POS & Legacy System Integration',
+        title: 'Outcome 3: Real-Time E-Commerce, POS & Legacy Accounting Sync',
         description:
-          'Connect ERPNext, POS terminals, SAP, SQL Accounting, AutoCount, Xero, Shopify, Shopee, Lazada, HubSpot, and custom databases with resilient, retry-safe webhook microservices and dead-letter queues.',
-        metrics: '99.95% event delivery reliability with full audit trails',
-        tags: ['n8n & Temporal', 'Python/Node Webhooks', 'POS & E-Commerce Sync', 'Legacy ERP Bridges'],
+          'Eliminate nightly CSV exports and stock-outs. We bridge ERPNext, POS outlets, AutoCount, SQL Accounting, Xero, Shopee, Lazada, and Shopify with idempotent, retry-safe webhook queues.',
+        metrics: 'Tracked KPI: 99.95% sync reliability & zero double-entries',
+        tags: ['n8n & Temporal', 'Idempotent Webhooks', 'Omnichannel Stock Sync', 'Dead-Letter Recovery'],
       },
       {
-        title: 'HR, Onboarding & Compliance Automation',
+        title: 'Outcome 4: Automated HR Onboarding, Expense Claims & Monthly Close',
         description:
-          'Automate candidate KYC/document verification, offer letter generation, multi-system access provisioning, leave/claim routing, and monthly payroll statutory file generation.',
-        metrics: 'Saves 15+ hours per new hire and monthly closing cycle',
-        tags: ['HR Workflows', 'Expense Claim OCR', 'Access Provisioning', 'Audit Logs'],
+          'Employees snap a photo of receipts on WhatsApp/mobile; AI OCR verifies policy compliance and routes manager approval, cutting monthly finance closing delays from 12 days to 2 days.',
+        metrics: 'Tracked KPI: 10 days shaved off monthly financial close',
+        tags: ['Mobile Expense OCR', 'Policy Guardrails', 'Payroll File Automation', 'Full Audit Trail'],
       },
     ],
     deliverables: [
-      'As-Is vs. To-Be Business Process Architecture Blueprint (BPMN)',
-      'Production workflow orchestration engine (n8n / Temporal / Custom FastAPI workers)',
-      'Real-time exception monitoring dashboard with Slack/WhatsApp/Email alerts',
-      'Idempotent API connectors with automatic retry & dead-letter recovery',
-      'Team handover training and standard operating procedures (SOPs)',
+      'Live Automation Telemetry Dashboard (Tasks Executed, Hours Reclaimed, Exceptions Caught)',
+      'Production Workflow Engine (n8n / Temporal / Custom FastAPI Microservices)',
+      '1-Click Human-in-the-Loop (HITL) Exception Approval Cards on WhatsApp / Slack',
+      'Idempotent API Bridges with Automatic Retry & Dead-Letter Recovery',
+      'Full SOP Documentation & Staff Handover',
     ],
     techStack: [
       'n8n',
@@ -316,89 +331,95 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'PostgreSQL',
       'Docker',
     ],
-    timeline: '2–5 Weeks per Workflow Stream',
+    timeline: '2–4 Weeks per Workflow Stream',
     startingInvestment: 'From USD $3,000 / MYR 13,000',
     faqs: [
       {
-        question: 'Can Jobshore automate workflows without replacing our existing accounting, POS, or CRM software?',
+        question: 'How do you make "automation" tangible so we can see the exact ROI every month?',
         answer:
-          'Yes. While we specialize in Frappe ERPNext and Jobshore POS, our automation middleware connects seamlessly with existing systems including Xero, QuickBooks, SQL Accounting, AutoCount, SAP, HubSpot, Salesforce, Shopify, and custom SQL databases via APIs, webhooks, or secure database bridges.',
+          'Every automated workflow we deploy includes built-in telemetry counters. Each time an invoice is 3-way matched, a WhatsApp order is logged, or a POS shift is reconciled, the system records the transaction and the benchmark manual minutes saved—delivering an automated monthly ROI scorecard to your inbox.',
       },
       {
-        question: 'What happens when an automated workflow encounters an exception or unreadable document?',
+        question: 'Can Jobshore automate workflows without replacing our existing accounting, POS, or CRM software?',
         answer:
-          'Every automation pipeline we build includes deterministic validation rules and a Human-in-the-Loop (HITL) exception queue. If a supplier invoice has a price discrepancy exceeding your tolerance threshold (e.g., >1%), the system pauses auto-posting and routes an instant approval card to your finance manager via WhatsApp, Slack, or the ERP dashboard.',
+          'Yes. While we specialize in Frappe ERPNext and Jobshore POS, our automation middleware connects seamlessly with existing systems including Xero, QuickBooks, SQL Accounting, AutoCount, SAP, HubSpot, Salesforce, Shopify, and custom SQL databases.',
       },
     ],
   },
   {
     id: 'erpnext-services',
     slug: 'erpnext-implementation',
-    badge: 'Pillar 03 • Open-Source Enterprise Core',
+    badge: 'Pillar 03 • Outcome: Real-Time Control, 100% LHDN Compliance & $0 Seat Tax',
     shortTitle: 'Frappe & ERPNext Consultation & Implementation',
     shortTitleBm: 'Konsultasi & Implementasi Frappe ERPNext',
     shortTitleZh: 'Frappe ERPNext 咨询、实施与电子发票集成',
-    title: 'Frappe & ERPNext Consultation, Implementation & Malaysia LHDN e-Invoicing',
-    titleBm: 'Konsultasi & Implementasi Frappe ERPNext (Lengkap Integrasi e-Invois LHDN MyInvois)',
-    titleZh: 'Frappe ERPNext 企业管理软件咨询与实施（$0 账号授权费 + LHDN 电子发票合规）',
+    title: 'Cut ERP Software Costs by 60–75% While Gaining Real-Time Stock, Production & LHDN Compliance',
+    titleBm: 'Jimat 60–75% Kos Perisian ERP dengan Kawalan Stok, Kilang & LHDN MyInvois Masa Nyata',
+    titleZh: '削减 60–75% ERP 软件开支，实现财务、生产、多仓进销存与 LHDN 电子发票实时管控',
     subtitle:
-      'Replace rigid, expensive per-user ERP licenses with a unified, 100% open-source ERPNext platform tailored to your exact manufacturing, distribution, retail, service, or multi-company operations.',
+      'Open-source ERPNext is free to download, but poorly configured ERPs fail when stock ledgers, manufacturing BOMs, and tax rules don’t match your real floor operations. We sell a guaranteed, reconciled go-live with $0 per-user license fees.',
     subtitleBm:
-      'Gantikan lesen perisian ERP berbayar per-pengguna yang mahal dengan platform sumber terbuka ERPNext merangkumi Perakaunan, Pembuatan (BOM), Inventori Gudang, HR/Gaji dan LHDN MyInvois.',
+      'Perisian sumber terbuka mudah dimuat turun, tetapi tanpa kejuruteraan proses yang betul, lejar stok dan akaun akanercelaru. Kami menjamin kelancaran Go-Live merangkumi Perakaunan, BOM Kilang, Gudang & LHDN e-Invois.',
     subtitleZh:
-      '告别昂贵的按用户数收费传统 ERP。基于 100% 开源的 Frappe ERPNext，为您量身打通财务会计、生产制造 (BOM/MRP)、多仓进销存、人力资源薪资与马来西亚 LHDN 电子发票。',
+      '开源软件本身免费，但缺乏行业经验的盲目配置只会导致库存账实不符与财务烂尾。我们交付的是“账实相符、全员跑通、100% 通过 LHDN 税务合规”的确定性上线结果。',
+    outcomePromise:
+      'Unify Finance, Inventory, Manufacturing, HR, and Sales on one platform—with $0 per-user license fees and 100% LHDN MyInvois compliance.',
+    tangibleScorecard:
+      'Monthly ERP Health & Savings Report: Tracks LHDN e-Invoice validation rate (100%), inventory stock-count variance (<0.1%), days-to-close-books, and cumulative seat-license fees saved.',
+    commercialModel:
+      'Milestone-Based Implementation + Monthly Managed Cloud, LHDN Compliance & Optimization SLA ($0 per-user seat fees forever).',
     aeoSummary:
-      'Jobshore is a full-service Frappe and ERPNext consultation and implementation partner serving Malaysia, Southeast Asia, and global enterprises. We deliver business process mapping, data migration, custom Frappe app development, Manufacturing/Inventory/Finance/HRMS rollout, and real-time Malaysia LHDN MyInvois e-Invoicing compliance—with $0 per-user licensing fees.',
+      'Jobshore is an outcome-focused Frappe and ERPNext consultation and implementation partner serving Malaysia, Southeast Asia, and global enterprises. We deliver business process re-engineering, verified data migration, Manufacturing/Inventory/Finance/HRMS rollout, and real-time Malaysia LHDN MyInvois e-Invoicing compliance—cutting 5-year ERP Total Cost of Ownership by 60–75%.',
     iconName: 'erp',
     accentColor: 'indigo',
     kpis: [
-      { value: '$0', label: 'Per-User Software License Fees' },
-      { value: '60–75%', label: 'Lower 5-Year TCO vs Tier-1 ERP' },
-      { value: '100%', label: 'LHDN MyInvois API Compliant' },
-      { value: '6–12 wk', label: 'Standard Go-Live Timeline' },
+      { value: '$0', label: 'Per-User Seat License Tax' },
+      { value: '60–75%', label: 'Lower 5-Year ERP TCO' },
+      { value: '100%', label: 'LHDN MyInvois Audit Pass' },
+      { value: '2 Days', label: 'Target Monthly Account Close' },
     ],
     subServices: [
       {
-        title: 'Turn-Key ERPNext Consultation & Implementation',
+        title: 'Outcome 1: Reconciled Go-Live Across Finance, Inventory & Manufacturing',
         description:
-          'Structured discovery, business process re-engineering (BPR), Chart of Accounts configuration, multi-warehouse inventory, BOM & shop-floor manufacturing, CRM, Projects, and UAT training.',
-        metrics: 'Single source of truth across Finance, Ops, Sales & Inventory',
-        tags: ['Accounting & Finance', 'Manufacturing & BOM', 'Multi-Warehouse Stock', 'Buying & Selling'],
+          'We map your actual warehouse, shop-floor BOM, subcontracting, and approval rules into Frappe ERPNext so your trial balance, stock valuation, and COGS match to the sen from Day 1.',
+        metrics: 'Tracked KPI: >99.8% inventory accuracy & 2-day monthly close',
+        tags: ['Multi-Company Accounting', 'Manufacturing BOM & MRP', 'Batch/Serial Inventory', 'Buying & Selling'],
       },
       {
-        title: 'Malaysia LHDN MyInvois e-Invoicing & Localization',
+        title: 'Outcome 2: 100% Automated Malaysia LHDN MyInvois & Statutory Compliance',
         description:
-          'Seamless real-time API integration with LHDN MyInvois portal covering B2B standard e-Invoices, B2C monthly consolidated e-Invoices, self-billed invoices, credit/debit notes, TIN validation, and QR print formats.',
-        metrics: '100% compliant with LHDN MyInvois SDK & SST regulations',
-        tags: ['LHDN MyInvois API', 'Consolidated e-Invoice', 'Self-Billed e-Invoice', 'MY Payroll (EPF/SOCSO/PCB)'],
+          'Eliminate tax penalties and manual portal uploads. Real-time API submission for B2B e-Invoices, monthly Consolidated e-Invoices, Self-Billed invoices, TIN validation, and EPF/SOCSO/EIS/PCB payroll.',
+        metrics: 'Tracked KPI: 100% LHDN UUID validation & 0 manual filings',
+        tags: ['LHDN MyInvois API', 'Consolidated & Self-Billed', 'QR Print Formats', 'MY Statutory Payroll'],
       },
       {
-        title: 'Custom Frappe Framework App Development',
+        title: 'Outcome 3: Zero-Downtime Migration from AutoCount, SQL, Xero or SAP',
         description:
-          'When standard ERP modules aren’t enough, we build custom Frappe applications, Doctypes, workflow state machines, custom Jinja/PDF print formats, and Frappe Insights executive BI dashboards.',
-        metrics: 'Upgrade-safe modular custom apps with 100% source ownership',
-        tags: ['Custom Frappe Apps', 'Doctypes & Workflows', 'Frappe Insights BI', 'Custom Print Formats'],
+          'We extract, cleanse, deduplicate, and verify your historical master data, open AR/AP invoices, and opening trial balances so your team switches over over a single weekend without operational pause.',
+        metrics: 'Tracked KPI: 100% reconciled opening trial balance & stock',
+        tags: ['AutoCount / SQL Migration', 'SAP / NetSuite Cutover', 'Data Cleansing', 'Parallel Run Audit'],
       },
       {
-        title: 'Legacy ERP Data Migration & Managed Hosting',
+        title: 'Outcome 4: Custom Frappe Workflows & Executive Profit Dashboards',
         description:
-          'Clean, verified migration of historical master data and opening balances from SAP Business One, Oracle NetSuite, SQL Accounting, AutoCount, or Xero, backed by high-availability cloud or on-prem hosting.',
-        metrics: 'Zero-downtime cutover with reconciled trial balance',
-        tags: ['Data Migration', 'AutoCount / SQL / SAP to ERPNext', 'HA Cloud Hosting', 'SLA Support'],
+          'Need industry-specific commission rules, dealer rebates, or real-time margin dashboards? We build upgrade-safe custom Frappe apps that fit your business instead of forcing you into rigid templates.',
+        metrics: 'Tracked KPI: 100% source code ownership & zero vendor lock-in',
+        tags: ['Custom Frappe Apps', 'Frappe Insights BI', 'Role-Based Security', 'Managed HA Hosting'],
       },
     ],
     deliverables: [
-      'Comprehensive Business Requirement Document (BRD) & Solution Blueprint',
-      'Configured ERPNext Production & Staging environments (Cloud or On-Premise)',
-      'Malaysia LHDN MyInvois real-time API connector & compliant PDF/QR templates',
-      'Migrated & reconciled Master Data (Customers, Suppliers, Items, BOMs, Balances)',
-      'Role-Based Access Control (RBAC), User Manuals, and Recorded Training Sessions',
+      'Reconciled Production Cutover Sign-Off (Trial Balance, AR/AP Aging & Stock Valuation)',
+      'Turnkey Malaysia LHDN MyInvois API Connector (B2B, Consolidated & Self-Billed)',
+      'Configured Production & Staging ERPNext Environments with Automated Daily Backups',
+      'Role-Based Access Control (RBAC), Custom Print Formats & Executive BI Dashboards',
+      'Recorded Department-by-Department Video SOPs & Post-Go-Live SLA Support',
     ],
     techStack: [
       'Frappe Framework (v15+)',
       'ERPNext (v15+)',
       'Frappe HRMS',
-      'Frappe Insights',
+      'Frappe Insights BI',
       'Python',
       'MariaDB / Postgres',
       'Redis',
@@ -410,9 +431,9 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     startingInvestment: 'From USD $7,500 / MYR 32,000',
     faqs: [
       {
-        question: 'Why choose Frappe ERPNext over SAP Business One, NetSuite, or Microsoft Dynamics?',
+        question: 'If Frappe ERPNext is open-source, what am I actually paying Jobshore for?',
         answer:
-          'ERPNext delivers full enterprise capabilities (Multi-Company Accounting, MRP Manufacturing, Batch/Serial Inventory, POS, CRM, HRMS, and Projects) with $0 per-user licensing cost and 100% open-source code transparency. Whether you have 15 users or 500 users, your software license fee remains zero, reducing 5-year Total Cost of Ownership (TCO) by 60–75% while allowing deep customization via the Frappe Framework.',
+          'You never pay us a cent for per-user software seat licenses. You pay Jobshore for the guaranteed business outcome: business process engineering, clean migration from your legacy software, accurate manufacturing/inventory/accounting reconciliation, LHDN MyInvois API compliance, custom workflow coding, staff training, and ongoing SLA uptime—while saving RM 50,000 to RM 250,000+ every year in avoided software license rents.',
       },
       {
         question: 'Can Jobshore integrate LHDN MyInvois e-Invoicing into an existing ERPNext setup?',
@@ -424,69 +445,75 @@ export const SERVICE_PILLARS: ServicePillar[] = [
   {
     id: 'pos-services',
     slug: 'pos-software-system',
-    badge: 'Pillar 04 • Retail, F&B & Omnichannel POS',
+    badge: 'Pillar 04 • Outcome: Zero Lost Sales Offline & 100% Automated POS e-Invoicing',
     shortTitle: 'POS Software & Point-of-Sale Systems',
     shortTitleBm: 'Perisian & Sistem POS (Runcit, F&B & Cawangan)',
     shortTitleZh: '智能零售与餐饮 POS 收银系统（支持离线与电子发票）',
-    title: 'Cloud & Offline-First POS Software and Point-of-Sale Systems (Retail, F&B & Multi-Outlet)',
-    titleBm: 'Perisian & Sistem POS Cloud & Luar Talian (Runcit, Restoran F&B, Farmasi & Pasar Raya)',
-    titleZh: '云端与断网离线 POS 收银系统（连锁零售、餐饮堂食扫码、药房超市与 ERPNext 实时同步）',
+    title: 'Never Lose a Sale When Store Internet Drops & Automate 100% of Retail/F&B LHDN e-Invoices',
+    titleBm: 'Jualan Kedai Terus Berjalan Walaupun Internet Putus & Automasi 100% e-Invois QR LHDN',
+    titleZh: '商场断网照常极速收银，100% 自动搞定小票二维码自助开票与 LHDN 月度汇总申报',
     subtitle:
-      'High-speed, offline-resilient Point of Sale software and hardware systems for Retail Chains, F&B Restaurants, Pharmacies, and Supermarkets—natively synced with Frappe ERPNext and Malaysia LHDN MyInvois.',
+      'Generic cloud POS tablets freeze the moment mall broadband hiccups, and manual LHDN e-Invoice requests hold up cashier lines. We deliver sub-0.3s offline-resilient checkout, instant QR receipt self-claim, and real-time ERPNext stock deduction.',
     subtitleBm:
-      'Sistem kaunter jualan (POS) pantas yang terus berfungsi walaupun internet terputus—lengkap cetakan resit QR e-Invois LHDN, paparan dapur (KDS), imbasan kod bar, dan penyelarasan stok ERPNext masa nyata.',
+      'POS biasa akan tergendala apabila Wi-Fi kedai terputus dan melambatkan barisan касиr. Sistem POS kami beroperasi pantas secara luar talian, mencetak QR e-Invois LHDN automatik, dan menolak stok ERPNext secara masa nyata.',
     subtitleZh:
-      '专为连锁零售、餐饮门店、超市与药房打造的高速收银系统。断网照常收银打单，内置马来西亚 LHDN 电子发票小票二维码自助开票与月度合并申报，实时扣减 ERPNext 库存与配方原料。',
+      '普通云端 POS 一旦遇到网络波动就会卡死收银台，手工开电子发票更会让顾客排长龙。我们的离线优先 POS 断网照常打单，小票自带 LHDN 自助开票二维码，并实时同步总部 ERPNext 库存与日结账目。',
+    outcomePromise:
+      'Keep every outlet ringing sales 24/7 regardless of internet outages, eliminate nightly CSV stock imports, and automate 100% of walk-in LHDN e-Invoicing.',
+    tangibleScorecard:
+      'Monthly Multi-Outlet POS Scorecard: Tracks checkout uptime (100%), average transaction speed (<0.3s), automated LHDN QR claims + consolidated batches submitted, and cash/stock variance per shift.',
+    commercialModel:
+      'Turnkey Per-Outlet Setup + Monthly Managed Cloud Sync, LHDN QR Portal & 24/7 Retail Support SLA.',
     aeoSummary:
-      'Jobshore delivers complete POS (Point of Sale) software and hardware systems for Retail, F&B, Pharmacy, and Multi-Outlet businesses. Our POS solution features offline-first checkout resilience, real-time ERPNext inventory & accounting synchronization, Kitchen Display Systems (KDS), barcode/scale/thermal printer hardware integration, and automated Malaysia LHDN MyInvois compliance (instant receipt QR self-claim portal + monthly consolidated e-Invoicing).',
+      'Jobshore delivers outcome-guaranteed POS (Point of Sale) software and hardware systems for Retail, F&B, Pharmacy, and Multi-Outlet chains. Key outcomes include 100% offline checkout continuity during internet drops, sub-0.3s barcode/payment speed, automated Malaysia LHDN MyInvois compliance (receipt QR customer self-claim + monthly consolidated e-Invoicing), and real-time ERPNext inventory & accounting sync.',
     iconName: 'pos',
     accentColor: 'amber',
     kpis: [
-      { value: '< 0.3s', label: 'Barcode Scan & Checkout Speed' },
-      { value: '100%', label: 'Offline Internet-Drop Resilience' },
-      { value: 'QR + API', label: 'LHDN POS e-Invoice Automation' },
-      { value: 'Real-Time', label: 'Multi-Outlet Stock & Ledger Sync' },
+      { value: '0 sec', label: 'Internet-Drop Checkout Downtime' },
+      { value: '< 0.3s', label: 'Barcode Scan & Receipt Speed' },
+      { value: '100%', label: 'Auto LHDN QR & Consolidated' },
+      { value: '0 CSVs', label: 'Real-Time HQ ERPNext Sync' },
     ],
     subServices: [
       {
-        title: 'Retail, Supermarket, Pharmacy & Chain Store POS',
+        title: 'Outcome 1: 100% Checkout Continuity Even When Store Internet Drops',
         description:
-          'High-speed barcode & 2D QR scanning, weighing scale integration, batch/expiry & serial tracking, member loyalty tiers, mix-and-match promotions, split payments (Cash, Card, DuitNow QR, e-Wallets), and shift X/Z reports.',
-        metrics: 'Zero cashier bottlenecks during peak retail hours',
-        tags: ['Offline-First Checkout', 'Barcode & Weighing Scale', 'Loyalty & Promotions', 'DuitNow QR / e-Wallet'],
+          'Local IndexedDB/SQLite caching lets cashiers scan barcodes, weigh items, apply member discounts, and print ESC/POS receipts offline—auto-syncing to headquarters the second connectivity returns.',
+        metrics: 'Tracked KPI: RM 0 lost revenue during broadband outages',
+        tags: ['Offline-First POS', 'Barcode & Weighing Scale', 'DuitNow QR & Card', 'Shift X/Z Reconciliation'],
       },
       {
-        title: 'F&B, Restaurant, Cafe & Cloud Kitchen POS',
+        title: 'Outcome 2: Zero Cashier Queue Delays for Malaysia LHDN e-Invoicing',
         description:
-          'Interactive floor table management, dine-in/takeaway/delivery modifiers, QR table self-ordering, Kitchen Display System (KDS) station routing, split/merge bills, and automatic recipe BOM ingredient deduction.',
-        metrics: 'Cuts table turnover time & kitchen ticket errors by 40%',
-        tags: ['Table & Floor Plan', 'QR Self-Ordering', 'Kitchen Display (KDS)', 'Recipe BOM Deduction'],
+          'Every receipt prints a unique QR code. Customers scan on their own phone to claim a validated LHDN e-Invoice in seconds, while unclaimed receipts auto-submit as a monthly Consolidated e-Invoice.',
+        metrics: 'Tracked KPI: 100% LHDN retail/F&B compliance with 0 extra cashier clicks',
+        tags: ['Receipt QR Self-Claim Portal', 'Monthly Consolidated e-Invoice', 'Instant TIN Check', 'SST Ready'],
       },
       {
-        title: 'POS Malaysia LHDN MyInvois QR & Consolidated e-Invoicing',
+        title: 'Outcome 3: 40% Faster Table Turnover & Zero Kitchen Ticket Errors (F&B)',
         description:
-          'Prints a unique QR code on every thermal receipt so walk-in customers can self-claim a validated LHDN e-Invoice on their smartphone, while automatically submitting unclaimed receipts as a monthly LHDN Consolidated e-Invoice.',
-        metrics: '100% LHDN retail & F&B e-Invoicing compliance with zero cashier delay',
-        tags: ['Receipt QR Self-Claim', 'Monthly Consolidated e-Invoice', 'TIN Instant Validation', 'SST Compliant'],
+          'QR table self-ordering, dine-in/takeaway modifiers, split/merge bills, Kitchen Display System (KDS) routing, and automatic recipe BOM ingredient deduction per dish sold.',
+        metrics: 'Tracked KPI: 40% fewer order errors & real-time food cost tracking',
+        tags: ['Floor Table Plan', 'QR Table Ordering', 'Kitchen Display (KDS)', 'Recipe BOM Deduction'],
       },
       {
-        title: 'POS Hardware Systems & Native ERPNext Back-Office Sync',
+        title: 'Outcome 4: Real-Time Multi-Outlet Stock & Daily P&L Visibility in ERPNext',
         description:
-          'Turn-key supply and integration of dual-screen touch POS terminals, iPad/Android tablets, ESC/POS thermal printers, 2D scanners, cash drawers, and self-service kiosks—synced directly into ERPNext Inventory & Accounting.',
-        metrics: 'Eliminates manual nightly POS-to-Accounting CSV imports',
-        tags: ['Touch POS Terminals', 'ESC/POS Thermal Printers', 'Multi-Store HQ Control', 'Native ERPNext Sync'],
+          'Every sale immediately deducts outlet stock, updates batch/expiry records, awards loyalty points, and posts shift closing journal entries into Frappe ERPNext—with complete hardware peripheral support.',
+        metrics: 'Tracked KPI: Eliminates 100% of manual nightly POS-to-Accounting imports',
+        tags: ['Native ERPNext Sync', 'Touch POS Hardware', 'Central Warehouse Replenish', 'Multi-Branch HQ'],
       },
     ],
     deliverables: [
-      'Configured Cloud & Offline-Capable POS Software (Web, Tablet, Android & Desktop Terminal)',
-      'Real-time Multi-Outlet ERPNext Inventory, Price List, Promotion & GL Accounting Sync',
-      'LHDN MyInvois Customer Web Self-Claim Portal + Automated Monthly Consolidated e-Invoice Scheduler',
-      'POS Hardware Peripheral Setup (Touch Terminal, Thermal Printer, Barcode Scanner, Cash Drawer, KDS)',
-      'Cashier, Store Manager & HQ Finance Training with 24/7 Retail SLA Support',
+      'Live Multi-Outlet POS Uptime, Shift Variance & LHDN e-Invoice Telemetry Dashboard',
+      'Offline-Capable POS Software Deployed Across Web, Android, iPad & Dual-Screen Touch Terminals',
+      'Branded Customer LHDN e-Invoice QR Self-Claim Web Portal + Monthly Consolidated Scheduler',
+      'Real-Time Frappe ERPNext Inventory, Promotion, Loyalty & Shift Accounting Sync',
+      'Hardware Peripheral Integration (Thermal Printers, 2D Scanners, Cash Drawers, KDS) + 24/7 Support',
     ],
     techStack: [
       'Frappe ERPNext POS / POS Awesome',
-      'IndexedDB & SQLite Offline Sync',
+      'IndexedDB & SQLite Offline Engine',
       'Vue / React / Flutter POS UI',
       'WebUSB / ESC-POS Thermal Print',
       'LHDN MyInvois POS API',
@@ -505,72 +532,78 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       {
         question: 'How does the POS system handle Malaysia LHDN MyInvois e-Invoicing for walk-in retail or F&B customers?',
         answer:
-          'Instead of slowing down the checkout line to type customer TIN details at the counter, our POS prints a unique QR code and short link on every thermal receipt. Customers who need a B2B/B2C validated e-Invoice simply scan the QR code on their phone, enter their TIN/IC, and receive their LHDN-validated e-Invoice automatically. All remaining unclaimed receipts are automatically aggregated and submitted to LHDN as a monthly Consolidated e-Invoice within the statutory 7-day window after month-end.',
+          'Instead of slowing down the checkout line to type customer TIN details at the counter, our POS prints a unique QR code and short link on every thermal receipt. Customers who need a B2B/B2C validated e-Invoice simply scan the QR code on their phone, enter their TIN/IC, and receive their LHDN-validated e-Invoice automatically. All remaining unclaimed receipts are automatically aggregated and submitted to LHDN as a monthly Consolidated e-Invoice.',
       },
     ],
   },
   {
     id: 'web-mobile-services',
     slug: 'web-mobile-development',
-    badge: 'Pillar 05 • Digital Products & Experiences',
+    badge: 'Pillar 05 • Outcome: High-Converting Inbound Leads & Empowered Field Teams',
     shortTitle: 'Web & Mobile App Development',
     shortTitleBm: 'Pembangunan Laman Web & Aplikasi Mudah Alih',
     shortTitleZh: '全栈网站开发与 iOS/Android 移动应用开发',
-    title: 'Full-Stack Web Development & Cross-Platform Mobile App Engineering',
-    titleBm: 'Pembangunan Laman Web SEO/AEO & Aplikasi Mudah Alih Pintar (iOS & Android)',
-    titleZh: '高性能全栈网站开发（100/100 SEO/AEO）与跨平台 iOS/Android 移动应用定制',
+    title: 'Turn Google & AI Search Into Qualified B2B Leads & Equip Field Teams with Offline Mobile Apps',
+    titleBm: 'Tukar Carian Google & AI Menjadi Pelanggan B2B & Perkasa Pasukan Luar dengan Aplikasi Mudah Alih',
+    titleZh: '让 Google 与 ChatGPT 搜索源源不断带来精准询盘，并用离线移动应用武装一线业务与仓库团队',
     subtitle:
-      'High-converting, SEO & AEO-engineered web platforms and resilient iOS/Android mobile apps built for speed, scalability, and deep integration with your ERP, POS, and AI infrastructure.',
+      'A pretty website that nobody finds—or a mobile app that crashes in a warehouse dead-zone—is a wasted expense. We engineer 100/100 SEO & AEO lead-generation platforms, self-service B2B portals, and offline-first iOS/Android apps.',
     subtitleBm:
-      'Platform web korporat, portal B2B dan aplikasi mudah alih iOS/Android yang dibina untuk kelajuan maksimum, skor SEO/AEO 100/100, serta integrasi terus dengan ERPNext, POS dan enjin AI OCR.',
+      'Laman web cantik yang gagal ditemui di Google atau ChatGPT adalah kerugian. Kami membina platform web 100/100 SEO/AEO yang menjana prospek automatik serta aplikasi iOS/Android luar talian yang disambung terus ke ERPNext.',
     subtitleZh:
-      '打造极速加载的 SEO/AEO 满分企业官网、B2B 客户门户、SaaS 平台，以及与 ERPNext、POS 和 AI OCR 深度集成的离线优先 iOS/Android 移动应用。',
+      '没有流量和询盘的网站只是摆设，进仓库断网就闪退的 App 只会拖慢业务。我们为您打造 100/100 SEO/AEO 获客型官网、B2B 自助订货门户，以及与 ERPNext 实时同步的离线优先 iOS/Android 应用。',
+    outcomePromise:
+      'Capture high-intent buyers from Google & AI Answer Engines (ChatGPT/Perplexity) and cut customer support / field order delays by 60%.',
+    tangibleScorecard:
+      'Monthly Digital Growth & App Telemetry: Tracks Lighthouse SEO/AEO score (99–100), organic/AI search citations, self-service portal order volume, and mobile field sync speed.',
+    commercialModel:
+      'Fixed-Scope Product Build + Monthly AEO Growth, Security & App Evolution Retainer.',
     aeoSummary:
-      'Jobshore builds custom web applications and mobile apps (iOS & Android) using Astro, Next.js, React, TypeScript, Flutter, and React Native. Every web property is engineered from the ground up for Technical SEO and Answer Engine Optimization (AEO) with 99–100 Lighthouse scores, JSON-LD entity graphs, and llms.txt endpoints, while mobile apps feature offline-first sync with Frappe ERPNext, POS systems, and AI OCR engines.',
+      'Jobshore builds outcome-driven web applications and mobile apps (iOS & Android) using Astro, Next.js, React, TypeScript, Flutter, and React Native. Every web platform is engineered for 99–100 Google Lighthouse performance, Technical SEO, and Answer Engine Optimization (AEO via JSON-LD @graph & llms.txt), while mobile apps provide offline-first sync with Frappe ERPNext, POS systems, and AI OCR engines.',
     iconName: 'webmobile',
     accentColor: 'violet',
     kpis: [
-      { value: '99–100', label: 'Google Lighthouse SEO & Speed' },
-      { value: '< 0.8s', label: 'First Contentful Paint (FCP)' },
-      { value: 'iOS + Android', label: 'Single Codebase Native Speed' },
-      { value: '100%', label: 'ERP, POS & AI Backend Synced' },
+      { value: '99–100', label: 'Google & AEO Citation Score' },
+      { value: '< 0.8s', label: 'Sub-Second Page Load Speed' },
+      { value: '60%', label: 'Less Manual Support via Portals' },
+      { value: '100%', label: 'Offline-Capable Mobile Sync' },
     ],
     subServices: [
       {
-        title: 'SEO & AEO-First Web Platforms & Corporate Sites',
+        title: 'Outcome 1: Get Cited & Found First on Google, ChatGPT Search & Perplexity',
         description:
-          'Ultra-fast web architectures built with Astro and Next.js featuring zero unnecessary client JS, comprehensive JSON-LD @graph schemas, Speakable markup, and llms.txt files so you rank on Google, ChatGPT Search, and Perplexity.',
-        metrics: '100/100 Core Web Vitals & AI Answer Engine readiness',
-        tags: ['Astro & Next.js', 'Technical SEO', 'AEO (llms.txt + JSON-LD)', 'Sub-Second Load'],
+          'We engineer ultra-fast Astro & Next.js web platforms with multi-entity JSON-LD @graph schemas, Speakable direct-answer capsules, and /llms.txt files—turning your website into a 24/7 inbound B2B lead magnet.',
+        metrics: 'Tracked KPI: 100/100 Core Web Vitals & verified AI search citations',
+        tags: ['Technical SEO + AEO', 'Astro & Next.js', 'JSON-LD + llms.txt', 'Interactive Lead Scopers'],
       },
       {
-        title: 'Custom B2B Portals, SaaS & Executive Dashboards',
+        title: 'Outcome 2: Cut Customer Service Calls by 60% with Self-Service B2B Portals',
         description:
-          'Self-service distributor portals, vendor bidding systems, multi-tenant SaaS products, and real-time operational command centers with granular role permissions and SSO.',
-        metrics: 'Cut customer support inquiries by 60% via self-service portals',
-        tags: ['React & TypeScript', 'B2B Customer Portals', 'Multi-Tenant SaaS', 'Real-Time BI'],
+          'Let your dealers, distributors, and corporate clients check live tier pricing, place bulk reorders, download LHDN e-Invoices, and track delivery status 24/7 without calling your admin team.',
+        metrics: 'Tracked KPI: 60% reduction in manual order/invoice inquiries',
+        tags: ['B2B Dealer Portals', 'React & TypeScript', 'Live ERPNext Pricing', 'Self-Service e-Invoices'],
       },
       {
-        title: 'Cross-Platform iOS & Android Mobile Apps',
+        title: 'Outcome 3: Eliminate Warehouse & Van-Sales Errors with Offline Mobile Apps',
         description:
-          'Sleek, responsive mobile applications built with Flutter and React Native for customer loyalty, QR table ordering, on-demand booking, field service management, and mobile commerce.',
-        metrics: '45% faster time-to-market across Apple App Store & Google Play',
-        tags: ['Flutter', 'React Native', 'iOS & Android', 'Biometric Auth & Push'],
+          'Purpose-built Flutter & React Native iOS/Android apps for warehouse barcode/RFID picking, van-sales mobile POS invoicing, and camera AI OCR receipt capture—working reliably even with zero signal.',
+        metrics: 'Tracked KPI: 99.9% picking/van-stock accuracy & zero paper DOs',
+        tags: ['Offline-First SQLite Sync', 'Handheld Barcode/POS', 'Mobile AI OCR Scan', 'iOS & Android'],
       },
       {
-        title: 'Offline-First Warehouse, Van-Sales POS & OCR Companion Apps',
+        title: 'Outcome 4: Launch Custom SaaS & Customer Loyalty Apps 45% Faster',
         description:
-          'Purpose-built industrial mobile apps with hardware barcode/QR scanning, handheld mobile POS billing, camera-based AI OCR document capture, and offline SQLite sync directly to ERPNext.',
-        metrics: 'Works reliably in zero-connectivity warehouses & field sites',
-        tags: ['Offline-First Sync', 'Mobile Handheld POS', 'Mobile OCR Capture', 'ERPNext Mobile API'],
+          'Single-codebase iOS, Android, and Web product engineering backed by automated Playwright E2E testing, biometric login, push notifications, and scalable cloud infrastructure.',
+        metrics: 'Tracked KPI: 45% faster time-to-market across App Store & Play Store',
+        tags: ['Flutter & React Native', 'Customer Loyalty Apps', 'Biometric Auth', 'CI/CD Automated QA'],
       },
     ],
     deliverables: [
-      'Figma UI/UX Interactive Prototypes & Design System',
-      'Production Web App (Astro / Next.js / React) with 99+ Lighthouse Performance',
-      'Built-in Technical SEO & AEO Stack (JSON-LD, Sitemap, Robots.txt, llms.txt)',
-      'Signed iOS (.ipa) and Android (.aab) builds published to App Store & Google Play',
-      'Automated CI/CD deployment pipeline, E2E test suite, and API documentation',
+      'Monthly SEO/AEO Visibility, Page-Speed & Conversion Telemetry Scorecard',
+      'Production Web Platform (Astro / Next.js / React) Scoring 99–100 on Google Lighthouse',
+      'Complete AEO Stack (Multi-Entity JSON-LD @graph, Sitemap, Robots.txt, llms.txt)',
+      'Signed iOS (.ipa) & Android (.aab) Mobile Apps Synced with ERPNext / POS / AI Backends',
+      'Automated E2E Test Suite & Full Source Code Ownership',
     ],
     techStack: [
       'Astro',
@@ -590,7 +623,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       {
         question: 'How does Jobshore optimize websites for both traditional SEO and AI Answer Engines (AEO)?',
         answer:
-          'Traditional SEO focuses on keywords, backlinks, and Core Web Vitals. AEO (Answer Engine Optimization) adds entity-first JSON-LD structured data (@graph connecting Organization, Service, FAQPage, and Speakable schemas), semantic HTML tables/definition lists, citation-ready direct-answer summaries, and /llms.txt endpoints so LLMs like ChatGPT, Perplexity, and Google AI Overviews can extract and cite your brand with high confidence.',
+          'Traditional SEO focuses on keywords, backlinks, and Core Web Vitals. AEO (Answer Engine Optimization) adds entity-first JSON-LD structured data (@graph connecting Organization, Service, FAQPage, and Speakable schemas), semantic HTML tables/definition lists, citation-ready direct-answer summaries, and /llms.txt endpoints so LLMs like ChatGPT, Perplexity, and Google AI Overviews extract and cite your brand with high confidence.',
       },
       {
         question: 'Can our mobile app connect directly to Frappe ERPNext, POS systems, or custom AI OCR APIs?',
@@ -607,6 +640,12 @@ export const ERP_COMPARISON_ROWS = [
     jobshoreErpnext: '$0 / user (100% Open-Source GPLv3)',
     legacyTier1: '$1,200 – $3,600+ per user / year',
     basicAccounting: '$300 – $900 per user / year (Limited users)',
+  },
+  {
+    criterion: 'What You Actually Pay For (Commercial Model)',
+    jobshoreErpnext: 'Tracked Business Outcomes, Implementation & Uptime SLA',
+    legacyTier1: 'Mandatory Annual Seat Tax + Expensive Change Requests',
+    basicAccounting: 'Recurring SaaS Seat Tax (Outgrown by Mid-Market)',
   },
   {
     criterion: 'Built-In Cloud & Offline POS System',
@@ -638,12 +677,6 @@ export const ERP_COMPARISON_ROWS = [
     legacyTier1: 'Proprietary Vendor Lock-In',
     basicAccounting: 'Closed SaaS (No Custom Doctypes)',
   },
-  {
-    criterion: 'Typical Implementation Time-to-Value',
-    jobshoreErpnext: '6 – 12 Weeks (POS Live in 1–4 Weeks)',
-    legacyTier1: '6 – 18 Months',
-    basicAccounting: '2 – 4 Weeks (Outgrown quickly by SMEs)',
-  },
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -652,13 +685,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     clientType: 'Precision Components Manufacturer (220 Staff)',
     region: 'Shah Alam, Selangor, Malaysia & Singapore',
     pillarBadge: 'ERPNext + AI OCR + LHDN MyInvois',
-    title: 'Migrating from Legacy Accounting to ERPNext with AI OCR 3-Way Matching & LHDN e-Invoicing',
+    title: 'Outcome: Cut Monthly Accounts Closing from 12 Days to 2 Days & Saved RM 145k/yr',
     challenge:
       'Finance and warehouse teams processed 4,200+ supplier invoices and delivery orders monthly across 3 warehouses using disconnected spreadsheets and legacy desktop accounting software, causing a 12-day monthly close delay.',
     solution:
-      'Jobshore implemented Frappe ERPNext across Manufacturing, Multi-Warehouse Inventory, and Accounting, integrated our multi-language AI OCR pipeline for automatic PO-GRN-Invoice 3-way matching, and enabled real-time LHDN MyInvois API compliance.',
+      'Jobshore implemented Frappe ERPNext across Manufacturing, Multi-Warehouse Inventory, and Accounting, integrated our math-verified AI OCR pipeline for automatic PO-GRN-Invoice 3-way matching, and enabled real-time LHDN MyInvois API compliance.',
     results: [
-      { metric: '99.5%', label: 'Invoice OCR Extraction Accuracy' },
+      { metric: '99.5%', label: 'Verified Invoice OCR Accuracy' },
       { metric: '82%', label: 'Faster Accounts Payable Processing' },
       { metric: 'RM 145k/yr', label: 'Saved in License & Overtime Costs' },
     ],
@@ -669,7 +702,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     clientType: 'Multi-Outlet Specialty Retail & Cafe Chain (18 Outlets)',
     region: 'Kuala Lumpur, Penang & Johor Bahru, Malaysia',
     pillarBadge: 'POS Software & System + ERPNext + LHDN QR',
-    title: 'Offline-Resilient POS Rollout Across 18 Outlets with LHDN QR Self-Claim & Central ERPNext Sync',
+    title: 'Outcome: Zero Lost Sales During Mall Internet Drops & 100% Automated POS LHDN e-Invoicing',
     challenge:
       'Disconnected legacy POS terminals across 18 outlets required nightly manual CSV imports into accounting, suffered checkout freezes during mall internet drops, and lacked LHDN MyInvois QR customer self-claim receipts.',
     solution:
@@ -686,7 +719,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     clientType: 'Regional B2B Trade Finance Platform',
     region: 'Singapore & Kuala Lumpur',
     pillarBadge: 'AI Coding + Verification + Automated QA',
-    title: 'Deterministic AI Code Verification, Self-Healing Playwright QA & Trade Document OCR',
+    title: 'Outcome: Zero Escaped Production Bugs in 12 Months & 1.8-Second Trade Document Verification',
     challenge:
       'Rapid feature releases were bottlenecked by flaky E2E tests and manual verification of cross-border bills of lading, commercial invoices, and customs declarations.',
     solution:
@@ -701,6 +734,12 @@ export const CASE_STUDIES: CaseStudy[] = [
 ];
 
 export const GLOBAL_FAQS: FaqItem[] = [
+  {
+    category: 'SEO, AEO & Engagement',
+    question: 'Since anyone can use AI to write code today, why do companies pay Jobshore?',
+    answer:
+      'Prompting ChatGPT or Cursor to generate raw code is easy; engineering a system where AI never hallucinates a tax total, never leaks PDPA data, and stays 100% reconciled with your ERPNext inventory and LHDN MyInvois APIs is hard. Clients don’t pay Jobshore for "typing code" or per-user software seat taxes—they pay us for guaranteed, tracked business outcomes: verified 99.4% OCR accuracy, 85% fewer manual hours, zero-downtime offline POS, and a monthly telemetry scorecard proving the exact hours and RM saved.',
+  },
   {
     category: 'SEO, AEO & Engagement',
     question: 'What is Answer Engine Optimization (AEO), and how does Jobshore build for both SEO and AEO?',
@@ -724,12 +763,6 @@ export const GLOBAL_FAQS: FaqItem[] = [
     question: 'What types of documents can Jobshore’s AI OCR & Intelligent Document Processing (IDP) extract?',
     answer:
       'Our AI OCR pipeline accurately processes commercial invoices, purchase orders (PO), delivery orders (DO), bills of lading, customs declarations (K1/K2/K3), bank statements, retail thermal receipts, handwritten delivery notes, and identity cards (MyKad, Passports). It supports English, Bahasa Melayu, Simplified/Traditional Chinese, and Tamil, outputting clean, schema-validated JSON ready for ERPNext or any REST API.',
-  },
-  {
-    category: 'AI & OCR',
-    question: 'How do your AI coding, verification, and automated testing services integrate with an existing engineering team?',
-    answer:
-      'We work either as an embedded AI quality & velocity squad or on a turnkey deliverable basis. We set up private RAG coding assistants, enforce deterministic verification checks (static analysis, schema validation, security guardrails) in your CI/CD pipeline, and build self-healing Playwright/Cypress E2E and API test suites so your developers ship 3x faster without regressions.',
   },
   {
     category: 'Frappe & ERPNext',
@@ -765,7 +798,7 @@ export function buildHomeJsonLd() {
         logo: `${COMPANY_INFO.domain}/favicon.svg`,
         image: `${COMPANY_INFO.domain}/og-image.svg`,
         description:
-          'Jobshore is an enterprise technology consultancy specializing in AI Services (Coding, Verification, Automated Testing, Intelligent OCR), Business Process Automation, Frappe ERPNext Consultation & Implementation, Cloud & Offline-First POS Software & Point-of-Sale Systems (with Malaysia LHDN MyInvois compliance), and SEO/AEO-first Web & Mobile Application Development.',
+          'Jobshore is an outcome-driven enterprise technology consultancy specializing in AI Services (Coding, Deterministic Verification, Automated Testing, Intelligent OCR), Business Process Automation, Frappe ERPNext Consultation & Implementation, Cloud & Offline-First POS Software & Point-of-Sale Systems (with Malaysia LHDN MyInvois compliance), and SEO/AEO-first Web & Mobile Application Development.',
         email: COMPANY_INFO.email,
         telephone: COMPANY_INFO.phone,
         priceRange: '$$-$$$',
@@ -840,7 +873,7 @@ export function buildHomeJsonLd() {
           '@id': `${COMPANY_INFO.domain}/#organization`,
         },
         description:
-          'Enterprise AI engineering (coding, verification, testing, OCR), business process automation, Frappe ERPNext implementation, Cloud & Offline POS Software & Systems (LHDN MyInvois ready), and full-stack web & mobile app development.',
+          'Outcome-guaranteed enterprise AI engineering (coding, verification, testing, OCR), business process automation, Frappe ERPNext implementation, Cloud & Offline POS Software & Systems (LHDN MyInvois ready), and full-stack web & mobile app development.',
         speakable: {
           '@type': 'SpeakableSpecification',
           cssSelector: ['.aeo-summary', '#hero-headline', '#faq-heading'],
