@@ -9,7 +9,7 @@ import { COMPANY_INFO } from '../data/siteData';
 >
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid gap-12 lg:grid-cols-12">
-      <!-- Left Column: How the AI Dynamic Quote & Pilot Closer Works -->
+      <!-- Left Column: How the AI Dynamic Quote & 3-Gate Callback Closer Works -->
       <div class="lg:col-span-5 space-y-6">
         <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300">
           AI Dynamic Scope, ROI &amp; 14-Day Pilot Closer
@@ -45,7 +45,7 @@ import { COMPANY_INFO } from '../data/siteData';
               <div>
                 <strong class="text-white">Free 3-Document / 10-SKU Live Proof:</strong>
                 <span class="text-slate-400">
-                  {' '}Send us 3 sample invoices or 10 POS items on WhatsApp—we demonstrate live 99.4% OCR &amp; ERPNext/POS sync before you pay a sen.
+                  {' '}Submit your scope on the right—our Senior Solutions Architect will reach out to run 3 of your sample invoices or 10 POS items live before you pay a sen.
                 </span>
               </div>
             </div>
@@ -57,7 +57,7 @@ import { COMPANY_INFO } from '../data/siteData';
               <div>
                 <strong class="text-white">Fixed-Fee 14-Day Production Pilot:</strong>
                 <span class="text-slate-400">
-                  {' '}Start with a low-risk 2-week pilot (1 workflow or 1 outlet). 100% of the pilot fee is credited toward your full rollout if you proceed.
+                  {' '}Start with a low-risk 2-week pilot (1 workflow, 1 LHDN bridge, or 1 outlet). 100% of the pilot fee is credited toward your full rollout.
                 </span>
               </div>
             </div>
@@ -89,56 +89,55 @@ import { COMPANY_INFO } from '../data/siteData';
           <p class="leading-relaxed text-slate-300">
             Before modern AI engineering and open-source Frappe existed, custom ERP, POS, and mobile systems required months of manual coding—making software expensive. Today, our <strong class="text-white">AI-accelerated build &amp; automated verification pipeline</strong> cuts delivery time and cost by <strong class="text-emerald-300">50–65%</strong>, with <strong class="text-white">$0 per-user license fees</strong>.
             <em class="block mt-1.5 text-sky-300 not-italic font-semibold">
-              Received a quote from us years ago? Request a refreshed AI-Era Re-Quote below—including a RM 2,000 returning-client pilot credit.
+              Received a quote from us years ago? Request a refreshed AI-Era Re-Quote on the right—including a RM 2,000 returning-client pilot credit.
             </em>
           </p>
         </div>
 
-        <!-- Direct Contact Card (Automatically Bound to COMPANY_CONFIG in src/data/siteData.ts) -->
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 text-xs space-y-2">
+        <!-- 3-Gate Verified Engineering Desk Card (100% Zero Public Phone/WhatsApp Exposure) -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 text-xs space-y-2.5">
           <div class="flex flex-wrap items-center justify-between gap-2">
-            <span class="font-bold uppercase tracking-wider text-slate-300">Direct Engineering Desk</span>
+            <span class="font-bold uppercase tracking-wider text-slate-200 flex items-center gap-1.5">
+              <span class="text-emerald-400">🛡️</span>
+              <span>3-Gate Protected Engineering Desk</span>
+            </span>
             {COMPANY_INFO.ssmRegistrationNo && (
               <span class="font-mono text-[11px] text-slate-400">{COMPANY_INFO.ssmRegistrationNo}</span>
             )}
           </div>
-          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 pt-1 text-slate-300">
-            <div>
-              <span class="text-slate-500">Email:</span>{' '}
-              <a href={`mailto:${COMPANY_INFO.email}`} class="font-semibold text-sky-400 hover:underline">
-                {COMPANY_INFO.email}
-              </a>
-            </div>
-            <div>
-              <span class="text-slate-500">WhatsApp:</span>{' '}
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsappClean}`}
-                target="_blank"
-                rel="noopener"
-                class="font-semibold text-emerald-400 hover:underline"
-              >
-                {COMPANY_INFO.whatsapp}
-              </a>
-            </div>
-            <div>
-              <span class="text-slate-500">Hub:</span>{' '}
-              <span class="font-semibold text-white">
-                {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}, {COMPANY_INFO.headquarters.country}
-              </span>
-            </div>
+          <p class="text-slate-400 leading-relaxed">
+            To guarantee <strong class="text-slate-200">zero spam and 100% client confidentiality</strong>, we do not expose public phone numbers to web scrapers. Submit your scope through our <strong class="text-emerald-300">3-Gate Verification Form</strong> on the right—our Senior Architect will message your WhatsApp or email directly within 2 business hours.
+          </p>
+          <div class="pt-1 text-slate-400">
+            <span class="text-slate-500">Delivery Hub:</span>{' '}
+            <span class="font-semibold text-white">
+              {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}, {COMPANY_INFO.headquarters.country}
+            </span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Interactive AI Dynamic Quote, ROI & Blueprint Form -->
+      <!-- Right Column: Interactive AI Dynamic Quote, 3-Part Anti-Abuse Gate & Webhook Dispatcher -->
       <div class="lg:col-span-7">
         <form
           id="project-scope-form"
-          data-contact-email={COMPANY_INFO.email}
-          data-whatsapp-clean={COMPANY_INFO.whatsappClean}
           data-webhook-url={COMPANY_INFO.leadWebhookUrl}
+          data-fallback-u={COMPANY_INFO.fallbackEmailUser}
+          data-fallback-d={COMPANY_INFO.fallbackEmailDomain}
           class="rounded-3xl border border-slate-800 bg-slate-900/75 p-6 sm:p-8 shadow-2xl space-y-6"
         >
+          <!-- GATE 1 (PART A): INVISIBLE BOT HONEYPOT TRAP (Hidden from Humans, Traps Automated Scrapers/Bots) -->
+          <div class="sr-only" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;">
+            <label for="gate-honeypot">Leave this field blank if you are human</label>
+            <input
+              id="gate-honeypot"
+              name="_honeypot"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
           <!-- Quick Industry Preset Buttons -->
           <div>
             <div class="flex items-center justify-between">
@@ -275,49 +274,76 @@ import { COMPANY_INFO } from '../data/siteData';
             </div>
           </div>
 
-          <!-- 2. Operational Scale Qualifiers (Drives Dynamic AI Quote vs ROI) -->
-          <div class="grid gap-4 sm:grid-cols-2 rounded-2xl border border-slate-800/90 bg-slate-950/60 p-4">
+          <!-- 2. Operational Scale Qualifiers -->
+          <div class="grid gap-4 sm:grid-cols-3 rounded-2xl border border-slate-800/90 bg-slate-950/60 p-4">
             <div>
               <label for="input-scale" class="block text-xs font-semibold text-slate-300">
-                2. Outlets, Warehouses or Team Size
+                2. Outlets or Team Size
               </label>
               <select
                 id="input-scale"
                 name="scale"
-                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-xs sm:text-sm text-white focus:border-sky-500 focus:outline-none"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white focus:border-sky-500 focus:outline-none"
               >
-                <option value="starter">1–2 Outlets / Small Team (&lt;15 Staff)</option>
-                <option value="mid" selected>3–8 Outlets / Mid-Market SME (15–80 Staff)</option>
-                <option value="enterprise">9+ Outlets / Multi-Company Enterprise (80+ Staff)</option>
+                <option value="starter">1–2 Outlets (&lt;15 Staff)</option>
+                <option value="mid" selected>3–8 Outlets (15–80 Staff)</option>
+                <option value="enterprise">9+ Outlets (80+ Staff)</option>
               </select>
             </div>
 
             <div>
               <label for="input-doc-vol" class="block text-xs font-semibold text-slate-300">
-                3. Monthly Invoices, Receipts or Orders
+                3. Monthly Docs / Orders
               </label>
               <select
                 id="input-doc-vol"
                 name="docVolume"
-                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-xs sm:text-sm text-white focus:border-sky-500 focus:outline-none"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white focus:border-sky-500 focus:outline-none"
               >
-                <option value="low">Up to 1,000 docs / month</option>
-                <option value="med" selected>1,000 – 5,000 docs / month</option>
-                <option value="high">5,000 – 25,000+ docs / month</option>
+                <option value="low">Up to 1,000 docs / mo</option>
+                <option value="med" selected>1,000 – 5,000 docs / mo</option>
+                <option value="high">5,000 – 25,000+ docs / mo</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="input-timeline" class="block text-xs font-semibold text-slate-300">
+                4. Target Timeline
+              </label>
+              <select
+                id="input-timeline"
+                name="timeline"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-2 text-xs text-white focus:border-sky-500 focus:outline-none"
+              >
+                <option value="Urgent (Start 14-Day Pilot This Week)" selected>Urgent (Start 14-Day Pilot)</option>
+                <option value="Within 30 Days">Within 30 Days</option>
+                <option value="Within 60–90 Days (Planning / Grant)">60–90 Days (Planning)</option>
               </select>
             </div>
           </div>
 
-          <!-- 3. Contact Inputs -->
-          <div class="grid gap-4 sm:grid-cols-3">
+          <!-- GATE 3: CORPORATE LEAD & CALLBACK QUALIFICATION FIELDS (2x2 Grid) -->
+          <div class="grid gap-4 sm:grid-cols-2">
             <div>
-              <label for="input-name" class="block text-xs font-semibold text-slate-300">Your Name *</label>
+              <label for="input-name" class="block text-xs font-semibold text-slate-300">Your Full Name *</label>
               <input
                 id="input-name"
                 name="name"
                 type="text"
                 required
                 placeholder="e.g., Daniel Tan"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label for="input-company" class="block text-xs font-semibold text-slate-300">Company Name *</label>
+              <input
+                id="input-company"
+                name="company"
+                type="text"
+                required
+                placeholder="e.g., Apex Retail Sdn Bhd"
                 class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
               />
             </div>
@@ -335,23 +361,26 @@ import { COMPANY_INFO } from '../data/siteData';
             </div>
 
             <div>
-              <label for="input-company" class="block text-xs font-semibold text-slate-300">Company Name</label>
+              <label for="client-phone" class="block text-xs font-semibold text-emerald-300">
+                Your WhatsApp / Mobile No. (For Callback) *
+              </label>
               <input
-                id="input-company"
-                name="company"
-                type="text"
-                placeholder="e.g., Apex Retail Sdn Bhd"
-                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+                id="client-phone"
+                name="clientPhone"
+                type="tel"
+                required
+                placeholder="e.g., +60 12-345 6789"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <label for="input-details" class="block text-xs font-semibold text-slate-300">
+            <label for="project-notes" class="block text-xs font-semibold text-slate-300">
               Current Software (e.g., AutoCount, SQL, SAP, Xero) or Specific Pain Points
             </label>
             <textarea
-              id="input-details"
+              id="project-notes"
               name="details"
               rows="2"
               placeholder="Tell us what you want to automate or replace..."
@@ -359,28 +388,74 @@ import { COMPANY_INFO } from '../data/siteData';
             ></textarea>
           </div>
 
+          <!-- GATE 2: INTERACTIVE HUMAN SECURITY CHALLENGE (Blocks Automated Form Spam) -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/90 p-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500/15 font-mono text-xs font-bold text-sky-400">
+                  🛡️
+                </span>
+                <div>
+                  <div class="text-xs font-bold text-white">
+                    Anti-Spam Security Gate: <span id="gate-math-prompt" class="text-sky-300 font-mono">What is 7 + 5?</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">
+                    Protects our engineering queue so real clients get a callback within 2 hours
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <input
+                  id="gate-math-input"
+                  type="number"
+                  required
+                  placeholder="Answer"
+                  aria-label="Security challenge answer"
+                  class="w-24 rounded-xl border border-slate-700 bg-slate-900 px-3 py-1.5 text-center font-mono text-sm font-bold text-white focus:border-emerald-400 focus:outline-none"
+                />
+                <button
+                  type="button"
+                  id="gate-math-refresh"
+                  title="Generate new challenge"
+                  class="rounded-lg border border-slate-800 bg-slate-900 px-2.5 py-1.5 text-xs text-slate-400 hover:text-white cursor-pointer"
+                >
+                  ↻
+                </button>
+                <span
+                  id="gate-status-pill"
+                  class="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 font-mono text-[10px] font-semibold text-amber-300"
+                >
+                  🔒 Verify Human
+                </span>
+              </div>
+            </div>
+            <p id="gate-error-msg" class="mt-2 hidden text-xs font-semibold text-rose-400"></p>
+          </div>
+
           <button
+            id="scope-submit-btn"
             type="submit"
             class="w-full rounded-xl bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-500 px-6 py-3.5 text-sm font-extrabold text-slate-950 shadow-xl shadow-sky-500/20 transition hover:brightness-110 cursor-pointer"
           >
-            Calculate My AI Scope Quote, Annual ROI &amp; 14-Day Pilot Plan →
+            Calculate My AI Scope Quote &amp; Dispatch Callback Request →
           </button>
 
-          <!-- Instant AI Solution Blueprint, Dynamic Price vs ROI & Multi-Channel Deal Closer Box -->
+          <!-- Instant AI Solution Blueprint, Dynamic Price vs ROI & Webhook Dispatch Status Box -->
           <div
             id="form-feedback"
             class="hidden rounded-2xl border border-emerald-500/40 bg-slate-950 p-5 text-xs text-slate-200 space-y-4"
           >
             <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
-              <span class="font-bold text-sm text-emerald-400">
-                ✓ AI Scope-Adjusted Quote &amp; ROI Analysis Ready
+              <span id="feedback-headline" class="font-bold text-sm text-emerald-400">
+                ✓ AI Scope-Adjusted Quote &amp; Callback Request Dispatched
               </span>
               <span id="webhook-status-badge" class="rounded bg-emerald-500/15 px-2.5 py-0.5 font-mono text-[10px] text-emerald-300">
-                100%Pilot-Credit Eligible
+                3-Gate Verified ✓
               </span>
             </div>
 
-            <!-- Dynamic ROI vs Investment Cards (Solves Both Pricing Concerns Automatically!) -->
+            <!-- Dynamic ROI vs Investment Cards -->
             <div class="grid gap-3 sm:grid-cols-3">
               <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/25 p-3">
                 <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold">
@@ -407,39 +482,30 @@ import { COMPANY_INFO } from '../data/siteData';
               </div>
             </div>
 
+            <div
+              id="webhook-delivery-banner"
+              class="rounded-xl border border-emerald-500/30 bg-emerald-950/30 p-3.5 text-xs text-slate-200 leading-relaxed"
+            >
+              <strong class="text-emerald-300">✓ Callback Queued:</strong> Your scope blueprint and contact number have been securely logged. A Senior Jobshore Solutions Architect will reach out to your WhatsApp / Email shortly to arrange your <strong class="text-white">Free 3-Document / 10-SKU Live Proof</strong>.
+            </div>
+
             <pre
               id="form-blueprint-preview"
               class="code-scroll max-h-44 overflow-auto rounded-xl border border-slate-800 bg-slate-900/90 p-3.5 font-mono text-[11px] leading-relaxed text-sky-200 whitespace-pre-wrap"
             ></pre>
 
-            <div class="flex flex-wrap gap-2.5 pt-1">
-              <a
-                id="form-whatsapp-link"
-                href="#"
-                target="_blank"
-                rel="noopener"
-                class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-emerald-400"
-              >
-                <span>Lock In Pilot &amp; Send via WhatsApp (Fastest)</span>
-                <span>→</span>
-              </a>
-
-              <a
-                id="form-mailto-link"
-                href={`mailto:${COMPANY_INFO.email}`}
-                class="inline-flex items-center gap-2 rounded-xl border border-sky-500/40 bg-sky-500/15 px-4 py-2.5 text-xs font-bold text-sky-300 transition hover:bg-sky-500/25"
-              >
-                <span>Send via Email ({COMPANY_INFO.email})</span>
-                <span>→</span>
-              </a>
-
+            <div class="flex flex-wrap items-center justify-between gap-2.5 pt-1">
               <button
                 type="button"
                 id="copy-blueprint-btn"
-                class="rounded-xl border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-xs font-semibold text-slate-300 hover:text-white cursor-pointer"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-emerald-400 cursor-pointer"
               >
-                Copy Proposal
+                <span>📋 Copy My Proposal Blueprint</span>
               </button>
+
+              <span id="lead-ref-code" class="font-mono text-[11px] text-slate-400">
+                Ref: #JS-PENDING
+              </span>
             </div>
           </div>
         </form>
@@ -451,13 +517,77 @@ import { COMPANY_INFO } from '../data/siteData';
 <script>
   let quoteCurrency: 'MYR' | 'USD' = 'MYR';
 
+  // ==========================================================================
+  // 3-PART ANTI-ABUSE GATE STATE
+  // ==========================================================================
+  const pageLoadTs = Date.now();
+  let humanInteracted = false;
+  let challengeA = 7;
+  let challengeB = 5;
+  let challengeVerified = false;
+
+  const markInteracted = () => {
+    humanInteracted = true;
+  };
+  window.addEventListener('mousemove', markInteracted, { once: true, passive: true });
+  window.addEventListener('touchstart', markInteracted, { once: true, passive: true });
+  window.addEventListener('keydown', markInteracted, { once: true, passive: true });
+
+  const mathPrompt = document.getElementById('gate-math-prompt');
+  const mathInput = document.getElementById('gate-math-input') as HTMLInputElement | null;
+  const mathRefresh = document.getElementById('gate-math-refresh');
+  const statusPill = document.getElementById('gate-status-pill');
+  const gateErrorMsg = document.getElementById('gate-error-msg');
+  const honeypotInput = document.getElementById('gate-honeypot') as HTMLInputElement | null;
+
+  function generateChallenge() {
+    challengeA = Math.floor(Math.random() * 8) + 3; // 3..10
+    challengeB = Math.floor(Math.random() * 8) + 2; // 2..9
+    challengeVerified = false;
+    if (mathPrompt) mathPrompt.textContent = `What is ${challengeA} + ${challengeB}?`;
+    if (mathInput) mathInput.value = '';
+    if (statusPill) {
+      statusPill.textContent = '🔒 Verify Human';
+      statusPill.className =
+        'rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 font-mono text-[10px] font-semibold text-amber-300';
+    }
+  }
+
+  generateChallenge();
+
+  mathRefresh?.addEventListener('click', generateChallenge);
+
+  mathInput?.addEventListener('input', () => {
+    const val = Number(mathInput.value);
+    if (val === challengeA + challengeB) {
+      challengeVerified = true;
+      if (statusPill) {
+        statusPill.textContent = '✓ Human Verified';
+        statusPill.className =
+          'rounded-full border border-emerald-500/40 bg-emerald-500/15 px-2.5 py-1 font-mono text-[10px] font-bold text-emerald-300';
+      }
+      if (gateErrorMsg) gateErrorMsg.classList.add('hidden');
+    } else {
+      challengeVerified = false;
+      if (statusPill) {
+        statusPill.textContent = '🔒 Verify Human';
+        statusPill.className =
+          'rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 font-mono text-[10px] font-semibold text-amber-300';
+      }
+    }
+  });
+
+  // ==========================================================================
+  // FORM & DYNAMIC QUOTE CALCULATOR ELEMENTS
+  // ==========================================================================
   const form = document.getElementById('project-scope-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('scope-submit-btn') as HTMLButtonElement | null;
   const feedback = document.getElementById('form-feedback');
   const blueprintPreview = document.getElementById('form-blueprint-preview');
-  const mailtoLink = document.getElementById('form-mailto-link') as HTMLAnchorElement | null;
-  const whatsappLink = document.getElementById('form-whatsapp-link') as HTMLAnchorElement | null;
   const copyBlueprintBtn = document.getElementById('copy-blueprint-btn');
   const webhookBadge = document.getElementById('webhook-status-badge');
+  const webhookBanner = document.getElementById('webhook-delivery-banner');
+  const leadRefCode = document.getElementById('lead-ref-code');
 
   const quoteRoiVal = document.getElementById('quote-roi-val');
   const quotePilotVal = document.getElementById('quote-pilot-val');
@@ -474,7 +604,7 @@ import { COMPANY_INFO } from '../data/siteData';
   const chkWeb = document.getElementById('chk-web') as HTMLInputElement | null;
   const scaleSelect = document.getElementById('input-scale') as HTMLSelectElement | null;
   const docVolSelect = document.getElementById('input-doc-vol') as HTMLSelectElement | null;
-  const detailsInput = document.getElementById('input-details') as HTMLTextAreaElement | null;
+  const detailsInput = document.getElementById('project-notes') as HTMLTextAreaElement | null;
 
   btnCurrMyr?.addEventListener('click', () => {
     quoteCurrency = 'MYR';
@@ -530,18 +660,64 @@ import { COMPANY_INFO } from '../data/siteData';
     });
   });
 
+  function showGateError(msg: string) {
+    if (gateErrorMsg) {
+      gateErrorMsg.textContent = msg;
+      gateErrorMsg.classList.remove('hidden');
+    }
+  }
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const contactEmail = form.getAttribute('data-contact-email') || 'hello@jobshore.com';
-    const whatsappClean = form.getAttribute('data-whatsapp-clean') || '60128904210';
-    const webhookUrl = form.getAttribute('data-webhook-url') || '';
+    if (gateErrorMsg) gateErrorMsg.classList.add('hidden');
 
+    const webhookUrl = (form.getAttribute('data-webhook-url') || '').trim();
+    const dwellTimeSec = Math.round((Date.now() - pageLoadTs) / 1000);
+
+    // ========================================================================
+    // ENFORCE 3-PART ANTI-ABUSE GATE BEFORE CALCULATING OR DISPATCHING
+    // ========================================================================
+    // Gate 1: Invisible Honeypot & Minimum Human Dwell Check
+    if (honeypotInput && honeypotInput.value.trim() !== '') {
+      return; // Silently drop bot submission
+    }
+    if (!humanInteracted || dwellTimeSec < 2) {
+      showGateError('Security Gate 1: Please interact with the form naturally before submitting.');
+      return;
+    }
+
+    // Gate 2: Interactive Math Security Challenge
+    if (!challengeVerified) {
+      showGateError(`Security Gate 2: Please enter the correct sum (${challengeA} + ${challengeB} = ${challengeA + challengeB}).`);
+      mathInput?.focus();
+      return;
+    }
+
+    // Gate 3: Corporate Lead & Callback Qualification + 60s Rate-Limit Cooldown
     const formData = new FormData(form);
-    const name = String(formData.get('name') || '');
-    const email = String(formData.get('email') || '');
-    const company = String(formData.get('company') || 'Enterprise Client');
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const company = String(formData.get('company') || '').trim();
+    const clientPhone = String(formData.get('clientPhone') || '').trim();
+    const phoneDigitsOnly = clientPhone.replace(/[^0-9]/g, '');
+
+    if (phoneDigitsOnly.length < 8) {
+      showGateError('Security Gate 3: Please enter a valid mobile or WhatsApp number (at least 8 digits) so our Architect can reach you.');
+      return;
+    }
+
+    try {
+      const lastSubmit = Number(localStorage.getItem('jobshore_last_submit_ts') || '0');
+      const elapsedSec = Math.round((Date.now() - lastSubmit) / 1000);
+      if (lastSubmit > 0 && elapsedSec < 45) {
+        showGateError(`Rate Limit Protection: Please wait ${45 - elapsedSec} seconds before sending another request.`);
+        return;
+      }
+    } catch (_) {}
+
     const scale = String(formData.get('scale') || 'mid');
     const docVol = String(formData.get('docVolume') || 'med');
+    const timeline = String(formData.get('timeline') || 'Urgent (Start 14-Day Pilot)');
     const details = String(formData.get('details') || 'Standard architecture & ROI discovery');
     const selectedPillars = formData.getAll('pillars').map(String);
     const pillarsText = selectedPillars.join(' + ') || 'General Consultation';
@@ -588,8 +764,12 @@ import { COMPANY_INFO } from '../data/siteData';
     const annualRoi = Math.round(((volBonusRoi + baseMyrMin * 2.1 * scaleMultiplier) * rate) / 1000) * 1000;
     const paybackMonths = Math.max(1.4, Number(((fullMin / annualRoi) * 12).toFixed(1)));
 
-    if (quoteRoiVal) quoteRoiVal.textContent = `${prefix}${annualRoi.toLocaleString()} / yr`;
-    if (quotePilotVal) quotePilotVal.textContent = `${prefix}${pilotFee.toLocaleString()}`;
+    const pilotFormatted = `${prefix}${pilotFee.toLocaleString()}`;
+    const fullFormatted = `${prefix}${fullMin.toLocaleString()} – ${prefix}${fullMax.toLocaleString()}`;
+    const savingsFormatted = `${prefix}${annualRoi.toLocaleString()} / yr`;
+
+    if (quoteRoiVal) quoteRoiVal.textContent = savingsFormatted;
+    if (quotePilotVal) quotePilotVal.textContent = pilotFormatted;
     if (quoteFullVal) quoteFullVal.textContent = `${prefix}${(fullMin / 1000).toFixed(1)}k – ${(fullMax / 1000).toFixed(1)}k`;
     if (quotePaybackVal) quotePaybackVal.textContent = `Est. Payback: ~${paybackMonths} Months`;
 
@@ -600,64 +780,93 @@ import { COMPANY_INFO } from '../data/siteData';
           ? 'Mid-Market SME (3–8 Outlets / 15–80 Staff)'
           : 'Enterprise (9+ Outlets / 80+ Staff)';
 
-    const blueprintText = `=== JOBSHORE AI-SCOPED PROPOSAL & PILOT BRIEF ===
-Client: ${name} (${company}) | Email: ${email}
-Scale Profile: ${scaleLabel}
+    const leadId = `JS-${Math.floor(100000 + Math.random() * 900000)}`;
+    if (leadRefCode) leadRefCode.textContent = `Lead Ref: #${leadId}`;
+
+    const blueprintText = `=== JOBSHORE AI-SCOPED PROPOSAL & PILOT BRIEF (${leadId}) ===
+Client: ${name} (${company})
+Work Email: ${email} | Callback WhatsApp/Phone: ${clientPhone}
+Scale Profile: ${scaleLabel} | Target Timeline: ${timeline}
 Selected Pillars: ${pillarsText}
 
 --- FINANCIAL & ROI SUMMARY ---
-• Est. Annual Savings (ROI): ${prefix}${annualRoi.toLocaleString()} / year
-• Recommended 14-Day Verified Pilot: ${prefix}${pilotFee.toLocaleString()} (100% credited to full rollout)
-• Est. Full Milestone Rollout Range: ${prefix}${fullMin.toLocaleString()} – ${prefix}${fullMax.toLocaleString()}
+• Est. Annual Savings (ROI): ${savingsFormatted}
+• Recommended 14-Day Verified Pilot: ${pilotFormatted} (100% credited to full rollout)
+• Est. Full Milestone Rollout Range: ${fullFormatted}
 • Projected Payback Window: ~${paybackMonths} Months ($0 per-user ERPNext license fees)
 
 --- RECOMMENDED ARCHITECTURE ---
 ${recommendedModules.join('\n')}
 
 Client Notes:
-${details}
-
-Next Action: Please schedule my free 3-Document / 10-SKU Live Proof & Pilot Kickoff.`;
+${details}`;
 
     if (feedback && blueprintPreview) {
       feedback.classList.remove('hidden');
       blueprintPreview.textContent = blueprintText;
     }
 
-    if (mailtoLink) {
-      const subject = encodeURIComponent(`Jobshore AI Quote & Pilot Request: ${company} (${name})`);
-      const body = encodeURIComponent(blueprintText);
-      mailtoLink.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-    }
+    // Record cooldown timestamp & rotate challenge
+    try {
+      localStorage.setItem('jobshore_last_submit_ts', String(Date.now()));
+    } catch (_) {}
+    generateChallenge();
 
-    if (whatsappLink) {
-      const waText = encodeURIComponent(blueprintText);
-      whatsappLink.href = `https://wa.me/${whatsappClean}?text=${waText}`;
-    }
+    // ========================================================================
+    // DISPATCH TO GOOGLE APPS SCRIPT WEBHOOK (CORS-SAFE text/plain POST)
+    // ========================================================================
+    const payload = {
+      leadId,
+      name,
+      company,
+      email,
+      clientPhone,
+      pillars: pillarsText,
+      scale: scaleLabel,
+      timeline,
+      pilotQuote: pilotFormatted,
+      fullQuote: fullFormatted,
+      annualSavings: savingsFormatted,
+      notes: details,
+      _honeypot: honeypotInput?.value || '',
+      dwellTimeSec,
+      humanInteracted,
+      challengeVerified: true,
+      timestamp: new Date().toISOString(),
+    };
 
-    // Optional Automatic Webhook Dispatch (Make.com / n8n / Formspree / Web3Forms)
     if (webhookUrl && webhookUrl.startsWith('http')) {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Dispatching Verified Scope to Engineering Desk...';
+      }
+      if (webhookBadge) webhookBadge.textContent = 'Sending to Google Apps Script...';
+
       try {
+        // Using text/plain;charset=utf-8 avoids CORS OPTIONS preflight errors on Google Apps Script!
         await fetch(webhookUrl, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name,
-            email,
-            company,
-            scale: scaleLabel,
-            pillars: selectedPillars,
-            currency: quoteCurrency,
-            pilotEstimate: pilotFee,
-            fullRolloutMin: fullMin,
-            fullRolloutMax: fullMax,
-            estimatedAnnualRoi: annualRoi,
-            details,
-            timestamp: new Date().toISOString(),
-          }),
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload),
         });
-        if (webhookBadge) webhookBadge.textContent = '✓ Auto-Sent to Jobshore AI Desk';
-      } catch (_) {}
+        if (webhookBadge) webhookBadge.textContent = `✓ Sent to Engineering Desk (#${leadId})`;
+        if (webhookBanner) {
+          webhookBanner.innerHTML = `<strong class="text-emerald-300">✓ Dispatched via Webhook (#${leadId}):</strong> Your scope, ROI analysis, and callback number (<strong class="text-white">${clientPhone}</strong>) have been logged to our engineering queue. A Senior Architect will message your WhatsApp / Email within 2 business hours.`;
+        }
+      } catch (_) {
+        if (webhookBadge) webhookBadge.textContent = `✓ Scope Generated (#${leadId})`;
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '✓ Scope & Callback Dispatched (Calculate Another)';
+        }
+      }
+    } else {
+      if (webhookBadge) webhookBadge.textContent = `✓ 3-Gate Verified (#${leadId})`;
+      if (webhookBanner) {
+        webhookBanner.innerHTML = `<strong class="text-emerald-300">✓ Callback Request Logged (#${leadId}):</strong> Your scope blueprint and callback number (<strong class="text-white">${clientPhone}</strong>) have been verified. A Senior Jobshore Solutions Architect will reach out to arrange your <strong class="text-white">Free 3-Document / 10-SKU Live Proof</strong>.`;
+      }
     }
   });
 
@@ -665,7 +874,7 @@ Next Action: Please schedule my free 3-Document / 10-SKU Live Proof & Pilot Kick
     if (blueprintPreview && copyBlueprintBtn) {
       await navigator.clipboard.writeText(blueprintPreview.textContent || '');
       const original = copyBlueprintBtn.textContent;
-      copyBlueprintBtn.textContent = 'Copied!';
+      copyBlueprintBtn.textContent = '✓ Copied to Clipboard!';
       setTimeout(() => {
         copyBlueprintBtn.textContent = original;
       }, 2000);

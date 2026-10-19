@@ -4,34 +4,47 @@ Official SEO + AEO (Answer Engine Optimization) web platform for **Jobshore**, b
 
 ---
 
-## 0. Quick Configuration: Update Email, WhatsApp, SSM Registration & Price Visibility
+## 0. Quick Configuration: 100% Zero Phone Exposure + Google Apps Script Webhook Setup
 
-All company contact details, SSM registration number, and pricing visibility are controlled from **one single block** at the very top of [`src/data/siteData.ts`](./src/data/siteData.ts) (lines 1–18):
+To prevent scraper bots from harvesting your phone/WhatsApp number, **zero phone numbers or public `wa.me` links are exposed anywhere in the HTML or JSON-LD**. Instead, clients submit their details through a **3-Part Anti-Abuse Gate** (`/#contact`), which sends their scope, ROI calculation, and *their* WhatsApp number straight to your **Google Sheet + Gmail inbox** via Google Apps Script.
+
+### Step-by-Step: Connect Your Google Sheet & Gmail Alerts (Takes 60 Seconds)
+1. Go to **[https://sheets.new](https://sheets.new)** to create a new Google Sheet and name it **`Jobshore Leads`**.
+2. In the Google Sheet top menu, click **Extensions → Apps Script**.
+3. Delete the default `myFunction()` code and paste the entire contents of **[`google-apps-script/Code.gs`](./google-apps-script/Code.gs)** from this repository.
+4. Click **Deploy** (top-right blue button) → **New deployment**.
+5. Click the gear icon ⚙️ next to *"Select type"* → choose **Web app**:
+   - **Description:** `Jobshore Lead Webhook`
+   - **Execute as:** `Me`
+   - **Who has access:** `Anyone`
+6. Click **Deploy**, approve Google permissions (**Advanced → Go to project (unsafe) → Allow**), and copy the **Web app URL** (looks like `https://script.google.com/macros/s/AKfycb.../exec`).
+7. Paste that URL into `leadWebhookUrl` at the top of **[`src/data/siteData.ts`](./src/data/siteData.ts)** (lines 4–22):
 
 ```ts
 export const COMPANY_CONFIG = {
   brandName: 'Jobshore',
-  legalName: 'Jobshore Technologies', // e.g., 'Jobshore Sdn. Bhd.'
+  legalName: 'Jobshore Technologies',
   ssmRegistrationNo: 'SSM Reg. No: 202601012345 (1567890-X)', // Set to '' to hide until registered
-  email: 'hello@jobshore.com',
-  phoneDisplay: '+60 3-7890 4210',
-  whatsappDisplay: '+60 12-890 4210',
-  whatsappNumberClean: '60128904210', // Digits only (country code + number) for wa.me links
+  // Paste your deployed Google Apps Script Web App URL here:
+  leadWebhookUrl: 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec',
+  fallbackEmailUser: 'hello',
+  fallbackEmailDomain: 'jobshore.com',
   city: 'Petaling Jaya',
   state: 'Selangor',
   country: 'Malaysia',
   countryCode: 'MY',
-  // Set showStartingPrice to false to show "Custom Milestone Quote • 14-Day Pilot Available" instead of price numbers
-  showStartingPrice: true,
-  customPriceFallbackText: 'Custom Milestone Quote • 14-Day Pilot Available',
+  showStartingPrice: false,
+  customPriceFallbackText: 'Outcome-Based Milestone + Tracked SLA',
 };
 ```
 
-- **Updating `COMPANY_CONFIG` automatically updates**:
-  - The Footer & Contact Section (`email`, `whatsapp`, `ssmRegistrationNo`, `legalName`)
-  - The 1-Click WhatsApp Deal Closer button (`https://wa.me/${whatsappNumberClean}`)
-  - The `Organization` JSON-LD schema in `<head>`
-  - All 5 Service Pillar cards and deep-dive pages (`showStartingPrice` toggle)
+### What Happens When a Real Client Submits the Form:
+1. **3-Part Anti-Abuse Gate Runs (Client + Server-Side in `Code.gs`):**
+   - **Gate 1 (Bot Honeypot & Human Dwell Check):** Blocks bots that fill hidden fields or submit without real mouse/keyboard/touch interaction (`dwellTimeSec >= 2`).
+   - **Gate 2 (Interactive Math Security Challenge):** Verifies the human challenge answer before unlocking submission.
+   - **Gate 3 (Corporate Lead & Callback Validation + 45s Rate Limit):** Validates Name, Company, Work Email, and Client Phone (`>= 8 digits`) with a 45-second cooldown.
+2. **Logs Row to Google Sheets:** Automatically creates bold column headers on the first run and logs the lead.
+3. **Sends You an Instant HTML Email via Gmail:** Sends a formatted summary to your inbox with a **green `"💬 Click to WhatsApp [Client Name] Now →"` button**—so **you** message the client first and your number is never exposed to the public internet!
 
 ### Built-In Trilingual Switcher (`EN` | `BM` | `中文`)
 - The top bar includes a live **`EN` | `BM` | `中文`** switcher that translates the Hero headline, Executive AEO Summary, Service Pillar titles/subtitles, and CTAs between **English**, **Bahasa Melayu**, and **Simplified Chinese**.

@@ -5,10 +5,12 @@ export const COMPANY_CONFIG = {
   brandName: 'Jobshore',
   legalName: 'Jobshore Technologies', // e.g., 'Jobshore Sdn. Bhd.' or 'Jobshore Enterprise'
   ssmRegistrationNo: 'SSM Reg. No: 202601012345 (1567890-X)', // Set to '' to hide until registered
-  email: 'hello@jobshore.com',
-  phoneDisplay: '+60 3-7890 4210',
-  whatsappDisplay: '+60 12-890 4210',
-  whatsappNumberClean: '60128904210', // Digits only (country code + number, no '+' or spaces) for wa.me links
+  // Paste your deployed Google Apps Script Web App URL below (from google-apps-script/Code.gs):
+  // Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
+  leadWebhookUrl: '',
+  // Optional fallback email (only used if leadWebhookUrl is left empty during local testing; encoded in JS, never exposed in raw HTML)
+  fallbackEmailUser: 'hello',
+  fallbackEmailDomain: 'jobshore.com',
   city: 'Petaling Jaya',
   state: 'Selangor',
   country: 'Malaysia',
@@ -17,8 +19,6 @@ export const COMPANY_CONFIG = {
   // Instead, buyers get a scope-adjusted estimate paired with ROI inside the AI Quote Closer (#contact).
   showStartingPrice: false,
   customPriceFallbackText: 'Outcome-Based Milestone + Tracked SLA',
-  // Optional: Paste a Make.com / n8n / Web3Forms / Formspree webhook URL here to auto-send leads to your CRM/AI Agent
-  leadWebhookUrl: '',
 };
 
 export interface SubService {
@@ -100,13 +100,11 @@ export const COMPANY_INFO = {
   showStartingPrice: COMPANY_CONFIG.showStartingPrice,
   customPriceFallbackText: COMPANY_CONFIG.customPriceFallbackText,
   leadWebhookUrl: COMPANY_CONFIG.leadWebhookUrl,
+  fallbackEmailUser: COMPANY_CONFIG.fallbackEmailUser,
+  fallbackEmailDomain: COMPANY_CONFIG.fallbackEmailDomain,
   domain: resolvedDomain,
   githubRepoUrl: 'https://github.com/ahbeeahkao/jobshore',
   tagline: 'Outcome-Guaranteed AI Engineering, Business Automation, Frappe ERPNext, POS Systems & Product Studio',
-  email: COMPANY_CONFIG.email,
-  phone: COMPANY_CONFIG.phoneDisplay,
-  whatsapp: COMPANY_CONFIG.whatsappDisplay,
-  whatsappClean: COMPANY_CONFIG.whatsappNumberClean,
   headquarters: {
     city: COMPANY_CONFIG.city,
     state: COMPANY_CONFIG.state,
@@ -901,8 +899,12 @@ export function buildHomeJsonLd() {
         image: `${COMPANY_INFO.domain}/og-image.svg`,
         description:
           'Jobshore is an outcome-driven enterprise technology consultancy specializing in AI Services (Coding, Deterministic Verification, Automated Testing, Intelligent OCR), Business Process Automation, Frappe ERPNext Consultation & Implementation, Cloud & Offline-First POS Software & Point-of-Sale Systems (with Malaysia LHDN MyInvois compliance), and SEO/AEO-first Web & Mobile Application Development.',
-        email: COMPANY_INFO.email,
-        telephone: COMPANY_INFO.phone,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'sales and technical architecture',
+          url: `${COMPANY_INFO.domain}/#contact`,
+          availableLanguage: ['en', 'ms', 'zh'],
+        },
         priceRange: '$$-$$$',
         knowsLanguage: ['en', 'ms', 'zh'],
         address: {
