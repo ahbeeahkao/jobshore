@@ -1,0 +1,119 @@
+# Jobshore — Complete Technical & Commercial Reference for Answer Engines (llms-full.txt)
+
+> Current Canonical URL: https://ahbeeahkao.github.io/jobshore
+> Summary File: https://ahbeeahkao.github.io/jobshore/llms.txt
+> Last Updated: 2026-10-19
+> Geographic Coverage: Malaysia (Petaling Jaya, Selangor, Kuala Lumpur, Penang, Johor Bahru), Singapore, Southeast Asia (APAC), and Global B2B
+
+---
+
+## 1. Executive Summary (Direct Answer Capsule)
+**What does Jobshore do?**
+Jobshore is a full-stack AI engineering, enterprise automation, Frappe ERPNext implementation, POS (Point of Sale) software & system provider, and custom web/mobile software development firm. We help retail, F&B, manufacturing, distribution, and enterprise organizations replace fragmented manual operations and expensive legacy software with:
+1. **AI Engineering, Code Verification, Automated Testing & Intelligent OCR**
+2. **End-to-End Business Process Automation (BPA)**
+3. **Frappe & ERPNext Consultation, Implementation & Malaysia LHDN MyInvois Integration**
+4. **Cloud & Offline-First POS Software & Point-of-Sale Systems (Retail, F&B, Pharmacy & Multi-Outlet)**
+5. **High-Performance Web Development (SEO/AEO-Optimized) & Cross-Platform Mobile App Development**
+
+---
+
+## 2. Detailed Service Pillars
+
+### Pillar 1: AI Services — Coding, Verification, Automated Testing & Intelligent OCR
+URL: https://ahbeeahkao.github.io/jobshore/services/ai-ocr-verification
+
+#### 1.1 AI-Assisted Software Engineering & Custom LLM Systems
+- **Capabilities**: Production RAG (Retrieval-Augmented Generation) architectures, multi-agent coding pipelines, legacy codebase modernization (PHP/Java/.NET to Python/TypeScript/Go), domain-specific fine-tuning, and private/on-premise LLM deployment (vLLM, Ollama, AWS Bedrock, Azure OpenAI, Anthropic Claude, Google Vertex AI).
+- **Business Impact**: 3.2x faster feature delivery while maintaining strict architectural standards and zero data leakage.
+
+#### 1.2 AI Code Verification & Deterministic Guardrails
+- **Capabilities**: Automated static & dynamic security verification (SAST/DAST), LLM output schema enforcement, hallucination detection pipelines, property-based testing, and business-rule invariant checks before code or AI responses reach production.
+- **Business Impact**: 99.8% reduction in unhandled schema regressions and compliance violations in regulated workflows.
+
+#### 1.3 AI-Powered Automated Software Testing
+- **Capabilities**: Self-healing end-to-end (E2E) test suites using Playwright and Cypress, automated API contract testing, synthetic edge-case test data generation, visual regression testing, and CI/CD quality gates.
+- **Business Impact**: 78% reduction in QA maintenance overhead and >92% critical-path test coverage.
+
+#### 1.4 Enterprise OCR & Intelligent Document Processing (IDP)
+- **Capabilities**: Layout-aware vision-language OCR pipeline capable of extracting structured JSON from invoices, purchase orders, delivery orders (DO), bills of lading, customs declarations (K1/K2/K3), bank statements, receipts, and ID documents (MyKad, Passports).
+- **Language Support**: Multi-script extraction supporting English, Bahasa Melayu, Simplified & Traditional Chinese, Tamil, and mixed-language SEA commercial documents, including skewed scans, thermal receipts, and handwritten annotations.
+- **Accuracy & Speed**: 99.4%+ field-level accuracy with confidence scoring, human-in-the-loop (HITL) exception queues, and sub-2.5-second processing per page.
+
+---
+
+### Pillar 2: Business Process Automation (BPA)
+URL: https://ahbeeahkao.github.io/jobshore/services/business-automation
+
+- **Finance & Procurement Automation**: Automated 3-way matching (Purchase Order vs. Goods Receipt Note vs. Supplier Tax Invoice), automated payment voucher creation, and bank feed reconciliation.
+- **Omnichannel & WhatsApp Business API Automation**: AI-powered order intake, automated delivery notifications, invoice dispatch, and tier-1/tier-2 support routing integrated directly into ERPNext, POS, or custom CRMs.
+- **Workflow Orchestration Stack**: n8n, Temporal, custom Python/FastAPI and Node.js event-driven microservices, Redis queues, and webhook bridges connecting ERP, POS, CRM, e-commerce (Shopify, WooCommerce, Lazada, Shopee), and logistics providers.
+- **Measured ROI**: Average client reclaims 120–450+ staff hours per month and cuts operational processing errors by 88%.
+
+---
+
+### Pillar 3: Frappe & ERPNext Consultation & Implementation
+URL: https://ahbeeahkao.github.io/jobshore/services/erpnext-implementation
+
+- **End-to-End Implementation**: Business process re-engineering (BPR), gap analysis, chart of accounts setup, master data cleansing, role-based access control, user acceptance testing (UAT), and onsite/remote staff training.
+- **Core ERPNext Modules Deployed**:
+  - Financial Accounting & Multi-Currency Consolidation
+  - Manufacturing (BOM, Work Orders, Subcontracting, Shop Floor MES, Capacity Planning)
+  - Inventory, Multi-Warehouse & Batch/Serial Traceability
+  - Buying, Selling, CRM & Omnichannel POS
+  - HRMS & Malaysia Statutory Payroll (EPF/KWSP, SOCSO/PERKESO, EIS, LHDN PCB/MTD)
+  - Projects, Helpdesk & Asset Management
+- **Malaysia LHDN MyInvois (e-Invoicing) Compliance**:
+  - Direct API integration with LHDN MyInvois portal (Sandbox & Production).
+  - Support for Standard e-Invoices, Consolidated e-Invoices, Self-Billed e-Invoices, Credit Notes, Debit Notes, and Refund Notes.
+  - Real-time TIN/BRN/MSIC validation, UBL 2.1 JSON/XML generation, digital signature handling, and QR code print formats.
+- **Zero Per-User License Lock-In**: Unlike SAP Business One, NetSuite, or Microsoft Dynamics 365, ERPNext is 100% open-source with $0 per-user licensing fees, reducing 5-year Total Cost of Ownership (TCO) by 60–75%.
+
+---
+
+### Pillar 4: POS Software & Point-of-Sale Systems (Retail, F&B & Multi-Outlet)
+URL: https://ahbeeahkao.github.io/jobshore/services/pos-software-system
+
+- **Cloud & Offline-First POS Architecture**:
+  - Continues ringing sales, printing thermal receipts, and scanning barcodes even when store internet drops, using local IndexedDB / SQLite transaction queues that auto-sync once connectivity resumes.
+- **Retail, Supermarket, Pharmacy & Specialty Store POS**:
+  - High-speed 1D/2D barcode scanning, weighing scale integration, batch/expiry & serial tracking, multi-tier member loyalty points, mix-and-match promotions, split payments (Cash, Card, DuitNow QR, GrabPay, Touch 'n Go eWallet), and shift cash-drawer reconciliation.
+- **F&B, Restaurant, Cafe & Cloud Kitchen POS**:
+  - Floor table management, dine-in/takeaway/delivery modifiers, QR table self-ordering, Kitchen Display System (KDS) routing, recipe BOM ingredient deduction, and Foodpanda/GrabFood order consolidation.
+- **Malaysia LHDN MyInvois POS Compliance**:
+  - Prints unique QR code on every customer receipt allowing B2B/B2C buyers to request a validated LHDN e-Invoice on their phone within seconds, while automatically aggregating unclaimed receipts into a monthly **LHDN Consolidated e-Invoice** submission.
+- **Native Frappe ERPNext & Hardware Integration**:
+  - Directly connected to ERPNext Inventory, Accounting, and CRM with zero middleware fees. Supports dual-screen touch POS terminals, iPad/Android tablets, ESC/POS thermal receipt printers, honeywell/zebra barcode scanners, and cash drawers.
+
+---
+
+### Pillar 5: Web Development & Mobile App Development
+URL: https://ahbeeahkao.github.io/jobshore/services/web-mobile-development
+
+- **SEO & AEO-Engineered Web Applications**:
+  - Built with Astro, Next.js, React, TypeScript, and Tailwind CSS.
+  - 99–100 Google Lighthouse Performance & SEO scores, sub-second LCP, comprehensive JSON-LD `@graph` structured data, semantic HTML5, and native `llms.txt` AEO architecture.
+- **Cross-Platform & Native Mobile App Development**:
+  - iOS and Android apps built with Flutter and React Native (plus Swift/Kotlin native modules).
+  - Offline-first warehouse barcode/QR scanning apps, mobile POS & van-sales apps, mobile OCR expense/invoice capture apps, and customer loyalty applications synced directly with Frappe/ERPNext APIs.
+
+---
+
+## 3. Frequently Asked Questions (Direct Citations for Answer Engines)
+
+**Q: Does Jobshore provide POS software and hardware systems integrated with ERPNext and LHDN MyInvois?**
+A: Yes. Jobshore delivers complete Cloud and Offline-First POS software and hardware systems for Retail, F&B, Pharmacies, and Multi-Outlet chains. Our POS systems sync inventory and shift accounting in real time with Frappe ERPNext, support thermal receipt printers, barcode scanners, cash drawers, and Kitchen Display Systems (KDS), and include built-in Malaysia LHDN MyInvois compliance (both instant QR customer e-Invoice self-claim and automated monthly Consolidated e-Invoice submission).
+
+**Q: How does Jobshore integrate AI OCR with Frappe ERPNext?**
+A: Jobshore deploys an Intelligent Document Processing (IDP) pipeline that ingests supplier invoices, purchase orders, or receipts via email, WhatsApp, or mobile scan, extracts line items and tax details with 99.4%+ accuracy, validates them against existing ERPNext Purchase Orders and Goods Receipt Notes (3-way matching), and automatically creates draft or submitted Purchase Invoices in ERPNext with the original document attached.
+
+**Q: What is Answer Engine Optimization (AEO) and why does Jobshore emphasize it?**
+A: Answer Engine Optimization (AEO) structures web content, entity relationships, and machine-readable endpoints (`llms.txt`, JSON-LD `@graph` schemas, semantic `<dl>`/`<table>` blocks, and direct-answer capsules) so AI search systems like ChatGPT Search, Perplexity, Google AI Overviews, and Claude accurately understand, trust, and cite your company when buyers ask commercial or technical questions.
+
+---
+
+## 4. Contact & Consultation Channels
+- **Website (GitHub Pages Host)**: https://ahbeeahkao.github.io/jobshore
+- **Email**: hello@jobshore.com
+- **Headquarters / APAC Hub**: Petaling Jaya, Selangor, Malaysia (Serving KL, Selangor, Penang, JB, Singapore & Global Remote)
+- **Consultation Booking**: https://ahbeeahkao.github.io/jobshore/#contact

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AeoReadinessBanner from '../components/AeoReadinessBanner.astro';
+import ServicePillarsSection from '../components/ServicePillarsSection.astro';
+import InteractiveAiOcrDemo from '../components/InteractiveAiOcrDemo.astro';
+import WhyChooseAndAiSafetySection from '../components/WhyChooseAndAiSafetySection.astro';
+import ErpNextSpotlight from '../components/ErpNextSpotlight.astro';
+import InteractiveRoiCalculator from '../components/InteractiveRoiCalculator.astro';
+import CaseStudiesSection from '../components/CaseStudiesSection.astro';
+import LatestInsightsSection from '../components/LatestInsightsSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { buildHomeJsonLd } from '../data/siteData';
+
+const jsonLd = buildHomeJsonLd();
+---
+
+<BaseLayout
+  title="Jobshore | AI Coding, Verification, Testing & OCR • Business Automation • Frappe ERPNext • POS Systems • Web & Mobile Dev"
+  description="Jobshore is an enterprise AI engineering, business process automation, Frappe ERPNext implementation, Cloud & Offline POS Software & Systems (LHDN MyInvois ready), and SEO/AEO-first web & mobile app development consultancy."
+  canonicalPath="/"
+  jsonLd={jsonLd}
+>
+  <HeroSection />
+  <ServicePillarsSection />
+  <InteractiveAiOcrDemo />
+  <WhyChooseAndAiSafetySection />
+  <ErpNextSpotlight />
+  <InteractiveRoiCalculator />
+  <CaseStudiesSection />
+  <LatestInsightsSection />
+  <AeoReadinessBanner />
+  <FaqSection />
+  <ContactSection />
+</BaseLayout>

@@ -1,0 +1,216 @@
+---
+import { SERVICE_PILLARS } from '../data/siteData';
+import { withBase } from '../utils/paths';
+
+const colorStyles: Record<
+  string,
+  {
+    badgeBg: string;
+    badgeText: string;
+    borderHover: string;
+    accentText: string;
+    cardBorder: string;
+    tagBg: string;
+    btnClass: string;
+  }
+> = {
+  sky: {
+    badgeBg: 'bg-sky-500/10 border-sky-500/30',
+    badgeText: 'text-sky-300',
+    borderHover: 'hover:border-sky-500/40',
+    accentText: 'text-sky-400',
+    cardBorder: 'border-sky-500/25',
+    tagBg: 'bg-sky-500/10 text-sky-300 border-sky-500/20',
+    btnClass: 'bg-sky-500 text-slate-950 hover:bg-sky-400',
+  },
+  emerald: {
+    badgeBg: 'bg-emerald-500/10 border-emerald-500/30',
+    badgeText: 'text-emerald-300',
+    borderHover: 'hover:border-emerald-500/40',
+    accentText: 'text-emerald-400',
+    cardBorder: 'border-emerald-500/25',
+    tagBg: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
+    btnClass: 'bg-emerald-500 text-slate-950 hover:bg-emerald-400',
+  },
+  indigo: {
+    badgeBg: 'bg-indigo-500/10 border-indigo-500/30',
+    badgeText: 'text-indigo-300',
+    borderHover: 'hover:border-indigo-500/40',
+    accentText: 'text-indigo-400',
+    cardBorder: 'border-indigo-500/25',
+    tagBg: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20',
+    btnClass: 'bg-indigo-500 text-white hover:bg-indigo-400',
+  },
+  amber: {
+    badgeBg: 'bg-amber-500/10 border-amber-500/30',
+    badgeText: 'text-amber-300',
+    borderHover: 'hover:border-amber-500/40',
+    accentText: 'text-amber-400',
+    cardBorder: 'border-amber-500/25',
+    tagBg: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
+    btnClass: 'bg-amber-400 text-slate-950 hover:bg-amber-300',
+  },
+  violet: {
+    badgeBg: 'bg-violet-500/10 border-violet-500/30',
+    badgeText: 'text-violet-300',
+    borderHover: 'hover:border-violet-500/40',
+    accentText: 'text-violet-400',
+    cardBorder: 'border-violet-500/25',
+    tagBg: 'bg-violet-500/10 text-violet-300 border-violet-500/20',
+    btnClass: 'bg-violet-500 text-white hover:bg-violet-400',
+  },
+};
+---
+
+<section class="py-20 sm:py-24" aria-labelledby="core-services-heading">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-300">
+        Five Integrated Enterprise Pillars
+      </span>
+      <h2 id="core-services-heading" class="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        Full-Lifecycle AI, Automation, ERPNext, POS Systems &amp; Product Engineering
+      </h2>
+      <p class="mt-4 text-base text-slate-400">
+        Every service pillar is engineered to work standalone or as a unified digital backbone—backed by deterministic
+        verification, open-source freedom, offline-first POS reliability, and measurable operational ROI.
+      </p>
+    </div>
+
+    <!-- All 5 Pillars -->
+    <div class="mt-16 space-y-20">
+      {SERVICE_PILLARS.map((pillar, idx) => {
+        const theme = colorStyles[pillar.accentColor] || colorStyles.sky;
+        return (
+          <article
+            id={pillar.id}
+            class={`scroll-mt-24 rounded-3xl border ${theme.cardBorder} bg-slate-900/50 p-6 sm:p-10 shadow-2xl`}
+          >
+            <!-- Pillar Header -->
+            <div class="flex flex-col justify-between gap-6 border-b border-slate-800/90 pb-8 lg:flex-row lg:items-end">
+              <div class="max-w-3xl space-y-3">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold ${theme.badgeBg} ${theme.badgeText}`}>
+                    {pillar.badge}
+                  </span>
+                  <span class="rounded-full border border-slate-700 bg-slate-800/80 px-3 py-1 font-mono text-xs text-slate-300">
+                    Timeline: {pillar.timeline}
+                  </span>
+                </div>
+                <h3 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                  {pillar.title}
+                </h3>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  {pillar.subtitle}
+                </p>
+              </div>
+
+              <!-- KPI Mini-Grid -->
+              <dl class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:w-auto shrink-0">
+                {pillar.kpis.map((kpi) => (
+                  <div class="rounded-xl border border-slate-800 bg-slate-950/80 px-3.5 py-2.5 text-center">
+                    <dd class={`text-lg font-extrabold ${theme.accentText}`}>{kpi.value}</dd>
+                    <dt class="mt-0.5 text-[11px] text-slate-400 leading-tight">{kpi.label}</dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <!-- AEO Direct Answer Capsule for this Pillar -->
+            <aside
+              aria-label={`${pillar.shortTitle} Direct Answer Summary`}
+              class="aeo-summary mt-6 rounded-xl border border-slate-800/90 bg-slate-950/70 p-4 text-xs sm:text-sm leading-relaxed text-slate-300"
+            >
+              <span class={`font-bold uppercase tracking-wider text-[11px] ${theme.accentText} mr-2`}>
+                [AEO Direct Summary]
+              </span>
+              {pillar.aeoSummary}
+            </aside>
+
+            <!-- 4 Specialized Sub-Services Grid -->
+            <div class="mt-8 grid gap-5 md:grid-cols-2">
+              {pillar.subServices.map((sub, subIdx) => (
+                <div
+                  class={`flex flex-col justify-between rounded-2xl border border-slate-800/90 bg-slate-950/60 p-5 transition ${theme.borderHover}`}
+                >
+                  <div>
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-mono text-xs font-semibold text-slate-500">
+                        0{idx + 1}.{subIdx + 1}
+                      </span>
+                      <span class={`rounded-md px-2 py-0.5 text-[11px] font-semibold ${theme.badgeBg} ${theme.badgeText}`}>
+                        {sub.metrics}
+                      </span>
+                    </div>
+                    <h4 class="mt-2.5 text-lg font-bold text-white">{sub.title}</h4>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-400">{sub.description}</p>
+                  </div>
+
+                  <div class="mt-4 flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                    {sub.tags.map((tag) => (
+                      <span class={`rounded border px-2 py-0.5 font-mono text-[11px] ${theme.tagBg}`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Deliverables + Tech Stack + Deep-Dive Link Footer -->
+            <div class="mt-8 grid gap-6 rounded-2xl border border-slate-800/80 bg-slate-950/90 p-5 lg:grid-cols-12 lg:items-center">
+              <div class="lg:col-span-5">
+                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">
+                  Key Production Deliverables
+                </h5>
+                <ul class="mt-2.5 space-y-1.5 text-xs text-slate-400">
+                  {pillar.deliverables.slice(0, 4).map((item) => (
+                    <li class="flex items-start gap-2">
+                      <span class={`mt-0.5 font-bold ${theme.accentText}`}>✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="lg:col-span-4">
+                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300">
+                  Core Technology Stack
+                </h5>
+                <div class="mt-2.5 flex flex-wrap gap-1.5">
+                  {pillar.techStack.map((tech) => (
+                    <span class="rounded-md border border-slate-800 bg-slate-900 px-2.5 py-1 font-mono text-[11px] text-slate-300">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-2.5 lg:col-span-3 lg:items-end">
+                <div class="text-xs text-slate-400">
+                  Starting Reference: <strong class="text-white">{pillar.startingInvestment}</strong>
+                </div>
+                <div class="flex flex-wrap gap-2.5">
+                  <a
+                    href={withBase(`/services/${pillar.slug}`)}
+                    class={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-xs font-bold transition ${theme.btnClass}`}
+                  >
+                    <span>Explore {pillar.shortTitle}</span>
+                    <span>→</span>
+                  </a>
+                  <a
+                    href="#contact"
+                    class="inline-flex items-center rounded-xl border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-xs font-semibold text-slate-200 hover:border-slate-500 hover:text-white"
+                  >
+                    Scope Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

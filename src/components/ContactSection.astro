@@ -1,0 +1,371 @@
+---
+import { COMPANY_INFO } from '../data/siteData';
+---
+
+<section
+  id="contact"
+  class="scroll-mt-20 border-t border-slate-800/80 bg-gradient-to-b from-slate-950 to-[#060a12] py-20 sm:py-24"
+  aria-labelledby="contact-heading"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <!-- Left Column: Direct Consultation Details & Engagement Roadmap -->
+      <div class="lg:col-span-5 space-y-6">
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300">
+          AI-Powered Instant Solution Scoper &amp; Deal Desk
+        </span>
+
+        <h2 id="contact-heading" class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          Generate Your Custom Architecture Blueprint &amp; Book Discovery
+        </h2>
+
+        <p class="text-sm sm:text-base leading-relaxed text-slate-400">
+          Select your required pillars on the right to generate an <strong class="text-white">instant technical architecture blueprint, timeline &amp; safeguard checklist</strong>—then send it directly to our engineering desk via <strong class="text-emerald-300">WhatsApp</strong> or <strong class="text-sky-300">Email</strong> in one click.
+        </p>
+
+        <!-- 3-Step Engagement Process -->
+        <ol class="space-y-4 pt-2">
+          <li class="flex gap-3.5 rounded-xl border border-slate-800/90 bg-slate-900/50 p-4">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 font-mono text-xs font-bold text-sky-400">
+              01
+            </span>
+            <div>
+              <h3 class="text-sm font-bold text-white">Instant On-Page AI Architecture Scoping</h3>
+              <p class="mt-1 text-xs text-slate-400">
+                Our interactive scoper maps your selected modules into a concrete architecture &amp; timeline immediately.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex gap-3.5 rounded-xl border border-slate-800/90 bg-slate-900/50 p-4">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 font-mono text-xs font-bold text-emerald-400">
+              02
+            </span>
+            <div>
+              <h3 class="text-sm font-bold text-white">45-Minute Live Demo &amp; Sample Document Test</h3>
+              <p class="mt-1 text-xs text-slate-400">
+                Send us 3 sample invoices/POs or your SKU list—we demonstrate live 99.4% OCR or ERPNext/POS flows on the call.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex gap-3.5 rounded-xl border border-slate-800/90 bg-slate-900/50 p-4">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-500/15 font-mono text-xs font-bold text-indigo-400">
+              03
+            </span>
+            <div>
+              <h3 class="text-sm font-bold text-white">14-Day Verified Pilot or Full Rollout</h3>
+              <p class="mt-1 text-xs text-slate-400">
+                Fixed-scope milestones with deterministic anti-hallucination guarantees and 100% source ownership.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Direct Contact Card -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 text-xs space-y-2">
+          <div class="font-bold uppercase tracking-wider text-slate-300">Direct Engineering Desk</div>
+          <div class="flex flex-wrap gap-4 pt-1 text-slate-300">
+            <div>
+              <span class="text-slate-500">Email:</span>{' '}
+              <a href={`mailto:${COMPANY_INFO.email}`} class="font-semibold text-sky-400 hover:underline">
+                {COMPANY_INFO.email}
+              </a>
+            </div>
+            <div>
+              <span class="text-slate-500">Hub:</span>{' '}
+              <span class="font-semibold text-white">Petaling Jaya / KL, Malaysia &amp; Global Remote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Project Scope & AI Blueprint Generator Form -->
+      <div class="lg:col-span-7">
+        <form
+          id="project-scope-form"
+          class="rounded-3xl border border-slate-800 bg-slate-900/75 p-6 sm:p-8 shadow-2xl space-y-6"
+        >
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300">
+              1. Which Service Pillars Do You Need? (Select All That Apply)
+            </label>
+            <div class="mt-3 grid gap-2.5 sm:grid-cols-2">
+              <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 transition hover:border-sky-500/50 has-[:checked]:border-sky-500 has-[:checked]:bg-sky-500/10">
+                <input
+                  type="checkbox"
+                  name="pillars"
+                  value="AI Services (Coding, Verification, Testing, OCR)"
+                  checked
+                  class="mt-0.5 h-4 w-4 rounded border-slate-700 accent-sky-400"
+                />
+                <span class="text-xs">
+                  <strong class="block font-bold text-white">AI Services &amp; Enterprise OCR</strong>
+                  <span class="text-slate-400">AI Coding, Verification, Automated QA, 99.4% OCR</span>
+                </span>
+              </label>
+
+              <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 transition hover:border-emerald-500/50 has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-500/10">
+                <input
+                  type="checkbox"
+                  name="pillars"
+                  value="Business Process Automation (BPA)"
+                  class="mt-0.5 h-4 w-4 rounded border-slate-700 accent-emerald-400"
+                />
+                <span class="text-xs">
+                  <strong class="block font-bold text-white">Business Process Automation</strong>
+                  <span class="text-slate-400">3-Way Match, WhatsApp API, n8n / Webhooks</span>
+                </span>
+              </label>
+
+              <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 transition hover:border-indigo-500/50 has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-500/10">
+                <input
+                  type="checkbox"
+                  name="pillars"
+                  value="Frappe & ERPNext Implementation (LHDN MyInvois)"
+                  checked
+                  class="mt-0.5 h-4 w-4 rounded border-slate-700 accent-indigo-400"
+                />
+                <span class="text-xs">
+                  <strong class="block font-bold text-white">Frappe &amp; ERPNext Implementation</strong>
+                  <span class="text-slate-400">Consultation, Migration, LHDN e-Invoicing</span>
+                </span>
+              </label>
+
+              <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 transition hover:border-amber-500/50 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/10">
+                <input
+                  type="checkbox"
+                  name="pillars"
+                  value="POS Software & Point-of-Sale Systems (Retail / F&B)"
+                  checked
+                  class="mt-0.5 h-4 w-4 rounded border-slate-700 accent-amber-400"
+                />
+                <span class="text-xs">
+                  <strong class="block font-bold text-white">POS Software &amp; Retail/F&amp;B Systems</strong>
+                  <span class="text-slate-400">Offline-First POS, KDS, LHDN QR &amp; Hardware</span>
+                </span>
+              </label>
+
+              <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 transition hover:border-violet-500/50 has-[:checked]:border-violet-500 has-[:checked]:bg-violet-500/10 sm:col-span-2">
+                <input
+                  type="checkbox"
+                  name="pillars"
+                  value="Web & Mobile App Development (SEO/AEO)"
+                  class="mt-0.5 h-4 w-4 rounded border-slate-700 accent-violet-400"
+                />
+                <span class="text-xs">
+                  <strong class="block font-bold text-white">Web &amp; Mobile App Development (SEO &amp; AEO Engineered)</strong>
+                  <span class="text-slate-400">100/100 SEO/AEO Web Platforms, B2B Portals &amp; Cross-Platform Flutter / React Native Mobile Apps</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Contact Inputs -->
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="input-name" class="block text-xs font-semibold text-slate-300">Your Full Name *</label>
+              <input
+                id="input-name"
+                name="name"
+                type="text"
+                required
+                placeholder="e.g., Daniel Tan / Sarah Lim"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label for="input-email" class="block text-xs font-semibold text-slate-300">Work Email *</label>
+              <input
+                id="input-email"
+                name="email"
+                type="email"
+                required
+                placeholder="name@company.com"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label for="input-company" class="block text-xs font-semibold text-slate-300">Company &amp; Industry</label>
+              <input
+                id="input-company"
+                name="company"
+                type="text"
+                placeholder="e.g., Apex Retail & Manufacturing Sdn Bhd"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label for="input-region" class="block text-xs font-semibold text-slate-300">Region &amp; Budget Range</label>
+              <select
+                id="input-region"
+                name="budget"
+                class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white focus:border-sky-500 focus:outline-none"
+              >
+                <option value="POS / Pilot / MVP (MYR 7.8k–35k / USD $1.8k–$8k)">POS / Pilot / MVP (MYR 7.8k–35k / USD $1.8k–$8k)</option>
+                <option value="Mid-Market Rollout (MYR 35k–100k / USD $8k–$25k)" selected>
+                  Mid-Market Rollout (MYR 35k–100k / USD $8k–$25k)
+                </option>
+                <option value="Enterprise Transformation (MYR 100k+ / USD $25k+)">
+                  Enterprise Transformation (MYR 100k+ / USD $25k+)
+                </option>
+                <option value="Dedicated Engineering Squad Retainer">Dedicated Engineering Squad Retainer</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="input-details" class="block text-xs font-semibold text-slate-300">
+              Current Workflow, POS Outlets, ERP, or Technical Objectives
+            </label>
+            <textarea
+              id="input-details"
+              name="details"
+              rows="3"
+              placeholder="Tell us about your number of POS outlets, document volume for OCR, current accounting/ERP software (e.g., AutoCount, SQL, SAP), LHDN e-Invoice timeline, or web/mobile app goals..."
+              class="mt-1.5 w-full rounded-xl border border-slate-800 bg-slate-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-sky-500 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-500 px-6 py-3.5 text-sm font-extrabold text-slate-950 shadow-xl shadow-sky-500/20 transition hover:brightness-110 cursor-pointer"
+          >
+            Generate AI Architecture Blueprint &amp; Deal-Closer Options →
+          </button>
+
+          <!-- Instant AI Solution Blueprint & Multi-Channel Deal Closer Box -->
+          <div
+            id="form-feedback"
+            class="hidden rounded-2xl border border-emerald-500/40 bg-slate-950 p-5 text-xs text-slate-200 space-y-4"
+          >
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <span class="font-bold text-sm text-emerald-400">
+                ✓ Custom AI Solution Blueprint Generated
+              </span>
+              <span class="rounded bg-emerald-500/15 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
+                Ready for Discovery Call
+              </span>
+            </div>
+
+            <pre
+              id="form-blueprint-preview"
+              class="code-scroll max-h-48 overflow-auto rounded-xl border border-slate-800 bg-slate-900/90 p-3.5 font-mono text-[11px] leading-relaxed text-sky-200 whitespace-pre-wrap"
+            ></pre>
+
+            <div class="flex flex-wrap gap-2.5 pt-1">
+              <a
+                id="form-whatsapp-link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 transition hover:bg-emerald-400"
+              >
+                <span>Send Blueprint via WhatsApp (Fastest Response)</span>
+                <span>→</span>
+              </a>
+
+              <a
+                id="form-mailto-link"
+                href={`mailto:${COMPANY_INFO.email}`}
+                class="inline-flex items-center gap-2 rounded-xl border border-sky-500/40 bg-sky-500/15 px-4 py-2.5 text-xs font-bold text-sky-300 transition hover:bg-sky-500/25"
+              >
+                <span>Send via Email Client</span>
+                <span>→</span>
+              </a>
+
+              <button
+                type="button"
+                id="copy-blueprint-btn"
+                class="rounded-xl border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-xs font-semibold text-slate-300 hover:text-white cursor-pointer"
+              >
+                Copy Blueprint Text
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('project-scope-form') as HTMLFormElement | null;
+  const feedback = document.getElementById('form-feedback');
+  const blueprintPreview = document.getElementById('form-blueprint-preview');
+  const mailtoLink = document.getElementById('form-mailto-link') as HTMLAnchorElement | null;
+  const whatsappLink = document.getElementById('form-whatsapp-link') as HTMLAnchorElement | null;
+  const copyBlueprintBtn = document.getElementById('copy-blueprint-btn');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const name = String(formData.get('name') || '');
+    const email = String(formData.get('email') || '');
+    const company = String(formData.get('company') || 'Enterprise Client');
+    const budget = String(formData.get('budget') || '');
+    const details = String(formData.get('details') || 'Standard architecture & ROI discovery');
+    const selectedPillars = formData.getAll('pillars').map(String);
+    const pillarsText = selectedPillars.join(' + ') || 'General Consultation';
+
+    const recommendedModules: string[] = [];
+    if (selectedPillars.some((p) => p.includes('AI Services'))) {
+      recommendedModules.push('• Vision-LLM OCR + Deterministic Math/Schema Verification Gate + Self-Healing Playwright QA');
+    }
+    if (selectedPillars.some((p) => p.includes('Automation'))) {
+      recommendedModules.push('• Automated 3-Way PO-GRN-Invoice Matching + WhatsApp Cloud API Approval Workflows');
+    }
+    if (selectedPillars.some((p) => p.includes('ERPNext'))) {
+      recommendedModules.push('• Frappe ERPNext v15 Core + Real-Time Malaysia LHDN MyInvois API Integration ($0/seat license)');
+    }
+    if (selectedPillars.some((p) => p.includes('POS'))) {
+      recommendedModules.push('• Offline-First Retail/F&B POS + LHDN Receipt QR Self-Claim & Monthly Consolidated e-Invoicing');
+    }
+    if (selectedPillars.some((p) => p.includes('Web & Mobile'))) {
+      recommendedModules.push('• 100/100 SEO & AEO Web Platform + Cross-Platform Flutter Mobile App');
+    }
+
+    const blueprintText = `=== JOBSHORE TECHNICAL ARCHITECTURE BRIEF ===
+Client: ${name} (${company}) | Email: ${email}
+Target Tier: ${budget}
+Selected Pillars: ${pillarsText}
+
+Recommended Architecture & Safeguards:
+${recommendedModules.join('\n')}
+
+Objectives & Context:
+${details}
+
+Next Step: 14-Day Pilot / 45-Min Solutions Architect Discovery`;
+
+    if (feedback && blueprintPreview) {
+      feedback.classList.remove('hidden');
+      blueprintPreview.textContent = blueprintText;
+    }
+
+    if (mailtoLink) {
+      const subject = encodeURIComponent(`Jobshore Architecture Blueprint: ${company} (${name})`);
+      const body = encodeURIComponent(blueprintText);
+      mailtoLink.href = `mailto:hello@jobshore.com?subject=${subject}&body=${body}`;
+    }
+
+    if (whatsappLink) {
+      const waText = encodeURIComponent(blueprintText);
+      whatsappLink.href = `https://wa.me/60128904210?text=${waText}`;
+    }
+  });
+
+  copyBlueprintBtn?.addEventListener('click', async () => {
+    if (blueprintPreview && copyBlueprintBtn) {
+      await navigator.clipboard.writeText(blueprintPreview.textContent || '');
+      const original = copyBlueprintBtn.textContent;
+      copyBlueprintBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyBlueprintBtn.textContent = original;
+      }, 2000);
+    }
+  });
+</script>
