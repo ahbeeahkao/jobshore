@@ -130,12 +130,18 @@ B2B buyers often worry about **AI hallucinations**, **data privacy (PDPA)**, and
 - In your GitHub repository, go to **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**.
 - Every push to `main` builds and deploys the site to `https://ahbeeahkao.github.io/jobshore`.
 
-### Switching to Your Custom Domain Later
-When your custom domain is ready:
-1. In GitHub **Settings → Pages**, enter your custom domain.
-2. In GitHub **Settings → Secrets and variables → Actions → Variables**, add:
-   - `PUBLIC_SITE_URL` = `https://your-custom-domain.com`
-   - `BASE_PATH` = `/`
+### Switching to Your DigitalPlat (`digitalplat.org`) or Custom Domain
+Because `digitalplat.org` is a **domain registry** (DNS) rather than a web server, the best setup is to **host the site on GitHub Pages (or Cloudflare Pages) and point your DigitalPlat domain to it**:
+
+1. **In Cloudflare / DigitalPlat DNS**:
+   - Add a `CNAME` record for your domain (e.g., `jobshore.dpdns.org` or `www`) pointing to `ahbeeahkao.github.io` (set Proxy status to **DNS only / Grey Cloud** while GitHub issues your free SSL certificate).
+2. **In GitHub Repository Variables** (**Settings → Secrets and variables → Actions → Variables**):
+   - Create a single repository variable:
+     - Name: `CUSTOM_DOMAIN`
+     - Value: `your-domain.dpdns.org` (without `https://`)
+3. **In GitHub Settings → Pages → Custom domain**:
+   - Enter `your-domain.dpdns.org` and check **Enforce HTTPS**.
+   - Our workflow (`.github/workflows/deploy.yml`) will automatically switch `BASE_PATH` to `/`, update all SEO/AEO canonical URLs to `https://your-domain.dpdns.org`, and generate the `CNAME` file!
 
 ---
 

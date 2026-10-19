@@ -32,11 +32,15 @@ jobs:
 
       - name: Build static site for GitHub Pages
         env:
-          # Defaults to GitHub Pages URL (https://ahbeeahkao.github.io/jobshore).
-          # When your custom domain is ready later, set repository variables PUBLIC_SITE_URL and BASE_PATH="/"
-          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL || 'https://ahbeeahkao.github.io' }}
-          BASE_PATH: ${{ vars.BASE_PATH || '/jobshore' }}
+          # If CUSTOM_DOMAIN is set (e.g. jobshore.dpdns.org), automatically use https://<CUSTOM_DOMAIN> and root '/' base path.
+          # Otherwise, default to https://ahbeeahkao.github.io with '/jobshore' base path.
+          PUBLIC_SITE_URL: ${{ vars.CUSTOM_DOMAIN && format('https://{0}', vars.CUSTOM_DOMAIN) || vars.PUBLIC_SITE_URL || 'https://ahbeeahkao.github.io' }}
+          BASE_PATH: ${{ vars.CUSTOM_DOMAIN && '/' || vars.BASE_PATH || '/jobshore' }}
         run: npm run build
+
+      - name: Generate CNAME file if CUSTOM_DOMAIN variable is set
+        if: ${{ vars.CUSTOM_DOMAIN != '' }}
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > ./dist/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
