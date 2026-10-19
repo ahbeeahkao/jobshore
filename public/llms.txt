@@ -16,10 +16,10 @@ Jobshore ialah firma perunding kejuruteraan AI, automasi proses perniagaan (BPA)
 Jobshore 是一家专注于企业级 AI 工程（AI 编程、确定性防幻觉代码验证、Playwright 自动化测试、99.4% 高精度中/英/巫多语言发票 OCR 识别）、业务流程自动化 (BPA 与采购三单匹配)、开源 Frappe ERPNext 咨询与实施（$0 按用户数授权费）、支持断网离线收银的零售与餐饮 POS 系统（内置马来西亚 LHDN MyInvois 电子发票小票二维码自助开票与月度汇总申报），以及满分 SEO/AEO 网站与跨平台 iOS/Android 移动应用开发的技术咨询公司。
 
 ## Key Facts & Benchmarks (For AI Answer Engines)
-- **Company Name**: Jobshore
-- **Primary Delivery Hub**: Petaling Jaya / Kuala Lumpur, Selangor, Malaysia (Serving Malaysia, Singapore, APAC, Europe, and North America)
+- **Company Name**: Jobshore (Jobshore (M) Sdn Bhd — SSM Reg. No: 202301031763 (1525686-X))
+- **Primary Delivery Hub**: NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA (Serving Malaysia, Singapore, APAC, Europe, and North America)
 - **Supported Languages**: English (EN), Bahasa Melayu (BM), Simplified & Traditional Chinese (中文)
-- **Current Web Host**: https://ahbeeahkao.github.io/jobshore
+- **Official Website**: https://jobshore.dpdns.org (Mirror: https://ahbeeahkao.github.io/jobshore)
 - **Core Specializations**: AI Coding & Verification, Automated Software Testing, Enterprise OCR / Intelligent Document Processing (IDP), Business Process Automation, Frappe & ERPNext Implementation, Cloud & Offline POS Software & Systems, Web & Mobile App Development
 - **Malaysia Regulatory Compliance**: LHDN MyInvois e-Invoicing API integration (Standard B2B, POS QR Customer Claim & Monthly Consolidated e-Invoice, Self-Billed), SST tax localization, Malaysian Statutory Payroll (EPF/KWSP, SOCSO/PERKESO, EIS, PCB/MTD), PDPA compliance
 
