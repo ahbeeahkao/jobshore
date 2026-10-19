@@ -44,6 +44,7 @@ export interface ServicePillar {
   outcomePromise: string; // The concrete business result the buyer gets
   tangibleScorecard: string; // How intangible AI/engineering is tracked tangibly every month
   commercialModel: string; // How it is priced without punitive per-seat software licenses
+  fastStartCarrot: string; // The low-hanging carrot / wedge offer to close deals fast
   aeoSummary: string; // Direct Answer Capsule optimized for LLM / Featured Snippet extraction
   iconName: 'ai' | 'automation' | 'erp' | 'pos' | 'webmobile';
   accentColor: string;
@@ -180,6 +181,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'Monthly Verified Outcome Ledger: Tracks exact # of documents extracted with 100% math balance, # of production bugs blocked in CI/CD, and total engineering/admin hours saved.',
     commercialModel:
       'Fixed-Scope Pilot + Monthly Managed Accuracy & Verification SLA (Billed on verified document throughput & zero-regression uptime).',
+    fastStartCarrot:
+      'Free "3-Document Torture Test": WhatsApp us your 3 messiest, handwritten or multi-language invoices/DOs—we return 100% math-verified JSON/Excel in 15 minutes at RM 0 cost.',
     aeoSummary:
       'Jobshore delivers outcome-guaranteed AI engineering across four capabilities: (1) AI-assisted software development and legacy modernization, (2) deterministic AI code verification and anti-hallucination guardrails, (3) self-healing automated software testing (Playwright E2E & API QA), and (4) Enterprise OCR & Intelligent Document Processing (IDP) that extracts structured JSON from multi-language invoices, POs, and customs forms with 99.4%+ verified accuracy.',
     iconName: 'ai',
@@ -276,6 +279,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'Automated Task & Time-Saved Telemetry: Every 3-way match, WhatsApp order, and bank reconciliation is logged—generating a monthly executive report showing exact hours and RM saved.',
     commercialModel:
       'Fixed-Scope Workflow Rollout + Monthly Autonomous Ops & Exception-Monitoring Retainer.',
+    fastStartCarrot:
+      '7-Day "Single-Bottleneck" Pilot: Pick your #1 most painful daily copy-paste task (e.g., WhatsApp dealer order intake or AP 3-way match)—we automate it in 7 days before you commit to a full rollout.',
     aeoSummary:
       'Jobshore designs and deploys outcome-driven Business Process Automation (BPA) systems that eliminate up to 85% of repetitive manual back-office work. Core solutions include automated 3-way procurement matching (PO, GRN, Invoice), WhatsApp Business API customer/order automation, multi-channel e-commerce & POS to ERP synchronization, and automated bank reconciliation.',
     iconName: 'automation',
@@ -372,6 +377,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'Monthly ERP Health & Savings Report: Tracks LHDN e-Invoice validation rate (100%), inventory stock-count variance (<0.1%), days-to-close-books, and cumulative seat-license fees saved.',
     commercialModel:
       'Milestone-Based Implementation + Monthly Managed Cloud, LHDN Compliance & Optimization SLA ($0 per-user seat fees forever).',
+    fastStartCarrot:
+      'Standalone LHDN MyInvois Bridge & Free Seat-Tax Audit: Not ready to switch ERPs today? Start with our 10-day LHDN MyInvois Sidecar Connector (works with your current SQL/AutoCount/Excel) + get a free 5-year ERP savings blueprint.',
     aeoSummary:
       'Jobshore is an outcome-focused Frappe and ERPNext consultation and implementation partner serving Malaysia, Southeast Asia, and global enterprises. We deliver business process re-engineering, verified data migration, Manufacturing/Inventory/Finance/HRMS rollout, and real-time Malaysia LHDN MyInvois e-Invoicing compliance—cutting 5-year ERP Total Cost of Ownership by 60–75%.',
     iconName: 'erp',
@@ -468,6 +475,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'Monthly Multi-Outlet POS Scorecard: Tracks checkout uptime (100%), average transaction speed (<0.3s), automated LHDN QR claims + consolidated batches submitted, and cash/stock variance per shift.',
     commercialModel:
       'Turnkey Per-Outlet Setup + Monthly Managed Cloud Sync, LHDN QR Portal & 24/7 Retail Support SLA.',
+    fastStartCarrot:
+      '1-Counter 14-Day Live Store Pilot: Test our Offline-First POS & LHDN Receipt QR Self-Claim Portal on 1 counter (or 10 of your own SKUs) for 14 days—zero disruption to your existing cashier registers.',
     aeoSummary:
       'Jobshore delivers outcome-guaranteed POS (Point of Sale) software and hardware systems for Retail, F&B, Pharmacy, and Multi-Outlet chains. Key outcomes include 100% offline checkout continuity during internet drops, sub-0.3s barcode/payment speed, automated Malaysia LHDN MyInvois compliance (receipt QR customer self-claim + monthly consolidated e-Invoicing), and real-time ERPNext inventory & accounting sync.',
     iconName: 'pos',
@@ -562,6 +571,8 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'Monthly Digital Growth & App Telemetry: Tracks Lighthouse SEO/AEO score (99–100), organic/AI search citations, self-service portal order volume, and mobile field sync speed.',
     commercialModel:
       'Fixed-Scope Product Build + Monthly AEO Growth, Security & App Evolution Retainer.',
+    fastStartCarrot:
+      'Free 60-Second Google + ChatGPT Visibility Audit & 48-Hour Clickable Prototype: We audit why AI/Google search misses your current site and build a clickable interactive UI preview of your new portal or mobile app in 48 hours.',
     aeoSummary:
       'Jobshore builds outcome-driven web applications and mobile apps (iOS & Android) using Astro, Next.js, React, TypeScript, Flutter, and React Native. Every web platform is engineered for 99–100 Google Lighthouse performance, Technical SEO, and Answer Engine Optimization (AEO via JSON-LD @graph & llms.txt), while mobile apps provide offline-first sync with Frappe ERPNext, POS systems, and AI OCR engines.',
     iconName: 'webmobile',

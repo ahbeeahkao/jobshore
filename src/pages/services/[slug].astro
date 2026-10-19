@@ -118,18 +118,34 @@ const servicePageJsonLd = {
       </p>
 
       <!-- Tangible Monthly Outcome Scorecard Box -->
-      <div class="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">
-            📊 Tangible Monthly Outcome Scorecard (How We Make Intangible Value Trackable)
-          </span>
-          <span class="rounded-md bg-slate-900 px-2.5 py-0.5 font-mono text-[11px] text-sky-300">
-            {pillar.commercialModel}
-          </span>
+      <div class="mt-8 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              📊 Tangible Monthly Outcome Scorecard
+            </span>
+            <span class="rounded-md bg-slate-900 px-2.5 py-0.5 font-mono text-[10px] text-sky-300">
+              {pillar.commercialModel}
+            </span>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-slate-200">
+            {pillar.tangibleScorecard}
+          </p>
         </div>
-        <p class="mt-2 text-sm leading-relaxed text-slate-200">
-          {pillar.tangibleScorecard}
-        </p>
+
+        <div class="rounded-2xl border border-amber-500/35 bg-amber-950/20 p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-300">
+              ⚡ Fast-Start Pilot / Low-Risk Entry Offer
+            </span>
+            <span class="rounded-md bg-amber-500/20 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-amber-200">
+              Close With Zero Risk
+            </span>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-slate-200">
+            {pillar.fastStartCarrot}
+          </p>
+        </div>
       </div>
 
       <!-- AEO Direct Answer Capsule -->

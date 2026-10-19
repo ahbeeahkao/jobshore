@@ -160,3 +160,33 @@ npm run build
 # Build static production output specifically for GitHub Pages (/jobshore base path)
 npm run build:gh-pages
 ```
+
+---
+
+## 7. Commercial Playbook: The 5 "Low-Hanging Carrots" & Winning Back Pre-AI Past Customers
+
+### A. The 5 Pillar "Low-Hanging Carrots" (High-Value to Client, <1 Hour Effort for You)
+Never ask a cold or returning prospect to sign a RM 50,000+ overhaul on Day 1. Use these 5 bite-sized **Wedge Offers** (already built into `src/data/siteData.ts` on your website) to get an immediate "Yes":
+
+| Pillar | The Low-Hanging Carrot (Wedge Offer) | Why It Closes Fast |
+| :--- | :--- | :--- |
+| **01. AI Coding, Verification & OCR** | **Free "3-Document Torture Test"**: Client sends 3 messy/handwritten/multi-language invoices or DOs on WhatsApp; you return 100% math-verified JSON/Excel in 15 mins. | Zero cost to them, takes you 5 minutes via your OCR pipeline, proves undeniable accuracy. |
+| **02. Business Process Automation** | **7-Day "Single-Bottleneck" Sprint**: Automate just **1** hated daily task (e.g., WhatsApp dealer order intake or AP 3-way match) for a small fixed pilot fee. | Solves an immediate headache in 1 week; 80%+ expand to full-company automation. |
+| **03. Frappe & ERPNext** | **10-Day Standalone LHDN MyInvois Sidecar Bridge + Seat-Tax Audit**: Connect LHDN e-Invoicing to their *current* SQL/AutoCount/Excel first without forcing an immediate ERP rip-and-replace. | Every Malaysian SME needs LHDN compliance now; once on your Frappe bridge, full ERPNext migration is a natural Phase 2. |
+| **04. POS Software & Systems** | **1-Counter 14-Day Live Store Trial + Receipt QR e-Invoice**: Put 1 terminal (or 10 SKUs) alongside their existing register for 14 days. | Removes retail/F&B owners' #1 fear (checkout disruption during peak hours). |
+| **05. Web & Mobile Apps** | **Free 60-Sec Google/ChatGPT Visibility Audit + 48-Hr Clickable UI Prototype**: Show them why AI search misses their current site + generate a clickable preview of their new portal/app. | Visualizes the finished product before they spend a sen. |
+
+---
+
+### B. Copy-Paste WhatsApp Scripts to Win Back "Pre-AI" Past Customers & Old Quotes
+Clients who didn't return years ago because of high pricing **did not reject your skill—they rejected pre-AI manual development costs**. Today, AI-accelerated engineering + open-source Frappe lets you deliver **50–65% cheaper and 3x faster** while keeping high margins.
+
+#### 1. English WhatsApp Win-Back Script
+> *"Hi [Name], hope you and the team at [Company] are doing well! I was reviewing some of our past project notes from a few years back. Back then—before modern AI engineering and open-source Frappe existed—custom software and ERP work required months of manual coding, which made our pricing high. Today, our AI-verified build pipeline has cut implementation costs by **50–65%** with **$0 per-user license fees**, and we now have ready-to-deploy modules for **LHDN MyInvois e-Invoicing, 99.4% Invoice OCR, and Offline POS**. Since we’ve worked together / spoken before, I’d love to run a free 15-minute live test on 3 of your documents (plus a RM 2,000 returning-client pilot credit if you ever need an upgrade). You can check out our new live sandbox here: https://ahbeeahkao.github.io/jobshore — no obligation at all, just wanted to share what’s new!"*
+
+#### 2. Bahasa Melayu WhatsApp Win-Back Script
+> *"Salam / Hai [Nama], harap bisnes di [Syarikat] semakin maju! Saya baru semak semula rekod sebut harga lama kita beberapa tahun lepas. Dulu—sebelum wujudnya kejuruteraan AI moden dan sistem sumber terbuka Frappe—pembangunan sistem memerlukan masa koding manual yang panjang menyebabkan kos agak tinggi. Sekarang, teknologi AI-verified kami telah **menurunkan kos pembangunan sebanyak 50–65%** dengan **$0 yuran lesen pengguna**, lengkap dengan modul sedia guna untuk **e-Invois LHDN MyInvois, AI OCR (99.4% tepat), dan POS Luar Talian**. Jika [Nama] berminat, saya boleh buat demo percuma 15 minit menggunakan 3 sampel invois syarikat tuan (serta rebat pelanggan lama RM 2,000). Boleh lihat demo langsung kami di: https://ahbeeahkao.github.io/jobshore"*
+
+#### 3. 简体中文 WhatsApp 老客户唤醒话术
+> *“[名字] 老板您好！希望贵司生意兴隆。最近在整理几年前的项目档案时想到了您。几年前在 AI 编程和开源 Frappe 成熟之前，定制软件与 ERP 需要大量人工手写代码，所以当时的报价确实偏高。现在通过我们的 AI 验证工程管线，**开发周期与整体费用直接降低了 50%–65%**，而且 **终身 $0 账号人头费**，还自带现成的 **马来西亚 LHDN MyInvois 电子发票、99.4% 财务单据自动识别 (OCR) 和断网收银 POS**。作为老朋友，您可以随时发 3 张平时最头疼的供应商发票给我，我免费帮您跑一次 15 分钟的自动化实测（老客户重启项目还有 RM 2,000 专属抵扣金）。欢迎看看我们全新的在线沙盒演示：https://ahbeeahkao.github.io/jobshore ！”*
+
