@@ -1,3 +1,23 @@
+// ============================================================================
+// 1. CENTRAL COMPANY CONFIGURATION (EDIT YOUR DETAILS HERE IN ONE PLACE)
+// ============================================================================
+export const COMPANY_CONFIG = {
+  brandName: 'Jobshore',
+  legalName: 'Jobshore Technologies', // e.g., 'Jobshore Sdn. Bhd.' or 'Jobshore Enterprise'
+  ssmRegistrationNo: 'SSM Reg. No: 202601012345 (1567890-X)', // Set to '' to hide until registered
+  email: 'hello@jobshore.com',
+  phoneDisplay: '+60 3-7890 4210',
+  whatsappDisplay: '+60 12-890 4210',
+  whatsappNumberClean: '60128904210', // Digits only (country code + number, no '+' or spaces) for wa.me links
+  city: 'Petaling Jaya',
+  state: 'Selangor',
+  country: 'Malaysia',
+  countryCode: 'MY',
+  // Set showStartingPrice to false if you prefer "Custom Scoped • Free Pilot Assessment" instead of showing price numbers
+  showStartingPrice: true,
+  customPriceFallbackText: 'Custom Milestone Quote • 14-Day Pilot Available',
+};
+
 export interface SubService {
   title: string;
   description: string;
@@ -10,8 +30,14 @@ export interface ServicePillar {
   slug: string;
   badge: string;
   shortTitle: string;
+  shortTitleBm: string;
+  shortTitleZh: string;
   title: string;
+  titleBm: string;
+  titleZh: string;
   subtitle: string;
+  subtitleBm: string;
+  subtitleZh: string;
   aeoSummary: string; // Direct Answer Capsule optimized for LLM / Featured Snippet extraction
   iconName: 'ai' | 'automation' | 'erp' | 'pos' | 'webmobile';
   accentColor: string;
@@ -57,27 +83,67 @@ const resolvedDomain =
     : `${configuredSite}${configuredBase}`;
 
 export const COMPANY_INFO = {
-  name: 'Jobshore',
-  legalName: 'Jobshore Technologies',
+  name: COMPANY_CONFIG.brandName,
+  legalName: COMPANY_CONFIG.legalName,
+  ssmRegistrationNo: COMPANY_CONFIG.ssmRegistrationNo,
+  showStartingPrice: COMPANY_CONFIG.showStartingPrice,
+  customPriceFallbackText: COMPANY_CONFIG.customPriceFallbackText,
   domain: resolvedDomain,
   githubRepoUrl: 'https://github.com/ahbeeahkao/jobshore',
   tagline: 'AI Engineering, Business Automation, Frappe ERPNext, POS Systems & Full-Stack Product Studio',
-  email: 'hello@jobshore.com',
-  phone: '+60 3-7890 4210',
-  whatsapp: '+60 12-890 4210',
+  email: COMPANY_CONFIG.email,
+  phone: COMPANY_CONFIG.phoneDisplay,
+  whatsapp: COMPANY_CONFIG.whatsappDisplay,
+  whatsappClean: COMPANY_CONFIG.whatsappNumberClean,
   headquarters: {
-    city: 'Petaling Jaya',
-    state: 'Selangor',
-    country: 'Malaysia',
-    countryCode: 'MY',
+    city: COMPANY_CONFIG.city,
+    state: COMPANY_CONFIG.state,
+    country: COMPANY_CONFIG.country,
+    countryCode: COMPANY_CONFIG.countryCode,
     regionCoverage: ['Malaysia', 'Singapore', 'Southeast Asia (ASEAN)', 'Global B2B (US, UK, EU, AU)'],
   },
   stats: [
     { value: '99.4%', label: 'Enterprise OCR Field Accuracy', detail: 'Multi-language invoices, DOs & customs forms' },
     { value: '85%', label: 'Manual Ops Automated', detail: 'End-to-end 3-way match & workflow pipelines' },
     { value: '100%', label: 'ERPNext + POS + LHDN Ready', detail: 'Real-time B2B, POS QR & Consolidated e-Invoice' },
-    { value: '100/100', label: 'SEO & AEO Architecture', detail: 'Zero-bloat Astro, JSON-LD Graph & llms.txt' },
+    { value: '100/100', label: 'SEO & AEO Architecture', detail: 'EN / BM / 中文 Indexed • JSON-LD & llms.txt' },
   ],
+};
+
+export const UI_TRANSLATIONS = {
+  en: {
+    topBadge: 'ERPNext + POS LHDN MyInvois Ready',
+    heroBadge: 'Enterprise AI • Automation • Frappe ERPNext • POS Systems • Web & Mobile',
+    heroTitleHtml:
+      'Ship Verified <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">AI &amp; OCR</span>, Autonomous Workflows, <span class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">Frappe ERPNext</span> &amp; <span class="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">POS Systems</span>.',
+    heroSummaryHtml:
+      '<strong class="text-white">Jobshore</strong> is an enterprise engineering consultancy serving <strong class="text-white">Malaysia, Southeast Asia, and Global B2B</strong> clients across five core pillars: (1) <strong class="text-sky-300">AI Coding, Deterministic Verification, Self-Healing Automated Testing &amp; 99.4% Enterprise OCR</strong>, (2) <strong class="text-emerald-300">End-to-End Business Process Automation</strong>, (3) <strong class="text-indigo-300">Frappe &amp; ERPNext Consultation &amp; Implementation</strong>, (4) <strong class="text-amber-300">Cloud &amp; Offline-First POS Software &amp; Retail/F&amp;B Systems</strong> (with real-time Malaysia LHDN MyInvois B2B, QR Self-Claim &amp; Consolidated e-Invoicing), and (5) <strong class="text-violet-300">SEO/AEO-First Web &amp; Cross-Platform Mobile App Development</strong>.',
+    ctaPrimary: 'Request Architecture & Quote',
+    ctaSecondary: 'Try Live AI OCR, POS & Verification Lab',
+    navBookCall: 'Book Discovery Call',
+  },
+  bm: {
+    topBadge: 'Sedia LHDN MyInvois e-Invois (ERPNext + POS)',
+    heroBadge: 'Kejuruteraan AI • Automasi Bisnes • Frappe ERPNext • Sistem POS • Web & Aplikasi Mudah Alih',
+    heroTitleHtml:
+      'Bina Sistem <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">AI &amp; OCR</span> Disahkan, Automasi Operasi, <span class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">Frappe ERPNext</span> &amp; <span class="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">Sistem POS</span>.',
+    heroSummaryHtml:
+      '<strong class="text-white">Jobshore</strong> ialah firma perunding kejuruteraan teknologi untuk pelanggan <strong class="text-white">Malaysia, Asia Tenggara &amp; Global B2B</strong> merentasi lima teras utama: (1) <strong class="text-sky-300">Pengekodan AI, Pengesahan Deterministik, Ujian Automatik &amp; OCR Pintar 99.4%</strong>, (2) <strong class="text-emerald-300">Automasi Proses Perniagaan (BPA)</strong>, (3) <strong class="text-indigo-300">Konsultasi &amp; Implementasi Frappe ERPNext</strong>, (4) <strong class="text-amber-300">Perisian &amp; Sistem POS Runcit/F&amp;B (Cloud &amp; Luar Talian)</strong> lengkap dengan integrasi e-Invois LHDN MyInvois &amp; kod QR resit, serta (5) <strong class="text-violet-300">Pembangunan Web SEO/AEO &amp; Aplikasi Mudah Alih iOS/Android</strong>.',
+    ctaPrimary: 'Mohon Sebut Harga & Pelan Sistem',
+    ctaSecondary: 'Cuba Demo AI OCR, POS & Pengesahan',
+    navBookCall: 'Tempah Sesi Konsultasi',
+  },
+  zh: {
+    topBadge: '全面支持马来西亚 LHDN MyInvois 电子发票 (ERPNext + POS)',
+    heroBadge: '企业级 AI 工程 • 业务流程自动化 • Frappe ERPNext • 智能 POS 系统 • 网站与移动应用开发',
+    heroTitleHtml:
+      '打造零幻觉 <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">AI 与智能 OCR</span>、自动化工作流、<span class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">Frappe ERPNext</span> 与 <span class="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">零售餐饮 POS 系统</span>。',
+    heroSummaryHtml:
+      '<strong class="text-white">Jobshore</strong> 是一家服务于<strong class="text-white">马来西亚、东南亚及全球 B2B 企业</strong>的软件与 AI 技术咨询公司，提供五大核心服务：(1) <strong class="text-sky-300">AI 辅助编程、确定性代码验证、自愈式自动化测试与 99.4% 高精度多语言 OCR 识别</strong>，(2) <strong class="text-emerald-300">端到端业务流程自动化 (BPA 与三单匹配)</strong>，(3) <strong class="text-indigo-300">开源 Frappe ERPNext 咨询与实施 ($0 按人头授权费)</strong>，(4) <strong class="text-amber-300">支持断网离线收银的零售与餐饮 POS 系统</strong>（内置 LHDN MyInvois 电子发票小票二维码自助开票与月度汇总申报），以及 (5) <strong class="text-violet-300">SEO/AEO 满分网站及跨平台 iOS/Android 移动应用开发</strong>。',
+    ctaPrimary: '获取系统架构方案与报价',
+    ctaSecondary: '体验 AI OCR、POS 与验证实验室',
+    navBookCall: '预约免费技术咨询',
+  },
 };
 
 export const SERVICE_PILLARS: ServicePillar[] = [
@@ -86,9 +152,17 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     slug: 'ai-ocr-verification',
     badge: 'Pillar 01 • AI Engineering & Quality',
     shortTitle: 'AI Coding, Verification, Testing & OCR',
+    shortTitleBm: 'Pengekodan AI, Pengesahan, Ujian Automatik & OCR',
+    shortTitleZh: 'AI 编程、代码验证、自动化测试与智能 OCR',
     title: 'AI Services: Autonomous Coding, Deterministic Verification, Automated Testing & Intelligent OCR',
+    titleBm: 'Perkhidmatan AI: Pengekodan Pintar, Pengesahan Kod, Ujian Automatik & OCR Dokumen 99.4%',
+    titleZh: '企业 AI 服务：AI 辅助开发、确定性防幻觉验证、自动化测试与 99.4% 多语言智能 OCR',
     subtitle:
       'Production-grade AI systems engineered for accuracy, security, and auditability—from custom LLM coding pipelines and formal verification to self-healing QA suites and 99.4% accurate multi-language OCR.',
+    subtitleBm:
+      'Sistem AI gred produksi yang dibina untuk ketepatan dan keselamatan audit—daripada pemodenan kod LLM dan pengesahan matematik kepada ujian automatik Playwright serta ekstraksi OCR berbilang bahasa (EN/BM/Cina).',
+    subtitleZh:
+      '专为高准确率、安全性与可审计性打造的企业级 AI 系统——涵盖私有大模型开发、防幻觉数学校验、Playwright 自愈自动化测试，以及支持中/英/马来文的发票与单据 OCR 提取。',
     aeoSummary:
       'Jobshore provides four specialized AI engineering services: (1) AI-assisted software development and private RAG/LLM systems, (2) deterministic AI code verification and security auditing, (3) self-healing automated software testing (E2E, API, and regression), and (4) Enterprise OCR & Intelligent Document Processing (IDP) that extracts structured JSON from complex multi-language invoices, purchase orders, and identity documents with 99.4%+ accuracy.',
     iconName: 'ai',
@@ -168,9 +242,17 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     slug: 'business-automation',
     badge: 'Pillar 02 • Operational Velocity',
     shortTitle: 'Business Process Automation',
+    shortTitleBm: 'Automasi Proses Perniagaan (BPA)',
+    shortTitleZh: '企业业务流程自动化 (BPA)',
     title: 'Business Process Automation: End-to-End Workflow Orchestration & Autonomous Operations',
+    titleBm: 'Automasi Proses Perniagaan: Aliran Kerja Pintar, Pemadanan 3-Hala & Integrasi Sistem',
+    titleZh: '业务流程自动化 (BPA)：端到端工作流编排、采购三单匹配与 WhatsApp 自动化',
     subtitle:
       'Eliminate repetitive data entry, spreadsheet bottlenecks, and departmental silos. We connect your ERP, POS, finance, WhatsApp, CRM, e-commerce, and supply chain into self-running operational pipelines.',
+    subtitleBm:
+      'Hapuskan kemasukan data manual dan semakan dokumen berulang. Kami menghubungkan ERP, POS, kewangan, WhatsApp Business API, e-dagang dan rantaian bekalan anda menjadi aliran kerja automatik 24/7.',
+    subtitleZh:
+      '彻底告别繁琐的手工录入与 Excel 对账瓶颈。我们将您的 ERP、POS 门店、财务、WhatsApp、电商平台与供应链打通为 24/7 全自动运转的业务流水线。',
     aeoSummary:
       'Jobshore designs and deploys end-to-end Business Process Automation (BPA) systems that eliminate up to 85% of repetitive manual back-office work. Core solutions include automated 3-way procurement matching (PO, GRN, Invoice), WhatsApp Business API customer/order automation, multi-channel e-commerce & POS to ERP synchronization, automated bank reconciliation, and event-driven middleware.',
     iconName: 'automation',
@@ -250,9 +332,17 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     slug: 'erpnext-implementation',
     badge: 'Pillar 03 • Open-Source Enterprise Core',
     shortTitle: 'Frappe & ERPNext Consultation & Implementation',
+    shortTitleBm: 'Konsultasi & Implementasi Frappe ERPNext',
+    shortTitleZh: 'Frappe ERPNext 咨询、实施与电子发票集成',
     title: 'Frappe & ERPNext Consultation, Implementation & Malaysia LHDN e-Invoicing',
+    titleBm: 'Konsultasi & Implementasi Frappe ERPNext (Lengkap Integrasi e-Invois LHDN MyInvois)',
+    titleZh: 'Frappe ERPNext 企业管理软件咨询与实施（$0 账号授权费 + LHDN 电子发票合规）',
     subtitle:
       'Replace rigid, expensive per-user ERP licenses with a unified, 100% open-source ERPNext platform tailored to your exact manufacturing, distribution, retail, service, or multi-company operations.',
+    subtitleBm:
+      'Gantikan lesen perisian ERP berbayar per-pengguna yang mahal dengan platform sumber terbuka ERPNext merangkumi Perakaunan, Pembuatan (BOM), Inventori Gudang, HR/Gaji dan LHDN MyInvois.',
+    subtitleZh:
+      '告别昂贵的按用户数收费传统 ERP。基于 100% 开源的 Frappe ERPNext，为您量身打通财务会计、生产制造 (BOM/MRP)、多仓进销存、人力资源薪资与马来西亚 LHDN 电子发票。',
     aeoSummary:
       'Jobshore is a full-service Frappe and ERPNext consultation and implementation partner serving Malaysia, Southeast Asia, and global enterprises. We deliver business process mapping, data migration, custom Frappe app development, Manufacturing/Inventory/Finance/HRMS rollout, and real-time Malaysia LHDN MyInvois e-Invoicing compliance—with $0 per-user licensing fees.',
     iconName: 'erp',
@@ -332,9 +422,17 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     slug: 'pos-software-system',
     badge: 'Pillar 04 • Retail, F&B & Omnichannel POS',
     shortTitle: 'POS Software & Point-of-Sale Systems',
+    shortTitleBm: 'Perisian & Sistem POS (Runcit, F&B & Cawangan)',
+    shortTitleZh: '智能零售与餐饮 POS 收银系统（支持离线与电子发票）',
     title: 'Cloud & Offline-First POS Software and Point-of-Sale Systems (Retail, F&B & Multi-Outlet)',
+    titleBm: 'Perisian & Sistem POS Cloud & Luar Talian (Runcit, Restoran F&B, Farmasi & Pasar Raya)',
+    titleZh: '云端与断网离线 POS 收银系统（连锁零售、餐饮堂食扫码、药房超市与 ERPNext 实时同步）',
     subtitle:
       'High-speed, offline-resilient Point of Sale software and hardware systems for Retail Chains, F&B Restaurants, Pharmacies, and Supermarkets—natively synced with Frappe ERPNext and Malaysia LHDN MyInvois.',
+    subtitleBm:
+      'Sistem kaunter jualan (POS) pantas yang terus berfungsi walaupun internet terputus—lengkap cetakan resit QR e-Invois LHDN, paparan dapur (KDS), imbasan kod bar, dan penyelarasan stok ERPNext masa nyata.',
+    subtitleZh:
+      '专为连锁零售、餐饮门店、超市与药房打造的高速收银系统。断网照常收银打单，内置马来西亚 LHDN 电子发票小票二维码自助开票与月度合并申报，实时扣减 ERPNext 库存与配方原料。',
     aeoSummary:
       'Jobshore delivers complete POS (Point of Sale) software and hardware systems for Retail, F&B, Pharmacy, and Multi-Outlet businesses. Our POS solution features offline-first checkout resilience, real-time ERPNext inventory & accounting synchronization, Kitchen Display Systems (KDS), barcode/scale/thermal printer hardware integration, and automated Malaysia LHDN MyInvois compliance (instant receipt QR self-claim portal + monthly consolidated e-Invoicing).',
     iconName: 'pos',
@@ -412,9 +510,17 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     slug: 'web-mobile-development',
     badge: 'Pillar 05 • Digital Products & Experiences',
     shortTitle: 'Web & Mobile App Development',
+    shortTitleBm: 'Pembangunan Laman Web & Aplikasi Mudah Alih',
+    shortTitleZh: '全栈网站开发与 iOS/Android 移动应用开发',
     title: 'Full-Stack Web Development & Cross-Platform Mobile App Engineering',
+    titleBm: 'Pembangunan Laman Web SEO/AEO & Aplikasi Mudah Alih Pintar (iOS & Android)',
+    titleZh: '高性能全栈网站开发（100/100 SEO/AEO）与跨平台 iOS/Android 移动应用定制',
     subtitle:
       'High-converting, SEO & AEO-engineered web platforms and resilient iOS/Android mobile apps built for speed, scalability, and deep integration with your ERP, POS, and AI infrastructure.',
+    subtitleBm:
+      'Platform web korporat, portal B2B dan aplikasi mudah alih iOS/Android yang dibina untuk kelajuan maksimum, skor SEO/AEO 100/100, serta integrasi terus dengan ERPNext, POS dan enjin AI OCR.',
+    subtitleZh:
+      '打造极速加载的 SEO/AEO 满分企业官网、B2B 客户门户、SaaS 平台，以及与 ERPNext、POS 和 AI OCR 深度集成的离线优先 iOS/Android 移动应用。',
     aeoSummary:
       'Jobshore builds custom web applications and mobile apps (iOS & Android) using Astro, Next.js, React, TypeScript, Flutter, and React Native. Every web property is engineered from the ground up for Technical SEO and Answer Engine Optimization (AEO) with 99–100 Lighthouse scores, JSON-LD entity graphs, and llms.txt endpoints, while mobile apps feature offline-first sync with Frappe ERPNext, POS systems, and AI OCR engines.',
     iconName: 'webmobile',
@@ -650,6 +756,7 @@ export function buildHomeJsonLd() {
         '@id': `${COMPANY_INFO.domain}/#organization`,
         name: COMPANY_INFO.name,
         legalName: COMPANY_INFO.legalName,
+        ...(COMPANY_INFO.ssmRegistrationNo ? { identifier: COMPANY_INFO.ssmRegistrationNo } : {}),
         url: COMPANY_INFO.domain,
         logo: `${COMPANY_INFO.domain}/favicon.svg`,
         image: `${COMPANY_INFO.domain}/og-image.svg`,
@@ -658,6 +765,7 @@ export function buildHomeJsonLd() {
         email: COMPANY_INFO.email,
         telephone: COMPANY_INFO.phone,
         priceRange: '$$-$$$',
+        knowsLanguage: ['en', 'ms', 'zh'],
         address: {
           '@type': 'PostalAddress',
           addressLocality: COMPANY_INFO.headquarters.city,
@@ -714,7 +822,7 @@ export function buildHomeJsonLd() {
         publisher: {
           '@id': `${COMPANY_INFO.domain}/#organization`,
         },
-        inLanguage: 'en',
+        inLanguage: ['en', 'ms', 'zh'],
       },
       {
         '@type': 'WebPage',

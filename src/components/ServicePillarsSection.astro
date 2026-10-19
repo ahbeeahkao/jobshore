@@ -1,5 +1,5 @@
 ---
-import { SERVICE_PILLARS } from '../data/siteData';
+import { COMPANY_INFO, SERVICE_PILLARS } from '../data/siteData';
 import { withBase } from '../utils/paths';
 
 const colorStyles: Record<
@@ -69,7 +69,13 @@ const colorStyles: Record<
       <span class="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-300">
         Five Integrated Enterprise Pillars
       </span>
-      <h2 id="core-services-heading" class="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+      <h2
+        id="core-services-heading"
+        class="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+        data-i18n-en="Full-Lifecycle AI, Automation, ERPNext, POS Systems & Product Engineering"
+        data-i18n-bm="Penyelesaian Bersepadu AI, Automasi Bisnes, Frappe ERPNext, Sistem POS & Pembangunan Aplikasi"
+        data-i18n-zh="全方位企业级 AI、业务自动化、Frappe ERPNext、POS 收银系统与软件研发"
+      >
         Full-Lifecycle AI, Automation, ERPNext, POS Systems &amp; Product Engineering
       </h2>
       <p class="mt-4 text-base text-slate-400">
@@ -98,10 +104,20 @@ const colorStyles: Record<
                     Timeline: {pillar.timeline}
                   </span>
                 </div>
-                <h3 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                <h3
+                  class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl"
+                  data-i18n-en={pillar.title}
+                  data-i18n-bm={pillar.titleBm}
+                  data-i18n-zh={pillar.titleZh}
+                >
                   {pillar.title}
                 </h3>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <p
+                  class="text-sm sm:text-base text-slate-300 leading-relaxed"
+                  data-i18n-en={pillar.subtitle}
+                  data-i18n-bm={pillar.subtitleBm}
+                  data-i18n-zh={pillar.subtitleZh}
+                >
                   {pillar.subtitle}
                 </p>
               </div>
@@ -189,7 +205,13 @@ const colorStyles: Record<
 
               <div class="flex flex-col gap-2.5 lg:col-span-3 lg:items-end">
                 <div class="text-xs text-slate-400">
-                  Starting Reference: <strong class="text-white">{pillar.startingInvestment}</strong>
+                  {COMPANY_INFO.showStartingPrice ? (
+                    <>
+                      Starting Reference: <strong class="text-white">{pillar.startingInvestment}</strong>
+                    </>
+                  ) : (
+                    <strong class="text-emerald-300">{COMPANY_INFO.customPriceFallbackText}</strong>
+                  )}
                 </div>
                 <div class="flex flex-wrap gap-2.5">
                   <a

@@ -4,6 +4,41 @@ Official SEO + AEO (Answer Engine Optimization) web platform for **Jobshore**, b
 
 ---
 
+## 0. Quick Configuration: Update Email, WhatsApp, SSM Registration & Price Visibility
+
+All company contact details, SSM registration number, and pricing visibility are controlled from **one single block** at the very top of [`src/data/siteData.ts`](./src/data/siteData.ts) (lines 1–18):
+
+```ts
+export const COMPANY_CONFIG = {
+  brandName: 'Jobshore',
+  legalName: 'Jobshore Technologies', // e.g., 'Jobshore Sdn. Bhd.'
+  ssmRegistrationNo: 'SSM Reg. No: 202601012345 (1567890-X)', // Set to '' to hide until registered
+  email: 'hello@jobshore.com',
+  phoneDisplay: '+60 3-7890 4210',
+  whatsappDisplay: '+60 12-890 4210',
+  whatsappNumberClean: '60128904210', // Digits only (country code + number) for wa.me links
+  city: 'Petaling Jaya',
+  state: 'Selangor',
+  country: 'Malaysia',
+  countryCode: 'MY',
+  // Set showStartingPrice to false to show "Custom Milestone Quote • 14-Day Pilot Available" instead of price numbers
+  showStartingPrice: true,
+  customPriceFallbackText: 'Custom Milestone Quote • 14-Day Pilot Available',
+};
+```
+
+- **Updating `COMPANY_CONFIG` automatically updates**:
+  - The Footer & Contact Section (`email`, `whatsapp`, `ssmRegistrationNo`, `legalName`)
+  - The 1-Click WhatsApp Deal Closer button (`https://wa.me/${whatsappNumberClean}`)
+  - The `Organization` JSON-LD schema in `<head>`
+  - All 5 Service Pillar cards and deep-dive pages (`showStartingPrice` toggle)
+
+### Built-In Trilingual Switcher (`EN` | `BM` | `中文`)
+- The top bar includes a live **`EN` | `BM` | `中文`** switcher that translates the Hero headline, Executive AEO Summary, Service Pillar titles/subtitles, and CTAs between **English**, **Bahasa Melayu**, and **Simplified Chinese**.
+- Translations can be customized in `UI_TRANSLATIONS` and `SERVICE_PILLARS` inside [`src/data/siteData.ts`](./src/data/siteData.ts).
+
+---
+
 ## 1. Complete List of AI Services You Can Offer (`AI_SERVICE_CATALOG`)
 
 In addition to ERPNext, POS, Business Automation, and Web/Mobile engineering, Jobshore is structured to offer **8 high-margin, high-demand B2B AI service lines** (showcased on the homepage at `/#why-choose-us` and `/services/ai-ocr-verification`):

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { COMPANY_INFO, SERVICE_PILLARS, buildHomeJsonLd } from '../data/siteData';
+import { COMPANY_INFO, SERVICE_PILLARS, UI_TRANSLATIONS, buildHomeJsonLd } from '../data/siteData';
 import { withBase } from '../utils/paths';
 import SeoAeoModal from '../components/SeoAeoModal.astro';
 
@@ -27,6 +27,9 @@ const {
     'Frappe ERPNext Implementation Malaysia',
     'ERPNext Consultation',
     'POS Software Malaysia',
+    'Sistem POS e-Invois LHDN',
+    '马来西亚 LHDN 电子发票 POS 系统',
+    'ERPNext 实施顾问',
     'Point of Sale System Retail F&B',
     'LHDN MyInvois POS Integration',
     'Web Application Development',
@@ -55,10 +58,12 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
 
-    <!-- Canonical & Regional Hreflang Signals for Malaysia / SEA / Global B2B -->
+    <!-- Canonical & Trilingual Regional Hreflang Signals (EN / BM / ZH) -->
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
     <link rel="alternate" hreflang="en-MY" href={canonicalUrl} />
+    <link rel="alternate" hreflang="ms-MY" href={canonicalUrl} />
+    <link rel="alternate" hreflang="zh-MY" href={canonicalUrl} />
     <link rel="alternate" hreflang="en-SG" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
@@ -81,7 +86,8 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:locale" content="en_MY" />
-    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="ms_MY" />
+    <meta property="og:locale:alternate" content="zh_MY" />
     <meta property="og:locale:alternate" content="en_SG" />
 
     <!-- Twitter / X Card -->
@@ -107,13 +113,13 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
       Skip to main content
     </a>
 
-    <!-- Top SEO/AEO Status & Regional Announcement Bar -->
+    <!-- Top SEO/AEO Status, Regional Announcement & Trilingual Switcher Bar -->
     <div class="border-b border-slate-800/80 bg-slate-950/90 px-4 py-2 text-xs text-slate-300">
       <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2">
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
           <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-medium text-emerald-300">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-            ERPNext + POS LHDN MyInvois Ready
+            <span id="i18n-top-badge">ERPNext + POS LHDN MyInvois Ready</span>
           </span>
           <span class="hidden text-slate-500 sm:inline">•</span>
           <span class="text-slate-300">
@@ -121,7 +127,36 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
           </span>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <!-- Language Switcher (EN | BM | 中文) -->
+          <div
+            class="inline-flex items-center rounded-lg border border-slate-800 bg-slate-900 p-0.5 text-[11px]"
+            role="group"
+            aria-label="Language Switcher"
+          >
+            <button
+              type="button"
+              data-lang-switch="en"
+              class="lang-switch-btn rounded-md bg-sky-500 px-2 py-0.5 font-bold text-slate-950 transition cursor-pointer"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              data-lang-switch="bm"
+              class="lang-switch-btn rounded-md px-2 py-0.5 font-semibold text-slate-300 transition hover:text-white cursor-pointer"
+            >
+              BM
+            </button>
+            <button
+              type="button"
+              data-lang-switch="zh"
+              class="lang-switch-btn rounded-md px-2 py-0.5 font-semibold text-slate-300 transition hover:text-white cursor-pointer"
+            >
+              中文
+            </button>
+          </div>
+
           <button
             type="button"
             data-open-seo-modal
@@ -130,8 +165,9 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
             <svg class="h-3.5 w-3.5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>SEO &amp; AEO Score: 100/100 (Inspect Schema &amp; llms.txt)</span>
+            <span>SEO &amp; AEO: 100/100</span>
           </button>
+
           <a
             href={withBase('/llms.txt')}
             target="_blank"
@@ -155,7 +191,7 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
             </span>
           </div>
           <div>
-            <span class="text-xl font-extrabold tracking-tight text-white">Jobshore</span>
+            <span class="text-xl font-extrabold tracking-tight text-white">{COMPANY_INFO.name}</span>
             <span class="block text-[10px] font-medium uppercase tracking-widest text-sky-400">
               AI • Automation • ERPNext • POS • Apps
             </span>
@@ -226,7 +262,7 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
             href={withBase('/#contact')}
             class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg shadow-sky-500/20 transition hover:brightness-110"
           >
-            <span>Book Discovery Call</span>
+            <span id="i18n-nav-cta">Book Discovery Call</span>
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -268,8 +304,11 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
           <a href={withBase('/#interactive-lab')} class="rounded-lg px-3 py-2 text-sm font-medium text-sky-400 hover:bg-slate-900">
             Interactive AI OCR, POS &amp; Verification Lab
           </a>
-          <a href={withBase('/#roi-calculator')} class="rounded-lg px-3 py-2 text-sm font-medium text-emerald-400 hover:bg-slate-900">
-            Automation, POS &amp; ERPNext ROI Calculator
+          <a href={withBase('/#why-choose-us')} class="rounded-lg px-3 py-2 text-sm font-medium text-emerald-400 hover:bg-slate-900">
+            Why Us &amp; Zero-Hallucination AI Safety
+          </a>
+          <a href={withBase('/#insights')} class="rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-900">
+            Latest News &amp; LHDN Guides
           </a>
           <a href={withBase('/#faq')} class="rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-900">
             AEO Knowledge Base &amp; FAQs
@@ -295,7 +334,7 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
     <footer class="border-t border-slate-800/90 bg-slate-950 text-slate-400" role="contentinfo">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-12">
-          <!-- Column 1: Brand & AEO Summary -->
+          <!-- Column 1: Brand, SSM Registration & Contact Info (All from COMPANY_CONFIG) -->
           <div class="lg:col-span-4 space-y-4">
             <a href={withBase('/')} class="flex items-center gap-3">
               <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/15 ring-1 ring-sky-400/40">
@@ -303,7 +342,14 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
                   J
                 </span>
               </div>
-              <span class="text-xl font-extrabold text-white">Jobshore</span>
+              <div>
+                <span class="text-xl font-extrabold text-white">{COMPANY_INFO.name}</span>
+                {COMPANY_INFO.ssmRegistrationNo && (
+                  <span class="block font-mono text-[11px] text-slate-400">
+                    {COMPANY_INFO.legalName} ({COMPANY_INFO.ssmRegistrationNo})
+                  </span>
+                )}
+              </div>
             </a>
             <p class="text-sm leading-relaxed text-slate-400">
               Enterprise AI engineering (coding, deterministic verification, self-healing QA, multi-language OCR),
@@ -312,10 +358,27 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
             </p>
             <address class="not-italic text-xs leading-relaxed text-slate-400 space-y-1 pt-1">
               <div class="font-semibold text-slate-200">APAC &amp; Global Delivery Headquarters:</div>
-              <div>Petaling Jaya, Selangor, Malaysia (Klang Valley / KL Hub)</div>
-              <div>Serving Malaysia, Singapore, Southeast Asia &amp; Global B2B</div>
-              <div class="pt-1">
-                Email: <a href={`mailto:${COMPANY_INFO.email}`} class="text-sky-400 hover:underline">{COMPANY_INFO.email}</a>
+              <div>
+                {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}, {COMPANY_INFO.headquarters.country}
+              </div>
+              <div class="pt-1 flex flex-col gap-1">
+                <span>
+                  Email:{' '}
+                  <a href={`mailto:${COMPANY_INFO.email}`} class="text-sky-400 hover:underline">
+                    {COMPANY_INFO.email}
+                  </a>
+                </span>
+                <span>
+                  WhatsApp:{' '}
+                  <a
+                    href={`https://wa.me/${COMPANY_INFO.whatsappClean}`}
+                    target="_blank"
+                    rel="noopener"
+                    class="text-emerald-400 hover:underline"
+                  >
+                    {COMPANY_INFO.whatsapp}
+                  </a>
+                </span>
               </div>
             </address>
           </div>
@@ -417,11 +480,14 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
         </div>
 
         <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800/80 pt-8 text-xs text-slate-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} {COMPANY_INFO.legalName}. All rights reserved. Ready for GitHub Pages &amp; Custom Domain.</p>
+          <p>
+            © {new Date().getFullYear()} {COMPANY_INFO.legalName}
+            {COMPANY_INFO.ssmRegistrationNo ? ` (${COMPANY_INFO.ssmRegistrationNo})` : ''}. All rights reserved.
+          </p>
           <p class="flex items-center gap-4">
-            <span>Frappe ERPNext &amp; POS Open-Source Specialists</span>
+            <span>EN • Bahasa Melayu • 简体中文</span>
             <span>•</span>
-            <span>PDPA &amp; ISO/SOC2-Aligned Engineering</span>
+            <span>PDPA &amp; LHDN MyInvois Ready</span>
           </p>
         </div>
       </div>
@@ -430,7 +496,8 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
     <!-- Live SEO & AEO Inspector Modal -->
     <SeoAeoModal jsonLd={jsonLd} />
 
-    <script>
+    <!-- Trilingual (EN / BM / ZH) Client-Side Switcher Script -->
+    <script define:vars={{ UI_TRANSLATIONS }}>
       const mobileToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
 
@@ -451,6 +518,63 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
           mobileToggle?.setAttribute('aria-expanded', 'false');
         });
       });
+
+      const langButtons = document.querySelectorAll('.lang-switch-btn');
+
+      function applyLanguage(lang) {
+        const t = UI_TRANSLATIONS[lang] || UI_TRANSLATIONS.en;
+
+        const topBadge = document.getElementById('i18n-top-badge');
+        const heroBadge = document.getElementById('i18n-hero-badge');
+        const heroHeadline = document.getElementById('hero-headline');
+        const heroSummary = document.getElementById('i18n-hero-summary');
+        const ctaPrimary = document.getElementById('i18n-cta-primary');
+        const ctaSecondary = document.getElementById('i18n-cta-secondary');
+        const navCta = document.getElementById('i18n-nav-cta');
+
+        if (topBadge) topBadge.textContent = t.topBadge;
+        if (heroBadge) heroBadge.textContent = t.heroBadge;
+        if (heroHeadline) heroHeadline.innerHTML = t.heroTitleHtml;
+        if (heroSummary) heroSummary.innerHTML = t.heroSummaryHtml;
+        if (ctaPrimary) ctaPrimary.textContent = t.ctaPrimary;
+        if (ctaSecondary) ctaSecondary.textContent = t.ctaSecondary;
+        if (navCta) navCta.textContent = t.navBookCall;
+
+        // Translate any element with data-i18n-en / data-i18n-bm / data-i18n-zh
+        document.querySelectorAll('[data-i18n-en]').forEach((el) => {
+          const val = el.getAttribute(`data-i18n-${lang}`) || el.getAttribute('data-i18n-en');
+          if (val) el.textContent = val;
+        });
+
+        langButtons.forEach((btn) => {
+          const bLang = btn.getAttribute('data-lang-switch');
+          if (bLang === lang) {
+            btn.className =
+              'lang-switch-btn rounded-md bg-sky-500 px-2 py-0.5 font-bold text-slate-950 transition cursor-pointer';
+          } else {
+            btn.className =
+              'lang-switch-btn rounded-md px-2 py-0.5 font-semibold text-slate-300 transition hover:text-white cursor-pointer';
+          }
+        });
+
+        try {
+          localStorage.setItem('jobshore_lang', lang);
+        } catch (_) {}
+      }
+
+      langButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang-switch') || 'en';
+          applyLanguage(lang);
+        });
+      });
+
+      try {
+        const saved = localStorage.getItem('jobshore_lang');
+        if (saved && (saved === 'en' || saved === 'bm' || saved === 'zh')) {
+          applyLanguage(saved);
+        }
+      } catch (_) {}
     </script>
   </body>
 </html>

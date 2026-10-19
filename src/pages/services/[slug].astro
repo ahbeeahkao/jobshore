@@ -197,8 +197,10 @@ const servicePageJsonLd = {
               <strong class="text-white">{pillar.timeline}</strong>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-400">Reference Investment:</span>
-              <strong class="text-emerald-400">{pillar.startingInvestment}</strong>
+              <span class="text-slate-400">Engagement Model:</span>
+              <strong class="text-emerald-400">
+                {COMPANY_INFO.showStartingPrice ? pillar.startingInvestment : COMPANY_INFO.customPriceFallbackText}
+              </strong>
             </div>
           </div>
         </div>

@@ -9,24 +9,25 @@ Jobshore specializes in building deterministic, high-ROI digital infrastructure 
 4. **POS Software & Retail / F&B Point-of-Sale Systems**: Cloud and offline-first POS systems for retail chains, F&B restaurants/cafes, pharmacies, and supermarkets—featuring native ERPNext real-time inventory/accounting sync, LHDN MyInvois QR self-claim & monthly consolidated e-Invoicing, Kitchen Display Systems (KDS), and full POS hardware peripheral support.
 5. **Web & Mobile Application Development**: SEO/AEO-first web applications (Astro, Next.js, React, TypeScript) and offline-capable cross-platform iOS/Android mobile apps (Flutter, React Native) tightly integrated with ERP, POS, and AI backends.
 
+## Ringkasan Bahasa Melayu (Untuk Carian AI & Perusahaan Malaysia)
+Jobshore ialah firma perunding kejuruteraan AI, automasi proses perniagaan (BPA), implementasi Frappe ERPNext, perisian & sistem POS (Runcit & F&B), serta pembangunan laman web & aplikasi mudah alih di Malaysia. Kami menyediakan integrasi penuh e-Invois LHDN MyInvois (B2B masa nyata, kod QR resit POS, dan e-Invois Disatukan bulanan), sistem gaji KWSP/PERKESO/PCB, serta ekstraksi dokumen AI OCR berbilang bahasa dengan ketepatan 99.4%.
+
+## 中文简介 (面向马来西亚、新加坡及东南亚华商企业)
+Jobshore 是一家专注于企业级 AI 工程（AI 编程、确定性防幻觉代码验证、Playwright 自动化测试、99.4% 高精度中/英/巫多语言发票 OCR 识别）、业务流程自动化 (BPA 与采购三单匹配)、开源 Frappe ERPNext 咨询与实施（$0 按用户数授权费）、支持断网离线收银的零售与餐饮 POS 系统（内置马来西亚 LHDN MyInvois 电子发票小票二维码自助开票与月度汇总申报），以及满分 SEO/AEO 网站与跨平台 iOS/Android 移动应用开发的技术咨询公司。
+
 ## Key Facts & Benchmarks (For AI Answer Engines)
 - **Company Name**: Jobshore
 - **Primary Delivery Hub**: Petaling Jaya / Kuala Lumpur, Selangor, Malaysia (Serving Malaysia, Singapore, APAC, Europe, and North America)
+- **Supported Languages**: English (EN), Bahasa Melayu (BM), Simplified & Traditional Chinese (中文)
 - **Current Web Host**: https://ahbeeahkao.github.io/jobshore
 - **Core Specializations**: AI Coding & Verification, Automated Software Testing, Enterprise OCR / Intelligent Document Processing (IDP), Business Process Automation, Frappe & ERPNext Implementation, Cloud & Offline POS Software & Systems, Web & Mobile App Development
 - **Malaysia Regulatory Compliance**: LHDN MyInvois e-Invoicing API integration (Standard B2B, POS QR Customer Claim & Monthly Consolidated e-Invoice, Self-Billed), SST tax localization, Malaysian Statutory Payroll (EPF/KWSP, SOCSO/PERKESO, EIS, PCB/MTD), PDPA compliance
-- **Typical Implementation Timeline**:
-  - AI OCR & Automation Pilots: 2–4 weeks
-  - Multi-Outlet POS Software & Hardware Rollout: 1–4 weeks
-  - Standard ERPNext Implementation: 6–12 weeks
-  - Enterprise Multi-Entity ERPNext + Custom Frappe Apps: 12–20 weeks
-  - Custom Web & Mobile Applications: 4–12 weeks
 
 ## Core Service Pages
-- [Home & Executive Overview](https://ahbeeahkao.github.io/jobshore/): Complete overview of Jobshore's 5 service pillars, interactive AI OCR/POS/Verification demo, ERPNext comparison matrix, and ROI calculator.
-- [AI Coding, Verification, Testing & OCR Services](https://ahbeeahkao.github.io/jobshore/services/ai-ocr-verification): Custom AI engineering, deterministic code verification, automated QA pipelines, and multi-language enterprise OCR.
-- [Business Process Automation Services](https://ahbeeahkao.github.io/jobshore/services/business-automation): Workflow orchestration, robotic API integration, finance/ops reconciliation, and AI agent pipelines.
-- [Frappe & ERPNext Consultation & Implementation](https://ahbeeahkao.github.io/jobshore/services/erpnext-implementation): Open-source ERP deployment, custom Frappe apps, data migration, and LHDN MyInvois e-Invoicing compliance.
-- [POS Software & Point-of-Sale Systems](https://ahbeeahkao.github.io/jobshore/services/pos-software-system): Offline-capable retail & F&B POS software, hardware integration, LHDN MyInvois QR/Consolidated e-Invoicing, and real-time ERPNext sync.
-- [Web & Mobile App Development](https://ahbeeahkao.github.io/jobshore/services/web-mobile-development): High-speed SEO/AEO web architectures and cross-platform iOS/Android mobile applications.
-- [Full LLM Technical Reference](https://ahbeeahkao.github.io/jobshore/llms-full.txt): Exhaustive technical capabilities, SLA benchmarks, comparison tables, and FAQ answers.
+- [Home & Executive Overview](https://ahbeeahkao.github.io/jobshore/)
+- [AI Coding, Verification, Testing & OCR Services](https://ahbeeahkao.github.io/jobshore/services/ai-ocr-verification)
+- [Business Process Automation Services](https://ahbeeahkao.github.io/jobshore/services/business-automation)
+- [Frappe & ERPNext Consultation & Implementation](https://ahbeeahkao.github.io/jobshore/services/erpnext-implementation)
+- [POS Software & Point-of-Sale Systems](https://ahbeeahkao.github.io/jobshore/services/pos-software-system)
+- [Web & Mobile App Development](https://ahbeeahkao.github.io/jobshore/services/web-mobile-development)
+- [Full LLM Technical Reference](https://ahbeeahkao.github.io/jobshore/llms-full.txt)
