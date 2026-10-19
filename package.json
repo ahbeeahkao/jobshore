@@ -1,0 +1,41 @@
+{
+  "name": "jobshore",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Jobshore — AI Engineering, OCR, Business Automation, Frappe ERPNext, POS Software & Systems, and Web/Mobile Development Consultancy",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0 --port 4321",
+    "start": "astro dev --host 0.0.0.0 --port 4321",
+    "build": "astro build",
+    "build:gh-pages": "BASE_PATH=/jobshore PUBLIC_SITE_URL=https://ahbeeahkao.github.io astro build",
+    "preview": "astro preview --host 0.0.0.0 --port 4321",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahbeeahkao/jobshore.git"
+  },
+  "homepage": "https://ahbeeahkao.github.io/jobshore",
+  "keywords": [
+    "AI Engineering",
+    "AI Verification",
+    "Automated Testing",
+    "Enterprise OCR",
+    "Business Process Automation",
+    "Frappe",
+    "ERPNext Implementation",
+    "POS Software",
+    "Point of Sale System",
+    "LHDN MyInvois POS",
+    "Web Development",
+    "Mobile App Development",
+    "SEO",
+    "AEO"
+  ],
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.3",
+    "astro": "^7.4.0",
+    "tailwindcss": "^4.2.3"
+  }
+}
