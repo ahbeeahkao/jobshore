@@ -1,205 +1,157 @@
-# Jobshore — Enterprise AI, Automation, Frappe ERPNext, POS Systems & Web/Mobile Platform
+# Jobshore — Outcome-Guaranteed AI, Business Automation, Frappe ERPNext, Offline POS & Web/Mobile Engineering
 
-Official SEO + AEO (Answer Engine Optimization) web platform for **Jobshore**, built with **Astro** and **Tailwind CSS** for ultra-fast static hosting on **GitHub Pages** (`https://ahbeeahkao.github.io/jobshore`) and seamless transition to a custom domain later.
+[![Live Platform](https://img.shields.io/badge/Live_Platform-Explore_Interactive_Sandbox-0ea5e9?style=for-the-badge)](https://ahbeeahkao.github.io/jobshore)
+[![Instant Quote & ROI](https://img.shields.io/badge/14--Day_Pilot-Calculate_Instant_Quote_%26_ROI-10b981?style=for-the-badge)](https://ahbeeahkao.github.io/jobshore/#contact)
+[![LHDN MyInvois Ready](https://img.shields.io/badge/Malaysia_LHDN_MyInvois-B2B_%E2%80%A2_POS_QR_%E2%80%A2_Consolidated-f59e0b?style=for-the-badge)](https://ahbeeahkao.github.io/jobshore/insights/malaysia-lhdn-myinvois-erpnext-pos-compliance-guide)
 
----
+> **Anyone can prompt an LLM to generate raw code. Businesses partner with Jobshore because we engineer *verified, auditable operational outcomes* that cut back-office costs, eliminate per-user software seat taxes, and guarantee 100% regulatory compliance.**
 
-## 0. Quick Configuration: 100% Zero Phone Exposure + Google Apps Script Webhook Setup
-
-To prevent scraper bots from harvesting your phone/WhatsApp number, **zero phone numbers or public `wa.me` links are exposed anywhere in the HTML or JSON-LD**. Instead, clients submit their details through a **3-Part Anti-Abuse Gate** (`/#contact`), which sends their scope, ROI calculation, and *their* WhatsApp number straight to your **Google Sheet + Gmail inbox** via Google Apps Script.
-
-### Step-by-Step: Connect Your Google Sheet & Gmail Alerts (Takes 60 Seconds)
-1. Go to **[https://sheets.new](https://sheets.new)** to create a new Google Sheet and name it **`Jobshore Leads`**.
-2. In the Google Sheet top menu, click **Extensions → Apps Script**.
-3. Delete the default `myFunction()` code and paste the entire contents of **[`google-apps-script/Code.gs`](./google-apps-script/Code.gs)** from this repository.
-4. Click **Deploy** (top-right blue button) → **New deployment**.
-5. Click the gear icon ⚙️ next to *"Select type"* → choose **Web app**:
-   - **Description:** `Jobshore Lead Webhook`
-   - **Execute as:** `Me`
-   - **Who has access:** `Anyone`
-6. Click **Deploy**, approve Google permissions (**Advanced → Go to project (unsafe) → Allow**), and copy the **Web app URL** (looks like `https://script.google.com/macros/s/AKfycb.../exec`).
-7. Paste that URL into `leadWebhookUrl` at the top of **[`src/data/siteData.ts`](./src/data/siteData.ts)** (lines 4–22):
-
-```ts
-export const COMPANY_CONFIG = {
-  brandName: 'Jobshore',
-  legalName: 'Jobshore Technologies',
-  ssmRegistrationNo: 'SSM Reg. No: 202601012345 (1567890-X)', // Set to '' to hide until registered
-  // Paste your deployed Google Apps Script Web App URL here:
-  leadWebhookUrl: 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec',
-  fallbackEmailUser: 'hello',
-  fallbackEmailDomain: 'jobshore.com',
-  city: 'Petaling Jaya',
-  state: 'Selangor',
-  country: 'Malaysia',
-  countryCode: 'MY',
-  showStartingPrice: false,
-  customPriceFallbackText: 'Outcome-Based Milestone + Tracked SLA',
-};
-```
-
-### What Happens When a Real Client Submits the Form:
-1. **3-Part Anti-Abuse Gate Runs (Client + Server-Side in `Code.gs`):**
-   - **Gate 1 (Bot Honeypot & Human Dwell Check):** Blocks bots that fill hidden fields or submit without real mouse/keyboard/touch interaction (`dwellTimeSec >= 2`).
-   - **Gate 2 (Interactive Math Security Challenge):** Verifies the human challenge answer before unlocking submission.
-   - **Gate 3 (Corporate Lead & Callback Validation + 45s Rate Limit):** Validates Name, Company, Work Email, and Client Phone (`>= 8 digits`) with a 45-second cooldown.
-2. **Logs Row to Google Sheets:** Automatically creates bold column headers on the first run and logs the lead.
-3. **Sends You an Instant HTML Email via Gmail:** Sends a formatted summary to your inbox with a **green `"💬 Click to WhatsApp [Client Name] Now →"` button**—so **you** message the client first and your number is never exposed to the public internet!
-
-### Built-In Trilingual Switcher (`EN` | `BM` | `中文`)
-- The top bar includes a live **`EN` | `BM` | `中文`** switcher that translates the Hero headline, Executive AEO Summary, Service Pillar titles/subtitles, and CTAs between **English**, **Bahasa Melayu**, and **Simplified Chinese**.
-- Translations can be customized in `UI_TRANSLATIONS` and `SERVICE_PILLARS` inside [`src/data/siteData.ts`](./src/data/siteData.ts).
+🌐 **Official Web Platform & Live Technical Sandbox:** **[https://ahbeeahkao.github.io/jobshore](https://ahbeeahkao.github.io/jobshore)**  
+📍 **APAC & Global Delivery Hub:** Petaling Jaya, Selangor, Malaysia *(Serving Malaysia, Singapore, Southeast Asia & Global B2B)*  
+🗣️ **Supported Languages:** English • Bahasa Melayu • 简体中文
 
 ---
 
-## 1. Complete List of AI Services You Can Offer (`AI_SERVICE_CATALOG`)
+## ⚡ Quick-Jump Executive Links
 
-In addition to ERPNext, POS, Business Automation, and Web/Mobile engineering, Jobshore is structured to offer **8 high-margin, high-demand B2B AI service lines** (showcased on the homepage at `/#why-choose-us` and `/services/ai-ocr-verification`):
-
-| Code | AI Service Offering | Target Buyers | Pricing / Engagement Model |
-| :--- | :--- | :--- | :--- |
-| **AI-01** | **AI-Assisted Coding & Legacy Modernization** | CTOs, VP Eng, SaaS Founders | Fixed-Scope Migration (PHP/Java/.NET → TS/Python/Go) or Squad Retainer |
-| **AI-02** | **Deterministic AI Verification & Anti-Hallucination Guardrails** | FinTech, Finance, Enterprise IT | Architecture Audit + CI/CD Verification Gate Setup |
-| **AI-03** | **AI-Powered Automated Software Testing & Self-Healing QA** | Product Teams, E-Commerce, Web/Mobile | Turnkey Playwright E2E + API Contract Suite |
-| **AI-04** | **Enterprise Multi-Language OCR & Intelligent Document Processing (IDP)** | Finance/AP, Logistics, Customs, Distributors | 14-Day Pilot + Volume or On-Premise License (EN/BM/中文) |
-| **AI-05** | **Private Enterprise RAG ("Chat with Your Company Docs")** | Operations, HR, Legal, Regulated Firms | Fixed-Scope Knowledge Base + Private LLM (`vLLM`/`Ollama`) |
-| **AI-06** | **AI Copilot for Frappe ERPNext & POS Predictive Analytics** | CEOs, CFOs, Retail & F&B Chains | Natural-Language BI, Stock-Out Forecasting & POS Anomaly Detection |
-| **AI-07** | **Omnichannel AI Sales & Order Intake Agents (WhatsApp / Web)** | Wholesalers, Distributors, Retail Chains | 24/7 Multilingual (EN/BM/中文) B2B Order & LHDN e-Invoice Bot |
-| **AI-08** | **AI Risk, Hallucination & PDPA Compliance Audits** | Risk Officers, Healthcare, Finance | Red-Teaming, PII Masking & Human-in-the-Loop (HITL) Governance |
-
----
-
-## 2. How to Close B2B Deals from GitHub Pages Using AI
-
-Because GitHub Pages is a static host, the most effective way to convert visitors into paying clients is combining **client-side AI solution scoping** with **instant multi-channel deal handoff**:
-
-### Step 1: On-Page Interactive ROI & AI Solution Blueprint Generator (`/#roi-calculator` & `/#contact`)
-- Visitors calculate their exact annual savings in **MYR (RM)** or **USD ($)** using the **Interactive ROI Calculator** (`src/components/InteractiveRoiCalculator.astro`).
-- In the **Project Scope & AI Blueprint Form** (`src/components/ContactSection.astro`), prospects check the pillars they need (AI/OCR, Automation, ERPNext, POS, Web/Mobile) and click **"Generate AI Architecture Blueprint"**.
-- The page immediately generates a structured **Technical Architecture Brief** listing recommended modules and anti-hallucination safeguards.
-
-### Step 2: 1-Click WhatsApp Deal Closer (`wa.me` Deep Link)
-- After generating the blueprint, the prospect clicks **"Send Blueprint via WhatsApp"**, which opens WhatsApp with the entire pre-qualified technical brief pre-filled to your number.
-- *Why this closes deals fast*: In Malaysia and Southeast Asia, B2B decision-makers respond 3–5x faster on WhatsApp than email. You can immediately reply: *"Send us 3 sample invoices or your SKU sheet right here on WhatsApp, and we will show you live 99.4% OCR / POS / ERPNext extraction on a 30-minute call tomorrow."*
-- **To update your WhatsApp number & email**: Edit `COMPANY_INFO.whatsapp` and `COMPANY_INFO.email` in `src/data/siteData.ts` (and the `wa.me/` link in `src/components/ContactSection.astro`).
-
-### Step 3: Optional Automated Webhook → n8n / Make AI Sales Agent
-- Even on static GitHub Pages, browser forms can `fetch(WEBHOOK_URL, { method: 'POST', body: JSON })` to an **n8n**, **Make.com**, **Formspree**, or **Web3Forms** webhook endpoint.
-- Your n8n workflow can pass the prospect's blueprint to an LLM to automatically generate a branded PDF proposal and notify your team on Telegram/Slack within 10 seconds.
-
----
-
-## 3. How to Update Latest News, LHDN Guides & Blog Posts (`/#insights`)
-
-You do **not** need a database or WordPress server to publish news or SEO/AEO blog articles.
-
-### Updating or Adding a Post in 60 Seconds (Even Directly on GitHub.com)
-1. Open [`src/data/insightsData.ts`](./src/data/insightsData.ts) (either locally or by clicking the **Edit (pencil icon)** on GitHub.com).
-2. Scroll to the `INSIGHT_ARTICLES` array and add a new object:
-   ```ts
-   {
-     slug: 'your-new-article-url-slug',
-     category: 'ERPNext & LHDN e-Invoice', // or 'AI & Hallucination Safety' | 'POS & Retail Tech' | 'Business Automation'
-     title: 'Your Article Headline Here',
-     publishedDate: '2026-10-25',
-     readTime: '4 min read',
-     excerpt: 'Short 1-2 sentence summary shown on the home page card.',
-     aeoDirectAnswer: 'Direct, factual 2-3 sentence answer optimized for ChatGPT, Perplexity, and Google AI Overviews.',
-     keyTakeaways: [
-       'First key takeaway bullet point',
-       'Second key takeaway bullet point',
-     ],
-     bodySections: [
-       {
-         heading: 'Section 1 Subheading',
-         content: 'Paragraph content for section 1...',
-       },
-     ],
-   }
-   ```
-3. Commit your change. Astro will automatically:
-   - Add the new card to the Home Page (`/#insights`)
-   - Generate a dedicated SEO/AEO article page at `/insights/your-new-article-url-slug` with `BlogPosting` and `Speakable` JSON-LD schema
-   - Add the new URL to `/sitemap.xml`!
-
----
-
-## 4. Why Choose Jobshore & How We Address AI Risks (Hallucinations)
-
-B2B buyers often worry about **AI hallucinations**, **data privacy (PDPA)**, and **system downtime**. The section at `/#why-choose-us` (`src/components/WhyChooseAndAiSafetySection.astro`) addresses these head-on:
-
-1. **Zero Hallucinations in Finance/OCR**: We never let an LLM write directly to a database. Every output passes through **Deterministic Math Invariants** (`Qty × Unit Price == Line Total` and `Subtotal + SST == Grand Total`) and strict `Pydantic`/`Zod` schemas.
-2. **Human-in-the-Loop (HITL) 3-Way Match Gate**: Any OCR field below 98% confidence or with a PO/GRN price variance is routed to a 1-click approval queue before touching ERPNext ledgers.
-3. **PDPA & Private LLM Deployment**: Support for zero-data-retention enterprise APIs or 100% private/on-premise models (`vLLM`, `Ollama`) inside the client's VPC.
-4. **AST & SAST/DAST Code Verification**: All AI-assisted code is verified by static analysis and 1,000+ property-based tests in CI/CD.
-5. **Offline-First POS & Warehouse Resilience**: Local `IndexedDB`/`SQLite` queues ensure retail/F&B POS terminals keep ringing sales and printing receipts even during internet outages.
-
----
-
-## 5. GitHub Pages Hosting & Switching to Custom Domain Later
-
-### Automatic GitHub Pages Deployment
-- This repository includes [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) and `public/.nojekyll`.
-- In your GitHub repository, go to **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**.
-- Every push to `main` builds and deploys the site to `https://ahbeeahkao.github.io/jobshore`.
-
-### Switching to Your DigitalPlat (`digitalplat.org`) or Custom Domain
-Because `digitalplat.org` is a **domain registry** (DNS) rather than a web server, the best setup is to **host the site on GitHub Pages (or Cloudflare Pages) and point your DigitalPlat domain to it**:
-
-1. **In Cloudflare / DigitalPlat DNS**:
-   - Add a `CNAME` record for your domain (e.g., `jobshore.dpdns.org` or `www`) pointing to `ahbeeahkao.github.io` (set Proxy status to **DNS only / Grey Cloud** while GitHub issues your free SSL certificate).
-2. **In GitHub Repository Variables** (**Settings → Secrets and variables → Actions → Variables**):
-   - Create a single repository variable:
-     - Name: `CUSTOM_DOMAIN`
-     - Value: `your-domain.dpdns.org` (without `https://`)
-3. **In GitHub Settings → Pages → Custom domain**:
-   - Enter `your-domain.dpdns.org` and check **Enforce HTTPS**.
-   - Our workflow (`.github/workflows/deploy.yml`) will automatically switch `BASE_PATH` to `/`, update all SEO/AEO canonical URLs to `https://your-domain.dpdns.org`, and generate the `CNAME` file!
-
----
-
-## 6. Local Development & Build Commands
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server (binds to 0.0.0.0:4321)
-npm run dev
-
-# Build static production output for root domain
-npm run build
-
-# Build static production output specifically for GitHub Pages (/jobshore base path)
-npm run build:gh-pages
-```
-
----
-
-## 7. Commercial Playbook: The 5 "Low-Hanging Carrots" & Winning Back Pre-AI Past Customers
-
-### A. The 5 Pillar "Low-Hanging Carrots" (High-Value to Client, <1 Hour Effort for You)
-Never ask a cold or returning prospect to sign a RM 50,000+ overhaul on Day 1. Use these 5 bite-sized **Wedge Offers** (already built into `src/data/siteData.ts` on your website) to get an immediate "Yes":
-
-| Pillar | The Low-Hanging Carrot (Wedge Offer) | Why It Closes Fast |
+| Interactive Tool / Resource | What You Can Do Right Now | Direct Link |
 | :--- | :--- | :--- |
-| **01. AI Coding, Verification & OCR** | **Free "3-Document Torture Test"**: Client sends 3 messy/handwritten/multi-language invoices or DOs on WhatsApp; you return 100% math-verified JSON/Excel in 15 mins. | Zero cost to them, takes you 5 minutes via your OCR pipeline, proves undeniable accuracy. |
-| **02. Business Process Automation** | **7-Day "Single-Bottleneck" Sprint**: Automate just **1** hated daily task (e.g., WhatsApp dealer order intake or AP 3-way match) for a small fixed pilot fee. | Solves an immediate headache in 1 week; 80%+ expand to full-company automation. |
-| **03. Frappe & ERPNext** | **10-Day Standalone LHDN MyInvois Sidecar Bridge + Seat-Tax Audit**: Connect LHDN e-Invoicing to their *current* SQL/AutoCount/Excel first without forcing an immediate ERP rip-and-replace. | Every Malaysian SME needs LHDN compliance now; once on your Frappe bridge, full ERPNext migration is a natural Phase 2. |
-| **04. POS Software & Systems** | **1-Counter 14-Day Live Store Trial + Receipt QR e-Invoice**: Put 1 terminal (or 10 SKUs) alongside their existing register for 14 days. | Removes retail/F&B owners' #1 fear (checkout disruption during peak hours). |
-| **05. Web & Mobile Apps** | **Free 60-Sec Google/ChatGPT Visibility Audit + 48-Hr Clickable UI Prototype**: Show them why AI search misses their current site + generate a clickable preview of their new portal/app. | Visualizes the finished product before they spend a sen. |
+| **🧪 Live AI OCR, POS & Verification Sandbox** | Test our 99.4% Multi-Language Invoice OCR, Offline POS Receipt QR, and Deterministic Code Verifier in your browser. | [**Open Live Sandbox →**](https://ahbeeahkao.github.io/jobshore/#interactive-lab) |
+| **🧮 Interactive 12-Month ROI & TCO Calculator** | Calculate your exact annual labor hours saved + ERP per-seat license savings in **MYR (RM)** or **USD ($)**. | [**Calculate Your Savings →**](https://ahbeeahkao.github.io/jobshore/#roi-calculator) |
+| **📂 6 Verified Production Case Studies** | Inspect deployed systems across Manufacturing, Multi-Outlet Retail/F&B, Wholesale Distribution, Logistics & FinTech. | [**View Portfolio →**](https://ahbeeahkao.github.io/jobshore/#portfolio) |
+| **🚀 Instant AI Scope & 14-Day Pilot Closer** | Generate a size-matched investment estimate, payback window, and request a **Free 3-Document / 10-SKU Live Proof**. | [**Request Your Scope →**](https://ahbeeahkao.github.io/jobshore/#contact) |
 
 ---
 
-### B. Copy-Paste WhatsApp Scripts to Win Back "Pre-AI" Past Customers & Old Quotes
-Clients who didn't return years ago because of high pricing **did not reject your skill—they rejected pre-AI manual development costs**. Today, AI-accelerated engineering + open-source Frappe lets you deliver **50–65% cheaper and 3x faster** while keeping high margins.
+## 🎯 Why Leading Teams Choose Jobshore Over Raw AI Prompts & Legacy Software Vendors
 
-#### 1. English WhatsApp Win-Back Script
-> *"Hi [Name], hope you and the team at [Company] are doing well! I was reviewing some of our past project notes from a few years back. Back then—before modern AI engineering and open-source Frappe existed—custom software and ERP work required months of manual coding, which made our pricing high. Today, our AI-verified build pipeline has cut implementation costs by **50–65%** with **$0 per-user license fees**, and we now have ready-to-deploy modules for **LHDN MyInvois e-Invoicing, 99.4% Invoice OCR, and Offline POS**. Since we’ve worked together / spoken before, I’d love to run a free 15-minute live test on 3 of your documents (plus a RM 2,000 returning-client pilot credit if you ever need an upgrade). You can check out our new live sandbox here: https://ahbeeahkao.github.io/jobshore — no obligation at all, just wanted to share what’s new!"*
+1. **You Pay for Tracked Monthly Outcomes—Not Raw Code:** Every system we deploy includes built-in telemetry that generates a **1st-of-the-Month Executive ROI Scorecard** tracking exact *documents verified, staff hours reclaimed, regression bugs blocked, and LHDN e-Invoices validated*.
+2. **$0 Per-User Software License Tax Forever:** By building on open-source **Frappe & ERPNext**, a 50-user or 200-user enterprise pays **$0/year in per-seat license fees**—saving **60–75%** compared to SAP Business One, Oracle NetSuite, or Dynamics 365.
+3. **Zero AI Hallucinations in Finance & Operations:** We never allow an LLM to write directly to your database. Every AI extraction or code commit passes through **Deterministic Math Invariants** (`Qty × Unit Price == Line Total` and `Subtotal + Tax == Grand Total`), strict schema validation, and a **Human-in-the-Loop (HITL)** exception queue.
+4. **100% Source Code & Database Ownership (Zero Vendor Lock-In):** You own your entire Git repository, Docker containers, custom Frappe apps, and PostgreSQL/MariaDB database—deployable on your own cloud or on-premise servers anytime.
 
-#### 2. Bahasa Melayu WhatsApp Win-Back Script
-> *"Salam / Hai [Nama], harap bisnes di [Syarikat] semakin maju! Saya baru semak semula rekod sebut harga lama kita beberapa tahun lepas. Dulu—sebelum wujudnya kejuruteraan AI moden dan sistem sumber terbuka Frappe—pembangunan sistem memerlukan masa koding manual yang panjang menyebabkan kos agak tinggi. Sekarang, teknologi AI-verified kami telah **menurunkan kos pembangunan sebanyak 50–65%** dengan **$0 yuran lesen pengguna**, lengkap dengan modul sedia guna untuk **e-Invois LHDN MyInvois, AI OCR (99.4% tepat), dan POS Luar Talian**. Jika [Nama] berminat, saya boleh buat demo percuma 15 minit menggunakan 3 sampel invois syarikat tuan (serta rebat pelanggan lama RM 2,000). Boleh lihat demo langsung kami di: https://ahbeeahkao.github.io/jobshore"*
+---
 
-#### 3. 简体中文 WhatsApp 老客户唤醒话术
-> *“[名字] 老板您好！希望贵司生意兴隆。最近在整理几年前的项目档案时想到了您。几年前在 AI 编程和开源 Frappe 成熟之前，定制软件与 ERP 需要大量人工手写代码，所以当时的报价确实偏高。现在通过我们的 AI 验证工程管线，**开发周期与整体费用直接降低了 50%–65%**，而且 **终身 $0 账号人头费**，还自带现成的 **马来西亚 LHDN MyInvois 电子发票、99.4% 财务单据自动识别 (OCR) 和断网收银 POS**。作为老朋友，您可以随时发 3 张平时最头疼的供应商发票给我，我免费帮您跑一次 15 分钟的自动化实测（老客户重启项目还有 RM 2,000 专属抵扣金）。欢迎看看我们全新的在线沙盒演示：https://ahbeeahkao.github.io/jobshore ！”*
+## 🏛️ Our 5 Outcome-Guaranteed Engineering Pillars
 
+### Pillar 01: AI Coding, Deterministic Verification, Automated Testing & 99.4% OCR
+🔗 **[Explore Pillar 01 Architecture & KPIs →](https://ahbeeahkao.github.io/jobshore/services/ai-ocr-verification)**
+- **Guaranteed Business Outcome:** Ship software **3.2x faster** with zero escaped critical bugs and eliminate manual document data entry with **99.4%+ math-verified OCR accuracy**.
+- **Core Capabilities:**
+  - **Multi-Language Enterprise OCR / IDP:** Extracts tables, tax codes, and handwritten notes from English, Bahasa Melayu, and Chinese invoices, POs, DOs, and customs forms (`K1/K2/K3`) in `< 2.2 seconds/page`.
+  - **Deterministic AI Verification Gate:** Static AST security auditing (`SAST/DAST`), integer-sen banker’s rounding checks, and schema enforcement.
+  - **Self-Healing Automated Testing:** AI-maintained Playwright E2E and API contract test suites that cut QA maintenance overhead by **78%**.
+  - **Legacy Modernization & Private RAG:** Migrate aging PHP/.NET/Java monoliths or deploy PDPA-compliant private LLM assistants inside your VPC.
+- **⚡ Fast-Start Wedge Offer:** **Free "3-Document Torture Test"** — Send us your 3 messiest, handwritten, or multi-language supplier invoices/DOs; we return 100% math-verified JSON/Excel in 15 minutes at RM 0 cost.
+
+---
+
+### Pillar 02: End-to-End Business Process Automation (BPA)
+🔗 **[Explore Pillar 02 Architecture & KPIs →](https://ahbeeahkao.github.io/jobshore/services/business-automation)**
+- **Guaranteed Business Outcome:** Eliminate up to **85% of repetitive manual copy-pasting** and reclaim **120–450+ staff hours every month** with a payback window under 3 months.
+- **Core Capabilities:**
+  - **Zero-Touch 3-Way Procurement Matching:** Automatically cross-checks supplier Invoices against ERP Purchase Orders (PO) and Warehouse Goods Receipt Notes (GRN).
+  - **24/7 WhatsApp Business Cloud API Order & Approval Bots:** Dealers message their restock list on WhatsApp; the system checks live ERP stock and credit limits, reserves inventory, and issues instant Proforma/e-Invoices.
+  - **Omnichannel E-Commerce & Legacy Accounting Sync:** Real-time, idempotent bridges connecting Shopee, Lazada, TikTok Shop, Shopify, POS terminals, AutoCount, SQL Accounting, Xero, and ERPNext.
+- **⚡ Fast-Start Wedge Offer:** **7-Day "Single-Bottleneck" Pilot** — Pick your #1 most painful daily copy-paste task; we automate it in 7 days before you commit to a full rollout.
+
+---
+
+### Pillar 03: Frappe & ERPNext Consultation, Migration & Malaysia LHDN MyInvois
+🔗 **[Explore Pillar 03 Architecture & KPIs →](https://ahbeeahkao.github.io/jobshore/services/erpnext-implementation)**
+- **Guaranteed Business Outcome:** Unify Finance, Multi-Warehouse Inventory, Manufacturing (BOM/MRP), HR/Payroll, and Sales on one platform—cutting 5-year ERP costs by **60–75% ($0 per-user seat tax)** and passing **100% of Malaysia LHDN MyInvois audits**.
+- **Core Capabilities:**
+  - **Reconciled Production Go-Live:** End-to-end configuration of Multi-Company Accounting, Batch/Serial Inventory, Shop-Floor MES/BOM, and Buying/Selling.
+  - **Turnkey Malaysia LHDN MyInvois Compliance:** Real-time UBL 2.1 API submission for Standard B2B, Monthly Consolidated, and Self-Billed e-Invoices, plus Malaysian Statutory Payroll (`EPF/KWSP`, `SOCSO/PERKESO`, `EIS`, `PCB/MTD`).
+  - **Zero-Downtime Legacy Migration:** Clean data extraction and parallel-run cutover from **AutoCount, SQL Accounting, UBS, Xero, QuickBooks, SAP Business One, or Oracle NetSuite**.
+- **⚡ Fast-Start Wedge Offer:** **10-Day Standalone LHDN MyInvois Sidecar Bridge + Free 5-Year ERP Seat-Tax Audit** — Connect LHDN e-Invoicing to your current accounting software or Excel today without forcing an immediate ERP rip-and-replace.
+
+---
+
+### Pillar 04: Cloud & Offline-First POS Software & Point-of-Sale Systems (Retail, F&B & Multi-Outlet)
+🔗 **[Explore Pillar 04 Architecture & KPIs →](https://ahbeeahkao.github.io/jobshore/services/pos-software-system)**
+- **Guaranteed Business Outcome:** **Zero lost sales** when store internet drops, `< 0.3s` barcode checkout speed, real-time HQ ERPNext inventory deduction, and **100% automated walk-in LHDN QR & Consolidated e-Invoicing**.
+- **Core Capabilities:**
+  - **Offline-Resilient Checkout Engine:** Local `IndexedDB`/`SQLite` caching lets cashiers scan barcodes, weigh items, apply promotions, and print `ESC/POS` thermal receipts even during mall broadband outages.
+  - **Frictionless LHDN e-Invoice Receipt QR:** Prints a unique QR code on every thermal receipt so walk-in customers can self-claim a validated LHDN e-Invoice on their smartphone in seconds, while unclaimed receipts automatically aggregate into a monthly **Consolidated e-Invoice**.
+  - **F&B & Retail Hardware Ready:** Supports Table Floor Plans, QR Table Ordering, Kitchen Display Systems (`KDS`), Recipe BOM ingredient deduction, `DuitNow QR`, 2D Scanners, Weighing Scales, and Dual-Screen Touch Terminals.
+- **⚡ Fast-Start Wedge Offer:** **1-Counter 14-Day Live Store Pilot** — Test our Offline-First POS & LHDN Receipt QR Portal on 1 counter (with 10 of your own SKUs) for 14 days with zero disruption to your current registers.
+
+---
+
+### Pillar 05: High-Converting SEO/AEO Web Platforms & Offline Field Mobile Apps
+🔗 **[Explore Pillar 05 Architecture & KPIs →](https://ahbeeahkao.github.io/jobshore/services/web-mobile-development)**
+- **Guaranteed Business Outcome:** Turn **Google Search and AI Answer Engines (ChatGPT, Perplexity, Gemini)** into a 24/7 inbound B2B lead engine, and equip field sales/drivers with offline-capable iOS & Android apps synced to your ERP.
+- **Core Capabilities:**
+  - **100/100 Google Lighthouse + Answer Engine Optimization (AEO):** Sub-second Astro/Next.js/React web platforms engineered with multi-entity JSON-LD `@graph` schemas and machine-readable AI feeds.
+  - **Self-Service B2B Dealer & Customer Portals:** Live stock visibility, tier pricing, statement downloads, and instant RFQ ordering.
+  - **Offline-First Flutter & React Native Mobile Apps:** Warehouse barcode/RFID picking, van-sales invoicing with Bluetooth thermal printing, and GPS/signature Proof of Delivery (`e-POD`).
+- **⚡ Fast-Start Wedge Offer:** **Free 60-Second Google + ChatGPT Visibility Audit & 48-Hour Clickable UI Prototype**.
+
+---
+
+## 📊 Enterprise ERP & POS Comparison Matrix
+
+| Evaluation Criterion | **Jobshore Frappe ERPNext + AI + POS** | Legacy Tier-1 ERP (SAP B1 / NetSuite) | Basic Accounting (AutoCount / SQL / Xero) |
+| :--- | :--- | :--- | :--- |
+| **Annual Per-User Seat License** | **$0 / user (100% Open-Source GPLv3)** | $1,200 – $3,600+ per user / year | $300 – $900 per user / year (User caps) |
+| **Commercial Model** | **Pay for Tracked Business Outcomes & Uptime SLA** | Mandatory Annual Seat Tax + Change Fees | Recurring SaaS Seat Tax |
+| **Cloud & Offline Retail/F&B POS** | **Built-in Offline-First POS + Real-Time ERP Sync** | Expensive 3rd-Party POS Connector | Separate POS Subscription & CSV Imports |
+| **Manufacturing (BOM, MRP, MES)** | **Native Multi-Level BOM & Shop-Floor Job Cards** | Expensive Add-On Tier Required | Not Supported / Basic Assembly Only |
+| **Malaysia LHDN MyInvois** | **Real-Time API (B2B, POS Receipt QR & Consolidated)** | High-Cost Middleware & Consulting | Manual Portal Upload or Basic Batch Export |
+| **AI OCR & 3-Way Match** | **Built-in 99.4% Multi-Language OCR + PO/GRN Match** | Separate Enterprise IDP License Required | Manual Data Entry or Per-Page Add-On |
+| **Source Code & Data Ownership** | **100% Full Source & Database Control** | Proprietary Vendor Lock-In | Closed SaaS / Proprietary Format |
+
+---
+
+## 🏆 Verified Production Portfolio & Case Studies
+
+Explore all 6 anonymized production deployments (and request a live staging walkthrough) at **[https://ahbeeahkao.github.io/jobshore/#portfolio](https://ahbeeahkao.github.io/jobshore/#portfolio)**:
+
+1. **Precision Components Manufacturer (220 Staff, 3 Plants — Selangor & Johor):**
+   - *Deployed:* Frappe ERPNext v15 (Manufacturing, Inventory, Finance) + AI OCR 3-Way Match + LHDN MyInvois API.
+   - *Tracked Outcome:* **Cut monthly accounts closing from 12 days to 2 days**, **99.5% verified invoice OCR accuracy**, and **saved RM 145,000/year** in software seat licenses & overtime.
+2. **Multi-Outlet Specialty Retail & Cafe Group (18 Outlets — KL, Penang & JB):**
+   - *Deployed:* Offline-First Touchscreen POS + Thermal Receipt LHDN QR Self-Claim Portal + Real-Time ERPNext Central Kitchen/Warehouse Sync.
+   - *Tracked Outcome:* **0 seconds of checkout downtime** during mall internet drops and **100% automated LHDN QR & Monthly Consolidated e-Invoicing** across 64,000+ monthly receipts.
+3. **FMCG & Hardware Wholesale Distributor (1,400+ Retail Accounts — PJ & Singapore):**
+   - *Deployed:* 24/7 WhatsApp Business Cloud API Order Intake Bot + Multi-Language AI OCR + Automated Credit-Limit & Stock Reservation.
+   - *Tracked Outcome:* **Reclaimed 340+ back-office hours/month** and cut order-to-proforma turnaround from **4 hours to 18 seconds**.
+4. **Regional B2B Trade Finance & Logistics Platform (Singapore & KL):**
+   - *Deployed:* Deterministic Financial Verification Gate + 450 Self-Healing Playwright E2E Tests + Multi-Script Customs/Trade Document OCR.
+   - *Tracked Outcome:* **0 escaped critical production bugs in 12 months** and **1.8-second trade document cross-check latency**.
+5. **Cold-Chain Food & Beverage Fleet (65 Delivery Trucks & 4 Warehouses — Malaysia):**
+   - *Deployed:* Offline-First Flutter iOS/Android Van-Sales & Warehouse Barcode App + Bluetooth Thermal Printing + GPS/Signature e-POD synced to ERPNext.
+   - *Tracked Outcome:* **92% reduction in delivery billing disputes** and **same-day AR invoice reconciliation**.
+6. **Industrial Automation & Machinery Exporter (Penang & Global Export):**
+   - *Deployed:* 100/100 Google Lighthouse & AEO Trilingual (`EN`/`BM`/`中文`) Web Platform + Self-Service B2B Dealer RFQ Portal.
+   - *Tracked Outcome:* **3.4x increase in qualified inbound B2B RFQ leads** from Google and AI Answer Engines.
+
+---
+
+## 📚 Executive Playbooks & Technical Compliance Guides
+
+Read our full engineering and compliance guides on the platform:
+- 📘 **[How to Eliminate AI Hallucinations in ERP, Accounting & Document OCR Pipelines](https://ahbeeahkao.github.io/jobshore/insights/eliminate-ai-hallucinations-in-erp-and-finance)**
+- 🇲🇾 **[Malaysia LHDN MyInvois e-Invoicing: The Complete ERPNext & Retail/F&B POS Compliance Guide](https://ahbeeahkao.github.io/jobshore/insights/malaysia-lhdn-myinvois-erpnext-pos-compliance-guide)**
+- 🚀 **[How B2B Companies Close More Deals with Answer Engine Optimization (AEO) & AI Automation](https://ahbeeahkao.github.io/jobshore/insights/closing-b2b-deals-with-aeo-and-ai-automation)**
+
+---
+
+## 🇲🇾 Malaysia RM 50,000 e-Invoice Tax Deduction & Ironclad Client Guarantees
+
+- **Tax-Deductible & Grant-Ready Billing:** Malaysian companies can claim a **Special Tax Deduction of up to RM 50,000 per Year of Assessment** on LHDN e-Invoice (MyInvois) consultation and software implementation costs, plus **Accelerated Capital Allowance (ACA)** on ICT & automation systems. Jobshore provides audit-ready itemized quotations and invoices structured for your tax agent.
+- **100% Pilot Credit Guarantee:** Start with a low-risk **14-Day Production Pilot** (1 workflow, 1 LHDN MyInvois bridge, or 1 POS counter). **100% of your pilot fee is credited** toward your full rollout if you proceed.
+- **Parallel-Run Zero-Disruption Cutover:** We never switch off your legacy software until your new trial balance, stock valuation, and LHDN e-Invoice validations match **100%**.
+
+---
+
+## 🚀 Start With a Free 3-Document / 10-SKU Live Proof
+
+Ready to see your own invoices, POS items, or ERP workflows running live—and get an instant, size-matched **14-Day Pilot Quote & 12-Month ROI Forecast**?
+
+👉 **[Calculate Your Instant AI Scope & Request an Architect Callback →](https://ahbeeahkao.github.io/jobshore/#contact)**
+
+---
+
+© 2026 **Jobshore Technologies** (`SSM Reg. No: 202601012345 (1567890-X)`). All rights reserved.
