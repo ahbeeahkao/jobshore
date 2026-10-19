@@ -86,9 +86,9 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
     bm: "Meja Kejuruteraan Dilindungi 3-Pintu",
     zh: "3 重门禁保护的资深工程团队"
   },
-  "SSM Reg. No: 202601012345 (1567890-X)": {
-    bm: "No. Pendaftaran SSM: 202601012345 (1567890-X)",
-    zh: "马来西亚公司注册号 SSM: 202601012345 (1567890-X)"
+  "SSM Reg. No: 202301031763 (1525686-X)": {
+    bm: "No. Pendaftaran SSM: 202301031763 (1525686-X)",
+    zh: "马来西亚公司注册号 SSM: 202301031763 (1525686-X)"
   },
   "To guarantee": {
     bm: "Bagi menjamin",
@@ -114,9 +114,9 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
     bm: "Hab Penghantaran:",
     zh: "亚太与全球交付中心："
   },
-  "Petaling Jaya, Selangor, Malaysia": {
-    bm: "Petaling Jaya, Selangor, Malaysia",
-    zh: "马来西亚雪兰莪八打灵再也 (Petaling Jaya)"
+  "NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA": {
+    bm: "NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA",
+    zh: "NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA"
   },
   "Leave this field blank if you are human": {
     bm: "Biarkan ruangan ini kosong jika anda manusia",
@@ -312,9 +312,9 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
   },
 
   // Footer & Global Layout
-  "Jobshore Technologies (SSM Reg. No: 202601012345 (1567890-X))": {
-    bm: "Jobshore Technologies (No. Pendaftaran SSM: 202601012345 (1567890-X))",
-    zh: "Jobshore Technologies（马来西亚公司注册号 SSM: 202601012345 (1567890-X)）"
+  "Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))": {
+    bm: "Jobshore (M) Sdn Bhd (No. Pendaftaran SSM: 202301031763 (1525686-X))",
+    zh: "Jobshore (M) Sdn Bhd（马来西亚公司注册号 SSM: 202301031763 (1525686-X)）"
   },
   "Enterprise AI engineering (coding, deterministic verification, self-healing QA, multi-language OCR), end-to-end business process automation, Frappe ERPNext implementation, Cloud & Offline POS Software & Systems, and SEO/AEO-first web & mobile application development.": {
     bm: "Kejuruteraan AI perusahaan (pengekodan, pengesahan deterministik, QA penyembuhan kendiri, OCR pelbagai bahasa), automasi proses perniagaan menyeluruh, pelaksanaan Frappe ERPNext, Perisian & Sistem POS Awan & Luar Talian, serta pembangunan aplikasi web & mudah alih berteraskan SEO/AEO.",
@@ -412,9 +412,9 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
     bm: "Skop Perintis 14 Hari",
     zh: "14 天生产试点评估"
   },
-  "© 2026 Jobshore Technologies (SSM Reg. No: 202601012345 (1567890-X)). All rights reserved.": {
-    bm: "© 2026 Jobshore Technologies (No. Pendaftaran SSM: 202601012345 (1567890-X)). Hak cipta terpelihara.",
-    zh: "© 2026 Jobshore Technologies (SSM 注册号: 202601012345 (1567890-X))。保留所有权利。"
+  "© 2026 Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X)). All rights reserved.": {
+    bm: "© 2026 Jobshore (M) Sdn Bhd (No. Pendaftaran SSM: 202301031763 (1525686-X)). Hak cipta terpelihara.",
+    zh: "© 2026 Jobshore (M) Sdn Bhd (SSM 注册号: 202301031763 (1525686-X))。保留所有权利。"
   },
   "PDPA & LHDN MyInvois Ready": {
     bm: "Sedia PDPA & LHDN MyInvois",

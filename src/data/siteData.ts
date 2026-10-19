@@ -3,18 +3,21 @@
 // ============================================================================
 export const COMPANY_CONFIG = {
   brandName: 'Jobshore',
-  legalName: 'Jobshore Technologies', // e.g., 'Jobshore Sdn. Bhd.' or 'Jobshore Enterprise'
-  ssmRegistrationNo: 'SSM Reg. No: 202601012345 (1567890-X)', // Set to '' to hide until registered
+  legalName: 'Jobshore (M) Sdn Bhd',
+  ssmRegistrationNo: 'SSM Reg. No: 202301031763 (1525686-X)',
   // Paste your deployed Google Apps Script Web App URL below (from google-apps-script/Code.gs):
   // Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
   leadWebhookUrl: '',
   // Optional fallback email (only used if leadWebhookUrl is left empty during local testing; encoded in JS, never exposed in raw HTML)
   fallbackEmailUser: 'hello',
-  fallbackEmailDomain: 'jobshore.com',
-  city: 'Petaling Jaya',
-  state: 'Selangor',
-  country: 'Malaysia',
+  fallbackEmailDomain: 'jobshore.dpdns.org',
+  streetAddress: 'NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG',
+  postalCode: '52100',
+  city: 'KUALA LUMPUR',
+  state: 'W.P. KUALA LUMPUR',
+  country: 'MALAYSIA',
   countryCode: 'MY',
+  fullAddress: 'NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA',
   // Set showStartingPrice to false so static cards don't low-anchor enterprise buyers;
   // Instead, buyers get a scope-adjusted estimate paired with ROI inside the AI Quote Closer (#contact).
   showStartingPrice: false,
@@ -85,13 +88,10 @@ export interface FaqItem {
   answer: string;
 }
 
-// Defaults to GitHub Pages deployment URL; automatically switches when PUBLIC_SITE_URL is set later
-const configuredSite = (import.meta.env.PUBLIC_SITE_URL || 'https://ahbeeahkao.github.io').replace(/\/$/, '');
-const configuredBase = (import.meta.env.BASE_URL || '/jobshore').replace(/\/$/, '');
-const resolvedDomain =
-  configuredSite === 'https://ahbeeahkao.github.io' && (!configuredBase || configuredBase === '')
-    ? 'https://ahbeeahkao.github.io/jobshore'
-    : `${configuredSite}${configuredBase}`;
+// Defaults to https://jobshore.dpdns.org; automatically adapts if PUBLIC_SITE_URL or BASE_URL is overridden
+const configuredSite = (import.meta.env.PUBLIC_SITE_URL || 'https://jobshore.dpdns.org').replace(/\/$/, '');
+const configuredBase = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+const resolvedDomain = `${configuredSite}${configuredBase}`;
 
 export const COMPANY_INFO = {
   name: COMPANY_CONFIG.brandName,
@@ -106,10 +106,13 @@ export const COMPANY_INFO = {
   githubRepoUrl: 'https://github.com/ahbeeahkao/jobshore',
   tagline: 'Outcome-Guaranteed AI Engineering, Business Automation, Frappe ERPNext, POS Systems & Product Studio',
   headquarters: {
+    streetAddress: COMPANY_CONFIG.streetAddress,
+    postalCode: COMPANY_CONFIG.postalCode,
     city: COMPANY_CONFIG.city,
     state: COMPANY_CONFIG.state,
     country: COMPANY_CONFIG.country,
     countryCode: COMPANY_CONFIG.countryCode,
+    fullAddress: COMPANY_CONFIG.fullAddress,
     regionCoverage: ['Malaysia', 'Singapore', 'Southeast Asia (ASEAN)', 'Global B2B (US, UK, EU, AU)'],
   },
   stats: [
@@ -909,6 +912,8 @@ export function buildHomeJsonLd() {
         knowsLanguage: ['en', 'ms', 'zh'],
         address: {
           '@type': 'PostalAddress',
+          streetAddress: COMPANY_INFO.headquarters.streetAddress,
+          postalCode: COMPANY_INFO.headquarters.postalCode,
           addressLocality: COMPANY_INFO.headquarters.city,
           addressRegion: COMPANY_INFO.headquarters.state,
           addressCountry: COMPANY_INFO.headquarters.countryCode,

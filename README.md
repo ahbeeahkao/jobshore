@@ -1,13 +1,14 @@
 # Jobshore — Outcome-Guaranteed AI, Business Automation, Frappe ERPNext, Offline POS & Web/Mobile Engineering
 
-[![Live Platform](https://img.shields.io/badge/Live_Platform-Explore_Interactive_Sandbox-0ea5e9?style=for-the-badge)](https://ahbeeahkao.github.io/jobshore)
-[![Instant Quote & ROI](https://img.shields.io/badge/14--Day_Pilot-Calculate_Instant_Quote_%26_ROI-10b981?style=for-the-badge)](https://ahbeeahkao.github.io/jobshore/#contact)
-[![LHDN MyInvois Ready](https://img.shields.io/badge/Malaysia_LHDN_MyInvois-B2B_%E2%80%A2_POS_QR_%E2%80%A2_Consolidated-f59e0b?style=for-the-badge)](https://ahbeeahkao.github.io/jobshore/insights/malaysia-lhdn-myinvois-erpnext-pos-compliance-guide)
+[![Live Platform](https://img.shields.io/badge/Live_Platform-Explore_Interactive_Sandbox-0ea5e9?style=for-the-badge)](https://jobshore.dpdns.org)
+[![Instant Quote & ROI](https://img.shields.io/badge/14--Day_Pilot-Calculate_Instant_Quote_%26_ROI-10b981?style=for-the-badge)](https://jobshore.dpdns.org/#contact)
+[![LHDN MyInvois Ready](https://img.shields.io/badge/Malaysia_LHDN_MyInvois-B2B_%E2%80%A2_POS_QR_%E2%80%A2_Consolidated-f59e0b?style=for-the-badge)](https://jobshore.dpdns.org/insights/malaysia-lhdn-myinvois-erpnext-pos-compliance-guide)
 
 > **Anyone can prompt an LLM to generate raw code. Businesses partner with Jobshore because we engineer *verified, auditable operational outcomes* that cut back-office costs, eliminate per-user software seat taxes, and guarantee 100% regulatory compliance.**
 
-🌐 **Official Web Platform & Live Technical Sandbox:** **[https://ahbeeahkao.github.io/jobshore](https://ahbeeahkao.github.io/jobshore)**  
-📍 **APAC & Global Delivery Hub:** Petaling Jaya, Selangor, Malaysia *(Serving Malaysia, Singapore, Southeast Asia & Global B2B)*  
+🌐 **Official Web Platform & Live Technical Sandbox:** **[https://jobshore.dpdns.org](https://jobshore.dpdns.org)**  
+🏢 **Registered Entity:** **Jobshore (M) Sdn Bhd** (`SSM Reg. No: 202301031763 (1525686-X)`)  
+📍 **APAC & Global Delivery Headquarters:** NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA *(Serving Malaysia, Singapore, Southeast Asia & Global B2B)*  
 🗣️ **Supported Languages:** English • Bahasa Melayu • 简体中文
 
 ---
@@ -150,8 +151,8 @@ Read our full engineering and compliance guides on the platform:
 
 Ready to see your own invoices, POS items, or ERP workflows running live—and get an instant, size-matched **14-Day Pilot Quote & 12-Month ROI Forecast**?
 
-👉 **[Calculate Your Instant AI Scope & Request an Architect Callback →](https://ahbeeahkao.github.io/jobshore/#contact)**
+👉 **[Calculate Your Instant AI Scope & Request an Architect Callback →](https://jobshore.dpdns.org/#contact)**
 
 ---
 
-© 2026 **Jobshore Technologies** (`SSM Reg. No: 202601012345 (1567890-X)`). All rights reserved.
+© 2026 **Jobshore (M) Sdn Bhd** (`SSM Reg. No: 202301031763 (1525686-X)`). All rights reserved.

@@ -113,6 +113,7 @@ A: Answer Engine Optimization (AEO) structures web content, entity relationships
 ---
 
 ## 4. Contact & Consultation Channels
-- **Website**: https://ahbeeahkao.github.io/jobshore
-- **Headquarters / APAC Hub**: Petaling Jaya, Selangor, Malaysia (Serving KL, Selangor, Penang, JB, Singapore & Global Remote)
-- **3-Gate Verified Scope & Callback Desk**: https://ahbeeahkao.github.io/jobshore/#contact
+- **Company Legal Name**: Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))
+- **Website**: https://jobshore.dpdns.org (Mirror: https://ahbeeahkao.github.io/jobshore)
+- **Headquarters / APAC Hub**: NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA
+- **3-Gate Verified Scope & Callback Desk**: https://jobshore.dpdns.org/#contact

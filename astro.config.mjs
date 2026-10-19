@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-const siteUrl = process.env.PUBLIC_SITE_URL || 'https://ahbeeahkao.github.io';
+const siteUrl = process.env.PUBLIC_SITE_URL || 'https://jobshore.dpdns.org';
 const basePath = process.env.BASE_PATH || '/';
 
 export default defineConfig({
