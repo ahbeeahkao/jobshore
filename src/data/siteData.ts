@@ -58,12 +58,16 @@ export interface ServicePillar {
 
 export interface CaseStudy {
   id: string;
+  category: 'AI & OCR' | 'Business Automation' | 'Frappe ERPNext' | 'POS Systems' | 'Web & Mobile Apps';
   clientType: string;
   region: string;
   pillarBadge: string;
+  timeline: string;
   title: string;
   challenge: string;
   solution: string;
+  deliverablePreview: string;
+  monthlyScorecardProof: string;
   results: { metric: string; label: string }[];
   stack: string[];
 }
@@ -615,7 +619,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       'React Native',
       'Node.js / Go / FastAPI',
       'PostgreSQL / Redis',
-      'Cloudflare / AWS / GitHub Pages',
+      'Cloudflare / AWS / Docker',
     ],
     timeline: '4–12 Weeks (MVP to Full Production)',
     startingInvestment: 'From USD $4,500 / MYR 20,000',
@@ -682,54 +686,141 @@ export const ERP_COMPARISON_ROWS = [
 export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'precision-mfg-erp-ocr',
-    clientType: 'Precision Components Manufacturer (220 Staff)',
-    region: 'Shah Alam, Selangor, Malaysia & Singapore',
-    pillarBadge: 'ERPNext + AI OCR + LHDN MyInvois',
-    title: 'Outcome: Cut Monthly Accounts Closing from 12 Days to 2 Days & Saved RM 145k/yr',
+    category: 'Frappe ERPNext',
+    clientType: 'Precision Components Manufacturer (220 Staff, 3 Plants)',
+    region: 'Shah Alam, Selangor & Johor, Malaysia',
+    pillarBadge: 'Pillar 03 + 01 • ERPNext + AI OCR + LHDN MyInvois',
+    timeline: 'Deployed in 9 Weeks',
+    title: 'Cut Monthly Accounts Closing from 12 Days to 2 Days & Saved RM 145k/yr in Software Seat Taxes',
     challenge:
-      'Finance and warehouse teams processed 4,200+ supplier invoices and delivery orders monthly across 3 warehouses using disconnected spreadsheets and legacy desktop accounting software, causing a 12-day monthly close delay.',
+      'Finance and warehouse teams processed 4,200+ supplier invoices and delivery orders monthly across 3 plants using disconnected spreadsheets and legacy desktop accounting software, causing a 12-day monthly close delay and frequent stock discrepancies.',
     solution:
-      'Jobshore implemented Frappe ERPNext across Manufacturing, Multi-Warehouse Inventory, and Accounting, integrated our math-verified AI OCR pipeline for automatic PO-GRN-Invoice 3-way matching, and enabled real-time LHDN MyInvois API compliance.',
+      'Implemented Frappe ERPNext across Manufacturing (BOM & Shop Floor Job Cards), Multi-Warehouse Inventory, and Accounting, paired with our math-verified AI OCR pipeline for automatic PO-GRN-Invoice 3-way matching and real-time LHDN MyInvois API compliance.',
+    deliverablePreview:
+      'Custom Frappe ERPNext v15 Manufacturing & Finance Workspace + Automated 3-Way Match Exception Queue + Real-Time LHDN MyInvois Validation Dashboard.',
+    monthlyScorecardProof:
+      'Monthly Scorecard Proof: 4,280 invoices auto-matched/mo • 0 LHDN rejections • RM 12,080/mo saved in software seats & clerk overtime.',
     results: [
       { metric: '99.5%', label: 'Verified Invoice OCR Accuracy' },
-      { metric: '82%', label: 'Faster Accounts Payable Processing' },
+      { metric: '2 Days', label: 'Month-End Closing (Down from 12)' },
       { metric: 'RM 145k/yr', label: 'Saved in License & Overtime Costs' },
     ],
-    stack: ['ERPNext v15', 'Vision-LLM OCR', 'LHDN MyInvois API', 'Python FastAPI', 'Docker'],
+    stack: ['Frappe ERPNext v15', 'Vision-LLM OCR', 'LHDN MyInvois API', 'Python FastAPI', 'Docker'],
   },
   {
     id: 'retail-fnb-pos-erpnext',
-    clientType: 'Multi-Outlet Specialty Retail & Cafe Chain (18 Outlets)',
+    category: 'POS Systems',
+    clientType: 'Multi-Outlet Specialty Retail & Cafe Group (18 Outlets)',
     region: 'Kuala Lumpur, Penang & Johor Bahru, Malaysia',
-    pillarBadge: 'POS Software & System + ERPNext + LHDN QR',
-    title: 'Outcome: Zero Lost Sales During Mall Internet Drops & 100% Automated POS LHDN e-Invoicing',
+    pillarBadge: 'Pillar 04 + 03 • Offline POS + LHDN QR + ERPNext',
+    timeline: 'Deployed in 3 Weeks',
+    title: 'Zero Lost Sales During Mall Internet Drops & 100% Automated POS LHDN e-Invoicing Across 18 Stores',
     challenge:
-      'Disconnected legacy POS terminals across 18 outlets required nightly manual CSV imports into accounting, suffered checkout freezes during mall internet drops, and lacked LHDN MyInvois QR customer self-claim receipts.',
+      'Legacy tablet POS terminals across 18 outlets froze whenever mall Wi-Fi dropped, required nightly manual CSV imports into accounting, and created long cashier queues when customers requested LHDN e-Invoices.',
     solution:
-      'Deployed Jobshore Cloud & Offline-First POS terminals with ESC/POS thermal receipt printers, DuitNow QR integration, instant LHDN e-Invoice QR self-claim portal + monthly consolidated e-Invoice automation, and real-time central kitchen/warehouse stock deduction in Frappe ERPNext.',
+      'Rolled out Jobshore Cloud & Offline-First POS terminals with ESC/POS thermal receipt printers, DuitNow QR integration, an instant LHDN e-Invoice QR self-claim portal + monthly consolidated e-Invoice automation, and real-time central kitchen/warehouse stock deduction in Frappe ERPNext.',
+    deliverablePreview:
+      'Touchscreen Offline-First POS Terminal UI + Thermal Receipt with Dynamic LHDN Self-Claim QR + HQ Multi-Branch Shift & Stock Dashboard.',
+    monthlyScorecardProof:
+      'Monthly Scorecard Proof: 64,000+ monthly receipts • 0 sec internet-drop downtime • 100% automated LHDN QR & Consolidated submissions.',
     results: [
       { metric: '0 sec', label: 'Downtime During Mall Internet Drops' },
-      { metric: '100%', label: 'Automated LHDN QR & Consolidated e-Invoice' },
-      { metric: 'Real-Time', label: '18-Outlet Inventory & Shift P&L Sync' },
+      { metric: '100%', label: 'Automated LHDN QR & Consolidated' },
+      { metric: 'Real-Time', label: '18-Outlet Stock & Shift P&L Sync' },
     ],
     stack: ['Jobshore POS', 'Frappe ERPNext', 'IndexedDB Offline Sync', 'LHDN MyInvois API', 'ESC/POS Hardware'],
   },
   {
-    id: 'fintech-ai-verification',
-    clientType: 'Regional B2B Trade Finance Platform',
-    region: 'Singapore & Kuala Lumpur',
-    pillarBadge: 'AI Coding + Verification + Automated QA',
-    title: 'Outcome: Zero Escaped Production Bugs in 12 Months & 1.8-Second Trade Document Verification',
+    id: 'fmcg-whatsapp-bpa-automation',
+    category: 'Business Automation',
+    clientType: 'FMCG & Hardware Wholesale Distributor (1,400+ Retail Accounts)',
+    region: 'Petaling Jaya, Malaysia & Singapore',
+    pillarBadge: 'Pillar 02 + 01 • WhatsApp B2B Order Bot + 3-Way Match',
+    timeline: 'Deployed in 4 Weeks',
+    title: 'Eliminated 85% of Manual Order Keying & Reclaimed 340+ Admin Hours Every Month',
     challenge:
-      'Rapid feature releases were bottlenecked by flaky E2E tests and manual verification of cross-border bills of lading, commercial invoices, and customs declarations.',
+      '8 customer-service clerks spent all day manually reading messy WhatsApp messages, voice notes, and PDF purchase orders from 1,400+ dealers, checking credit limits, and typing Sales Orders into the ERP.',
     solution:
-      'Engineered an automated verification pipeline combining static/formal schema guardrails, a self-healing 450-test Playwright suite, and a multi-script OCR verification engine that cross-validates trade documents in under 2 seconds.',
+      'Built an autonomous WhatsApp Business API + AI OCR order intake pipeline that parses multi-language dealer orders (EN/BM/Chinese), verifies live ERPNext stock and customer credit limits, reserves inventory, and dispatches instant proforma invoices.',
+    deliverablePreview:
+      'WhatsApp B2B Dealer Ordering Assistant + Automated Credit-Limit & Stock Reservation Engine + Live Admin Exception Dashboard.',
+    monthlyScorecardProof:
+      'Monthly Scorecard Proof: 3,900+ dealer orders auto-processed/mo • 340 staff hours reclaimed • Order turnaround cut from 4 hours to 18 seconds.',
     results: [
-      { metric: '94%', label: 'Automated E2E Test Coverage' },
-      { metric: '1.8 sec', label: 'Trade Document Verification Time' },
-      { metric: '0', label: 'Critical Schema Escapes in 12 Months' },
+      { metric: '340 hrs/mo', label: 'Back-Office Staff Hours Reclaimed' },
+      { metric: '18 sec', label: 'Order-to-Invoice Turnaround' },
+      { metric: '85%', label: 'Reduction in Manual Data Entry' },
     ],
-    stack: ['TypeScript', 'Playwright', 'Python', 'Pydantic Guardrails', 'PostgreSQL', 'GitHub Actions'],
+    stack: ['WhatsApp Cloud API', 'Python LangGraph', 'Multi-Language OCR', 'Frappe ERPNext API', 'Redis Queue'],
+  },
+  {
+    id: 'fintech-ai-verification',
+    category: 'AI & OCR',
+    clientType: 'Regional B2B Trade Finance & Logistics Platform',
+    region: 'Singapore & Kuala Lumpur',
+    pillarBadge: 'Pillar 01 • AI Coding, Deterministic Verification & QA',
+    timeline: 'Deployed in 6 Weeks',
+    title: 'Zero Escaped Production Bugs in 12 Months & 1.8-Second Cross-Border Trade Document Verification',
+    challenge:
+      'Rapid weekly releases were bottlenecked by flaky E2E tests and manual verification of cross-border bills of lading, commercial invoices, and customs declarations (K1/K2) where a single rounding error stalled payouts.',
+    solution:
+      'Engineered an automated verification pipeline combining deterministic financial math guardrails, a self-healing 450-test Playwright CI/CD gate, and a multi-script OCR verification engine that cross-checks trade documents in under 2 seconds.',
+    deliverablePreview:
+      'CI/CD Deterministic Verification Gate + Self-Healing Playwright Test Runner + Multi-Document Trade Finance Cross-Check Console.',
+    monthlyScorecardProof:
+      'Monthly Scorecard Proof: 18,500+ trade docs verified/mo • 0 escaped production schema bugs • 78% reduction in QA maintenance hours.',
+    results: [
+      { metric: '94%', label: 'Self-Healing E2E Test Coverage' },
+      { metric: '1.8 sec', label: 'Document Cross-Check Latency' },
+      { metric: '0', label: 'Critical Bugs Escaped in 12 Months' },
+    ],
+    stack: ['TypeScript', 'Playwright', 'Python FastAPI', 'Pydantic Guardrails', 'PostgreSQL', 'GitHub Actions'],
+  },
+  {
+    id: 'van-sales-wms-mobile-app',
+    category: 'Web & Mobile Apps',
+    clientType: 'Cold-Chain Food & Beverage Fleet (65 Delivery Trucks & 4 Warehouses)',
+    region: 'Klang Valley, Ipoh & Melaka, Malaysia',
+    pillarBadge: 'Pillar 05 + 03 • Offline Flutter Mobile App + ERPNext',
+    timeline: 'Deployed in 6 Weeks',
+    title: 'Cut Delivery Dispute Claims by 92% & Accelerated Driver Cash/Credit Reconciliation to Same-Day',
+    challenge:
+      'Drivers and warehouse pickers relied on paper delivery orders (DO) that got lost or damaged, resulting in delayed invoicing, stock picking mistakes, and a 7-day lag in collecting proof-of-delivery (e-POD).',
+    solution:
+      'Developed a custom offline-first Flutter iOS/Android mobile app for warehouse barcode picking and driver van-sales—featuring Bluetooth thermal invoice printing, GPS geotagged photo/signature e-POD, and instant sync with Frappe ERPNext.',
+    deliverablePreview:
+      'Offline-First iOS/Android Driver & Warehouse App + Bluetooth Receipt Printer SDK + Real-Time Fleet & e-POD Tracking Portal.',
+    monthlyScorecardProof:
+      'Monthly Scorecard Proof: 22,000+ e-POD deliveries synced/mo • 92% fewer customer billing disputes • Same-day accounts receivable billing.',
+    results: [
+      { metric: '92%', label: 'Drop in Delivery & Billing Disputes' },
+      { metric: 'Same-Day', label: 'Invoice & e-POD Reconciliation' },
+      { metric: '100%', label: 'Offline Cold-Room & Highway Sync' },
+    ],
+    stack: ['Flutter (iOS & Android)', 'SQLite Offline Sync', 'Bluetooth ESC/POS', 'Frappe ERPNext REST API', 'Barcode/RFID'],
+  },
+  {
+    id: 'industrial-b2b-seo-aeo-portal',
+    category: 'Web & Mobile Apps',
+    clientType: 'Industrial Automation & Machinery Exporter (Serving SEA, Middle East & Europe)',
+    region: 'Penang, Malaysia & Global Export',
+    pillarBadge: 'Pillar 05 • 100/100 SEO & AEO Web Platform + Dealer Portal',
+    timeline: 'Deployed in 5 Weeks',
+    title: '3.4x Increase in Qualified Inbound B2B RFQ Leads from Google & AI Answer Engines',
+    challenge:
+      'A slow legacy WordPress website scored 38/100 on mobile PageSpeed, was invisible on ChatGPT/Perplexity supplier searches, and forced B2B buyers to email PDF catalogs manually to request quotes.',
+    solution:
+      'Re-engineered their digital flagship on Astro + React with 100/100 Core Web Vitals, trilingual (EN/BM/ZH) technical product schemas, an AI Technical Spec Concierge, and a self-service B2B Dealer RFQ Portal connected directly to ERPNext CRM.',
+    deliverablePreview:
+      '100/100 Lighthouse B2B Product & Spec Portal + Interactive BOM/RFQ Configurator + Direct ERPNext CRM Opportunity Pipeline.',
+    monthlyScorecardProof:
+      'Monthly Scorecard Proof: 100/100 Core Web Vitals • 3.4x qualified B2B RFQs • Top-3 citations on Google & AI search for 45+ industrial SKUs.',
+    results: [
+      { metric: '3.4x', label: 'More Inbound B2B RFQ Leads' },
+      { metric: '100/100', label: 'Google Core Web Vitals Score' },
+      { metric: '< 0.4s', label: 'Global Page Load Time' },
+    ],
+    stack: ['Astro', 'React', 'Tailwind CSS', 'JSON-LD Product Graph', 'ERPNext CRM Webhook', 'Cloudflare Edge'],
   },
 ];
 
