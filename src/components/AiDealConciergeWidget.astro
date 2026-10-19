@@ -106,7 +106,7 @@ import { COMPANY_INFO } from '../data/siteData';
       </button>
     </form>
 
-    <!-- Bottom Conversion Strip -->
+    <!-- Bottom Conversion Strip (100% Zero Public Phone Exposure) -->
     <div class="flex items-center justify-between border-t border-slate-800 bg-slate-900 px-3.5 py-2 text-[11px]">
       <a
         href="#contact"
@@ -116,12 +116,11 @@ import { COMPANY_INFO } from '../data/siteData';
         Calculate My Dynamic Quote →
       </a>
       <a
-        href={`https://wa.me/${COMPANY_INFO.whatsappClean}?text=${encodeURIComponent('Hi Jobshore, I would like a Free 3-Document OCR / POS / ERPNext Demo and 14-Day Pilot quote.')}`}
-        target="_blank"
-        rel="noopener"
+        href="#contact"
+        id="concierge-request-callback"
         class="font-bold text-emerald-400 hover:underline"
       >
-        WhatsApp Engineer Now →
+        🔒 Request Architect Callback →
       </a>
     </div>
   </div>
@@ -135,6 +134,8 @@ import { COMPANY_INFO } from '../data/siteData';
   const form = document.getElementById('ai-concierge-form') as HTMLFormElement | null;
   const input = document.getElementById('ai-concierge-input') as HTMLInputElement | null;
   const gotoQuote = document.getElementById('concierge-goto-quote');
+  const requestCallback = document.getElementById('concierge-request-callback');
+  let lastUserQuestion = '';
 
   const ANSWERS: Record<string, { q: string; a: string }> = {
     pricing: {
@@ -156,6 +157,7 @@ import { COMPANY_INFO } from '../data/siteData';
   };
 
   function appendExchange(question: string, answer: string) {
+    lastUserQuestion = question;
     if (!messagesBox) return;
     const userDiv = document.createElement('div');
     userDiv.className = 'ml-6 rounded-xl bg-sky-500/20 border border-sky-500/30 p-2.5 text-right text-white font-medium';
@@ -188,6 +190,19 @@ import { COMPANY_INFO } from '../data/siteData';
   gotoQuote?.addEventListener('click', () => {
     panel?.classList.add('hidden');
     panel?.classList.remove('flex');
+  });
+
+  requestCallback?.addEventListener('click', () => {
+    panel?.classList.add('hidden');
+    panel?.classList.remove('flex');
+    if (lastUserQuestion) {
+      const notesEl = document.getElementById('project-notes') as HTMLTextAreaElement | null;
+      if (notesEl && !notesEl.value.includes(lastUserQuestion)) {
+        notesEl.value = (notesEl.value ? notesEl.value + '\n' : '') + `[AI Architect Question]: ${lastUserQuestion}`;
+      }
+    }
+    const clientPhoneInput = document.getElementById('client-phone') as HTMLInputElement | null;
+    setTimeout(() => clientPhoneInput?.focus(), 350);
   });
 
   document.querySelectorAll('.concierge-chip').forEach((chip) => {

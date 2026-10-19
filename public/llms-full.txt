@@ -113,7 +113,6 @@ A: Answer Engine Optimization (AEO) structures web content, entity relationships
 ---
 
 ## 4. Contact & Consultation Channels
-- **Website (GitHub Pages Host)**: https://ahbeeahkao.github.io/jobshore
-- **Email**: hello@jobshore.com
+- **Website**: https://ahbeeahkao.github.io/jobshore
 - **Headquarters / APAC Hub**: Petaling Jaya, Selangor, Malaysia (Serving KL, Selangor, Penang, JB, Singapore & Global Remote)
-- **Consultation Booking**: https://ahbeeahkao.github.io/jobshore/#contact
+- **3-Gate Verified Scope & Callback Desk**: https://ahbeeahkao.github.io/jobshore/#contact

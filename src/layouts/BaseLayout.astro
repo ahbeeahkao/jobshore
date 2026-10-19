@@ -349,28 +349,21 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
               end-to-end business process automation, Frappe ERPNext implementation, Cloud &amp; Offline POS Software &amp;
               Systems, and SEO/AEO-first web &amp; mobile application development.
             </p>
-            <address class="not-italic text-xs leading-relaxed text-slate-400 space-y-1 pt-1">
+            <address class="not-italic text-xs leading-relaxed text-slate-400 space-y-1.5 pt-1">
               <div class="font-semibold text-slate-200">APAC &amp; Global Delivery Headquarters:</div>
               <div>
                 {COMPANY_INFO.headquarters.city}, {COMPANY_INFO.headquarters.state}, {COMPANY_INFO.headquarters.country}
               </div>
-              <div class="pt-1 flex flex-col gap-1">
-                <span>
-                  Email:{' '}
-                  <a href={`mailto:${COMPANY_INFO.email}`} class="text-sky-400 hover:underline">
-                    {COMPANY_INFO.email}
-                  </a>
-                </span>
-                <span>
-                  WhatsApp:{' '}
-                  <a
-                    href={`https://wa.me/${COMPANY_INFO.whatsappClean}`}
-                    target="_blank"
-                    rel="noopener"
-                    class="text-emerald-400 hover:underline"
-                  >
-                    {COMPANY_INFO.whatsapp}
-                  </a>
+              <div class="pt-1 flex flex-col gap-1.5">
+                <a
+                  href={withBase('/#contact')}
+                  class="inline-flex items-center gap-1.5 font-semibold text-emerald-400 hover:text-emerald-300"
+                >
+                  <span>🔒 Request Verified Architect Callback &amp; Scope</span>
+                  <span>→</span>
+                </a>
+                <span class="text-[11px] text-slate-500">
+                  Zero-Spam Policy: Direct engineering lines are assigned upon 3-Gate verification.
                 </span>
               </div>
             </address>
