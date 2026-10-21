@@ -1,12 +1,14 @@
 # Jobshore — Outcome-Guaranteed AI, Business Automation, Frappe ERPNext, Offline POS & Web/Mobile Engineering
 
 [![Live Platform](https://img.shields.io/badge/Live_Platform-Explore_Interactive_Sandbox-0ea5e9?style=for-the-badge)](https://jobshore.dpdns.org)
-[![Instant Quote & ROI](https://img.shields.io/badge/14--Day_Pilot-Calculate_Instant_Quote_%26_ROI-10b981?style=for-the-badge)](https://jobshore.dpdns.org/#contact)
+[![Client & Sample Projects Portal](https://img.shields.io/badge/Live_Portfolio-Client_%26_Sample_Projects_Portal-10b981?style=for-the-badge)](https://portfolio.jobshore.dpdns.org)
+[![Instant Quote & ROI](https://img.shields.io/badge/14--Day_Pilot-Calculate_Instant_Quote_%26_ROI-6366f1?style=for-the-badge)](https://jobshore.dpdns.org/#contact)
 [![LHDN MyInvois Ready](https://img.shields.io/badge/Malaysia_LHDN_MyInvois-B2B_%E2%80%A2_POS_QR_%E2%80%A2_Consolidated-f59e0b?style=for-the-badge)](https://jobshore.dpdns.org/insights/malaysia-lhdn-myinvois-erpnext-pos-compliance-guide)
 
 > **Anyone can prompt an LLM to generate raw code. Businesses partner with Jobshore because we engineer *verified, auditable operational outcomes* that cut back-office costs, eliminate per-user software seat taxes, and guarantee 100% regulatory compliance.**
 
 🌐 **Official Web Platform & Live Technical Sandbox:** **[https://jobshore.dpdns.org](https://jobshore.dpdns.org)**  
+🚀 **Live Client & Sample Projects Portal:** **[https://portfolio.jobshore.dpdns.org](https://portfolio.jobshore.dpdns.org)**  
 🏢 **Registered Entity:** **Jobshore (M) Sdn Bhd** (`SSM Reg. No: 202301031763 (1525686-X)`)  
 📍 **APAC & Global Delivery Headquarters:** NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA *(Serving Malaysia, Singapore, Southeast Asia & Global B2B)*  
 🗣️ **Supported Languages:** English • Bahasa Melayu • 简体中文
@@ -17,10 +19,11 @@
 
 | Interactive Tool / Resource | What You Can Do Right Now | Direct Link |
 | :--- | :--- | :--- |
-| **🧪 Live AI OCR, POS & Verification Sandbox** | Test our 99.4% Multi-Language Invoice OCR, Offline POS Receipt QR, and Deterministic Code Verifier in your browser. | [**Open Live Sandbox →**](https://ahbeeahkao.github.io/jobshore/#interactive-lab) |
-| **🧮 Interactive 12-Month ROI & TCO Calculator** | Calculate your exact annual labor hours saved + ERP per-seat license savings in **MYR (RM)** or **USD ($)**. | [**Calculate Your Savings →**](https://ahbeeahkao.github.io/jobshore/#roi-calculator) |
-| **📂 6 Verified Production Case Studies** | Inspect deployed systems across Manufacturing, Multi-Outlet Retail/F&B, Wholesale Distribution, Logistics & FinTech. | [**View Portfolio →**](https://ahbeeahkao.github.io/jobshore/#portfolio) |
-| **🚀 Instant AI Scope & 14-Day Pilot Closer** | Generate a size-matched investment estimate, payback window, and request a **Free 3-Document / 10-SKU Live Proof**. | [**Request Your Scope →**](https://ahbeeahkao.github.io/jobshore/#contact) |
+| **🚀 Client & Sample Projects Portal** | Browse live deployed client systems, interactive demos, and sample architectures across AI OCR, ERPNext, POS & Web/Mobile. | [**Open Projects Portal →**](https://portfolio.jobshore.dpdns.org) |
+| **🧪 Live AI OCR, POS & Verification Sandbox** | Test our 99.4% Multi-Language Invoice OCR, Offline POS Receipt QR, and Deterministic Code Verifier in your browser. | [**Open Live Sandbox →**](https://jobshore.dpdns.org/#interactive-lab) |
+| **🧮 Interactive 12-Month ROI & TCO Calculator** | Calculate your exact annual labor hours saved + ERP per-seat license savings in **MYR (RM)** or **USD ($)**. | [**Calculate Your Savings →**](https://jobshore.dpdns.org/#roi-calculator) |
+| **📂 6 Verified Production Case Studies** | Inspect deployed systems across Manufacturing, Multi-Outlet Retail/F&B, Wholesale Distribution, Logistics & FinTech. | [**View Case Studies →**](https://jobshore.dpdns.org/#portfolio) |
+| **🚀 Instant AI Scope & 14-Day Pilot Closer** | Generate a size-matched investment estimate, payback window, and request a **Free 3-Document / 10-SKU Live Proof**. | [**Request Your Scope →**](https://jobshore.dpdns.org/#contact) |
 
 ---
 
@@ -105,9 +108,10 @@
 
 ---
 
-## 🏆 Verified Production Portfolio & Case Studies
+## 🏆 Verified Production Portfolio & Live Sample Projects Portal
 
-Explore all 6 anonymized production deployments (and request a live staging walkthrough) at **[https://ahbeeahkao.github.io/jobshore/#portfolio](https://ahbeeahkao.github.io/jobshore/#portfolio)**:
+- 🚀 **Live Client & Sample Projects Portal:** **[https://portfolio.jobshore.dpdns.org](https://portfolio.jobshore.dpdns.org)**
+- 📂 **6 Anonymized Production Case Studies:** **[https://jobshore.dpdns.org/#portfolio](https://jobshore.dpdns.org/#portfolio)**
 
 1. **Precision Components Manufacturer (220 Staff, 3 Plants — Selangor & Johor):**
    - *Deployed:* Frappe ERPNext v15 (Manufacturing, Inventory, Finance) + AI OCR 3-Way Match + LHDN MyInvois API.

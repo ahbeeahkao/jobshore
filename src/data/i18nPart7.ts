@@ -312,6 +312,38 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
   },
 
   // Footer & Global Layout
+  "Live Projects Portal": {
+    bm: "Portal Projek Langsung",
+    zh: "在线客户与样板项目库"
+  },
+  "🚀 Client & Sample Projects Portal ↗": {
+    bm: "🚀 Portal Projek Pelanggan & Sampel ↗",
+    zh: "🚀 客户与样板项目在线门户 ↗"
+  },
+  "Client & Sample Projects ↗": {
+    bm: "Projek Pelanggan & Sampel ↗",
+    zh: "客户与样板项目库 ↗"
+  },
+  "📂 Browse Client & Sample Projects Portal": {
+    bm: "📂 Layari Portal Projek Pelanggan & Sampel",
+    zh: "📂 浏览客户与样板项目在线门户"
+  },
+  "🚀 Explore Live Client & Sample Projects Portal": {
+    bm: "🚀 Teroka Portal Projek Pelanggan & Sampel Langsung",
+    zh: "🚀 探索在线客户与样板项目门户"
+  },
+  "View Live Sample Project": {
+    bm: "Lihat Projek Sampel Langsung",
+    zh: "查看在线样板项目"
+  },
+  "Launch Projects Portal": {
+    bm: "Buka Portal Projek",
+    zh: "进入样板项目门户"
+  },
+  "📂 See Live Client & Sample Projects?": {
+    bm: "📂 Lihat Projek Pelanggan & Sampel?",
+    zh: "📂 查看在线客户与样板项目？"
+  },
   "Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))": {
     bm: "Jobshore (M) Sdn Bhd (No. Pendaftaran SSM: 202301031763 (1525686-X))",
     zh: "Jobshore (M) Sdn Bhd（马来西亚公司注册号 SSM: 202301031763 (1525686-X)）"

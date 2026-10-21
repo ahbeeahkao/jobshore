@@ -87,6 +87,13 @@ import { COMPANY_INFO } from '../data/siteData';
         >
           🛡️ How do you prevent AI hallucinations?
         </button>
+        <button
+          type="button"
+          data-concierge-q="portfolio"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-cyan-300 hover:border-cyan-500 cursor-pointer"
+        >
+          📂 See Live Client &amp; Sample Projects?
+        </button>
       </div>
     </div>
 
@@ -199,6 +206,20 @@ import { COMPANY_INFO } from '../data/siteData';
         a: '我们绝不允许大模型直接写入数据库。所有 AI OCR 提取结果均须通过确定性数学恒等式校验（数量 × 单价 == 行小计 且 小计 + 税额 == 总计）、PO/GRN 采购三单匹配以及人机协同 (HITL) 异常审核队列。',
       },
     },
+    portfolio: {
+      en: {
+        q: 'Where can I inspect live client projects & sample architectures?',
+        a: 'You can explore our dedicated Client & Sample Projects Portal right now at https://portfolio.jobshore.dpdns.org — featuring live walkthroughs across AI OCR, ERPNext v15, Offline POS, and B2B Dealer Portals, plus our 6 verified case studies on this page (#portfolio).',
+      },
+      bm: {
+        q: 'Di manakah saya boleh menyemak projek pelanggan & seni bina sampel secara langsung?',
+        a: 'Anda boleh meneroka Portal Projek Pelanggan & Sampel khusus kami sekarang di https://portfolio.jobshore.dpdns.org — menampilkan demonstrasi langsung merentasi AI OCR, ERPNext v15, POS Luar Talian, dan Portal Pengedar B2B, serta 6 kajian kes disahkan di halaman ini (#portfolio).',
+      },
+      zh: {
+        q: '在哪里可以查看真实的客户项目与在线样板工程？',
+        a: '您可以立即访问我们的专属客户与样板项目门户 https://portfolio.jobshore.dpdns.org —— 涵盖 AI 视觉 OCR、ERPNext v15、断网离线 POS 及 B2B 经销商门户的实机演示，同时也可浏览本页的 6 个已验证生产案例 (#portfolio)。',
+      },
+    },
   };
 
   function appendExchange(question: string, answer: string) {
@@ -283,6 +304,8 @@ import { COMPANY_INFO } from '../data/siteData';
       reply = (ANSWERS.erp[lang] || ANSWERS.erp.en).a;
     } else if (lower.includes('ocr') || lower.includes('hallucinat') || lower.includes('accuracy') || lower.includes('test') || lower.includes('识别')) {
       reply = (ANSWERS.hallucination[lang] || ANSWERS.hallucination.en).a;
+    } else if (lower.includes('portfolio') || lower.includes('sample') || lower.includes('project') || lower.includes('projek') || lower.includes('案例') || lower.includes('样板')) {
+      reply = (ANSWERS.portfolio[lang] || ANSWERS.portfolio.en).a;
     }
 
     appendExchange(text, reply);

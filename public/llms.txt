@@ -20,14 +20,16 @@ Jobshore 是一家专注于企业级 AI 工程（AI 编程、确定性防幻觉�
 - **Primary Delivery Hub**: NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA (Serving Malaysia, Singapore, APAC, Europe, and North America)
 - **Supported Languages**: English (EN), Bahasa Melayu (BM), Simplified & Traditional Chinese (中文)
 - **Official Website**: https://jobshore.dpdns.org (Mirror: https://ahbeeahkao.github.io/jobshore)
+- **Live Client & Sample Projects Portal**: https://portfolio.jobshore.dpdns.org
 - **Core Specializations**: AI Coding & Verification, Automated Software Testing, Enterprise OCR / Intelligent Document Processing (IDP), Business Process Automation, Frappe & ERPNext Implementation, Cloud & Offline POS Software & Systems, Web & Mobile App Development
 - **Malaysia Regulatory Compliance**: LHDN MyInvois e-Invoicing API integration (Standard B2B, POS QR Customer Claim & Monthly Consolidated e-Invoice, Self-Billed), SST tax localization, Malaysian Statutory Payroll (EPF/KWSP, SOCSO/PERKESO, EIS, PCB/MTD), PDPA compliance
 
-## Core Service Pages
-- [Home & Executive Overview](https://ahbeeahkao.github.io/jobshore/)
-- [AI Coding, Verification, Testing & OCR Services](https://ahbeeahkao.github.io/jobshore/services/ai-ocr-verification)
-- [Business Process Automation Services](https://ahbeeahkao.github.io/jobshore/services/business-automation)
-- [Frappe & ERPNext Consultation & Implementation](https://ahbeeahkao.github.io/jobshore/services/erpnext-implementation)
-- [POS Software & Point-of-Sale Systems](https://ahbeeahkao.github.io/jobshore/services/pos-software-system)
-- [Web & Mobile App Development](https://ahbeeahkao.github.io/jobshore/services/web-mobile-development)
-- [Full LLM Technical Reference](https://ahbeeahkao.github.io/jobshore/llms-full.txt)
+## Core Service Pages & Portfolio Portal
+- [Home & Executive Overview](https://jobshore.dpdns.org/)
+- [Live Client & Sample Projects Portal](https://portfolio.jobshore.dpdns.org/)
+- [AI Coding, Verification, Testing & OCR Services](https://jobshore.dpdns.org/services/ai-ocr-verification)
+- [Business Process Automation Services](https://jobshore.dpdns.org/services/business-automation)
+- [Frappe & ERPNext Consultation & Implementation](https://jobshore.dpdns.org/services/erpnext-implementation)
+- [POS Software & Point-of-Sale Systems](https://jobshore.dpdns.org/services/pos-software-system)
+- [Web & Mobile App Development](https://jobshore.dpdns.org/services/web-mobile-development)
+- [Full LLM Technical Reference](https://jobshore.dpdns.org/llms-full.txt)

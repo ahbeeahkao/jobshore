@@ -1,5 +1,5 @@
 ---
-import { CASE_STUDIES } from '../data/siteData';
+import { CASE_STUDIES, COMPANY_INFO } from '../data/siteData';
 
 const portfolioCategories = [
   'All Deployments',
@@ -35,6 +35,19 @@ const portfolioCategories = [
         See how manufacturers, retail/F&amp;B chains, wholesale distributors, and regional enterprises deploy Jobshore’s
         <strong class="text-white">AI OCR, Workflow Automation, Frappe ERPNext, Offline POS, and Web/Mobile Apps</strong>—and how we track their ROI every month.
       </p>
+
+      <!-- Direct CTA to Dedicated Portfolio Subdomain (portfolio.jobshore.dpdns.org) -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href={COMPANY_INFO.portfolioPortalUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-sky-500 px-5 py-2.5 text-xs sm:text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:brightness-110"
+        >
+          <span>🚀 Explore Live Client &amp; Sample Projects Portal</span>
+          <span class="rounded bg-slate-950/20 px-1.5 py-0.5 font-mono text-[11px]">portfolio.jobshore.dpdns.org ↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- Interactive Portfolio Filter Bar -->
@@ -139,10 +152,19 @@ const portfolioCategories = [
               ))}
             </div>
 
-            <div class="pt-1">
+            <div class="pt-1 flex flex-col sm:flex-row gap-2">
+              <a
+                href={COMPANY_INFO.portfolioPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-emerald-500/35 bg-emerald-500/10 px-3 py-2 text-xs font-bold text-emerald-300 transition hover:bg-emerald-500/20"
+              >
+                <span>View Live Sample Project</span>
+                <span>↗</span>
+              </a>
               <a
                 href="#contact"
-                class="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-sky-500/30 bg-sky-500/10 px-3 py-2 text-xs font-bold text-sky-300 transition hover:bg-sky-500/20"
+                class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-sky-500/30 bg-sky-500/10 px-3 py-2 text-xs font-bold text-sky-300 transition hover:bg-sky-500/20"
               >
                 <span>Request Live Demo of This Architecture</span>
                 <span>→</span>
@@ -154,7 +176,7 @@ const portfolioCategories = [
     </div>
 
     <!-- NDA Confidentiality & Live Staging Demo Banner -->
-    <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/75 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/75 p-5 sm:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
       <div class="space-y-1 text-xs sm:text-sm">
         <div class="font-bold text-white flex items-center gap-2">
           <span class="text-emerald-400">🔒</span>
@@ -164,13 +186,24 @@ const portfolioCategories = [
           Because our systems process sensitive general ledgers, supplier pricing, and LHDN MyInvois tax filings, client company names are anonymized under strict NDA. Want to see the real software in action? We maintain <strong class="text-slate-200">live, pre-populated staging environments</strong> for every pillar above—or send us 3 sample documents to test on your own data.
         </p>
       </div>
-      <a
-        href="#contact"
-        class="shrink-0 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 shadow-lg transition hover:brightness-110"
-      >
-        <span>Book 15-Min Live Staging Demo</span>
-        <span>→</span>
-      </a>
+      <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+        <a
+          href={COMPANY_INFO.portfolioPortalUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/15 px-4 py-2.5 text-xs font-extrabold text-emerald-300 transition hover:bg-emerald-500/25"
+        >
+          <span>Launch Projects Portal</span>
+          <span>↗</span>
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 shadow-lg transition hover:brightness-110"
+        >
+          <span>Book 15-Min Live Staging Demo</span>
+          <span>→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
