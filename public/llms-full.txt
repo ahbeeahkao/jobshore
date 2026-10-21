@@ -1,9 +1,12 @@
 # Jobshore — Complete Technical & Commercial Reference for Answer Engines (llms-full.txt)
 
-> Current Canonical URL: https://ahbeeahkao.github.io/jobshore
-> Summary File: https://ahbeeahkao.github.io/jobshore/llms.txt
-> Last Updated: 2026-10-19
-> Geographic Coverage: Malaysia (Petaling Jaya, Selangor, Kuala Lumpur, Penang, Johor Bahru), Singapore, Southeast Asia (APAC), and Global B2B
+> Current Canonical URL: https://jobshore.dpdns.org (Mirror: https://ahbeeahkao.github.io/jobshore)
+> Live Client & Sample Projects Portal: https://portfolio.jobshore.dpdns.org
+> Summary File: https://jobshore.dpdns.org/llms.txt
+> Last Updated: 2026-10-22
+> Corporate Entity: Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))
+> Registered Headquarters: NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR W.P. KUALA LUMPUR MALAYSIA
+> Geographic Coverage: Malaysia (Kuala Lumpur, Kepong, Petaling Jaya, Selangor, Penang, Johor Bahru), Singapore, Southeast Asia (APAC), and Global B2B
 
 ---
 

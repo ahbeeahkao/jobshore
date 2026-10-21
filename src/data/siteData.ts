@@ -8,6 +8,8 @@ export const COMPANY_CONFIG = {
   // Paste your deployed Google Apps Script Web App URL below (from google-apps-script/Code.gs):
   // Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
   leadWebhookUrl: '',
+  // Official Client & Sample Projects Portfolio Portal Subdomain:
+  portfolioPortalUrl: 'https://portfolio.jobshore.dpdns.org',
   // Optional fallback email (only used if leadWebhookUrl is left empty during local testing; encoded in JS, never exposed in raw HTML)
   fallbackEmailUser: 'hello',
   fallbackEmailDomain: 'jobshore.dpdns.org',
@@ -100,6 +102,7 @@ export const COMPANY_INFO = {
   showStartingPrice: COMPANY_CONFIG.showStartingPrice,
   customPriceFallbackText: COMPANY_CONFIG.customPriceFallbackText,
   leadWebhookUrl: COMPANY_CONFIG.leadWebhookUrl,
+  portfolioPortalUrl: COMPANY_CONFIG.portfolioPortalUrl,
   fallbackEmailUser: COMPANY_CONFIG.fallbackEmailUser,
   fallbackEmailDomain: COMPANY_CONFIG.fallbackEmailDomain,
   domain: resolvedDomain,
@@ -898,6 +901,7 @@ export function buildHomeJsonLd() {
         legalName: COMPANY_INFO.legalName,
         ...(COMPANY_INFO.ssmRegistrationNo ? { identifier: COMPANY_INFO.ssmRegistrationNo } : {}),
         url: COMPANY_INFO.domain,
+        sameAs: [COMPANY_INFO.portfolioPortalUrl, COMPANY_INFO.githubRepoUrl],
         logo: `${COMPANY_INFO.domain}/favicon.svg`,
         image: `${COMPANY_INFO.domain}/og-image.svg`,
         description:
