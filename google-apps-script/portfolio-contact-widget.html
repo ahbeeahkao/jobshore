@@ -170,6 +170,29 @@
         </div>
 
         <p id="pf-status-msg" style="display:none;font-size:0.82rem;font-weight:700;margin:0;padding:10px 14px;border-radius:10px;"></p>
+
+        <!-- OPTION B (STACKED ON TOP OF OPTION A): Unlocked ONLY After Gate 1-3 Pass -->
+        <div
+          id="pf-wa-fasttrack-box"
+          data-wa-u-b64="QGpvYnNob3Jl"
+          data-wa-p-b64="NDgyOQ=="
+          style="display:none;background:rgba(14,165,233,0.12);border:1px solid rgba(56,189,248,0.4);border-radius:12px;padding:14px 16px;font-size:0.82rem;color:#e2e8f0;"
+        >
+          <div style="font-weight:800;color:#7dd3fc;margin-bottom:6px;">
+            ⚡ Fast-Track Option (Unlocked After 3-Gate Verification)
+          </div>
+          <p style="margin:0 0 10px;line-height:1.5;color:#cbd5e1;">
+            Want to send your sample invoices, POS items, or screenshots immediately? Open WhatsApp, search for our verified Architect Username below, and quote your <strong style="color:#6ee7b7;">4-Digit Access PIN</strong> (both phone numbers remain 100% private):
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+            <span style="background:#020617;border:1px solid rgba(56,189,248,0.4);border-radius:8px;padding:6px 12px;">
+              WhatsApp Username: <strong id="pf-unlocked-wa-user" style="color:#38bdf8;font-family:monospace;"></strong>
+            </span>
+            <span style="background:#020617;border:1px solid rgba(16,185,129,0.4);border-radius:8px;padding:6px 12px;">
+              Access PIN: <strong id="pf-unlocked-wa-pin" style="color:#6ee7b7;font-family:monospace;"></strong>
+            </span>
+          </div>
+        </div>
       </form>
 
       <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid #1e293b;display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.5rem;font-size:11px;color:#64748b;">
@@ -261,6 +284,16 @@
           }
           localStorage.setItem('jobshore_pf_submit_ts', String(Date.now()));
           showStatus('✅ Verified! Your portfolio callback request has been logged. A Senior Jobshore Solutions Architect will message your WhatsApp / Email shortly.', false);
+          const waBox = document.getElementById('pf-wa-fasttrack-box');
+          const waUser = document.getElementById('pf-unlocked-wa-user');
+          const waPin = document.getElementById('pf-unlocked-wa-pin');
+          if (waBox && waUser && waPin) {
+            try {
+              waUser.textContent = atob(waBox.getAttribute('data-wa-u-b64') || '');
+              waPin.textContent = atob(waBox.getAttribute('data-wa-p-b64') || '');
+              waBox.style.display = 'block';
+            } catch (_) {}
+          }
           form.reset();
         } catch (err) {
           showStatus('Network error—redirecting you to our main Quote & Callback engine...', true);

@@ -352,6 +352,42 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
     bm: "× Padam",
     zh: "× 清除"
   },
+  "Fast-Track Option (Unlocked After 3-Gate Verification)": {
+    bm: "Pilihan Laluan Pantas (Dibuka Selepas Pengesahan 3-Pintu)",
+    zh: "快速通道选项（通过 3 重门禁验证后已解锁）"
+  },
+  "Zero Phone Exposure • Privacy Protected": {
+    bm: "Sifar Pendedahan Nombor • Privasi Dilindungi",
+    zh: "零号码暴露 • 双向隐私保护"
+  },
+  "Want to send us your": {
+    bm: "Ingin menghantar kepada kami",
+    zh: "想要立即向我们发送您的"
+  },
+  "3 sample invoices, POS items, or screenshots immediately": {
+    bm: "3 sampel invois, item POS, atau tangkapan skrin dengan segera",
+    zh: "3 份发票样本、POS 商品清单或系统截图"
+  },
+  "without waiting for our callback? Open WhatsApp, search for our verified Architect Username below, and include your": {
+    bm: "tanpa menunggu panggilan balik kami? Buka WhatsApp, cari Nama Pengguna Arkitek disahkan kami di bawah, dan sertakan",
+    zh: "而无需等待回电？请打开 WhatsApp 搜索下方经验证的架构师用户名，并附上您的"
+  },
+  "4-Digit Access PIN": {
+    bm: "PIN Akses 4-Digit",
+    zh: "4 位数访问 PIN 码"
+  },
+  "WhatsApp Username:": {
+    bm: "Nama Pengguna WhatsApp:",
+    zh: "WhatsApp 用户名："
+  },
+  "Access PIN:": {
+    bm: "PIN Akses:",
+    zh: "访问 PIN 码："
+  },
+  "📋 Copy @username + PIN": {
+    bm: "📋 Salin @namapengguna + PIN",
+    zh: "📋 复制 @用户名 + PIN 码"
+  },
   "Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))": {
     bm: "Jobshore (M) Sdn Bhd (No. Pendaftaran SSM: 202301031763 (1525686-X))",
     zh: "Jobshore (M) Sdn Bhd（马来西亚公司注册号 SSM: 202301031763 (1525686-X)）"

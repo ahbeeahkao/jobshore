@@ -1,5 +1,8 @@
 ---
 import { COMPANY_INFO } from '../data/siteData';
+
+const waUserB64 = Buffer.from(COMPANY_INFO.gatedWhatsappUsername || '').toString('base64');
+const waPinB64 = Buffer.from(COMPANY_INFO.gatedWhatsappPin || '').toString('base64');
 ---
 
 <section
@@ -124,6 +127,8 @@ import { COMPANY_INFO } from '../data/siteData';
           data-webhook-url={COMPANY_INFO.leadWebhookUrl}
           data-fallback-u={COMPANY_INFO.fallbackEmailUser}
           data-fallback-d={COMPANY_INFO.fallbackEmailDomain}
+          data-wa-u-b64={waUserB64}
+          data-wa-p-b64={waPinB64}
           class="rounded-3xl border border-slate-800 bg-slate-900/75 p-6 sm:p-8 shadow-2xl space-y-6"
         >
           <!-- GATE 1 (PART A): INVISIBLE BOT HONEYPOT TRAP (Hidden from Humans, Traps Automated Scrapers/Bots) -->
@@ -509,6 +514,43 @@ import { COMPANY_INFO } from '../data/siteData';
               class="rounded-xl border border-emerald-500/30 bg-emerald-950/30 p-3.5 text-xs text-slate-200 leading-relaxed"
             >
               <strong class="text-emerald-300">✓ Callback Queued:</strong> Your scope blueprint and contact number have been securely logged. A Senior Jobshore Solutions Architect will reach out to your WhatsApp / Email shortly to arrange your <strong class="text-white">Free 3-Document / 10-SKU Live Proof</strong>.
+            </div>
+
+            <!-- OPTION B (STACKED ON TOP OF OPTION A): Gated Post-Submission WhatsApp @username + 4-Digit PIN -->
+            <!-- Decoded in JS ONLY AFTER the human passes all 3 Anti-Abuse Gates & submits their callback number -->
+            <div
+              id="gated-wa-fasttrack-box"
+              class="hidden rounded-xl border border-sky-500/35 bg-sky-950/30 p-4 text-xs space-y-2.5"
+            >
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="font-bold uppercase tracking-wider text-sky-300 flex items-center gap-1.5">
+                  <span>⚡</span>
+                  <span>Fast-Track Option (Unlocked After 3-Gate Verification)</span>
+                </span>
+                <span class="rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-300">
+                  Zero Phone Exposure • Privacy Protected
+                </span>
+              </div>
+              <p class="text-slate-300 leading-relaxed">
+                Want to send us your <strong class="text-white">3 sample invoices, POS items, or screenshots immediately</strong> without waiting for our callback? Open WhatsApp, search for our verified Architect Username below, and include your <strong class="text-emerald-300">4-Digit Access PIN</strong>:
+              </p>
+              <div class="flex flex-wrap items-center gap-2.5 pt-0.5">
+                <div class="inline-flex items-center gap-2 rounded-lg border border-sky-500/40 bg-slate-950 px-3 py-1.5">
+                  <span class="text-slate-400">WhatsApp Username:</span>
+                  <code id="unlocked-wa-username" class="font-mono text-sm font-extrabold text-sky-300"></code>
+                </div>
+                <div id="unlocked-wa-pin-pill" class="inline-flex items-center gap-2 rounded-lg border border-emerald-500/40 bg-slate-950 px-3 py-1.5">
+                  <span class="text-slate-400">Access PIN:</span>
+                  <code id="unlocked-wa-pin" class="font-mono text-sm font-extrabold text-emerald-300"></code>
+                </div>
+                <button
+                  type="button"
+                  id="copy-wa-username-btn"
+                  class="inline-flex items-center gap-1.5 rounded-lg border border-sky-500/40 bg-sky-500/15 px-3 py-1.5 font-bold text-sky-300 hover:bg-sky-500/25 cursor-pointer"
+                >
+                  <span>📋 Copy @username + PIN</span>
+                </button>
+              </div>
             </div>
 
             <pre
@@ -948,6 +990,34 @@ ${details}`;
       blueprintPreview.textContent = blueprintText;
     }
 
+    // ========================================================================
+    // OPTION B (STACKED ON TOP OF OPTION A): UNLOCK GATED WHATSAPP @USERNAME + PIN
+    // Decoded at runtime ONLY AFTER Gate 1, Gate 2, and Gate 3 succeed
+    // ========================================================================
+    const waFastTrackBox = document.getElementById('gated-wa-fasttrack-box');
+    const waUserEl = document.getElementById('unlocked-wa-username');
+    const waPinEl = document.getElementById('unlocked-wa-pin');
+    const waPinPill = document.getElementById('unlocked-wa-pin-pill');
+    const waUserB64Attr = (form.getAttribute('data-wa-u-b64') || '').trim();
+    const waPinB64Attr = (form.getAttribute('data-wa-p-b64') || '').trim();
+
+    if (waUserB64Attr && waFastTrackBox && waUserEl) {
+      try {
+        const decodedUser = atob(waUserB64Attr);
+        const decodedPin = waPinB64Attr ? atob(waPinB64Attr) : '';
+        if (decodedUser) {
+          waUserEl.textContent = decodedUser;
+          if (decodedPin && waPinEl) {
+            waPinEl.textContent = decodedPin;
+            waPinPill?.classList.remove('hidden');
+          } else {
+            waPinPill?.classList.add('hidden');
+          }
+          waFastTrackBox.classList.remove('hidden');
+        }
+      } catch (_) {}
+    }
+
     // Record cooldown timestamp & rotate challenge
     try {
       localStorage.setItem('jobshore_last_submit_ts', String(Date.now()));
@@ -1021,5 +1091,21 @@ ${details}`;
         copyBlueprintBtn.textContent = original;
       }, 2000);
     }
+  });
+
+  const copyWaUsernameBtn = document.getElementById('copy-wa-username-btn');
+  copyWaUsernameBtn?.addEventListener('click', async () => {
+    const waUserEl = document.getElementById('unlocked-wa-username');
+    const waPinEl = document.getElementById('unlocked-wa-pin');
+    const u = waUserEl?.textContent?.trim() || '';
+    const p = waPinEl?.textContent?.trim() || '';
+    const ref = leadRefCode?.textContent?.trim() || '';
+    const textToCopy = p ? `${u} (Access PIN: ${p}) — ${ref}` : `${u} — ${ref}`;
+    await navigator.clipboard.writeText(textToCopy);
+    const original = copyWaUsernameBtn.textContent;
+    copyWaUsernameBtn.textContent = '✓ Copied @username + PIN!';
+    setTimeout(() => {
+      copyWaUsernameBtn.textContent = original;
+    }, 2000);
   });
 </script>
