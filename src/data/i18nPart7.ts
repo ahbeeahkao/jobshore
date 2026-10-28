@@ -344,6 +344,14 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
     bm: "📂 Lihat Projek Pelanggan & Sampel?",
     zh: "📂 查看在线客户与样板项目？"
   },
+  "📂 Reference Portfolio Architecture Selected": {
+    bm: "📂 Seni Bina Portfolio Rujukan Dipilih",
+    zh: "📂 已选定参考项目架构"
+  },
+  "× Clear": {
+    bm: "× Padam",
+    zh: "× 清除"
+  },
   "Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))": {
     bm: "Jobshore (M) Sdn Bhd (No. Pendaftaran SSM: 202301031763 (1525686-X))",
     zh: "Jobshore (M) Sdn Bhd（马来西亚公司注册号 SSM: 202301031763 (1525686-X)）"
