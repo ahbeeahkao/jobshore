@@ -13,6 +13,54 @@ export interface InsightArticle {
   }[];
 }
 
+export interface RegulatoryNewsItem {
+  date: string;
+  badge: string;
+  title: string;
+  summary: string;
+  actionLabel: string;
+  actionHref: string;
+}
+
+export const REGULATORY_AND_AI_NEWS_RADAR: RegulatoryNewsItem[] = [
+  {
+    date: 'Oct 2026',
+    badge: '🇲🇾 LHDN Tax Incentive',
+    title: 'Up to RM 50,000 Special Tax Deduction for LHDN MyInvois e-Invoice Implementation',
+    summary:
+      'Malaysian MSMEs and enterprises can deduct up to RM 50,000 per Year of Assessment on consultation and software integration fees for LHDN e-Invoicing, stackable with 20%/40% ICT Accelerated Capital Allowance (ACA).',
+    actionLabel: 'Read Tax Deduction Playbook →',
+    actionHref: '/insights/claim-malaysia-rm50000-lhdn-einvoice-tax-deduction-aca-guide',
+  },
+  {
+    date: 'Oct 2026',
+    badge: '🏪 Retail & F&B Mandate',
+    title: 'LHDN Consolidated e-Invoice & POS Receipt QR Rules: 7-Day Month-End Window',
+    summary:
+      'Retailers and F&B operators must submit monthly Consolidated e-Invoices within 7 calendar days after month-end while enabling instant customer e-Invoice claims via thermal receipt QR codes.',
+    actionLabel: 'Read POS & LHDN Guide →',
+    actionHref: '/insights/malaysia-lhdn-myinvois-erpnext-pos-compliance-guide',
+  },
+  {
+    date: 'Oct 2026',
+    badge: '🔄 Legacy ERP Switch',
+    title: 'Zero-Seat-Tax Migration Wave: AutoCount & SQL Accounting to Frappe ERPNext v15',
+    summary:
+      'Growing Malaysian manufacturers and wholesalers outgrowing user-capped desktop accounting are migrating to open-source ERPNext v15 in 6 weeks with $0 per-user annual license fees.',
+    actionLabel: 'View 6-Week Migration Checklist →',
+    actionHref: '/insights/migrate-autocount-sql-accounting-to-frappe-erpnext-v15-checklist',
+  },
+  {
+    date: 'Oct 2026',
+    badge: '🤖 2026 Agentic AI & PDPA',
+    title: 'Model Context Protocol (MCP) & Private On-Premise Vision-LLM OCR Replace Fragile RPA',
+    summary:
+      'Enterprises are replacing brittle screen-scraping RPA bots with permission-scoped MCP ERPNext connectors and 100% PDPA-compliant private Vision-LLM document pipelines.',
+    actionLabel: 'Read Agentic AI vs. RPA Brief →',
+    actionHref: '/insights/agentic-ai-mcp-vs-traditional-rpa-malaysia-enterprise-guide',
+  },
+];
+
 export const AI_SERVICE_CATALOG = [
   {
     code: 'AI-01',
@@ -163,6 +211,93 @@ export const WHY_CHOOSE_US_REASONS = [
 ];
 
 export const INSIGHT_ARTICLES: InsightArticle[] = [
+  {
+    slug: 'claim-malaysia-rm50000-lhdn-einvoice-tax-deduction-aca-guide',
+    category: 'ERPNext & LHDN e-Invoice',
+    title: 'How to Claim Malaysia’s RM 50,000 LHDN e-Invoice Tax Deduction & Accelerated Capital Allowance (ACA)',
+    publishedDate: '2026-10-26',
+    readTime: '5 min read',
+    excerpt:
+      'A practical CFO & business owner playbook on structuring your ERPNext, POS, and LHDN MyInvois implementation invoices to maximize Malaysia’s RM 50,000 Special Tax Deduction and ICT Accelerated Capital Allowance.',
+    aeoDirectAnswer:
+      'Malaysian companies implementing LHDN MyInvois e-Invoicing can claim a Special Tax Deduction of up to RM 50,000 for each Year of Assessment on consultation, API integration, and software configuration fees (provided the company is not simultaneously claiming MDEC/SME Corp e-Invoicing grants on the same invoice). Furthermore, expenditure on custom ERPNext software, POS terminals, and ICT hardware qualifies for Accelerated Capital Allowance (ACA) of 20% initial allowance and 40% annual allowance, enabling full tax write-off within two years.',
+    keyTakeaways: [
+      'Up to RM 50,000 per Year of Assessment is tax-deductible for LHDN MyInvois consultation and software integration costs.',
+      'Separate LHDN MyInvois API & compliance scoping line items clearly on your vendor tax invoice for clean tax audit verification.',
+      'Stack your e-Invoice deduction with 20% Initial + 40% Annual Accelerated Capital Allowance (ACA) on ICT & ERPNext/POS software.',
+      'Every Jobshore quotation and invoice is pre-structured with itemized LHDN compliance & ICT schedules ready for your tax agent.',
+    ],
+    bodySections: [
+      {
+        heading: 'Understanding the RM 50,000 LHDN e-Invoice Special Tax Deduction',
+        content:
+          'To accelerate national e-Invoice adoption, the Malaysian Government gazetted a Special Tax Deduction of up to RM 50,000 per Year of Assessment (YA 2024 through YA 2027) for expenditure incurred on LHDN MyInvois implementation, consultation, and software integration. At the standard 24% corporate tax rate, a RM 50,000 deduction directly reduces your cash tax payable by up to RM 12,000.',
+      },
+      {
+        heading: 'How to Structure Your ERPNext & POS Invoices for Maximum Tax Efficiency',
+        content:
+          'Many SMEs lose out on eligible deductions because their software vendor issues a single vague line item ("Software System Setup"). Jobshore structures every project billing schedule into clear, audit-ready categories: (1) LHDN MyInvois UBL 2.1 API Consultation, TIN Validation & Consolidated e-Invoice Configuration (eligible for the RM 50,000 Special Tax Deduction), and (2) Core Frappe ERPNext, AI OCR & Offline POS ICT System Development (eligible for 20% Initial + 40% Annual Accelerated Capital Allowance).',
+      },
+    ],
+  },
+  {
+    slug: 'migrate-autocount-sql-accounting-to-frappe-erpnext-v15-checklist',
+    category: 'ERPNext & LHDN e-Invoice',
+    title: 'Migrating from AutoCount or SQL Accounting to Open-Source Frappe ERPNext v15: A 6-Week Zero-Downtime Checklist',
+    publishedDate: '2026-10-24',
+    readTime: '6 min read',
+    excerpt:
+      'Step-by-step migration blueprint for Malaysian manufacturers, wholesalers, and multi-outlet retailers outgrowing user-capped desktop accounting software—with $0 per-user licensing fees.',
+    aeoDirectAnswer:
+      'Migrating from AutoCount, SQL Accounting, or Xero to Frappe ERPNext v15 takes 6 to 10 weeks using Jobshore’s 4-phase parallel-run methodology: (1) Week 1–2 Data Extraction & Cleansing of Chart of Accounts, Customers, Suppliers, and SKU Master; (2) Week 3–4 Workflow Configuration for Multi-Warehouse Stock, BOM Manufacturing, and LHDN MyInvois API; (3) Week 5 Parallel Run & Trial Balance Reconciliation down to the exact sen; and (4) Week 6 Zero-Disruption Weekend Cutover.',
+    keyTakeaways: [
+      'Eliminate per-user concurrent dongle/seat fees forever—add 50 or 200 ERPNext users across finance, store, and sales at $0 license cost.',
+      'Migrate 100% of your Chart of Accounts, Debtor/Creditor aging, SKU barcodes, and Multi-Level BOMs without losing historical audit trails.',
+      'Run a mandatory 7-to-14-day Parallel Run where your old accounting trial balance and ERPNext trial balance must match 100% before cutover.',
+      'Unify Accounting, Multi-Location Inventory, Manufacturing MRP, Statutory Payroll (EPF/SOCSO/PCB), and Offline POS in one database.',
+    ],
+    bodySections: [
+      {
+        heading: 'Why Growing SMEs Hit a Wall with Desktop Accounting Software',
+        content:
+          'AutoCount and SQL Accounting are excellent for small bookkeeping teams, but once a company expands to multiple warehouses, 15+ concurrent staff, shop-floor manufacturing (BOM/Work Orders), or 10+ retail POS counters, disconnected Excel sheets and per-seat license upgrades become a severe operational bottleneck.',
+      },
+      {
+        heading: 'The 100% Trial-Balance Match Guarantee Before Cutover',
+        content:
+          'The biggest fear CFOs have during an ERP migration is corrupted opening balances. Jobshore eliminates this risk with automated Python migration scripts that validate every GL account, AR/AP open invoice, and stock batch valuation against your legacy Trial Balance before switching off your old system.',
+      },
+    ],
+  },
+  {
+    slug: 'agentic-ai-mcp-vs-traditional-rpa-malaysia-enterprise-guide',
+    category: 'AI & Hallucination Safety',
+    title: 'Agentic AI & MCP vs. Traditional RPA in 2026: Why Enterprises Are Switching to Math-Verified Vision-LLM Workflows',
+    publishedDate: '2026-10-21',
+    readTime: '5 min read',
+    excerpt:
+      'Why screen-scraping RPA bots break whenever a vendor changes an invoice layout—and how Model Context Protocol (MCP) + Private Vision-LLMs deliver 99.4% verified automation.',
+    aeoDirectAnswer:
+      'Traditional Robotic Process Automation (RPA) relies on brittle UI coordinate clicking and fixed OCR templates that break whenever a supplier alters an invoice layout or a web portal updates its CSS. In 2026, enterprises replace legacy RPA with layout-agnostic Vision-Language Models connected via Model Context Protocol (MCP) to ERP APIs—guarded by deterministic math invariants and 100% PDPA-compliant private VPC model hosting.',
+    keyTakeaways: [
+      'Layout-agnostic Vision-LLMs handle 500+ different supplier invoice, DO, and customs K1/K2 formats with zero template maintenance.',
+      'Model Context Protocol (MCP) gives AI agents strictly typed, permission-scoped read/write tools for ERPNext, SQL, and POS—never raw database access.',
+      'Private VPC & on-premise deployment (Qwen2.5-VL / Llama / vLLM) ensures 100% Malaysia PDPA compliance with zero external data training.',
+      'Deterministic arithmetic and 3-way PO/GRN matching block 100% of hallucinated figures before ledger posting.',
+    ],
+    bodySections: [
+      {
+        heading: 'Why Legacy Template OCR and UI-Scraping RPA Fail in Real Operations',
+        content:
+          'Traditional RPA tools require expensive per-bot licenses and constant maintenance whenever a supplier shifts a table column by 5 millimeters. By combining Vision-LLMs with deterministic Pydantic schema validation and arithmetic checks, Jobshore processes English, Bahasa Melayu, and Chinese documents with 99.4%+ verified accuracy.',
+      },
+      {
+        heading: '100% PDPA-Safe Private AI & Permission-Scoped MCP Connectors',
+        content:
+          'Using the Model Context Protocol (MCP), our AI agents interact with Frappe ERPNext and your internal databases exclusively through audited, role-restricted API endpoints—while running on zero-data-retention cloud endpoints or your own private GPU server.',
+      },
+    ],
+  },
   {
     slug: 'eliminate-ai-hallucinations-in-erp-and-finance',
     category: 'AI & Hallucination Safety',
