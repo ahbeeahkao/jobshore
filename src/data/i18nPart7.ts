@@ -1062,5 +1062,431 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
   "Total Paid (DuitNow QR): RM 126.40": {
     bm: "Jumlah Dibayar (DuitNow QR): RM 126.40",
     zh: "实付总额 (DuitNow QR)：RM 126.40"
+  },
+
+  // ==========================================================================
+  // 1(A), 1(B), 1(C) & 2(A), 2(B): 2026 PRIVATE AI / MCP, READINESS GRADER,
+  // REGULATORY RADAR & 3 NEW EXECUTIVE PLAYBOOKS
+  // ==========================================================================
+  "🇲🇾 RM 50,000 LHDN Tax Deduction?": {
+    bm: "🇲🇾 Potongan Cukai LHDN RM 50,000?",
+    zh: "🇲🇾 RM 50,000 LHDN 扣税政策？"
+  },
+  "🔒 Private AI, PDPA & MCP Agents?": {
+    bm: "🔒 AI Peribadi, PDPA & Ejen MCP?",
+    zh: "🔒 私有化 AI、PDPA 与 MCP 智能体？"
+  },
+  "2026 Architecture: 100% PDPA-Safe Private AI & Model Context Protocol (MCP) Agents": {
+    bm: "Seni Bina 2026: AI Peribadi 100% Patuh PDPA & Ejen Model Context Protocol (MCP)",
+    zh: "2026 核心架构：100% 符合 PDPA 隐私合规的私有化 AI 与 MCP 智能体"
+  },
+  "Zero Public Model Training • Malaysia PDPA Compliant": {
+    bm: "Sifar Latihan Model Awam • Patuh PDPA Malaysia",
+    zh: "零公网模型训练 • 100% 符合马来西亚 PDPA 合规"
+  },
+  "Worried about uploading confidential supplier pricing, general ledgers, or payroll records to public AI clouds? Jobshore engineers": {
+    bm: "Bimbang tentang memuat naik harga pembekal sulit, lejar am, atau rekod gaji ke awan AI awam? Jobshore membina",
+    zh: "担心将机密供应商报价、财务总账或薪资记录上传至公有云 AI？Jobshore 为您构建"
+  },
+  "strictly isolated enterprise AI pipelines": {
+    bm: "saluran paip AI perusahaan yang diasingkan sepenuhnya",
+    zh: "严格物理与网络隔离的企业级私有 AI 管道"
+  },
+  "across three layers:": {
+    bm: "merentasi tiga lapisan:",
+    zh: "涵盖以下三大安全层级："
+  },
+  "1. Permission-Scoped MCP Connectors": {
+    bm: "1. Penyambung MCP Berskop Kebenaran",
+    zh: "1. 权限受控的 MCP 协议连接器"
+  },
+  "Our AI agents connect to Frappe ERPNext, SQL, and POS exclusively through audited": {
+    bm: "Ejen AI kami bersambung ke Frappe ERPNext, SQL, dan POS secara eksklusif melalui",
+    zh: "我们的 AI 智能体仅通过经安全审计的"
+  },
+  "Model Context Protocol (MCP)": {
+    bm: "Model Context Protocol (MCP)",
+    zh: "Model Context Protocol (MCP)"
+  },
+  "tool servers—never raw database write access.": {
+    bm: "pelayan alat teraudit—tidak sesekali akses tulis pangkalan data mentah.",
+    zh: "工具服务与 Frappe ERPNext、SQL 及 POS 交互——绝不开放底层数据库直接写入权限。"
+  },
+  "2. Private VPC or Local GPU LLMs": {
+    bm: "2. VPC Peribadi atau LLM GPU Tempatan",
+    zh: "2. 私有云 VPC 或本地 GPU 大模型部署"
+  },
+  "Deploy open-weights Vision & Reasoning models (": {
+    bm: "Laksanakan model Vision & Penaakulan terbuka (",
+    zh: "支持在您的马来西亚私有云 VPC 或本地服务器内部署开源视觉与推理大模型（"
+  },
+  ") inside your Malaysian VPC or on-premise server so zero data leaves your network.": {
+    bm: ") di dalam VPC Malaysia atau pelayan di premis anda supaya sifar data keluar daripada rangkaian anda.",
+    zh: "），确保机密数据 100% 不出内网。"
+  },
+  "3. Immutable Audit & Rollback Log": {
+    bm: "3. Log Audit & Undur Tidak Boleh Diubah",
+    zh: "3. 不可篡改审计与一键回滚日志"
+  },
+  "Every OCR extraction, 3-way PO match, and LHDN e-Invoice payload records a cryptographic hash, math proof, and 1-click human approval trail.": {
+    bm: "Setiap pengekstrakan OCR, padanan PO 3-hala, dan muatan e-Invois LHDN merekodkan cincangan kriptografi, bukti matematik, dan jejak kelulusan manusia 1-klik.",
+    zh: "每一次 OCR 提取、采购三单匹配及 LHDN 电子发票报文均记录加密哈希、数学恒等式证明与人工审批轨迹。"
+  },
+
+  // 1(A): Interactive 60-Second Readiness Grader
+  "⚡ 60-Second Interactive Diagnostic Grader": {
+    bm: "⚡ Penggred Diagnostik Interaktif 60-Saat",
+    zh: "⚡ 60 秒交互式自动化与合规就绪度测评"
+  },
+  "Check Your AI Automation, ERPNext & LHDN Readiness Score": {
+    bm: "Semak Skor Kesediaan Automasi AI, ERPNext & LHDN Anda",
+    zh: "立即测评您的 AI 自动化、ERPNext 与 LHDN 合规就绪度得分"
+  },
+  "Select your current operational profile across the 4 questions below to generate an instant": {
+    bm: "Pilih profil operasi semasa anda merentasi 4 soalan di bawah untuk menjana",
+    zh: "在下方 4 个问题中选择您当前的运营现状，即可实时生成"
+  },
+  "0–100 Automation Opportunity Score": {
+    bm: "Skor Peluang Automasi 0–100",
+    zh: "0–100 自动化与投资回报潜力评分"
+  },
+  ", estimated hours reclaimed, and your tailored": {
+    bm: ", anggaran jam dijimatkan, dan",
+    zh: "、每月预计释放工时，以及为您量身定制的"
+  },
+  "3-Step Rollout Blueprint": {
+    bm: "Pelan Pelaksanaan 3-Langkah",
+    zh: "3 步落地行动蓝图"
+  },
+  "1. Current Accounting / ERP Setup": {
+    bm: "1. Sistem Perakaunan / ERP Semasa",
+    zh: "1. 当前使用的财务 / ERP 系统"
+  },
+  "AutoCount / SQL / UBS / Spreadsheets": {
+    bm: "AutoCount / SQL / UBS / Hamparan Excel",
+    zh: "AutoCount / SQL / UBS / Excel 表格"
+  },
+  "Xero / QuickBooks / Bukku Cloud SaaS": {
+    bm: "Xero / QuickBooks / Bukku Cloud SaaS",
+    zh: "Xero / QuickBooks / Bukku 云端财务软件"
+  },
+  "SAP B1 / Oracle NetSuite / Dynamics (High Seat Fees)": {
+    bm: "SAP B1 / Oracle NetSuite / Dynamics (Yuran Pengguna Tinggi)",
+    zh: "SAP B1 / Oracle NetSuite / Dynamics（高昂按人头年费）"
+  },
+  "2. Monthly Supplier Invoices / DOs / Bills": {
+    bm: "2. Jumlah Invois Pembekal / DO / Bil Bulanan",
+    zh: "2. 每月处理的供应商发票 / 送货单 / 账单量"
+  },
+  "300 – 1,500 Documents / Month": {
+    bm: "300 – 1,500 Dokumen / Bulan",
+    zh: "300 – 1,500 份单据 / 月"
+  },
+  "1,500+ Documents / Multi-Branch": {
+    bm: "1,500+ Dokumen / Pelbagai Cawangan",
+    zh: "1,500+ 份单据 / 多分店多仓库"
+  },
+  "Under 300 Documents / Month": {
+    bm: "Bawah 300 Dokumen / Bulan",
+    zh: "300 份以下 / 月"
+  },
+  "3. Retail / F&B POS or Field Operations": {
+    bm: "3. POS Runcit / F&B atau Operasi Lapangan",
+    zh: "3. 零售 / 餐饮 POS 门店或外勤车队"
+  },
+  "Multi-Outlet Retail / F&B / Pharmacy POS": {
+    bm: "POS Runcit / F&B / Farmasi Pelbagai Cawangan",
+    zh: "多门店连锁零售 / 餐饮 / 药房 POS"
+  },
+  "B2B Warehouse / Factory / Delivery Fleet": {
+    bm: "Gudang B2B / Kilang / Armada Penghantaran",
+    zh: "B2B 仓库 / 制造工厂 / 配送车队"
+  },
+  "Single Office / Service Business": {
+    bm: "Pejabat Tunggal / Perniagaan Perkhidmatan",
+    zh: "单一办公室 / 服务型企业"
+  },
+  "4. Malaysia LHDN MyInvois e-Invoice Status": {
+    bm: "4. Status e-Invois LHDN MyInvois Malaysia",
+    zh: "4. 马来西亚 LHDN MyInvois 电子发票现状"
+  },
+  "Manual Portal Entry / Need POS Receipt QR": {
+    bm: "Kemasukan Portal Manual / Perlu QR Resit POS",
+    zh: "人工登录门户填报 / 急需 POS 小票扫码开票"
+  },
+  "Batch CSV Upload (Need Real-Time ERP API)": {
+    bm: "Muat Naik CSV Kelompok (Perlu API ERP Masa Nyata)",
+    zh: "批量 CSV 导入（需升级 ERP 实时 API 直连）"
+  },
+  "Already Live (Need AI OCR 3-Way Match & Audit Defense)": {
+    bm: "Sudah Aktif (Perlu Padanan 3-Hala AI OCR & Pertahanan Audit)",
+    zh: "已基础对接（需升级 AI OCR 三单匹配与审计防错）"
+  },
+  "Your Operational Readiness & ROI Score": {
+    bm: "Skor Kesediaan Operasi & ROI Anda",
+    zh: "您的自动化就绪度与 ROI 潜力评分"
+  },
+  "High Immediate Automation & Tax-Saving Potential": {
+    bm: "Potensi Automasi Segera & Penjimatan Cukai Tinggi",
+    zh: "具备极高的即时自动化降本与扣税潜力"
+  },
+  "Est. Time Reclaimed": {
+    bm: "Anggaran Masa Dijimatkan",
+    zh: "预计每月释放工时"
+  },
+  "165 hrs / mo": {
+    bm: "165 jam / bln",
+    zh: "165 小时 / 月"
+  },
+  "Tax Deduction Eligibility": {
+    bm: "Kelayakan Potongan Cukai",
+    zh: "可享税务扣除额度"
+  },
+  "Up to RM 50,000 + ACA": {
+    bm: "Sehingga RM 50,000 + ACA",
+    zh: "最高 RM 50,000 + ACA"
+  },
+  "Recommended 3-Step Jobshore Action Plan:": {
+    bm: "Pelan Tindakan 3-Langkah Jobshore Disyorkan:",
+    zh: "Jobshore 推荐的 3 步落地行动方案："
+  },
+  "Deploy Vision-LLM OCR + 3-Way PO/GRN Match to eliminate 85% of manual bill keying.": {
+    bm: "Laksanakan AI OCR Berasaskan Matematik + Padanan 3-Hala PO/GRN untuk menghapuskan 85% kemasukan bil manual.",
+    zh: "部署确定性数学校验 AI OCR + PO/GRN 三单匹配，消除 85% 人工录单工作。"
+  },
+  "Roll out Offline-First POS with Thermal Receipt LHDN QR Self-Claim & Monthly Consolidated e-Invoicing.": {
+    bm: "Pasang POS Luar Talian dengan Kod QR Resit LHDN & e-Invois Disatukan bulanan automatik.",
+    zh: "上线断网离线 POS 收银系统，内置小票 LHDN 二维码自助开票与月度汇总电子发票自动申报。"
+  },
+  "Unify stock & accounting on Frappe ERPNext v15 ($0/seat license) and claim the RM 50,000 LHDN tax deduction.": {
+    bm: "Satukan perakaunan & stok pada Frappe ERPNext v15 ($0 lesen/pengguna) dan tuntut potongan cukai LHDN RM 50,000.",
+    zh: "在 Frappe ERPNext v15（$0 按人头授权费）统一财务与多仓进销存，并申领 RM 50,000 LHDN 电子发票扣税。"
+  },
+  "🚀 Apply My Readiness Plan to the 14-Day Pilot Quote Closer": {
+    bm: "🚀 Gunakan Pelan Kesediaan Saya pada Penutup Sebut Harga Perintis 14-Hari",
+    zh: "🚀 将我的测评方案一键填入 14 天试点与动态报价器"
+  },
+
+  // 2(A): Malaysia 2026 Regulatory, Tax Deduction & Enterprise AI Radar
+  "Executive Briefings, 2026 Regulatory Radar & LHDN Compliance Guides": {
+    bm: "Taklimat Eksekutif, Radar Kawal Selia 2026 & Panduan Pematuhan LHDN",
+    zh: "高管实战指南、2026 政策雷达与 LHDN 合规白皮书"
+  },
+  "Actionable strategies and live regulatory updates for Malaysian, Southeast Asian, and global leaders on eliminating manual bottlenecks, claiming tax incentives, and scaling retail/ERP operations.": {
+    bm: "Strategi praktikal dan kemas kini kawal selia langsung untuk pemimpin Malaysia, Asia Tenggara, dan global dalam menghapuskan kekangan manual, menuntut insentif cukai, dan mengembangkan operasi runcit/ERP.",
+    zh: "面向马来西亚、东南亚及全球企业决策者的实战指南与最新政策雷达，助您消除人工瓶颈、申领高额税务津贴并高效扩展零售与 ERP 运营。"
+  },
+  "📡 Malaysia 2026 Regulatory, Tax Deduction & Enterprise AI Radar": {
+    bm: "📡 Radar Kawal Selia, Potongan Cukai & AI Perusahaan Malaysia 2026",
+    zh: "📡 2026 马来西亚财税新政、专项扣税与企业级 AI 动态雷达"
+  },
+  "Updated Oct 2026 • LHDN & PDPA Verified": {
+    bm: "Dikemas Kini Okt 2026 • Disahkan LHDN & PDPA",
+    zh: "2026 年 10 月更新 • LHDN 与 PDPA 合规核验"
+  },
+  "Oct 2026": {
+    bm: "Okt 2026",
+    zh: "2026年10月"
+  },
+  "🇲🇾 LHDN Tax Incentive": {
+    bm: "🇲🇾 Insentif Cukai LHDN",
+    zh: "🇲🇾 LHDN 税务奖励"
+  },
+  "Up to RM 50,000 Special Tax Deduction for LHDN MyInvois e-Invoice Implementation": {
+    bm: "Potongan Cukai Khas Sehingga RM 50,000 untuk Pelaksanaan e-Invois LHDN MyInvois",
+    zh: "LHDN MyInvois 电子发票实施最高可享 RM 50,000 专项扣税"
+  },
+  "Malaysian MSMEs and enterprises can deduct up to RM 50,000 per Year of Assessment on consultation and software integration fees for LHDN e-Invoicing, stackable with 20%/40% ICT Accelerated Capital Allowance (ACA).": {
+    bm: "PMKS dan perusahaan Malaysia boleh menolak sehingga RM 50,000 setiap Tahun Taksiran ke atas yuran perundingan dan integrasi perisian e-Invois LHDN, boleh digabungkan dengan Elaun Modal Dipercepatkan (ACA) ICT 20%/40%.",
+    zh: "马来西亚中小微企业及大型企业每年可就 LHDN 电子发票咨询与软件集成费用申报最高 RM 50,000 专项扣税，并可叠加 20%/40% ICT 加速资本津贴 (ACA)。"
+  },
+  "Read Tax Deduction Playbook →": {
+    bm: "Baca Panduan Potongan Cukai →",
+    zh: "阅读扣税申领指南 →"
+  },
+  "🏪 Retail & F&B Mandate": {
+    bm: "🏪 Mandat Runcit & F&B",
+    zh: "🏪 零售与餐饮合规新规"
+  },
+  "LHDN Consolidated e-Invoice & POS Receipt QR Rules: 7-Day Month-End Window": {
+    bm: "Peraturan e-Invois Disatukan LHDN & QR Resit POS: Tempoh 7 Hari Akhir Bulan",
+    zh: "LHDN 月度汇总电子发票与 POS 小票扫码规范：月底后 7 天申报窗口"
+  },
+  "Retailers and F&B operators must submit monthly Consolidated e-Invoices within 7 calendar days after month-end while enabling instant customer e-Invoice claims via thermal receipt QR codes.": {
+    bm: "Peruncit dan pengendali F&B mesti menghantar e-Invois Disatukan bulanan dalam tempoh 7 hari kalendar selepas akhir bulan sambil membolehkan tuntutan segera pelanggan melalui kod QR resit terma.",
+    zh: "零售与餐饮商户须在每月结束后 7 个日历日内提交月度汇总电子发票，同时支持顾客通过热敏小票二维码自助申领电子发票。"
+  },
+  "Read POS & LHDN Guide →": {
+    bm: "Baca Panduan POS & LHDN →",
+    zh: "阅读 POS 与 LHDN 指南 →"
+  },
+  "🔄 Legacy ERP Switch": {
+    bm: "🔄 Pertukaran ERP Lama",
+    zh: "🔄 传统财务软件升级潮"
+  },
+  "Zero-Seat-Tax Migration Wave: AutoCount & SQL Accounting to Frappe ERPNext v15": {
+    bm: "Gelombang Migrasi Sifar-Cukai-Kerusi: AutoCount & SQL Accounting ke Frappe ERPNext v15",
+    zh: "零人头税迁移浪潮：从 AutoCount 与 SQL Accounting 升级至 Frappe ERPNext v15"
+  },
+  "Growing Malaysian manufacturers and wholesalers outgrowing user-capped desktop accounting are migrating to open-source ERPNext v15 in 6 weeks with $0 per-user annual license fees.": {
+    bm: "Pengilang dan pemborong Malaysia yang berkembang melangkaui perakaunan desktop terhad pengguna kini berhijrah ke ERPNext v15 sumber terbuka dalam 6 minggu dengan yuran lesen tahunan $0 setiap pengguna.",
+    zh: "越来越多突破单机并发限制的马来西亚制造厂与批发商，正通过 6 周平滑迁移方案升级至终身 $0 按用户数收费的开源 ERPNext v15。"
+  },
+  "View 6-Week Migration Checklist →": {
+    bm: "Lihat Senarai Semak Migrasi 6-Minggu →",
+    zh: "查看 6 周零停机迁移清单 →"
+  },
+  "🤖 2026 Agentic AI & PDPA": {
+    bm: "🤖 AI Ejen 2026 & PDPA",
+    zh: "🤖 2026 智能体 AI 与 PDPA 合规"
+  },
+  "Model Context Protocol (MCP) & Private On-Premise Vision-LLM OCR Replace Fragile RPA": {
+    bm: "Model Context Protocol (MCP) & Vision-LLM OCR Peribadi Menggantikan RPA Rapuh",
+    zh: "MCP 协议与私有化视觉大模型 OCR 全面取代传统脆弱 RPA"
+  },
+  "Enterprises are replacing brittle screen-scraping RPA bots with permission-scoped MCP ERPNext connectors and 100% PDPA-compliant private Vision-LLM document pipelines.": {
+    bm: "Perusahaan kini menggantikan bot RPA kikis-skrin yang rapuh dengan penyambung MCP ERPNext berskop kebenaran dan saluran dokumen Vision-LLM peribadi yang 100% patuh PDPA.",
+    zh: "企业正纷纷淘汰易碎的屏幕抓取 RPA 机器人，升级为权限受控的 MCP ERPNext 连接器与 100% 符合 PDPA 的私有化视觉大模型单据流水线。"
+  },
+  "Read Agentic AI vs. RPA Brief →": {
+    bm: "Baca Taklimat AI Ejen lwn RPA →",
+    zh: "阅读智能体 AI 对比 RPA 报告 →"
+  },
+
+  // 2(B): 3 New Full-Length Executive Playbooks
+  "How to Claim Malaysia’s RM 50,000 LHDN e-Invoice Tax Deduction & Accelerated Capital Allowance (ACA)": {
+    bm: "Cara Menuntut Potongan Cukai e-Invois LHDN RM 50,000 Malaysia & Elaun Modal Dipercepatkan (ACA)",
+    zh: "如何申领马来西亚 RM 50,000 LHDN 电子发票专项扣税与加速资本津贴 (ACA)"
+  },
+  "A practical CFO & business owner playbook on structuring your ERPNext, POS, and LHDN MyInvois implementation invoices to maximize Malaysia’s RM 50,000 Special Tax Deduction and ICT Accelerated Capital Allowance.": {
+    bm: "Panduan praktikal CFO & pemilik perniagaan tentang menstrukturkan invois pelaksanaan ERPNext, POS, dan LHDN MyInvois anda bagi memaksimumkan Potongan Cukai Khas RM 50,000 Malaysia dan Elaun Modal Dipercepatkan ICT.",
+    zh: "面向财务总监与企业主的实战指南：如何合规拆分您的 ERPNext、POS 与 LHDN MyInvois 实施税票，最大化享受马来西亚 RM 50,000 专项扣税与 ICT 加速资本津贴。"
+  },
+  "Malaysian companies implementing LHDN MyInvois e-Invoicing can claim a Special Tax Deduction of up to RM 50,000 for each Year of Assessment on consultation, API integration, and software configuration fees (provided the company is not simultaneously claiming MDEC/SME Corp e-Invoicing grants on the same invoice). Furthermore, expenditure on custom ERPNext software, POS terminals, and ICT hardware qualifies for Accelerated Capital Allowance (ACA) of 20% initial allowance and 40% annual allowance, enabling full tax write-off within two years.": {
+    bm: "Syarikat Malaysia yang melaksanakan e-Invois LHDN MyInvois boleh menuntut Potongan Cukai Khas sehingga RM 50,000 bagi setiap Tahun Taksiran ke atas yuran perundingan, integrasi API, dan konfigurasi perisian (dengan syarat syarikat tidak menuntut geran e-Invois MDEC/SME Corp secara serentak pada invois yang sama). Tambahan pula, perbelanjaan ke atas perisian ERPNext tersuai, terminal POS, dan perkakasan ICT layak mendapat Elaun Modal Dipercepatkan (ACA) sebanyak 20% elaun permulaan dan 40% elaun tahunan.",
+    zh: "实施 LHDN MyInvois 电子发票的马来西亚企业，每个评税年度可就咨询、API 对接与软件配置费用申请最高 RM 50,000 的专项税务扣除（前提是同一张发票未重复申领 MDEC/SME Corp 电子发票补贴）。此外，定制 ERPNext 软件、POS 收银终端及 ICT 硬件支出还可享受 20% 首期津贴 + 40% 年度津贴的加速资本津贴 (ACA)，实现两年内全额税务折旧抵扣。"
+  },
+  "Up to RM 50,000 per Year of Assessment is tax-deductible for LHDN MyInvois consultation and software integration costs.": {
+    bm: "Sehingga RM 50,000 setiap Tahun Taksiran boleh ditolak cukai untuk kos perundingan dan integrasi perisian LHDN MyInvois.",
+    zh: "每个评税年度最高 RM 50,000 的 LHDN MyInvois 咨询与软件集成费用可享专项税务扣除。"
+  },
+  "Separate LHDN MyInvois API & compliance scoping line items clearly on your vendor tax invoice for clean tax audit verification.": {
+    bm: "Asingkan item baris skop pematuhan & API LHDN MyInvois dengan jelas pada invois cukai vendor anda untuk pengesahan audit cukai yang kemas.",
+    zh: "在供应商税票上清晰分列 LHDN MyInvois API 对接与合规咨询明细，确保税务审计一目了然。"
+  },
+  "Stack your e-Invoice deduction with 20% Initial + 40% Annual Accelerated Capital Allowance (ACA) on ICT & ERPNext/POS software.": {
+    bm: "Gabungkan potongan e-Invois anda dengan Elaun Modal Dipercepatkan (ACA) 20% Permulaan + 40% Tahunan ke atas perisian ICT & ERPNext/POS.",
+    zh: "将电子发票专项扣税与 ICT 及 ERPNext/POS 软件的 20% 首期 + 40% 年度加速资本津贴 (ACA) 叠加使用。"
+  },
+  "Every Jobshore quotation and invoice is pre-structured with itemized LHDN compliance & ICT schedules ready for your tax agent.": {
+    bm: "Setiap sebut harga dan invois Jobshore distrukturkan lebih awal dengan jadual pematuhan LHDN & ICT terperinci sedia untuk ejen cukai anda.",
+    zh: "Jobshore 出具的每一份报价单与税票均预先按 LHDN 合规与 ICT 资本支出分项列明，方便您的税务代理直接申报。"
+  },
+  "Understanding the RM 50,000 LHDN e-Invoice Special Tax Deduction": {
+    bm: "Memahami Potongan Cukai Khas e-Invois LHDN RM 50,000",
+    zh: "深入解读 RM 50,000 LHDN 电子发票专项税务扣除"
+  },
+  "To accelerate national e-Invoice adoption, the Malaysian Government gazetted a Special Tax Deduction of up to RM 50,000 per Year of Assessment (YA 2024 through YA 2027) for expenditure incurred on LHDN MyInvois implementation, consultation, and software integration. At the standard 24% corporate tax rate, a RM 50,000 deduction directly reduces your cash tax payable by up to RM 12,000.": {
+    bm: "Bagi mempercepatkan penerimaan e-Invois kebangsaan, Kerajaan Malaysia telah mewartakan Potongan Cukai Khas sehingga RM 50,000 bagi setiap Tahun Taksiran (TT 2024 hingga TT 2027) untuk perbelanjaan pelaksanaan, perundingan, dan integrasi perisian LHDN MyInvois. Pada kadar cukai korporat standard 24%, potongan RM 50,000 secara langsung mengurangkan cukai tunai perlu dibayar anda sehingga RM 12,000.",
+    zh: "为加速全国电子发票普及，马来西亚政府颁布了每个评税年度（YA 2024 至 YA 2027）最高 RM 50,000 的专项税务扣除政策，涵盖 LHDN MyInvois 实施、咨询与软件集成支出。按 24% 标准企业所得税率计算，RM 50,000 扣除可直接为您节省高达 RM 12,000 的现金税款。"
+  },
+  "How to Structure Your ERPNext & POS Invoices for Maximum Tax Efficiency": {
+    bm: "Cara Menstrukturkan Invois ERPNext & POS Anda untuk Kecekapan Cukai Maksimum",
+    zh: "如何合规规划 ERPNext 与 POS 实施税票以实现税务效益最大化"
+  },
+  "Many SMEs lose out on eligible deductions because their software vendor issues a single vague line item (\"Software System Setup\"). Jobshore structures every project billing schedule into clear, audit-ready categories: (1) LHDN MyInvois UBL 2.1 API Consultation, TIN Validation & Consolidated e-Invoice Configuration (eligible for the RM 50,000 Special Tax Deduction), and (2) Core Frappe ERPNext, AI OCR & Offline POS ICT System Development (eligible for 20% Initial + 40% Annual Accelerated Capital Allowance).": {
+    bm: "Banyak PKS kehilangan potongan yang layak kerana vendor perisian mereka mengeluarkan satu item baris kabur (\"Pemasangan Sistem Perisian\"). Jobshore menstrukturkan setiap jadual pengebilan projek kepada kategori jelas sedia audit: (1) Perundingan API UBL 2.1 LHDN MyInvois, Pengesahan TIN & Konfigurasi e-Invois Disatukan (layak untuk Potongan Cukai Khas RM 50,000), dan (2) Pembangunan Sistem ICT Teras Frappe ERPNext, AI OCR & POS Luar Talian (layak untuk Elaun Modal Dipercepatkan 20% Permulaan + 40% Tahunan).",
+    zh: "许多中小企业错失扣税良机，是因为软件商只开具了一行模糊的“软件系统安装费”。Jobshore 将每份项目账单清晰拆分为符合审计要求的两大类别：(1) LHDN MyInvois UBL 2.1 API 咨询、TIN 税号核验与月度汇总电子发票配置（可申领 RM 50,000 专项扣税），以及 (2) Frappe ERPNext 核心系统、AI OCR 与离线 POS 软硬件开发（可申领 20% 首期 + 40% 年度加速资本津贴）。"
+  },
+
+  "Migrating from AutoCount or SQL Accounting to Open-Source Frappe ERPNext v15: A 6-Week Zero-Downtime Checklist": {
+    bm: "Migrasi daripada AutoCount atau SQL Accounting ke Frappe ERPNext v15 Sumber Terbuka: Senarai Semak Sifar-Henti 6-Minggu",
+    zh: "从 AutoCount 或 SQL Accounting 迁移至开源 Frappe ERPNext v15：6 周零停机实战清单"
+  },
+  "Step-by-step migration blueprint for Malaysian manufacturers, wholesalers, and multi-outlet retailers outgrowing user-capped desktop accounting software—with $0 per-user licensing fees.": {
+    bm: "Pelan migrasi langkah demi langkah untuk pengilang, pemborong, dan peruncit pelbagai cawangan Malaysia yang melangkaui perisian perakaunan desktop terhad pengguna—dengan yuran lesen $0 setiap pengguna.",
+    zh: "专为突破单机并发限制的马来西亚制造厂、批发商与多门店零售商打造的迁移蓝图——实现终身 $0 按用户数授权费。"
+  },
+  "Migrating from AutoCount, SQL Accounting, or Xero to Frappe ERPNext v15 takes 6 to 10 weeks using Jobshore’s 4-phase parallel-run methodology: (1) Week 1–2 Data Extraction & Cleansing of Chart of Accounts, Customers, Suppliers, and SKU Master; (2) Week 3–4 Workflow Configuration for Multi-Warehouse Stock, BOM Manufacturing, and LHDN MyInvois API; (3) Week 5 Parallel Run & Trial Balance Reconciliation down to the exact sen; and (4) Week 6 Zero-Disruption Weekend Cutover.": {
+    bm: "Migrasi daripada AutoCount, SQL Accounting, atau Xero ke Frappe ERPNext v15 mengambil masa 6 hingga 10 minggu menggunakan metodologi larian selari 4-fasa Jobshore: (1) Minggu 1–2 Pengekstrakan & Pembersihan Data Carta Akaun, Pelanggan, Pembekal, dan Induk SKU; (2) Minggu 3–4 Konfigurasi Aliran Kerja untuk Stok Pelbagai Gudang, Pembuatan BOM, dan API LHDN MyInvois; (3) Minggu 5 Larian Selari & Penyesuaian Imbangan Duga tepat hingga ke sen; dan (4) Minggu 6 Pertukaran Hujung Minggu Sifar-Gangguan.",
+    zh: "采用 Jobshore 的 4 阶段双轨并行方法论，从 AutoCount、SQL Accounting 或 Xero 迁移至 Frappe ERPNext v15 仅需 6 至 10 周：(1) 第 1–2 周：提取并清洗会计科目表、客户、供应商与 SKU 商品主数据；(2) 第 3–4 周：配置多仓库存、生产 BOM 与 LHDN MyInvois API；(3) 第 5 周：双系统并行运行与试算表分毫不差对账；(4) 第 6 周：周末零停机平滑切换上线。"
+  },
+  "Eliminate per-user concurrent dongle/seat fees forever—add 50 or 200 ERPNext users across finance, store, and sales at $0 license cost.": {
+    bm: "Hapuskan yuran dongle/kerusi serentak setiap pengguna selama-lamanya—tambah 50 atau 200 pengguna ERPNext merentasi kewangan, stor, dan jualan pada kos lesen $0.",
+    zh: "彻底告别按并发加密狗或账号数收费——在财务、仓库与销售团队增加 50 或 200 名 ERPNext 用户均为 $0 授权费。"
+  },
+  "Migrate 100% of your Chart of Accounts, Debtor/Creditor aging, SKU barcodes, and Multi-Level BOMs without losing historical audit trails.": {
+    bm: "Migrasikan 100% Carta Akaun, penuaan Penghutang/Pemiutang, kod bar SKU, dan BOM Pelbagai Peringkat anda tanpa kehilangan jejak audit sejarah.",
+    zh: "100% 完整迁移您的会计科目表、应收/应付账龄、SKU 条码与多级生产 BOM，完整保留历史审计轨迹。"
+  },
+  "Run a mandatory 7-to-14-day Parallel Run where your old accounting trial balance and ERPNext trial balance must match 100% before cutover.": {
+    bm: "Jalankan Larian Selari wajib 7-hingga-14-hari di mana imbangan duga perakaunan lama anda dan imbangan duga ERPNext mesti sepadan 100% sebelum pertukaran.",
+    zh: "执行严格的 7 至 14 天双系统并行期，确保旧财务软件试算表与 ERPNext 试算表 100% 分毫不差后才正式切换。"
+  },
+  "Unify Accounting, Multi-Location Inventory, Manufacturing MRP, Statutory Payroll (EPF/SOCSO/PCB), and Offline POS in one database.": {
+    bm: "Satukan Perakaunan, Inventori Pelbagai Lokasi, MRP Pembuatan, Gaji Berkanun (KWSP/PERKESO/PCB), dan POS Luar Talian dalam satu pangkalan data.",
+    zh: "将财务总账、多仓进销存、生产 MRP、马来西亚法定薪资 (EPF/SOCSO/PCB) 与断网离线 POS 统一在同一数据库中。"
+  },
+  "Why Growing SMEs Hit a Wall with Desktop Accounting Software": {
+    bm: "Mengapa PKS yang Berkembang Menghadapi Kekangan dengan Perisian Perakaunan Desktop",
+    zh: "为什么成长型中小企业在单机版财务软件上频频碰壁？"
+  },
+  "AutoCount and SQL Accounting are excellent for small bookkeeping teams, but once a company expands to multiple warehouses, 15+ concurrent staff, shop-floor manufacturing (BOM/Work Orders), or 10+ retail POS counters, disconnected Excel sheets and per-seat license upgrades become a severe operational bottleneck.": {
+    bm: "AutoCount dan SQL Accounting sangat baik untuk pasukan simpan kira kecil, tetapi apabila syarikat berkembang ke pelbagai gudang, 15+ kakitangan serentak, pembuatan lantai kilang (BOM/Pesanan Kerja), atau 10+ kaunter POS runcit, helaian Excel yang terputus dan kos tambahan lesen setiap pengguna menjadi kekangan operasi yang serius.",
+    zh: "AutoCount 与 SQL Accounting 非常适合小型记账团队，但当企业扩展至多个仓库、15 名以上并发员工、车间生产管理（BOM/工单）或 10 多台零售 POS 收银机时，割裂的 Excel 表格与高昂的加购账号费用就会成为严重的运营瓶颈。"
+  },
+  "The 100% Trial-Balance Match Guarantee Before Cutover": {
+    bm: "Jaminan Padanan Imbangan Duga 100% Sebelum Pertukaran",
+    zh: "上线前 100% 试算表平衡对账保障"
+  },
+  "The biggest fear CFOs have during an ERP migration is corrupted opening balances. Jobshore eliminates this risk with automated Python migration scripts that validate every GL account, AR/AP open invoice, and stock batch valuation against your legacy Trial Balance before switching off your old system.": {
+    bm: "Ketakutan terbesar CFO semasa migrasi ERP ialah baki awal yang rosak. Jobshore menghapuskan risiko ini dengan skrip migrasi Python automatik yang mengesahkan setiap akaun GL, invois terbuka AR/AP, dan penilaian kelompok stok terhadap Imbangan Duga lama anda sebelum menutup sistem lama anda.",
+    zh: "财务总监在 ERP 迁移中最担心的就是期初余额错乱。Jobshore 通过自动化 Python 数据迁移校验脚本，在停用旧系统前逐笔核验每个总账科目、未结应收/应付发票及库存批次估值，确保与旧系统试算表 100% 一致。"
+  },
+
+  "Agentic AI & MCP vs. Traditional RPA in 2026: Why Enterprises Are Switching to Math-Verified Vision-LLM Workflows": {
+    bm: "AI Ejen & MCP lwn RPA Tradisional pada 2026: Mengapa Perusahaan Beralih kepada Aliran Kerja Vision-LLM Disahkan Matematik",
+    zh: "2026 智能体 AI 与 MCP 对比传统 RPA：为什么企业正全面转向数学校验视觉大模型工作流"
+  },
+  "Why screen-scraping RPA bots break whenever a vendor changes an invoice layout—and how Model Context Protocol (MCP) + Private Vision-LLMs deliver 99.4% verified automation.": {
+    bm: "Mengapa bot RPA kikis-skrin rosak setiap kali vendor menukar susun atur invois—dan bagaimana Model Context Protocol (MCP) + Vision-LLM Peribadi memberikan automasi disahkan 99.4%.",
+    zh: "解析传统屏幕抓取 RPA 为何在供应商更改发票排版时频频崩溃——以及 MCP 协议 + 私有化视觉大模型如何实现 99.4% 经校验自动化。"
+  },
+  "Traditional Robotic Process Automation (RPA) relies on brittle UI coordinate clicking and fixed OCR templates that break whenever a supplier alters an invoice layout or a web portal updates its CSS. In 2026, enterprises replace legacy RPA with layout-agnostic Vision-Language Models connected via Model Context Protocol (MCP) to ERP APIs—guarded by deterministic math invariants and 100% PDPA-compliant private VPC model hosting.": {
+    bm: "Automasi Proses Robotik (RPA) tradisional bergantung pada klik koordinat UI yang rapuh dan templat OCR tetap yang gagal apabila pembekal mengubah susun atur invois. Pada 2026, perusahaan menggantikan RPA lama dengan Model Bahasa-Penglihatan (Vision-LLM) yang disambungkan melalui Model Context Protocol (MCP) ke API ERP—dikawal oleh invarian matematik deterministik dan pengehosan model VPC peribadi yang 100% patuh PDPA.",
+    zh: "传统机器人流程自动化 (RPA) 依赖脆弱的界面坐标点击与固定 OCR 模板，一旦供应商调整发票版式或网页更新就会报错中断。2026 年，领先企业正采用免模板的视觉语言大模型 (Vision-LLM)，通过 Model Context Protocol (MCP) 安全连接 ERP API，并辅以确定性数学恒等式校验与 100% 符合 PDPA 的私有化模型部署。"
+  },
+  "Layout-agnostic Vision-LLMs handle 500+ different supplier invoice, DO, and customs K1/K2 formats with zero template maintenance.": {
+    bm: "Vision-LLM bebas-susun-atur mengendalikan 500+ format invois pembekal, DO, dan kastam K1/K2 yang berbeza dengan sifar penyelenggaraan templat.",
+    zh: "免模板视觉大模型可自动解析 500+ 种不同排版的供应商发票、送货单与海关 K1/K2 报关单，零模板维护成本。"
+  },
+  "Model Context Protocol (MCP) gives AI agents strictly typed, permission-scoped read/write tools for ERPNext, SQL, and POS—never raw database access.": {
+    bm: "Model Context Protocol (MCP) memberi ejen AI alat baca/tulis ditaip ketat dan berskop kebenaran untuk ERPNext, SQL, dan POS—bukan akses pangkalan data mentah.",
+    zh: "MCP 协议为 AI 智能体提供严格类型化、权限受控的 ERPNext、SQL 与 POS 读写工具——绝不暴露底层数据库。"
+  },
+  "Private VPC & on-premise deployment (Qwen2.5-VL / Llama / vLLM) ensures 100% Malaysia PDPA compliance with zero external data training.": {
+    bm: "Pelaksanaan VPC peribadi & di premis (Qwen2.5-VL / Llama / vLLM) memastikan pematuhan 100% PDPA Malaysia dengan sifar latihan data luaran.",
+    zh: "私有云 VPC 与本地化部署（Qwen2.5-VL / Llama / vLLM）确保 100% 符合马来西亚 PDPA 法规，零外部数据训练。"
+  },
+  "Deterministic arithmetic and 3-way PO/GRN matching block 100% of hallucinated figures before ledger posting.": {
+    bm: "Aritmetik deterministik dan padanan PO/GRN 3-hala menyekat 100% angka halusinasi sebelum catatan lejar.",
+    zh: "确定性算术校验与 PO/GRN 采购三单匹配在入账前 100% 拦截任何 AI 幻觉数字。"
+  },
+  "Why Legacy Template OCR and UI-Scraping RPA Fail in Real Operations": {
+    bm: "Mengapa OCR Templat Lama dan RPA Kikis-Skrin Gagal dalam Operasi Sebenar",
+    zh: "为什么传统模板 OCR 与屏幕抓取 RPA 在实际业务中频频失效？"
+  },
+  "Traditional RPA tools require expensive per-bot licenses and constant maintenance whenever a supplier shifts a table column by 5 millimeters. By combining Vision-LLMs with deterministic Pydantic schema validation and arithmetic checks, Jobshore processes English, Bahasa Melayu, and Chinese documents with 99.4%+ verified accuracy.": {
+    bm: "Alat RPA tradisional memerlukan lesen setiap bot yang mahal dan penyelenggaraan berterusan setiap kali pembekal mengalihkan lajur jadual sebanyak 5 milimeter. Dengan menggabungkan Vision-LLM bersama pengesahan skema Pydantic deterministik dan semakan aritmetik, Jobshore memproses dokumen Bahasa Inggeris, Bahasa Melayu, dan Bahasa Cina dengan ketepatan disahkan 99.4%+.",
+    zh: "传统 RPA 工具不仅按机器人收取高昂年费，而且一旦供应商将表格列宽移动 5 毫米就会解析失败。Jobshore 将视觉大模型与确定性 Pydantic 模式校验及算术恒等式相结合，以 99.4%+ 的经核验准确率稳定处理英文、马来文与中文单据。"
+  },
+  "100% PDPA-Safe Private AI & Permission-Scoped MCP Connectors": {
+    bm: "AI Peribadi 100% Patuh PDPA & Penyambung MCP Berskop Kebenaran",
+    zh: "100% 符合 PDPA 的私有化 AI 与权限受控 MCP 连接器"
+  },
+  "Using the Model Context Protocol (MCP), our AI agents interact with Frappe ERPNext and your internal databases exclusively through audited, role-restricted API endpoints—while running on zero-data-retention cloud endpoints or your own private GPU server.": {
+    bm: "Menggunakan Model Context Protocol (MCP), ejen AI kami berinteraksi dengan Frappe ERPNext dan pangkalan data dalaman anda secara eksklusif melalui titik akhir API terhad peranan yang diaudit—sambil beroperasi pada titik akhir awan sifar-simpanan-data atau pelayan GPU peribadi anda sendiri.",
+    zh: "借助 Model Context Protocol (MCP)，我们的 AI 智能体仅通过经审计的角色受限 API 端点与 Frappe ERPNext 及内部数据库交互，并可运行在零数据留存专线或您自有的本地 GPU 服务器上。"
   }
 };
+

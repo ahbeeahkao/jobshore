@@ -94,6 +94,20 @@ import { COMPANY_INFO } from '../data/siteData';
         >
           📂 See Live Client &amp; Sample Projects?
         </button>
+        <button
+          type="button"
+          data-concierge-q="tax"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-amber-200 hover:border-amber-400 cursor-pointer"
+        >
+          🇲🇾 RM 50,000 LHDN Tax Deduction?
+        </button>
+        <button
+          type="button"
+          data-concierge-q="mcp"
+          class="concierge-chip rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1 text-[11px] font-medium text-violet-300 hover:border-violet-400 cursor-pointer"
+        >
+          🔒 Private AI, PDPA &amp; MCP Agents?
+        </button>
       </div>
     </div>
 
@@ -220,6 +234,34 @@ import { COMPANY_INFO } from '../data/siteData';
         a: '您可以立即访问我们的专属客户与样板项目门户 https://portfolio.jobshore.dpdns.org —— 涵盖 AI 视觉 OCR、ERPNext v15、断网离线 POS 及 B2B 经销商门户的实机演示，同时也可浏览本页的 6 个已验证生产案例 (#portfolio)。',
       },
     },
+    tax: {
+      en: {
+        q: 'How do we claim Malaysia’s RM 50,000 LHDN e-Invoice Tax Deduction & ACA?',
+        a: 'Malaysian companies can claim a Special Tax Deduction of up to RM 50,000 per Year of Assessment on LHDN MyInvois consultation and software integration, plus 20% Initial + 40% Annual Accelerated Capital Allowance (ACA) on ICT & ERPNext/POS software. Every Jobshore invoice is pre-itemized for your tax agent!',
+      },
+      bm: {
+        q: 'Bagaimana kami menuntut Potongan Cukai Khas e-Invois LHDN RM 50,000 & ACA?',
+        a: 'Syarikat Malaysia boleh menuntut Potongan Cukai Khas sehingga RM 50,000 bagi setiap Tahun Taksiran ke atas perundingan dan integrasi perisian LHDN MyInvois, ditambah Elaun Modal Dipercepatkan (ACA) 20% Permulaan + 40% Tahunan ke atas sistem ICT & ERPNext/POS. Setiap invois Jobshore diperincikan untuk ejen cukai anda!',
+      },
+      zh: {
+        q: '如何申领马来西亚 RM 50,000 LHDN 电子发票专项扣税与加速资本津贴 (ACA)？',
+        a: '马来西亚企业每年可就 LHDN MyInvois 电子发票咨询与系统集成费用申请最高 RM 50,000 的专项税务扣除，同时 ICT 与 ERPNext/POS 系统还可叠加 20% 首期 + 40% 年度加速资本津贴 (ACA)。Jobshore 提供的所有报价与税票均已按审计标准分项列明！',
+      },
+    },
+    mcp: {
+      en: {
+        q: 'Can you deploy 100% PDPA-Safe Private AI & Model Context Protocol (MCP) Agents?',
+        a: 'Yes! For strict Malaysia PDPA & financial confidentiality, we deploy open-weights Vision & Reasoning LLMs (Qwen2.5-VL, Llama-3.3, vLLM) inside your private VPC or local GPU server—connected to ERPNext & SQL via permission-scoped Model Context Protocol (MCP) tools so zero data ever trains public models.',
+      },
+      bm: {
+        q: 'Bolehkah anda melaksanakan AI Peribadi 100% Patuh PDPA & Ejen Model Context Protocol (MCP)?',
+        a: 'Ya! Untuk pematuhan ketat PDPA Malaysia & kerahsiaan kewangan, kami melaksanakan model Vision & LLM (Qwen2.5-VL, Llama-3.3, vLLM) di dalam VPC peribadi atau pelayan GPU tempatan anda—disambungkan ke ERPNext & SQL melalui alat Model Context Protocol (MCP) supaya sifar data keluar daripada rangkaian anda.',
+      },
+      zh: {
+        q: '能否部署 100% 符合 PDPA 隐私合规的私有化大模型与 MCP 智能体？',
+        a: '完全可以！针对严格的马来西亚 PDPA 与财务保密要求，我们支持在您的私有云 VPC 或本地 GPU 服务器内部署开源视觉与推理模型（Qwen2.5-VL、Llama-3.3、vLLM），并通过权限受控的 MCP (Model Context Protocol) 协议安全连接 ERPNext 与数据库，确保财务数据 100% 不外流。',
+      },
+    },
   };
 
   function appendExchange(question: string, answer: string) {
@@ -256,6 +298,17 @@ import { COMPANY_INFO } from '../data/siteData';
   gotoQuote?.addEventListener('click', () => {
     panel?.classList.add('hidden');
     panel?.classList.remove('flex');
+    if (lastUserQuestion) {
+      window.dispatchEvent(
+        new CustomEvent('jobshore:select-portfolio-project', {
+          detail: {
+            project: lastUserQuestion,
+            client: 'AI Concierge Inquiry',
+            category: lastUserQuestion,
+          },
+        })
+      );
+    }
   });
 
   requestCallback?.addEventListener('click', () => {
@@ -296,13 +349,17 @@ import { COMPANY_INFO } from '../data/siteData';
           ? '非常好的问题！根据您的需求，我们建议先进行免费的“3 份单据 / 10 个 SKU 真实数据演示”，随后启动 14 天验证试点。请点击下方“计算我的动态方案报价”即时获取投资估算与 ROI！'
           : 'Great question! Based on your requirement, we recommend starting with a Free 3-Document / 10-SKU Live Demo followed by a 14-Day Verified Pilot. Click "Calculate My Dynamic Quote" below to get your instant scope-adjusted estimate & ROI!';
 
-    if (lower.includes('price') || lower.includes('cost') || lower.includes('harga') || lower.includes('多少钱') || lower.includes('报价') || lower.includes('quote')) {
+    if (lower.includes('50,000') || lower.includes('50k') || lower.includes('tax') || lower.includes('deduct') || lower.includes('cukai') || lower.includes('aca') || lower.includes('grant') || lower.includes('扣税') || lower.includes('补贴')) {
+      reply = (ANSWERS.tax[lang] || ANSWERS.tax.en).a;
+    } else if (lower.includes('mcp') || lower.includes('pdpa') || lower.includes('private') || lower.includes('local') || lower.includes('on-prem') || lower.includes('privacy') || lower.includes('peribadi') || lower.includes('私有')) {
+      reply = (ANSWERS.mcp[lang] || ANSWERS.mcp.en).a;
+    } else if (lower.includes('price') || lower.includes('cost') || lower.includes('harga') || lower.includes('多少钱') || lower.includes('报价') || lower.includes('quote')) {
       reply = (ANSWERS.pricing[lang] || ANSWERS.pricing.en).a;
-    } else if (lower.includes('pos') || lower.includes('retail') || lower.includes('f&b') || lower.includes('qr') || lower.includes('offline') || lower.includes('收银')) {
+    } else if (lower.includes('pos') || lower.includes('retail') || lower.includes('f&b') || lower.includes('cafe') || lower.includes('restaurant') || lower.includes('pharmacy') || lower.includes('farmasi') || lower.includes('qr') || lower.includes('offline') || lower.includes('收银') || lower.includes('餐饮') || lower.includes('药房')) {
       reply = (ANSWERS.pos[lang] || ANSWERS.pos.en).a;
-    } else if (lower.includes('erp') || lower.includes('autocount') || lower.includes('sql') || lower.includes('lhdn') || lower.includes('invois') || lower.includes('发票')) {
+    } else if (lower.includes('erp') || lower.includes('autocount') || lower.includes('sql') || lower.includes('lhdn') || lower.includes('invois') || lower.includes('factory') || lower.includes('kilang') || lower.includes('manufactur') || lower.includes('wholesale') || lower.includes('hardware') || lower.includes('construction') || lower.includes('logistics') || lower.includes('发票') || lower.includes('工厂') || lower.includes('五金')) {
       reply = (ANSWERS.erp[lang] || ANSWERS.erp.en).a;
-    } else if (lower.includes('ocr') || lower.includes('hallucinat') || lower.includes('accuracy') || lower.includes('test') || lower.includes('识别')) {
+    } else if (lower.includes('ocr') || lower.includes('hallucinat') || lower.includes('accuracy') || lower.includes('test') || lower.includes('rpa') || lower.includes('识别')) {
       reply = (ANSWERS.hallucination[lang] || ANSWERS.hallucination.en).a;
     } else if (lower.includes('portfolio') || lower.includes('sample') || lower.includes('project') || lower.includes('projek') || lower.includes('案例') || lower.includes('样板')) {
       reply = (ANSWERS.portfolio[lang] || ANSWERS.portfolio.en).a;
