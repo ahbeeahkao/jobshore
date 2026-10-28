@@ -1487,6 +1487,14 @@ export const I18N_PART_7: Record<string, TrilingualEntry> = {
   "Using the Model Context Protocol (MCP), our AI agents interact with Frappe ERPNext and your internal databases exclusively through audited, role-restricted API endpoints—while running on zero-data-retention cloud endpoints or your own private GPU server.": {
     bm: "Menggunakan Model Context Protocol (MCP), ejen AI kami berinteraksi dengan Frappe ERPNext dan pangkalan data dalaman anda secara eksklusif melalui titik akhir API terhad peranan yang diaudit—sambil beroperasi pada titik akhir awan sifar-simpanan-data atau pelayan GPU peribadi anda sendiri.",
     zh: "借助 Model Context Protocol (MCP)，我们的 AI 智能体仅通过经审计的角色受限 API 端点与 Frappe ERPNext 及内部数据库交互，并可运行在零数据留存专线或您自有的本地 GPU 服务器上。"
+  },
+  "📡 RSS Feed (/rss.xml)": {
+    bm: "📡 Suapan RSS (/rss.xml)",
+    zh: "📡 RSS 订阅源 (/rss.xml)"
+  },
+  "RSS Feed (/rss.xml)": {
+    bm: "Suapan RSS (/rss.xml)",
+    zh: "RSS 订阅源 (/rss.xml)"
   }
 };
 

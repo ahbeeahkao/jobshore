@@ -74,9 +74,10 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
     <meta name="geo.position" content="3.2140;101.6366" />
     <meta name="ICBM" content="3.2140, 101.6366" />
 
-    <!-- Answer Engine Optimization (AEO) Discovery Links -->
+    <!-- Answer Engine Optimization (AEO) & RSS Discovery Links -->
     <link rel="alternate" type="text/markdown" title="LLMs Summary Index (llms.txt)" href={withBase('/llms.txt')} />
     <link rel="alternate" type="text/markdown" title="LLMs Full Reference (llms-full.txt)" href={withBase('/llms-full.txt')} />
+    <link rel="alternate" type="application/rss+xml" title="Jobshore Executive Playbooks, LHDN e-Invoice & Enterprise AI RSS Feed" href={withBase('/rss.xml')} />
     <link rel="sitemap" type="application/xml" title="Sitemap" href={withBase('/sitemap.xml')} />
 
     <!-- Open Graph / Social Sharing -->
@@ -484,6 +485,11 @@ const ogImageUrl = `${COMPANY_INFO.domain}/og-image.svg`;
               <li>
                 <a href={withBase('/#insights')} class="text-slate-400 hover:text-sky-300">
                   LHDN MyInvois Guides
+                </a>
+              </li>
+              <li>
+                <a href={withBase('/rss.xml')} target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-300">
+                  RSS Feed (/rss.xml)
                 </a>
               </li>
               <li>

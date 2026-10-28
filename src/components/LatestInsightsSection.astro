@@ -35,9 +35,19 @@ import { withBase } from '../utils/paths';
             📡 Malaysia 2026 Regulatory, Tax Deduction &amp; Enterprise AI Radar
           </h3>
         </div>
-        <span class="rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-0.5 font-mono text-[11px] font-bold text-emerald-300">
-          Updated Oct 2026 • LHDN &amp; PDPA Verified
-        </span>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-0.5 font-mono text-[11px] font-bold text-emerald-300">
+            Updated Oct 2026 • LHDN &amp; PDPA Verified
+          </span>
+          <a
+            href={withBase('/rss.xml')}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 rounded-full border border-sky-500/35 bg-sky-500/10 px-3 py-0.5 font-mono text-[11px] font-bold text-sky-300 transition hover:bg-sky-500/20"
+          >
+            <span>📡 RSS Feed (/rss.xml)</span>
+          </a>
+        </div>
       </div>
 
       <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

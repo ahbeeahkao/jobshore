@@ -33,6 +33,7 @@ Jobshore 是一家专注于企业级 AI 工程（AI 编程、确定性防幻觉�
 - [POS Software & Point-of-Sale Systems](https://jobshore.dpdns.org/services/pos-software-system)
 - [Web & Mobile App Development](https://jobshore.dpdns.org/services/web-mobile-development)
 - [Full LLM Technical Reference](https://jobshore.dpdns.org/llms-full.txt)
+- [Executive Playbooks & 2026 Regulatory Radar RSS 2.0 Feed](https://jobshore.dpdns.org/rss.xml)
 
 ## Executive Playbooks & Malaysia LHDN / AI Compliance Guides
 - [How to Claim Malaysia’s RM 50,000 LHDN e-Invoice Tax Deduction & Accelerated Capital Allowance (ACA)](https://jobshore.dpdns.org/insights/claim-malaysia-rm50000-lhdn-einvoice-tax-deduction-aca-guide)
