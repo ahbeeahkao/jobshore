@@ -40,19 +40,22 @@ const articleJsonLd = {
       ],
     },
     {
-      '@type': 'BlogPosting',
+      '@type': ['TechArticle', 'NewsArticle', 'BlogPosting'],
       headline: article.title,
       description: article.excerpt,
-      datePublished: article.publishedDate,
-      dateModified: article.publishedDate,
+      articleSection: article.category,
+      inLanguage: ['en-MY', 'ms-MY', 'zh-MY'],
+      datePublished: `${article.publishedDate}T08:00:00+08:00`,
+      dateModified: `${article.publishedDate}T08:00:00+08:00`,
       author: {
         '@type': 'Organization',
-        name: COMPANY_INFO.name,
+        name: COMPANY_INFO.legalName,
         url: COMPANY_INFO.domain,
       },
       publisher: {
         '@type': 'Organization',
-        name: COMPANY_INFO.name,
+        name: COMPANY_INFO.legalName,
+        url: COMPANY_INFO.domain,
         logo: {
           '@type': 'ImageObject',
           url: `${COMPANY_INFO.domain}/favicon.svg`,

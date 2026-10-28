@@ -3,12 +3,17 @@ import { COMPANY_INFO, SERVICE_PILLARS } from '../data/siteData';
 import { INSIGHT_ARTICLES } from '../data/insightsData';
 
 export const GET: APIRoute = () => {
-  const lastmod = '2026-10-19';
+  const lastmod = '2026-10-28';
   const urls = [
     {
       loc: `${COMPANY_INFO.domain}/`,
       changefreq: 'weekly',
       priority: '1.0',
+    },
+    {
+      loc: `${COMPANY_INFO.domain}/rss.xml`,
+      changefreq: 'weekly',
+      priority: '0.7',
     },
     ...SERVICE_PILLARS.map((pillar) => ({
       loc: `${COMPANY_INFO.domain}/services/${pillar.slug}`,
