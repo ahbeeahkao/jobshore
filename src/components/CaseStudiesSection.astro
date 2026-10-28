@@ -164,7 +164,10 @@ const portfolioCategories = [
               </a>
               <a
                 href="#contact"
-                class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-sky-500/30 bg-sky-500/10 px-3 py-2 text-xs font-bold text-sky-300 transition hover:bg-sky-500/20"
+                data-scope-project={cs.title}
+                data-scope-client={cs.clientType}
+                data-scope-category={cs.category}
+                class="portfolio-scope-btn inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-sky-500/30 bg-sky-500/10 px-3 py-2 text-xs font-bold text-sky-300 transition hover:bg-sky-500/20"
               >
                 <span>Request Live Demo of This Architecture</span>
                 <span>→</span>
@@ -211,6 +214,20 @@ const portfolioCategories = [
 <script>
   const portfolioBtns = document.querySelectorAll('.portfolio-filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const portfolioScopeBtns = document.querySelectorAll('.portfolio-scope-btn');
+
+  portfolioScopeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const project = btn.getAttribute('data-scope-project') || '';
+      const client = btn.getAttribute('data-scope-client') || '';
+      const category = btn.getAttribute('data-scope-category') || '';
+      window.dispatchEvent(
+        new CustomEvent('jobshore:select-portfolio-project', {
+          detail: { project, client, category, source: 'jobshore.dpdns.org/#portfolio' },
+        })
+      );
+    });
+  });
 
   portfolioBtns.forEach((btn) => {
     btn.addEventListener('click', () => {

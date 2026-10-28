@@ -138,6 +138,28 @@ import { COMPANY_INFO } from '../data/siteData';
             />
           </div>
 
+          <!-- Selected Portfolio Architecture Banner (Auto-Shown When Clicking From #portfolio or portfolio.jobshore.dpdns.org) -->
+          <div
+            id="selected-portfolio-banner"
+            class="hidden rounded-2xl border border-emerald-500/40 bg-emerald-950/35 px-4 py-3 text-xs"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <div class="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+                  📂 Reference Portfolio Architecture Selected
+                </div>
+                <div id="selected-portfolio-title" class="font-bold text-white"></div>
+              </div>
+              <button
+                type="button"
+                id="clear-portfolio-banner"
+                class="rounded-lg border border-slate-700 bg-slate-900 px-2 py-0.5 text-[11px] font-semibold text-slate-400 hover:text-white cursor-pointer"
+              >
+                × Clear
+              </button>
+            </div>
+          </div>
+
           <!-- Quick Industry Preset Buttons -->
           <div>
             <div class="flex items-center justify-between">
@@ -706,6 +728,79 @@ import { COMPANY_INFO } from '../data/siteData';
       }
     });
   });
+
+  // ========================================================================
+  // PORTFOLIO-TO-QUOTE BRIDGE (#portfolio clicks + ?project= URL from portfolio.jobshore.dpdns.org)
+  // ========================================================================
+  const portfolioBanner = document.getElementById('selected-portfolio-banner');
+  const portfolioBannerTitle = document.getElementById('selected-portfolio-title');
+  const clearPortfolioBannerBtn = document.getElementById('clear-portfolio-banner');
+
+  function applyPortfolioSelection(projectTitle: string, categoryOrPillar: string, clientLabel = '') {
+    if (!projectTitle) return;
+    humanInteracted = true;
+
+    const fullLabel = clientLabel ? `${clientLabel} — ${projectTitle}` : projectTitle;
+    if (portfolioBanner && portfolioBannerTitle) {
+      portfolioBannerTitle.textContent = fullLabel;
+      portfolioBanner.classList.remove('hidden');
+    }
+
+    const catLower = (categoryOrPillar + ' ' + projectTitle).toLowerCase();
+    if (chkAi && chkBpa && chkErp && chkPos && chkWeb) {
+      chkAi.checked = false;
+      chkBpa.checked = false;
+      chkErp.checked = false;
+      chkPos.checked = false;
+      chkWeb.checked = false;
+
+      if (catLower.includes('pos') || catLower.includes('retail') || catLower.includes('f&b') || catLower.includes('receipt')) {
+        chkPos.checked = true;
+        chkErp.checked = true;
+      }
+      if (catLower.includes('erp') || catLower.includes('frappe') || catLower.includes('lhdn') || catLower.includes('manufacturing')) {
+        chkErp.checked = true;
+        chkAi.checked = true;
+      }
+      if (catLower.includes('automation') || catLower.includes('bpa') || catLower.includes('whatsapp')) {
+        chkBpa.checked = true;
+        chkAi.checked = true;
+      }
+      if (catLower.includes('web') || catLower.includes('mobile') || catLower.includes('flutter') || catLower.includes('portal')) {
+        chkWeb.checked = true;
+      }
+      if (catLower.includes('ai') || catLower.includes('ocr') || catLower.includes('verif') || catLower.includes('test')) {
+        chkAi.checked = true;
+      }
+      if (!chkAi.checked && !chkBpa.checked && !chkErp.checked && !chkPos.checked && !chkWeb.checked) {
+        chkAi.checked = true;
+        chkErp.checked = true;
+      }
+    }
+
+    if (detailsInput) {
+      detailsInput.value = `[Reference Portfolio Project]: ${fullLabel} — Requesting a live walkthrough & 14-day pilot scope for a similar setup.`;
+    }
+  }
+
+  clearPortfolioBannerBtn?.addEventListener('click', () => {
+    portfolioBanner?.classList.add('hidden');
+  });
+
+  window.addEventListener('jobshore:select-portfolio-project', (ev: any) => {
+    const d = ev?.detail || {};
+    applyPortfolioSelection(d.project || '', d.category || '', d.client || '');
+  });
+
+  // Also check URL query parameters (?project=...&pillar=...) when arriving from https://portfolio.jobshore.dpdns.org
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const urlProject = params.get('project') || params.get('sample') || '';
+    const urlPillar = params.get('pillar') || params.get('category') || '';
+    if (urlProject) {
+      applyPortfolioSelection(urlProject.replace(/[-_]+/g, ' '), urlPillar);
+    }
+  } catch (_) {}
 
   function showGateError(msg: string) {
     if (gateErrorMsg) {

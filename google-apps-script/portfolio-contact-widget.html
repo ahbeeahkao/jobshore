@@ -1,0 +1,274 @@
+<!--
+  ============================================================================
+  JOBSHORE (M) SDN BHD — DROP-IN CONTACT & 3-GATE CALLBACK WIDGET
+  For: https://portfolio.jobshore.dpdns.org
+  ============================================================================
+  HOW TO USE ON https://portfolio.jobshore.dpdns.org:
+  1. Option A1 (Zero-Code Link Buttons on Each Project Card):
+     Point any "Scope Similar Project" button on portfolio.jobshore.dpdns.org to:
+     https://jobshore.dpdns.org/?project=Offline-POS-System&pillar=pos#contact
+     (jobshore.dpdns.org automatically reads ?project= and ?pillar=, selects
+      the matching Service Pillar, and pre-fills the Quote & ROI form!)
+
+  2. Option A2 (Inline 3-Gate Callback Form Directly on portfolio.jobshore.dpdns.org):
+     Paste the <section id="portfolio-contact">...</section> below at the bottom
+     of your portfolio.jobshore.dpdns.org page. It uses the EXACT SAME Google
+     Apps Script Web App URL (Code.gs), enforces the 3-Part Anti-Abuse Gate
+     (Honeypot + Dynamic Math Challenge + Phone Format Check + 45s Cooldown),
+     and keeps 100% Zero Public Phone/WhatsApp Exposure!
+  ============================================================================
+-->
+
+<section
+  id="portfolio-contact"
+  style="background:#060a12;border-top:1px solid #1e293b;padding:4rem 1.25rem;color:#f8fafc;font-family:system-ui,-apple-system,sans-serif;"
+>
+  <div style="max-width:960px;margin:0 auto;">
+    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:24px;padding:2rem;box-shadow:0 20px 50px rgba(0,0,0,0.45);">
+      <!-- Top Header & Direct ROI Calculator Bridge -->
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;border-bottom:1px solid #1e293b;padding-bottom:1.5rem;margin-bottom:1.5rem;">
+        <div style="max-width:600px;">
+          <span style="display:inline-block;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.35);color:#6ee7b7;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:4px 12px;border-radius:999px;">
+            🛡️ 3-Gate Protected Engineering Desk • Zero Spam
+          </span>
+          <h2 style="font-size:1.65rem;font-weight:800;margin:0.75rem 0 0.5rem;color:#ffffff;">
+            Want a Similar Architecture Deployed for Your Business?
+          </h2>
+          <p style="font-size:0.9rem;color:#94a3b8;margin:0;line-height:1.6;">
+            Submit your WhatsApp / mobile number below to request a <strong style="color:#ffffff;">Live Staging Walkthrough &amp; 14-Day Pilot Scope</strong> from a Senior Jobshore Solutions Architect—or use our full interactive ROI &amp; Quote Calculator on the main platform.
+          </p>
+        </div>
+
+        <a
+          href="https://jobshore.dpdns.org/?project=Portfolio-Portal-Inquiry&pillar=ai-erp#contact"
+          style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#0ea5e9,#10b981);color:#020617;font-weight:800;font-size:0.82rem;padding:0.75rem 1.2rem;border-radius:12px;text-decoration:none;white-space:nowrap;"
+        >
+          <span>🧮 Open Full Quote &amp; ROI Calculator</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- 3-Gate Protected Callback Form (Posts to the same Google Apps Script Code.gs Webhook) -->
+      <form
+        id="portfolio-callback-form"
+        data-webhook-url="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
+        style="display:grid;gap:1rem;"
+      >
+        <!-- GATE 1: Invisible Honeypot Trap -->
+        <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+          <label for="pf-honeypot">Leave blank if human</label>
+          <input id="pf-honeypot" name="_honeypot" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#cbd5e1;margin-bottom:6px;">
+              Your Name &amp; Role *
+            </label>
+            <input
+              name="name"
+              type="text"
+              required
+              placeholder="e.g. Tan Sri / Dato / Mr. Lim (Director)"
+              style="width:100%;box-sizing:border-box;background:#020617;border:1px solid #334155;border-radius:10px;padding:10px 12px;color:#fff;font-size:0.85rem;"
+            />
+          </div>
+
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#cbd5e1;margin-bottom:6px;">
+              Company Name *
+            </label>
+            <input
+              name="company"
+              type="text"
+              required
+              placeholder="e.g. Apex Manufacturing Sdn Bhd"
+              style="width:100%;box-sizing:border-box;background:#020617;border:1px solid #334155;border-radius:10px;padding:10px 12px;color:#fff;font-size:0.85rem;"
+            />
+          </div>
+
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#cbd5e1;margin-bottom:6px;">
+              Work Email *
+            </label>
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="you@company.com"
+              style="width:100%;box-sizing:border-box;background:#020617;border:1px solid #334155;border-radius:10px;padding:10px 12px;color:#fff;font-size:0.85rem;"
+            />
+          </div>
+
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#6ee7b7;margin-bottom:6px;">
+              Your WhatsApp / Mobile Number (For Callback) *
+            </label>
+            <input
+              id="pf-client-phone"
+              name="clientPhone"
+              type="tel"
+              required
+              placeholder="e.g. +6012-345 6789"
+              style="width:100%;box-sizing:border-box;background:#020617;border:1px solid #10b981;border-radius:10px;padding:10px 12px;color:#fff;font-size:0.85rem;"
+            />
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#cbd5e1;margin-bottom:6px;">
+              Which Sample Project Interested You Most? *
+            </label>
+            <select
+              name="pillars"
+              style="width:100%;box-sizing:border-box;background:#020617;border:1px solid #334155;border-radius:10px;padding:10px 12px;color:#fff;font-size:0.85rem;"
+            >
+              <option value="AI Services (Coding, Verification, Testing, OCR)">AI OCR, Code Verification &amp; Automated QA</option>
+              <option value="Frappe & ERPNext Implementation (LHDN MyInvois)">Frappe ERPNext v15 &amp; LHDN MyInvois e-Invoicing</option>
+              <option value="POS Software & Retail/F&B Systems">Offline-First Retail / F&amp;B POS + LHDN Receipt QR</option>
+              <option value="Business Process Automation (BPA)">WhatsApp Order Bot &amp; 3-Way Match Automation</option>
+              <option value="Web & Mobile App Development (SEO/AEO)">100/100 SEO/AEO Web &amp; Offline Mobile App</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block;font-size:11px;font-weight:700;text-transform:uppercase;color:#cbd5e1;margin-bottom:6px;">
+              Project Notes / Sample Reference
+            </label>
+            <input
+              name="details"
+              type="text"
+              placeholder="e.g. Interested in a similar setup to the 18-outlet POS or ERPNext project"
+              style="width:100%;box-sizing:border-box;background:#020617;border:1px solid #334155;border-radius:10px;padding:10px 12px;color:#fff;font-size:0.85rem;"
+            />
+          </div>
+        </div>
+
+        <!-- GATE 2: Human Math Verification + Submit Bar -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;background:#020617;border:1px solid #1e293b;border-radius:14px;padding:1rem;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:12px;font-weight:700;color:#38bdf8;">🔒 Anti-Bot Gate:</span>
+            <label id="pf-math-label" for="pf-math-input" style="font-size:13px;font-weight:700;color:#fff;">
+              What is 4 + 5?
+            </label>
+            <input
+              id="pf-math-input"
+              type="number"
+              required
+              placeholder="?"
+              style="width:68px;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:6px 10px;color:#fff;font-weight:800;text-align:center;"
+            />
+          </div>
+
+          <button
+            type="submit"
+            style="background:linear-gradient(90deg,#10b981,#0ea5e9);color:#020617;border:none;border-radius:12px;padding:12px 22px;font-weight:800;font-size:0.85rem;cursor:pointer;"
+          >
+            🔒 Request Verified Architect Callback →
+          </button>
+        </div>
+
+        <p id="pf-status-msg" style="display:none;font-size:0.82rem;font-weight:700;margin:0;padding:10px 14px;border-radius:10px;"></p>
+      </form>
+
+      <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid #1e293b;display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.5rem;font-size:11px;color:#64748b;">
+        <span>Jobshore (M) Sdn Bhd (SSM Reg. No: 202301031763 (1525686-X))</span>
+        <span>NO. 44-1, JALAN PRIMA 2, PUSAT NIAGA METRO PRIMA KEPONG, 52100 KUALA LUMPUR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const form = document.getElementById('portfolio-callback-form');
+    const mathLabel = document.getElementById('pf-math-label');
+    const mathInput = document.getElementById('pf-math-input');
+    const statusMsg = document.getElementById('pf-status-msg');
+    const honeypot = document.getElementById('pf-honeypot');
+    const loadTs = Date.now();
+
+    const a = Math.floor(Math.random() * 6) + 2;
+    const b = Math.floor(Math.random() * 6) + 2;
+    if (mathLabel) mathLabel.textContent = 'What is ' + a + ' + ' + b + '?';
+
+    function showStatus(text, isError) {
+      if (!statusMsg) return;
+      statusMsg.style.display = 'block';
+      statusMsg.style.background = isError ? 'rgba(244,63,94,0.15)' : 'rgba(16,185,129,0.15)';
+      statusMsg.style.border = isError ? '1px solid rgba(244,63,94,0.4)' : '1px solid rgba(16,185,129,0.4)';
+      statusMsg.style.color = isError ? '#fda4af' : '#6ee7b7';
+      statusMsg.textContent = text;
+    }
+
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (honeypot && honeypot.value.trim() !== '') return;
+
+        const dwellSec = Math.round((Date.now() - loadTs) / 1000);
+        if (dwellSec < 2) {
+          showStatus('Security Gate 1: Please take a moment to fill out the form.', true);
+          return;
+        }
+
+        if (Number(mathInput.value) !== a + b) {
+          showStatus('Security Gate 2: Please enter the correct sum (' + a + ' + ' + b + ' = ' + (a + b) + ').', true);
+          return;
+        }
+
+        const fd = new FormData(form);
+        const phone = String(fd.get('clientPhone') || '').trim();
+        if (phone.replace(/[^0-9]/g, '').length < 8) {
+          showStatus('Security Gate 3: Please enter a valid WhatsApp / mobile number (at least 8 digits).', true);
+          return;
+        }
+
+        const lastTs = Number(localStorage.getItem('jobshore_pf_submit_ts') || '0');
+        if (lastTs > 0 && Date.now() - lastTs < 45000) {
+          showStatus('Rate Limit: Please wait 45 seconds before submitting another request.', true);
+          return;
+        }
+
+        const webhookUrl = (form.getAttribute('data-webhook-url') || '').trim();
+        const payload = {
+          name: fd.get('name'),
+          company: fd.get('company'),
+          email: fd.get('email'),
+          clientPhone: phone,
+          pillars: fd.get('pillars'),
+          scale: 'Portfolio Portal Lead',
+          docVolume: 'Portfolio Walkthrough',
+          timeline: '14-Day Pilot / Demo Walkthrough',
+          pilotEstimate: 'Scoped on Call',
+          fullRolloutEstimate: 'Scoped on Call',
+          annualRoiEstimate: 'Calculated on Call',
+          details: '[Source: portfolio.jobshore.dpdns.org] ' + (fd.get('details') || 'Requested live portfolio walkthrough'),
+          _honeypot: '',
+          gateVerified: true,
+          challengePassed: true,
+          dwellTimeSec: dwellSec
+        };
+
+        try {
+          if (webhookUrl && webhookUrl.startsWith('https://script.google.com/')) {
+            await fetch(webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(payload)
+            });
+          }
+          localStorage.setItem('jobshore_pf_submit_ts', String(Date.now()));
+          showStatus('✅ Verified! Your portfolio callback request has been logged. A Senior Jobshore Solutions Architect will message your WhatsApp / Email shortly.', false);
+          form.reset();
+        } catch (err) {
+          showStatus('Network error—redirecting you to our main Quote & Callback engine...', true);
+          setTimeout(function () {
+            window.location.href = 'https://jobshore.dpdns.org/?project=' + encodeURIComponent(String(fd.get('pillars') || 'Portfolio-Lead')) + '#contact';
+          }, 1200);
+        }
+      });
+    }
+  })();
+</script>
