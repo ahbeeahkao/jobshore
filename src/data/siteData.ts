@@ -10,6 +10,11 @@ export const COMPANY_CONFIG = {
   leadWebhookUrl: '',
   // Official Client & Sample Projects Portfolio Portal Subdomain:
   portfolioPortalUrl: 'https://portfolio.jobshore.dpdns.org',
+  // OPTION B (STACKED ON TOP OF OPTION A): Gated WhatsApp Username & 4-Digit Access PIN
+  // Never shown on the public website or in plain HTML; only unlocked in JS AFTER the buyer passes all 3 Anti-Abuse Gates
+  // and submits their own phone/email to your Google Sheet + Email webhook!
+  gatedWhatsappUsername: '@jobshore',
+  gatedWhatsappPin: '4829',
   // Optional fallback email (only used if leadWebhookUrl is left empty during local testing; encoded in JS, never exposed in raw HTML)
   fallbackEmailUser: 'hello',
   fallbackEmailDomain: 'jobshore.dpdns.org',
@@ -103,6 +108,8 @@ export const COMPANY_INFO = {
   customPriceFallbackText: COMPANY_CONFIG.customPriceFallbackText,
   leadWebhookUrl: COMPANY_CONFIG.leadWebhookUrl,
   portfolioPortalUrl: COMPANY_CONFIG.portfolioPortalUrl,
+  gatedWhatsappUsername: COMPANY_CONFIG.gatedWhatsappUsername,
+  gatedWhatsappPin: COMPANY_CONFIG.gatedWhatsappPin,
   fallbackEmailUser: COMPANY_CONFIG.fallbackEmailUser,
   fallbackEmailDomain: COMPANY_CONFIG.fallbackEmailDomain,
   domain: resolvedDomain,
